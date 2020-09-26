@@ -1,0 +1,124 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: lightgray;
+}
+
+$primary: #7e8948;
+$info: #5db7de;
+//$warning: #b87d4b;
+$warning: #d0dca0;
+
+$navbar-item-color: $warning;
+//$navbar-item-hover-color: white;
+$navbar-background-color: #0a0a0a;
+$navbar-item-hover-background-color: none;
+//$link: $info;
+$link-hover: white;
+
+
+
+.logo{
+    opacity: .6;
+    transition: .5s;
+}
+.logo:hover{
+    opacity: 1;
+}
+.navbar-item{
+    transition: .5s;
+}
+.navbar-item:hover{
+    font-size: 1.6rem;
+    color: white !important;
+    text-shadow: #dfdfdf 0 0 5px;
+}
+.box-projet div.box{
+    transition: .3s;
+}
+.box-projet div.box:hover{
+    box-shadow: black 0 0 15px;
+    scale: 1.03;
+}
+.block-presentation{
+    margin: auto;
+    width: 80%;
+    transition: .3s;
+    opacity: 0.5
+}
+.block-presentation:hover{
+    width: 100%;
+    opacity: 1;
+    box-shadow: black 0 0 15px;
+}
+.text-presentation-touch{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-direction: column;
+}
+.text-presentation-touch p{
+    padding: .75rem;
+    background: rgba(0,0,0,.1);
+}
+.text-presentation-touch div.buttons{
+    width: 100%;
+    justify-content: space-evenly;
+}
+figure{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.text-presentation{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+}
+.text-presentation p{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+
+section{
+    padding-bottom: 3rem;
+}
+
+.subtitle-left .subtitle-right{
+    align-items: center
+}
+.subtitle-left{
+    text-shadow: rgba(0,0,0,0.5) 2px 2px 2px;
+}
+.subtitle-right{
+    justify-content: end;
+    text-shadow: rgba(126, 137, 72, 0.5) -2px 2px 2px;
+}
+
+.competence{
+    transition: .3s;
+}
+.competence:hover{
+    scale:1.05;
+}
+.progress{
+    border-radius: 3px !important;
+}
+
+@import "~bulma";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";

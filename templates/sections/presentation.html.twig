@@ -1,0 +1,61 @@
+<div id="presentation" style="position: relative;top: -8rem;"></div>
+<section class="hero is-primary is-normal">
+    <div class="hero-body">
+        <div class="container">
+            <h2 class="subtitle is-1 has-text-black has-text-weight-bold has-text-centered-touch is-flex-desktop subtitle-left">
+                Présentation
+                <span class="icon is-large has-text-black is-hidden-touch" style="position: absolute;right: 5%">
+                    <i class="fas fa-3x fa-angle-left"></i>
+                    <i class="fas fa-3x fa-angle-left"></i>
+                    <i class="fas fa-3x fa-angle-left"></i>
+                </span>
+            </h2>
+        </div>
+    </div>
+
+    {% include 'includes/block_presentation.html.twig' %}
+    {% include 'includes/block_presentation.html.twig' %}
+
+</section>
+
+
+
+{#<script>#}
+
+{#    function elementPosition (a) {#}
+{#        var b = a.getBoundingClientRect();#}
+{#        return {#}
+{#            clientX: a.offsetLeft,#}
+{#            clientY: a.offsetTop,#}
+{#            viewportX: (b.x || b.left),#}
+{#            viewportY: (b.y || b.top)#}
+{#        }#}
+{#    }#}
+
+
+{#    // for(let i = 0 ; i < blockPresentation.length ; i++){#}
+{#    // }#}
+
+{#    document.addEventListener('scroll', function () {#}
+{#        let blockPresentation = document.getElementsByClassName("block-presentation");#}
+{#        let positions = elementPosition(blockPresentation[0]);#}
+{#        // let positionWindows = elementPosition(document.querySelector("html"));#}
+{#        // let windowsPosVert = positions.clientY;#}
+{#        let elementPosVert = positions.viewportY;#}
+{#        // console.log(positionWindows);#}
+{#        console.log({#}
+{#        //     // "Position horizontale dans la fenetre": positions.clientX,#}
+{#        //     // "Position verticale dans la fenetre": positions.clientY,#}
+{#        //     // "Position horizontale dans le document": positions.viewportX,#}
+{#            "Position verticale dans le document": positions.viewportY#}
+{#        });#}
+
+{#            if ( elementPosVert >= 150 && elementPosVert <= 400 ){#}
+{#                blockPresentation[0].style.width = "100%";#}
+{#                // console.log("position de lelement centre")#}
+{#            }else {#}
+{#                blockPresentation[0].style.width = "80%";#}
+{#            }#}
+{#        })#}
+
+{#</script>#}
