@@ -17,11 +17,11 @@ class HomeController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/adm", name="admin")
-     */
-    public function admin()
-    {
-        return $this->redirectToRoute('');
-    }
+//    /**
+//     * @Route("/admin", name="admin")
+//     */
+//    public function admin()
+//    {
+//        return $this->redirectToRoute('');
+//    }
 }
