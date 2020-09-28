@@ -15,40 +15,17 @@
 
     <div class="">
 
-        <div class="columns is-vcentered is-centered is-half competence">
-            <h4 class="column is-1 has-text-centered">HTML</h4>
-            <div class="column is-10">
-                <progress class="progress is-large is-primary" value="60" max="100">60%</progress>
-            </div>
+        {% for competences in competences %}
+            {{ include('sections/competences/competence_barre.html.twig') }}
+        {% endfor %}
+
+        <div class="column has-text-centered">
+            <a href="{{ path('add_comp') }}" class="button is-info">Ajouter une compétence</a>
         </div>
 
-        <div class="columns is-vcentered is-centered is-half competence">
-            <h4 class="column is-1 has-text-centered">HTML</h4>
-            <div class="column is-10">
-                <progress class="progress is-large is-primary" value="60" max="100">60%</progress>
-            </div>
-        </div>
-
-        <div class="columns is-vcentered is-centered is-half competence">
-            <h4 class="column is-1 has-text-centered">HTML</h4>
-            <div class="column is-10">
-                <progress class="progress is-large is-primary" value="60" max="100">60%</progress>
-            </div>
-        </div>
-
-        <div class="columns is-vcentered is-centered is-half competence">
-            <h4 class="column is-1 has-text-centered">HTML</h4>
-            <div class="column is-10">
-                <progress class="progress is-large is-primary" value="60" max="100">60%</progress>
-            </div>
-        </div>
-
-        <div class="columns is-vcentered is-centered is-half competence">
-            <h4 class="column is-1 has-text-centered">HTML</h4>
-            <div class="column is-10">
-                <progress class="progress is-large is-primary" value="60" max="100">60%</progress>
-            </div>
-        </div>
+{#        <div class="box is-half column">#}
+{#            {{ include('sections/competences/add_comp.html.twig') }}#}
+{#        </div>#}
 
     </div>
 
