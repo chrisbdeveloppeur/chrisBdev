@@ -1,6 +1,23 @@
-<div class="columns is-vcentered is-centered is-half competence" id="{{ competences.id }}">
-    <h4 class="column is-1 has-text-centered">{{ competences.name }}</h4>
-    <div class="column is-10">
-        <progress class="progress is-large is-primary" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+    <div style="position:relative;justify-content: center" class="competence is-flex-desktop" id="competence-{{ competences.id }}">
+        <div class="is-flex column is-one-fifth">
+            {% if is_granted("ROLE_ADMIN") %}
+                <div class="column half-touch has-text-centered">
+                    <a class="is-primary button is-small has-text-weight-bold" href="{{ path('edit_comp', {'id': competences.id }) }}">
+                        éditer
+                    </a>
+                </div>
+            {% endif %}
+
+            <h4 class="column half-touch has-text-centered">{{ competences.name }}</h4>
+        </div>
+
+
+        <div class="column is-three-quarters is-full-touch" style="display: flex;align-items: center">
+            <progress class="progress is-large is-primary" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+        </div>
+
     </div>
-</div>
+
+
+
+

@@ -13,20 +13,16 @@
         </div>
     </div>
 
-    <div class="">
 
         {% for competences in competences %}
             {{ include('sections/competences/competence_barre.html.twig') }}
         {% endfor %}
 
+        {% if is_granted('ROLE_ADMIN') %}
         <div class="column has-text-centered">
-            <a href="{{ path('add_comp') }}" class="button is-info">Ajouter une compétence</a>
+            <a href="{{ path('add_comp') }}" class="button is-primary">Ajouter une compétence</a>
         </div>
+        {% endif %}
 
-{#        <div class="box is-half column">#}
-{#            {{ include('sections/competences/add_comp.html.twig') }}#}
-{#        </div>#}
-
-    </div>
 
 </section>
