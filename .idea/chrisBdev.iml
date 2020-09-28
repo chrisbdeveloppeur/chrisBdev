@@ -24,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/reflection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easycorp/easyadmin-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jms/metadata" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-code" />
@@ -58,6 +59,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/intl" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/mailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/maker-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/mime" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/monolog-bridge" />
