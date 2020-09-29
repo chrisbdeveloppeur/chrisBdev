@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Comp;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -26,10 +27,19 @@ class CompType extends AbstractType
                     )
             )
             ->add('color',
-               TextType::class,
-                    array('label' => false,
-                        'required' => false
-                    )
+               ChoiceType::class,[
+                    'choices' => [
+                        'Bleu' => "success",
+                        'Rouge' => "danger",
+                        'Jaune' => "warning",
+                        'Vert' => "primary",
+                        'Violet' => "link",
+                        'Bleu claire' => "info",
+                    ],
+                    'label' => false,
+                    'required' => false
+                ]
+
             )
         ;
     }
