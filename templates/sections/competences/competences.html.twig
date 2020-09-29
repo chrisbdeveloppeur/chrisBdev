@@ -13,15 +13,17 @@
         </div>
     </div>
 
+{#        <div style="display: flex;flex-direction:column;align-items:center;justify-content: center;">#}
+            {% for competences in competences %}
+                {{ include('sections/competences/competence_barre.html.twig') }}
+            {% endfor %}
+{#        </div>#}
 
-        {% for competences in competences %}
-            {{ include('sections/competences/competence_barre.html.twig') }}
-        {% endfor %}
 
         {% if is_granted('ROLE_ADMIN') %}
         <div class="column has-text-centered">
             <span class="icon is-large">
-                <a href="{{ path('add_comp') }}" class="fas fa-3x fa-plus-circle has-text-warning"></a>
+                <a href="{{ path('add_comp') }}" class="fas fa-3x fa-plus-circle has-text-warning" title="Ajouter une compétence"></a>
             </span>
         </div>
         {% endif %}

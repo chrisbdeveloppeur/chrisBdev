@@ -1,10 +1,10 @@
-    <div style="position:relative;justify-content: center" class="competence is-flex-desktop" id="competence-{{ competences.id }}">
-        <div class="is-flex column is-one-fifth">
+    <div style="margin: auto" class="competence is-flex-desktop column is-two-thirds is-full-touch is-center" id="competence-{{ competences.id }}">
+        <div class="is-flex column">
             {% if is_granted("ROLE_ADMIN") %}
 
                 <div style="display: flex;align-items: center" class="column is-centered">
                     <span class="icon is-medium">
-                        <a href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger"></a>
+                        <a href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la compétence"></a>
                     </span>
                 </div>
 
