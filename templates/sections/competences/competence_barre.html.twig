@@ -1,8 +1,15 @@
     <div style="position:relative;justify-content: center" class="competence is-flex-desktop" id="competence-{{ competences.id }}">
         <div class="is-flex column is-one-fifth">
             {% if is_granted("ROLE_ADMIN") %}
+
+                <div style="display: flex;align-items: center" class="column is-centered">
+                    <span class="icon is-medium">
+                        <a href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger"></a>
+                    </span>
+                </div>
+
                 <div class="column half-touch has-text-centered">
-                    <a class="is-primary button is-small has-text-weight-bold" href="{{ path('edit_comp', {'id': competences.id }) }}">
+                    <a class="is-warning button is-small has-text-weight-bold" href="{{ path('edit_comp', {'id': competences.id }) }}">
                         éditer
                     </a>
                 </div>

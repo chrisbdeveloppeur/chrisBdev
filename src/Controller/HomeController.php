@@ -84,5 +84,18 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("del-competence-{id}", name="del_comp")
+     */
+    public function del_competence(CompRepository $compRepository, $id)
+    {
+        $competence = $compRepository->find($id);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($competence);
+        $entityManager->flush();
+        return $this->redirectToRoute('home');
+
+    }
+
 
 }

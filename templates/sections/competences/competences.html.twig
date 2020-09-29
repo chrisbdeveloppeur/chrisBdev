@@ -20,7 +20,9 @@
 
         {% if is_granted('ROLE_ADMIN') %}
         <div class="column has-text-centered">
-            <a href="{{ path('add_comp') }}" class="button is-primary">Ajouter une compétence</a>
+            <span class="icon is-large">
+                <a href="{{ path('add_comp') }}" class="fas fa-3x fa-plus-circle has-text-warning"></a>
+            </span>
         </div>
         {% endif %}
 
