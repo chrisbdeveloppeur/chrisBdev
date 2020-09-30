@@ -1,8 +1,8 @@
-    <div style="margin: auto" class="competence is-flex-desktop column is-two-thirds is-full-touch is-center" id="competence-{{ competences.id }}">
-        <div class="is-flex column">
+    <div style="justify-content: space-evenly" class="competence is-flex-desktop column is-full" id="competence-{{ competences.id }}">
+        <div class="column is-2" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
             {% if is_granted("ROLE_ADMIN") %}
 
-                <div style="display: flex;align-items: center" class="column is-centered">
+                <div style="display: flex;align-items: center;justify-content: center" class="column is-centered">
                     <span class="icon is-medium">
                         <a href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la compétence"></a>
                     </span>
@@ -19,7 +19,7 @@
         </div>
 
 
-        <div class="column is-three-quarters is-full-touch" style="display: flex;align-items: center">
+        <div class="column is-8 is-full-touch" style="display: flex;align-items: center">
             <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
         </div>
 
