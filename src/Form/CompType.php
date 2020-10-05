@@ -29,12 +29,16 @@ class CompType extends AbstractType
             ->add('color',
                ChoiceType::class,[
                     'choices' => [
-                        'Bleu' => "success",
-                        'Rouge' => "danger",
-                        'Jaune' => "warning",
-                        'Vert' => "primary",
-                        'Violet' => "link",
-                        'Bleu claire' => "info",
+                        'Bleu' => "blue",
+                        'Bleu-ciel' => "skyblue",
+                        'Jaune' => "yellow",
+                        'Marron' => "brown",
+                        'Orange' => "orange",
+                        'Rouge' => "red",
+                        'Violet' => "purple",
+                        'Vert' => "green",
+                        'Gris' => "grey",
+
                     ],
                     'label' => false,
                     'required' => false
