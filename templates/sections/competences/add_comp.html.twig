@@ -5,7 +5,7 @@
     {% if is_granted('ROLE_ADMIN') %}
     <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative">
 
-        <h1 class="title has-text-black-bis has-text-weight-bold" style="position: absolute;top: 3rem">
+        <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
             Ajouter une compétence
         </h1>
 
@@ -42,6 +42,10 @@
 
             {{ form_end(comp_form) }}
         </div>
+
+        <a href="{{ path('home') }}#competences" class="button is-danger">
+            Retour
+        </a>
 
 
     </section>
