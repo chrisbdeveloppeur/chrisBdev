@@ -7,6 +7,7 @@ use App\Entity\Comp;
 use App\Form\CompType;
 use App\Repository\AdminRepository;
 use App\Repository\CompRepository;
+use App\Repository\PresentationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +17,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home(CompRepository $compRepository, AdminRepository $adminRepository)
+    public function home(CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository)
     {
         $evenAdmin = $adminRepository->findAll();
 
@@ -35,8 +36,10 @@ class HomeController extends AbstractController
 
 
         $competences = $compRepository->findAll();
+        $presentation = $presentationRepository->findAll();
         return $this->render('home/index.html.twig', [
             'competences' => $competences,
+            'presentations' => $presentation
         ]);
     }
 

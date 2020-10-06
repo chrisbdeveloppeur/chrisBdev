@@ -34,7 +34,7 @@ class CompetenceController extends AbstractController
     }
 
     /**
-     * @Route("edit-competence-{id}", name="edit_comp")
+     * @Route("modifier-competence-{id}", name="edit_comp")
      */
     public function edit_competence(Request $request, CompRepository $compRepository, $id)
     {
@@ -55,7 +55,7 @@ class CompetenceController extends AbstractController
     }
 
     /**
-     * @Route("del-competence-{id}", name="del_comp")
+     * @Route("supprimer-competence-{id}", name="del_comp")
      */
     public function del_competence(CompRepository $compRepository, $id)
     {
