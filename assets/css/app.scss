@@ -67,9 +67,6 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
     box-shadow: black 0 0 15px;
     z-index: 10;
 }
-.block-presentation h3{
-    background: $primary;
-}
 .text-presentation-touch{
     height: 100%;
     display: flex;
@@ -119,12 +116,8 @@ section{
 .subtitle-left .subtitle-right{
     align-items: center
 }
-.subtitle-left{
-    text-shadow: rgba(0,0,0,0.5) 2px 2px 2px;
-}
 .subtitle-right{
     justify-content: end;
-    text-shadow: rgba(126, 137, 72, 0.5) -2px 2px 2px;
 }
 
 .competence{
@@ -174,6 +167,18 @@ section{
 
 
 //////// CUSTOM COLOR VAR ////////////
+/*           Box background color           */
+.box.is-green{
+    background: $primary
+}
+
+/*          global elements Background-green        */
+.has-background-green{
+background: $primary
+}
+
+
+
 /*          Progess bar colors customed         */
 .progress.is-yellow::-webkit-progress-value {
     background: #919a1e;
