@@ -1,7 +1,6 @@
     <div style="justify-content: center" class="competence is-flex-desktop column is-full" id="competence-{{ competences.id }}">
-        <div class="column is-2" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
-            {% if is_granted("ROLE_ADMIN") %}
-
+        {% if is_granted("ROLE_ADMIN") %}
+        <div class="column is-fullwidth" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
                 <div style="display: flex;align-items: center;justify-content: center" class="column is-centered">
                     <span class="icon is-medium">
                         <a href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la compétence"></a>
@@ -13,15 +12,26 @@
                         éditer
                     </a>
                 </div>
-            {% endif %}
-
             <h4 class="column half-touch has-text-centered">{{ competences.name }}</h4>
         </div>
 
-
-        <div class="column is-8 is-full-touch" style="display: flex;align-items: center;position: relative">
-            <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+            <div class="column is-8 is-full-touch" style="display: flex;align-items: center;position: relative">
+                <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+            </div>
+        {% else %}
+        <div class="column is-1" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
+            <h4 class="column half-touch has-text-centered">{{ competences.name }}</h4>
         </div>
+
+            <div class="column is-11 is-full-touch" style="display: flex;align-items: center;position: relative">
+                <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+            </div>
+        {% endif %}
+
+
+
+
+
 
     </div>
 
