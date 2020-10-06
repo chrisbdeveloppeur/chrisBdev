@@ -6,7 +6,7 @@ body {
     background-color: lightgray;
 }
 
-$primary: #7e8948;
+$primary: rgba(126, 137, 72, 0.71);
 $success: #312fff;
 $link: #9a009a;
 $info: #5db7de;
@@ -14,7 +14,9 @@ $danger: #ff392b;
 $warning: #d0dca0;
 
 
-
+.progress.is-large{
+    height: 3rem !important;
+}
 
 
 
@@ -63,6 +65,10 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
     width: 100%;
     opacity: 1;
     box-shadow: black 0 0 15px;
+    z-index: 10;
+}
+.block-presentation h3{
+    background: $primary;
 }
 .text-presentation-touch{
     height: 100%;
