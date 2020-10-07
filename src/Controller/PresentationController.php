@@ -34,9 +34,22 @@ class PresentationController extends AbstractController
     /**
      * @Route("/modifier-presentation-{id}", name="edit_presentation")
      */
-    public function edit_presentation()
+    public function edit_presentation(Request $request, PresentationRepository $presentationRepository, $id)
     {
-        return $this->redirectToRoute('home', [
+        $presentation = $presentationRepository->find($id);
+        $form = $this->createForm(PresentationType::class, $presentation);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $presentation = $form->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($presentation);
+            $entityManager->flush();
+            return $this->redirectToRoute('home');
+        }
+        return $this->render('sections/presentation/includes/edit_presentation.html.twig',[
+            'presentation' => $presentation,
+            'presentation_form' => $form->createView()
         ]);
     }
 

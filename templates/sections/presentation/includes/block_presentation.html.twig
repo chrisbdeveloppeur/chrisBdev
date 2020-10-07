@@ -1,17 +1,5 @@
 <div class="is-centered block-presentation is-hidden-touch">
 
-    <div style="display: flex;align-items: center;justify-content: center" class="column is-centered">
-                    <span class="icon is-medium">
-                        <a href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la présentation"></a>
-                    </span>
-    </div>
-
-    <div class="column half-touch has-text-centered">
-        <a class="is-warning button is-small has-text-weight-bold" href="{{ path('edit_presentation', {'id': presentation.id }) }}">
-            éditer
-        </a>
-    </div>
-
     <h3 class="is-size-3 has-text-centered has-text-weight-bold has-text-black has-background-green">{{ presentation.title }}</h3>
 
     <figure class="image is-3by1" style="position:relative;">
@@ -23,17 +11,31 @@
                 {{ presentation.text }}
             </p>
 
-            <div class="buttons">
+            <div class="column">
                 <a href="#" class="button is-primary">bouton #1</a>
                 <a href="#" class="button is-danger">bouton #2</a>
             </div>
 
+            {% if is_granted('ROLE_ADMIN') %}
+                <div style="display: flex;">
+                    <div style="display: flex;align-items: center;justify-content: center" class="column is-centered">
+                        <span class="icon is-medium">
+                            <a href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la présentation"></a>
+                        </span>
+                    </div>
+
+                    <div class="column half-touch has-text-centered">
+                        <a class="is-warning button is-small has-text-weight-bold" href="{{ path('edit_presentation', {'id': presentation.id }) }}">
+                            éditer
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+
         </div>
 
-
-
-
     </figure>
+
 </div>
 
 <div class="is-centered is-hidden-desktop" style="margin-bottom: 3rem;box-shadow: black 0 0 15px;">
@@ -48,10 +50,26 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis cupiditate dolor ducimus hic laudantium molestias sapiente sunt tempora ullam? Assumenda consequuntur dignissimos earum iste laborum necessitatibus quos. Perspiciatis, qui?
             </p>
 
-            <div class="buttons">
+            <div class="is-flex align-items-center" style="width: 100%; justify-content: space-evenly">
                 <a href="#" class="button is-primary">bouton #1</a>
                 <a href="#" class="button is-danger">bouton #2</a>
             </div>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <div style="display: flex;">
+                    <div style="display: flex;align-items: center;justify-content: center" class="column is-centered">
+                        <span class="icon is-medium">
+                            <a href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la présentation"></a>
+                        </span>
+                    </div>
+
+                    <div class="column half-touch has-text-centered">
+                        <a class="is-warning button is-small has-text-weight-bold" href="{{ path('edit_presentation', {'id': presentation.id }) }}">
+                            éditer
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
 
         </div>
 

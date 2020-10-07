@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative">
+
+            <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
+                Modifier la présentation :
+                <h2 class="subtitle has-text-black-bis">" {{ presentation.title }} "</h2>
+            </h1>
+
+
+            <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
+                {{ form_start(presentation_form) }}
+
+                <div class="field">
+                    <label class="label">Titre</label>
+                    <div class="control">
+                        {{ form_row(presentation_form.title, {'attr' : {'class' : 'input', 'placeholder' : 'ex : chris B developper', 'alt' : 'Titre' }
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Sous-titre</label>
+                    <div class="control">
+                        {{ form_row(presentation_form.sub_title, {'attr' : {'class' : 'input', 'placeholder' : 'ex : Voici mes services', 'alt' : 'Sous-titre' }
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Texte</label>
+                    <div class="control">
+                        {{ form_row(presentation_form.text, {'attr' : {
+                            'class' : 'textarea',
+                            'placeholder' : 'Entre le text de la présentation',
+                            'pattern' : '[0-9]{10}',
+                            'alt' : 'Text de la présentation',
+                            'style' :  'resize:none'
+                        }
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="column is-centered">
+                    <button type="submit" style="width: 100%;" class="button is-info">Valider</button>
+                </div>
+
+                {{ form_end(presentation_form) }}
+            </div>
+
+            <a href="{{ path('home') }}#competences" class="button is-danger">
+                Retour
+            </a>
+
+
+        </section>
+    {% endif %}
+
+{% endblock %}
