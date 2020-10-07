@@ -56,14 +56,17 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
     scale: 1.03;
 }
 .block-presentation{
-    margin: auto;
+    margin: auto auto 1.75rem auto;
     width: 80%;
     transition: .3s;
+    padding: 1.75rem;
     //opacity: 0.5
 }
-//.block-presentation:hover{
-//    opacity: 1;
-//}
+.block-presentation:hover{
+    scale: 1.02;
+    z-index: 10;
+    box-shadow: black 0 0 15px;
+}
 .text-presentation-touch{
     height: 100%;
     display: flex;
@@ -141,6 +144,10 @@ section{
 @media (max-width: 768px) {
     #figureLogo{
         width: 110px;
+    }
+    .block-presentation{
+        padding: 1rem;
+        width: 100%;
     }
 }
 
