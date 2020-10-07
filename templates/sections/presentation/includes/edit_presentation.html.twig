@@ -44,8 +44,20 @@
                     </div>
                 </div>
 
+                <div class="field">
+                    <label class="label">Lien du "call to action"</label>
+                    <div class="control">
+                        {{ form_row(presentation_form.button_link, {'attr' : {
+                            'class' : 'input',
+                            'placeholder' : 'ex : https://chrisbdev.com',
+                            'alt' : 'Entrer un lien'
+                        }
+                        }) }}
+                    </div>
+                </div>
+
                 <div class="column is-centered">
-                    <button type="submit" style="width: 100%;" class="button is-info">Valider</button>
+                    <button type="submit" style="width: 100%;" class="button is-info">Modifier</button>
                 </div>
 
                 {{ form_end(presentation_form) }}

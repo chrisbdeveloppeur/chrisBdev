@@ -29,7 +29,10 @@ class PresentationType extends AbstractType
                 'required' => false,
             ])
 
-//            ->add('button')
+            ->add('button_link', TextType::class,[
+                'label' => false,
+                'required' => false,
+            ])
         ;
     }
 

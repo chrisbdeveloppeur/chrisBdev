@@ -35,7 +35,8 @@ class Presentation
     /**
      * @ORM\Column(type="text", nullable=true)
      * @Assert\Length(
-     *     max="250"
+     *     max="1000",
+     *     maxMessage="1000 charactères maximum autorisé"
      * )
      */
     private $text;
@@ -43,7 +44,7 @@ class Presentation
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $button;
+    private $button_link;
 
     /**
      *
@@ -109,15 +110,21 @@ class Presentation
         return $this;
     }
 
-    public function getButton(): ?string
+    /**
+     * @return mixed
+     */
+    public function getButtonLink()
     {
-        return $this->button;
+        return $this->button_link;
     }
 
-    public function setButton(?string $button): self
+    /**
+     * @param mixed $button_link
+     * @return Presentation
+     */
+    public function setButtonLink($button_link)
     {
-        $this->button = $button;
-
+        $this->button_link = $button_link;
         return $this;
     }
 
