@@ -1,17 +1,17 @@
     <div style="justify-content: center" class="competence is-flex-desktop column is-full" id="competence-{{ competences.id }}">
         {% if is_granted("ROLE_ADMIN") %}
-        <div class="column is-fullwidth" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
-                <div style="display: flex;align-items: center;justify-content: center" class="column is-centered">
-                    <span class="icon is-medium">
-                        <a href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la compétence"></a>
-                    </span>
-                </div>
+        <div class="column is-3-desktop" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
+            <div class="column half-touch has-text-centered">
+                                <span class="icon is-medium">
+                                    <a style="text-decoration: none" href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la compétence"></a>
+                                </span>
+            </div>
 
-                <div class="column half-touch has-text-centered">
-                    <a class="is-warning button is-small has-text-weight-bold" href="{{ path('edit_comp', {'id': competences.id }) }}">
-                        éditer
-                    </a>
-                </div>
+            <div class="column half-touch has-text-centered">
+                                <span class="icon is-medium">
+                                    <a style="text-decoration: none" href="{{ path('edit_comp', {'id': competences.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la compétence"></a>
+                                </span>
+            </div>
             <h4 class="column half-touch has-text-centered">{{ competences.name }}</h4>
         </div>
 
@@ -23,7 +23,7 @@
             <h4 class="column half-touch has-text-centered">{{ competences.name }}</h4>
         </div>
 
-            <div class="column is-11 is-full-touch" style="display: flex;align-items: center;position: relative">
+            <div class="column is-10 is-full-touch" style="display: flex;align-items: center;position: relative">
                 <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
         {% endif %}

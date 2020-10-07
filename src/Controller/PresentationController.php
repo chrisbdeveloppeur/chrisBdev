@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\PresentationType;
 use App\Repository\PresentationRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,6 +13,7 @@ class PresentationController extends AbstractController
 {
     /**
      * @Route("/ajouter-presentation", name="add_presentation")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function add_presentation(Request $request)
     {
@@ -33,6 +35,7 @@ class PresentationController extends AbstractController
 
     /**
      * @Route("/modifier-presentation-{id}", name="edit_presentation")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit_presentation(Request $request, PresentationRepository $presentationRepository, $id)
     {
@@ -55,6 +58,7 @@ class PresentationController extends AbstractController
 
     /**
      * @Route("/supprimer-presentation-{id}", name="del_presentation")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function del_presentation(PresentationRepository $presentationRepository, $id)
     {

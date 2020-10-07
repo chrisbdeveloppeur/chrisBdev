@@ -4,7 +4,7 @@
 
         <div class="container" style="padding-bottom: 1.75rem">
 
-            <p class="title is-1">{{ presentation.title }}</p>
+            <p class="title is-1 is-spaced">{{ presentation.title }}</p>
             <p class="subtitle is-3">{{ presentation.subTitle }}</p>
 
             <article class="message is-primary">
@@ -17,16 +17,16 @@
                     {% if is_granted('ROLE_ADMIN') %}
                         <hr class="has-background-white">
                         <div style="display: flex;">
-                            <div style="display: flex;align-items: center;justify-content: center" class="column is-centered">
-                        <span class="icon is-medium">
-                            <a style="text-decoration: none" href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la présentation"></a>
-                        </span>
+                            <div class="column half-touch has-text-centered">
+                                <span class="icon is-medium">
+                                    <a style="text-decoration: none" href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la présentation"></a>
+                                </span>
                             </div>
 
                             <div class="column half-touch has-text-centered">
-                                <a class="is-warning button is-small has-text-weight-bold" href="{{ path('edit_presentation', {'id': presentation.id }) }}">
-                                    éditer
-                                </a>
+                                <span class="icon is-medium">
+                                    <a style="text-decoration: none" href="{{ path('edit_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la présentation"></a>
+                                </span>
                             </div>
                         </div>
                     {% endif %}

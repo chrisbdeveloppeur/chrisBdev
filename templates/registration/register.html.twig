@@ -6,16 +6,39 @@
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
+<section class="hero is-bold section is-dark is-fullheight-with-navbar">
+    <div class="columns is-flex has-text-centered is-centered">
+        <div class="column is-one-quarter">
+            <h1 class="title has-text-primary">Enregistrer un compte</h1>
+            {{ form_start(registrationForm) }}
+            <div class="field">
+                <label class="label has-text-white">Email</label>
+                <div class="control">
+                    {{ form_widget(registrationForm.email, {'attr': {'class': 'input is-primary'}}) }}
+                </div>
+            </div>
 
-    <h1>Register</h1>
+            <div class="field">
+                <label class="label has-text-white">Mot de passe</label>
+                <div class="control">
+                    {{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'input is-primary'}}) }}
+                </div>
+            </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+            <div class="field">
+                <label class="label has-text-white">Confirmer votre mot de passe</label>
+                <div class="control">
+                    {{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'input is-primary'}}) }}
+                </div>
+            </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            <button type="submit" class="button is-success">S'enregistrer</button>
+
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+</section>
+
+
+
 {% endblock %}

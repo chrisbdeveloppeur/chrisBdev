@@ -7,8 +7,8 @@ body {
 }
 
 $primary: rgba(126, 137, 72, 0.71);
-$success: #312fff;
-$link: #9a009a;
+//$success: #312fff;
+//$link: #9a009a;
 $info: #5db7de;
 $danger: #F22B29;
 $warning: #d0dca0;
@@ -59,11 +59,11 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
     margin: auto;
     width: 80%;
     transition: .3s;
-    opacity: 0.5
+    //opacity: 0.5
 }
-.block-presentation:hover{
-    opacity: 1;
-}
+//.block-presentation:hover{
+//    opacity: 1;
+//}
 .text-presentation-touch{
     height: 100%;
     display: flex;
@@ -126,6 +126,10 @@ section{
 .progress{
     border-radius: 0px !important;
 }
+#figureLogo{
+    width: 150px;
+    padding: 1rem
+}
 
 
 
@@ -133,7 +137,12 @@ section{
 
 
 
-
+//////////////////////////////      MEDIA QUERIES //////////////////////////////////
+@media (max-width: 768px) {
+    #figureLogo{
+        width: 110px;
+    }
+}
 
 
 

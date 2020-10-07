@@ -1,7 +1,7 @@
 
     <nav class="navbar is-black has-text-centered" role="navigation" aria-label="main navigation" style="box-shadow: black 0px 0px 10px 5px;align-items: center">
         <div class="navbar-brand" style="align-items: center;">
-            <figure style="width: 150px;padding: 1rem">
+            <figure id="figureLogo">
                 <a class="logo" href="{{ path('home') }}">
                     <img src="{{ asset('build/images/Chris B Dev - Logo - reduit.98de0cf1.svg') }}" alt="" width="150">
                 </a>
@@ -18,23 +18,23 @@
         <div class="is-size-4 navbar-menu" style="justify-content: center" id="navMenu">
             <div class="navbar">
 
-                <a class="navbar-item" href="#presentation" style="justify-content: center;display: flex;">
+                <a class="navbar-item" href="{{ path('home') }}#presentation" style="justify-content: center;display: flex;">
                      Présentation
                 </a>
 
-                <a class="navbar-item" href="#competences" style="justify-content: center;display: flex;">
+                <a class="navbar-item" href="{{ path('home') }}#competences" style="justify-content: center;display: flex;">
                     Compétences
                 </a>
 
-                <a class="navbar-item" href="#projets" style="justify-content: center;display: flex;">
+                <a class="navbar-item" href="{{ path('home') }}#projets" style="justify-content: center;display: flex;">
                     Projets
                 </a>
 
-                <a class="navbar-item" href="#cv" style="justify-content: center;display: flex;">
+                <a class="navbar-item" href="{{ path('home') }}#cv" style="justify-content: center;display: flex;">
                     CV
                 </a>
 
-                <a class="navbar-item" href="#contact" style="justify-content: center;display: flex;">
+                <a class="navbar-item" href="{{ path('home') }}#contact" style="justify-content: center;display: flex;">
                     Contact
                 </a>
 
@@ -42,13 +42,23 @@
         </div>
 
         {% if is_granted("ROLE_ADMIN") %}
+
         <div class="navbar-end">
             <div class="navbar-item">
-                <div class="buttons">
-                    <a href="{{ path('app_logout') }}" class="button is-danger">
-                        <strong>Deconnexion</strong>
-                    </a>
+
+                <div class="control">
+                    <div class="tags has-addons is-centered">
+                        <span class="tag is-light is-medium is-size-7-touch">{{ app.user.username }}</span>
+                        <a href="{{ path('app_logout') }}" class="tag is-danger is-medium is-size-7-touch">
+                            <strong>Deconnexion</strong>
+                        </a>
+                    </div>
                 </div>
+{#                <div class="buttons">#}
+{#                    <a href="{{ path('app_logout') }}" class="button is-danger">#}
+{#                        <strong>Deconnexion</strong>#}
+{#                    </a>#}
+{#                </div>#}
             </div>
         </div>
         {% endif %}
