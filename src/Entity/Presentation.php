@@ -34,6 +34,9 @@ class Presentation
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\Length(
+     *     max="250"
+     * )
      */
     private $text;
 

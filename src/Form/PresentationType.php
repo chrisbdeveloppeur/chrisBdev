@@ -26,7 +26,7 @@ class PresentationType extends AbstractType
 
             ->add('text', TextareaType::class, [
                 'label' => false,
-                'required' => false
+                'required' => false,
             ])
 
 //            ->add('button')
