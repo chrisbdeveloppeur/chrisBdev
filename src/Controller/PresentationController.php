@@ -78,4 +78,23 @@ class PresentationController extends AbstractController
         $entityManager->flush();
         return $this->redirectToRoute('home');
     }
+
+    /**
+     * @Route("/supprimer-img-{id}", name="del_img")
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function del_img(PresentationRepository $presentationRepository, $id, Request $request)
+    {
+        $presentation = $presentationRepository->find($id);
+        $form = $this->createForm(PresentationType::class, $presentation);
+        $form->handleRequest($request);
+        $entityManager = $this->getDoctrine()->getManager();
+        $presentation->setImgName(null);
+        $entityManager->flush();
+
+        return $this->render('sections/presentation/includes/edit_presentation.html.twig',[
+            'presentation' => $presentation,
+            'presentation_form' => $form->createView()
+        ]);
+    }
 }

@@ -62,9 +62,9 @@
                     </div>
                 </div>
 
-
                 <div class="field">
                     <label class="label has-text-light">Image d'illustration</label>
+
                     <div class="control">
                         <div class="file has-name is-fullwidth">
                             <label class="file-label">
@@ -80,19 +80,11 @@
                                     </span>
                                 </span>
                                 <span class="file-name has-background-grey-lighter">
-                                    {% if presentation.imgName %}
-                                        {{ presentation.imgName }}
-                                    {% else %}
-                                        Aucune image upalodé
-                                    {% endif %}
+                                        Aucune image uploadé
                                 </span>
                             </label>
                         </div>
                     </div>
-
-                    {% if presentation.imgName %}
-                        <img style="margin-top: .75rem" src="{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}" alt="{{ presentation.imgName }}">
-                    {% endif %}
 
                 </div>
 

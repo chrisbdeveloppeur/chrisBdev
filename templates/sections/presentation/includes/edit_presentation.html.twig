@@ -7,8 +7,8 @@
 
             <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
                 Modifier la présentation :
-                <h2 class="subtitle has-text-black-bis">" {{ presentation.title }} "</h2>
             </h1>
+            <h2 class="subtitle has-text-black-bis">" {{ presentation.title }} "</h2>
 
 
             <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
@@ -52,10 +52,16 @@
                     </div>
                 </div>
 
-
-
                 <div class="field">
                     <label class="label has-text-light">Image d'illustration</label>
+
+                    {% if presentation.imgName %}
+                        <figure class="figure" style="position: relative">
+                            <a href="{{ path('del_img', {'id': presentation.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
+                            <img class="img-thumb-presentation" src="{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}" alt="{{ presentation.imgName }}">
+                        </figure>
+                        <{% endif %}
+
                     <div class="control">
                         <div class="file has-name is-fullwidth">
                             <label class="file-label">
@@ -74,24 +80,26 @@
                                     {% if presentation.imgName %}
                                         {{ presentation.imgName }}
                                     {% else %}
-                                        Aucune image upalodé
+                                        Aucune image uploadé
                                     {% endif %}
                                 </span>
                             </label>
                         </div>
                     </div>
 
-                    {% if presentation.imgName %}
-                        <img style="margin-top: .75rem" src="{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}" alt="{{ presentation.imgName }}">
-                    {% endif %}
-
                 </div>
 
-                <div class="column is-centered">
-                    <button type="submit" style="width: 100%;" class="button is-info">Modifier</button>
+                <div class="field is-centered">
+                    <div class="is-half has-text-centered">
+                        <button type="submit" style="width: 100%;" class="button is-info">Valider les modifications</button>
+                    </div>
                 </div>
+
 
                 {{ form_end(presentation_form) }}
+
+                <a style="text-decoration: none" href="{{ path('del_presentation', {'id': presentation.id}) }}" class="button is-danger is-fullwidth" title="supprimer la présentation">supprimer</a>
+
             </div>
 
             <a href="{{ path('home') }}#presentation" class="button is-danger">

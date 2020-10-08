@@ -57,10 +57,8 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
 }
 .block-presentation{
     margin: auto auto 1.75rem auto;
-    width: 80%;
     transition: .3s;
     padding: 1.75rem;
-    //opacity: 0.5
 }
 .text-presentation{
     transition: .3s;
@@ -74,6 +72,9 @@ figure{
     display: flex !important;
     justify-content: center;
     align-items: center;
+}
+.img-thumb-presentation{
+    border-radius: 3px;
 }
 
 
