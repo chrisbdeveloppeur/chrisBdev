@@ -1,18 +1,27 @@
 
 
-<div class="is-centered block-presentation" style="{% if presentation.imgName %}background: center / cover no-repeat url('{{ vich_uploader_asset(presentation, 'img') | imagine_filter('HQ') }}');{% endif %}box-shadow: black 0 0 50px 3px;">
+<div class="is-centered block-presentation" style="{% if presentation.imgName %}background: center / cover no-repeat url('{{ vich_uploader_asset(presentation, 'img') | imagine_filter('HQ') }}');{% endif %}">
 
-        <div class="container" style="padding-bottom: 1.75rem">
+        <div class="container column is-two-thirds is-full-touch">
 
-            <p class="title is-1 is-spaced has-text-primary has-text-centered">{{ presentation.title }}</p>
-            <p class="subtitle is-3 has-text-primary has-text-centered">{{ presentation.subTitle }}</p>
+            <div class="column mb-4 has-background-black-bis" style="border-radius: 3px">
+
+                {% if presentation.title %}
+                <p class="title is-1 is-spaced has-text-primary has-text-centered">{{ presentation.title }}</p>
+                {% endif %}
+
+                {% if presentation.subTitle %}
+                <p class="subtitle is-3 has-text-primary has-text-centered">{{ presentation.subTitle }}</p>
+                {% endif %}
+
+            </div>
 
             <article class="message is-primary text-presentation">
                 <div class="message-body has-text-dark">
                     {{ presentation.text }}
                     {% if presentation.buttonLink %}
                         <div class="has-text-centered column">
-                            <a href="{{ presentation.buttonLink }}" class="button is-primary">En savoir plus...</a>
+                            <a href="{{ presentation.buttonLink }}" class="button is-green-custom has-text-weight-bold" style="border-radius: 0px">En savoir plus...</a>
                         </div>
 
                     {% endif %}

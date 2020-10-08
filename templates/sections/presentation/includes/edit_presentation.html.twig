@@ -56,11 +56,11 @@
                     <label class="label has-text-light">Image d'illustration</label>
 
                     {% if presentation.imgName %}
-                        <figure class="figure" style="position: relative">
+                        <figure class="figure" style="position: relative;margin-bottom: .75rem">
                             <a href="{{ path('del_img', {'id': presentation.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
                             <img class="img-thumb-presentation" src="{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}" alt="{{ presentation.imgName }}">
                         </figure>
-                        <{% endif %}
+                        {% endif %}
 
                     <div class="control">
                         <div class="file has-name is-fullwidth">
