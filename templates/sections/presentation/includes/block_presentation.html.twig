@@ -1,11 +1,11 @@
 
 
-<div class="is-centered block-presentation" style="{% if presentation.imgName %}background: center / cover no-repeat url('{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}');{% endif %}box-shadow: black 0 0 50px 3px;">
+<div class="is-centered block-presentation" style="{% if presentation.imgName %}background: center / cover no-repeat url('{{ vich_uploader_asset(presentation, 'img') | imagine_filter('HQ') }}');{% endif %}box-shadow: black 0 0 50px 3px;">
 
-        <div class="container" style="padding-bottom: 1.75rem;width: 80%">
+        <div class="container" style="padding-bottom: 1.75rem">
 
-            <p class="title is-1 is-spaced">{{ presentation.title }}</p>
-            <p class="subtitle is-3">{{ presentation.subTitle }}</p>
+            <p class="title is-1 is-spaced has-text-primary has-text-centered">{{ presentation.title }}</p>
+            <p class="subtitle is-3 has-text-primary has-text-centered">{{ presentation.subTitle }}</p>
 
             <article class="message is-primary text-presentation">
                 <div class="message-body has-text-dark">
