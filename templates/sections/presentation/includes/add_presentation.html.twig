@@ -62,6 +62,40 @@
                     </div>
                 </div>
 
+
+                <div class="field">
+                    <label class="label has-text-light">Image d'illustration</label>
+                    <div class="control">
+                        <div class="file has-name is-fullwidth">
+                            <label class="file-label">
+                                {{ form_row(presentation_form.img, {'attr' : {
+                                    'class' : 'file-input',
+                                    'alt' : 'Uploader une image'} }) }}
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choose a file…
+                                    </span>
+                                </span>
+                                <span class="file-name has-background-grey-lighter">
+                                    {% if presentation.imgName %}
+                                        {{ presentation.imgName }}
+                                    {% else %}
+                                        Aucune image upalodé
+                                    {% endif %}
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    {% if presentation.imgName %}
+                        <img style="margin-top: .75rem" src="{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}" alt="{{ presentation.imgName }}">
+                    {% endif %}
+
+                </div>
+
                 <div class="column is-centered">
                     <button type="submit" style="width: 100%;" class="button is-info">Ajouter</button>
                 </div>
@@ -76,5 +110,7 @@
 
         </section>
     {% endif %}
+
+    {% include 'flash_message.html.twig' %}
 
 {% endblock %}

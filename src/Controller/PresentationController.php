@@ -25,6 +25,9 @@ class PresentationController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($presentation);
             $entityManager->flush();
+
+            $this->addFlash('success', 'La présentation "' . $presentation->getTitle() . '" à bien été modifié');
+
             return $this->redirectToRoute('home');
         }
 
@@ -48,7 +51,14 @@ class PresentationController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($presentation);
             $entityManager->flush();
-            return $this->redirectToRoute('home');
+
+            $this->addFlash('success', 'La présentation "' . $presentation->getTitle() . '" à bien été modifié');
+
+            return $this->render('sections/presentation/includes/edit_presentation.html.twig',[
+                'presentation' => $presentation,
+                'presentation_form' => $form->createView()
+            ]);
+
         }
         return $this->render('sections/presentation/includes/edit_presentation.html.twig',[
             'presentation' => $presentation,
