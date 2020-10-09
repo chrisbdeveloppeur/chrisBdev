@@ -88,14 +88,20 @@ section{
 
 .competence{
     transition: .3s;
+    background: rgba(0,0,0,0.2);
 }
 
-.progress{
-    border-radius: 0px !important;
-}
+//.progress{
+//    border-radius: 0px !important;
+//}
 #figureLogo{
     width: 150px;
     padding: 1rem
+}
+
+.percent{
+    transition: .3s;
+    opacity: 0;
 }
 
 
@@ -111,7 +117,7 @@ section{
         width: 110px;
     }
     .block-presentation{
-        padding: 1rem;
+        padding: 0;
         width: 100%;
     }
 }

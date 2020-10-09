@@ -1,42 +1,55 @@
-    <div style="justify-content: center" class="competence is-flex-desktop columns is-full" id="competence-{{ competences.id }}">
+    <div style="justify-content: center" class="competence is-flex-desktop mt-2 mb-2 is-full" id="competence-{{ competences.id }}">
+
         {% if is_granted("ROLE_ADMIN") %}
-        <div class="column is-fullwidth is-one-fifth-desktop" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
-{#            <div class="column half-touch has-text-centered">#}
-                                <span class="icon is-medium">
-                                    <a style="text-decoration: none" href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la compétence"></a>
-                                </span>
-{#            </div>#}
 
-{#            <div class="column half-touch has-text-centered">#}
-                                <span class="icon is-medium">
-                                    <a style="text-decoration: none" href="{{ path('edit_comp', {'id': competences.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la compétence"></a>
-                                </span>
-{#            </div>#}
-            <span class="is-medium">{{ competences.name }}</span>
-        </div>
+            <div class="column is-fullwidth is-one-fifth-desktop" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
 
-            <div class="column is-9 is-7-desktop is-full-touch" style="display: flex;align-items: center;justify-content:center;position: relative">
-                <span class="has-text-weight-bold has-text-centered has-text-black-bis is-size-4" style="position: absolute;">{{ competences.value }}%</span>
+                <span class="is-medium">{{ competences.name }}</span>
+
+            </div>
+
+            <div class="column is-full-touch" style="display: flex;align-items: center;position: relative;">
+                <span style="left: {{ competences.value / 2 }}%;position:absolute;" id="percent-{{ competences.id }}" class="has-text-weight-bold has-text-centered has-text-dark is-size-4 percent" >{{ competences.value }}%</span>
                 <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
+
+            <div class="column is-fullwidth is-one-fifth-desktop" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
+
+                <span class="icon is-medium">
+                    <a style="text-decoration: none" href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-minus-circle has-text-danger" title="supprimer la compétence"></a>
+                </span>
+
+                <span class="icon is-medium">
+                    <a style="text-decoration: none" href="{{ path('edit_comp', {'id': competences.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la compétence"></a>
+                </span>
+
+            </div>
+
         {% else %}
         <div class="column is-1" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
-            <h4 class="column half-touch has-text-centered">{{ competences.name }}</h4>
+            <h4 class="half-touch has-text-centered">{{ competences.name }}</h4>
         </div>
 
-            <div class="column is-10 is-full-touch" style="display: flex;align-items: center;justify-content:center;position: relative">
-                <span class="has-text-weight-bold has-text-centered has-text-black-bis is-size-4" style="position: absolute;">{{ competences.value }}%</span>
+            <div class="column is-10 is-full-touch" style="display: flex;align-items: center;position: relative;">
+                <span style="left: {{ competences.value / 2 }}%;position:absolute;" id="percent-{{ competences.id }}" class="has-text-weight-bold has-text-centered has-text-dark is-size-4 percent" >{{ competences.value }}%</span>
                 <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
         {% endif %}
 
-
-
-
-
-
     </div>
 
+    <script>
+        let competence{{ competences.id }} = document.getElementById('competence-{{ competences.id }}');
+        let competencePercent{{ competences.id }} = document.getElementById('percent-{{ competences.id }}');
+        {#console.log(competence{{ competences.id }});#}
+        competence{{ competences.id }}.addEventListener('mouseover', event => {
+            competencePercent{{ competences.id }}.style.opacity = '1';
+        });
+        competence{{ competences.id }}.addEventListener('mouseleave', event => {
+            competencePercent{{ competences.id }}.style.opacity = '0';
+        })
+
+    </script>
 
 
 
