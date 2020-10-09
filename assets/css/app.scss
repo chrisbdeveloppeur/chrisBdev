@@ -91,9 +91,9 @@ section{
     background: rgba(0,0,0,0.2);
 }
 
-//.progress{
-//    border-radius: 0px !important;
-//}
+.progress{
+    border-radius: 0px !important;
+}
 #figureLogo{
     width: 150px;
     padding: 1rem
@@ -162,6 +162,36 @@ section{
 
 
 //////// CUSTOM COLOR VAR ////////////
+/*          Colors          */
+.is-green{
+    color: #1db540 ;
+}
+.is-yellow{
+    color: #caca20;
+}
+.is-red{
+    color:#ca2b20;
+}
+.is-blue{
+    color:#205cca;
+}
+.is-purple{
+    color: #ca207b;
+}
+.is-grey{
+    color: #a9a9a9;
+}
+.is-orange{
+    color: #cf7221;
+}
+.is-brown{
+    color: #886444;
+}
+.is-skyblue{
+    color: #20b0ca;
+}
+
+
 /*           Box background color           */
 .box.is-green{
     background: $primary
@@ -170,6 +200,14 @@ section{
 /*          global elements Background-green        */
 .has-background-green{
 background: $primary
+}
+
+.has-background-green-custom{
+    background: #1b8b3d;
+    background: -moz-linear-gradient(top,  #1b8b3d 0%, #24c447 50%, #1db540 51%, #5fe37a 100%);
+    background: -webkit-linear-gradient(top,  #1b8b3d 0%,#24c447 50%,#1db540 51%,#5fe37a 100%);
+    background: linear-gradient(to bottom,  #1b8b3d 0%,#24c447 50%,#1db540 51%,#5fe37a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b8b3d', endColorstr='#5fe37a',GradientType=0 );
 }
 
 .is-green-custom{

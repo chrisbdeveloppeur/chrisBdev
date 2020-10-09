@@ -27,7 +27,7 @@ class CompetenceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($competence);
             $entityManager->flush();
-            return $this->redirectToRoute('home');
+            return $this->redirect('\#competences');
         }
 
         return $this->render('sections/competences/add_comp.html.twig',[
@@ -50,7 +50,7 @@ class CompetenceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($competence);
             $entityManager->flush();
-            return $this->redirectToRoute('home');
+            return $this->redirect('\#competences');
         }
         return $this->render('sections/competences/edit_comp.html.twig',[
             'comp_form' => $form->createView()

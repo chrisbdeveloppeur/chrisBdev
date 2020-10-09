@@ -28,7 +28,7 @@ class PresentationController extends AbstractController
 
             $this->addFlash('success', 'La présentation "' . $presentation->getTitle() . '" à bien été modifié');
 
-            return $this->redirectToRoute('home');
+            return $this->redirect('\#presentation');
         }
 
         return $this->render('sections/presentation/includes/add_presentation.html.twig',[
@@ -76,7 +76,7 @@ class PresentationController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($presentation);
         $entityManager->flush();
-        return $this->redirectToRoute('home');
+        return $this->redirect('\#presentation');
     }
 
     /**
