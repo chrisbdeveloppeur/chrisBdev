@@ -56,7 +56,6 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
     scale: 1.03;
 }
 .block-presentation{
-    box-shadow: black 0 0 35px 1px;
     margin-bottom: 1.75rem;
     transition: 1s;
     padding: 1.75rem;
@@ -64,9 +63,7 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
     margin-left: auto;
     margin-right: auto;
 }
-.block-presentation:hover{
-    scale: 1.1;
-}
+
 
 figure{
     display: flex !important;
@@ -92,9 +89,7 @@ section{
 .competence{
     transition: .3s;
 }
-.competence:hover{
-    scale:1.03;
-}
+
 .progress{
     border-radius: 0px !important;
 }
@@ -110,6 +105,7 @@ section{
 
 
 //////////////////////////////      MEDIA QUERIES //////////////////////////////////
+/*          TOUCH-PAD           */
 @media (max-width: 768px) {
     #figureLogo{
         width: 110px;
@@ -120,6 +116,17 @@ section{
     }
 }
 
+/*          DESKTOP         */
+@media (min-width: 768px) {
+    .block-presentation:hover{
+        scale: 1.1;
+        box-shadow: black 0 0 50px 0px;
+        z-index: 10;
+    }
+    .competence:hover{
+        scale:1.03;
+    }
+}
 
 
 
