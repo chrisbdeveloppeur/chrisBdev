@@ -27,12 +27,19 @@ $navbar-item-hover-background-color: none;
 //$link: $info;
 $link-hover: white;
 
+$family-primary: 'Oxygen', sans-serif;
+$family-secondary: 'Teko', sans-serif;
 
 
 $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
 
 
-
+*{
+    font-family: 'Oxygen', sans-serif;
+}
+.title, .subtitle, .navbar-item{
+    font-family: 'Teko', sans-serif;
+}
 .logo{
     opacity: .6;
     transition: .5s;
