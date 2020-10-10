@@ -1,4 +1,4 @@
-    <div style="justify-content: center" class="competence is-flex-desktop mt-2 mb-2 is-full" id="competence-{{ competences.id }}">
+    <div style="justify-content: center" class="competence has-background-dark is-flex-desktop mt-2 mb-2 is-full" id="competence-{{ competences.id }}">
 
         {% if is_granted("ROLE_ADMIN") %}
 
@@ -7,8 +7,8 @@
             </div>
 
             <div class="column is-8 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <span  id="percent-{{ competences.id }}" class="has-text-weight-bold has-text-centered has-text-light is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
-                <span  class="has-text-weight-bold has-text-centered has-text-light is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
+                <span  id="percent-{{ competences.id }}" class="has-text-weight-bold has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
+                <span  class="has-text-weight-bold has-text-centered has-text-dark is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
                 <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
 
@@ -30,8 +30,8 @@
         </div>
 
             <div class="column is-10 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <span  id="percent-{{ competences.id }}" class="has-text-weight-bold has-text-centered has-text-light is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
-                <span  class="has-text-weight-bold has-text-centered has-text-light is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
+                <span  id="percent-{{ competences.id }}" class="has-text-weight-bold has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
+                <span  class="has-text-weight-bold has-text-centered has-text-dark is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
                 <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
         {% endif %}
