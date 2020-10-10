@@ -44,7 +44,7 @@
         {#console.log(competence{{ competences.id }});#}
         competence{{ competences.id }}.addEventListener('mouseover', event => {
             competencePercent{{ competences.id }}.style.opacity = '1';
-            competencePercent{{ competences.id }}.style.left = '{{ competences.value - 5 }}%';
+            competencePercent{{ competences.id }}.style.left = '{{ competences.value - 10 }}%';
         });
         competence{{ competences.id }}.addEventListener('mouseleave', event => {
             competencePercent{{ competences.id }}.style.opacity = '0';

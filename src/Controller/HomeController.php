@@ -3,13 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Admin;
-use App\Entity\Comp;
-use App\Form\CompType;
 use App\Repository\AdminRepository;
 use App\Repository\CompRepository;
 use App\Repository\PresentationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
