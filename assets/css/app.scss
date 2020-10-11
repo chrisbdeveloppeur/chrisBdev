@@ -20,12 +20,12 @@ $warning: #d0dca0;
 
 
 
-$navbar-item-color: $warning;
-//$navbar-item-hover-color: white;
+$navbar-item-color: white;
+//$navbar-item-hover-color: $primary;
 $navbar-background-color: #0a0a0a;
 $navbar-item-hover-background-color: none;
-//$link: $info;
-$link-hover: white;
+$link: white;
+$link-hover: $primary;
 
 $family-primary: 'Oxygen', sans-serif;
 $family-secondary: 'Teko', sans-serif;
@@ -52,7 +52,7 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
 }
 .navbar-item:hover{
     font-size: 1.6rem;
-    color: white !important;
+    color: $warning !important;
     text-shadow: #dfdfdf 0 0 5px;
 }
 .box-projet div.box{
@@ -122,7 +122,7 @@ section{
 /*          TOUCH-PAD           */
 @media (max-width: 768px) {
     #figureLogo{
-        width: 110px;
+        width: 100px;
     }
     .block-presentation{
         padding: 0;

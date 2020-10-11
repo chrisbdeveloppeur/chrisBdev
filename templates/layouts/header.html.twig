@@ -2,8 +2,8 @@
     <nav class="navbar is-black has-text-centered" role="navigation" aria-label="main navigation" style="box-shadow: black 0px 0px 20px 3px;align-items: center">
         <div class="navbar-brand" style="align-items: center;">
             <figure id="figureLogo">
-                <a class="logo" href="{{ path('home') }}">
-                    <img src="{{ asset('build/images/Chris B Dev - Logo - reduit.98de0cf1.svg') }}" alt="" width="150">
+                <a class="logo is-flex" href="{{ path('home') }}">
+                    <img src="{{ asset('build/images/Chris B Dev - Logo - reduit.98de0cf1.svg') }}" alt="" width="100">
                 </a>
             </figure>
 
@@ -16,7 +16,7 @@
 
 
         <div class="is-size-4 navbar-menu" style="justify-content: center" id="navMenu">
-            <div class="navbar">
+            <div class="navbar navbar-start">
 
                 <a class="navbar-item" href="{{ path('home') }}#presentation" style="justify-content: center;display: flex;">
                      Présentation
@@ -39,24 +39,26 @@
                 </a>
 
             </div>
-        </div>
 
-        {% if is_granted("ROLE_ADMIN") %}
 
-        <div class="navbar-end">
-            <div class="navbar-item">
+            {% if is_granted("ROLE_ADMIN") %}
 
-                <div class="control">
-                    <div class="tags has-addons is-centered">
-                        <span class="tag is-light is-medium is-size-7-touch">{{ app.user.username }}</span>
-                        <a href="{{ path('app_logout') }}" class="tag is-danger is-medium is-size-7-touch">
-                            <strong>Deconnexion</strong>
-                        </a>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+
+                        <div class="control">
+                            <div class="tags has-addons is-centered">
+                                <span class="tag is-light is-medium is-size-7-touch">{{ app.user.username }}</span>
+                                <a href="{{ path('app_logout') }}" class="tag is-danger is-medium is-size-7-touch">
+                                    <strong>Deconnexion</strong>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
+
         </div>
-        {% endif %}
 
 
     </nav>
