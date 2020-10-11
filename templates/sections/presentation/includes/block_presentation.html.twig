@@ -9,11 +9,11 @@
             <div class="column mb-4" style="border-radius: 3px;background: rgba(18,18,18,0.9)">
 
                 {% if presentation.title %}
-                <p class="title is-1 is-spaced has-text-primary has-text-centered is-uppercase">{{ presentation.title }}</p>
+                <p class="title is-1 is-spaced has-text-centered is-uppercase" style="color: white;text-shadow: 0 0 10px rgb(126, 137, 1);">{{ presentation.title }}</p>
                 {% endif %}
 
                 {% if presentation.subTitle %}
-                <p class="subtitle is-3 has-text-primary has-text-centered">{{ presentation.subTitle }}</p>
+                <p class="subtitle is-3 has-text-centered" style="color: white;text-shadow: 0 0 10px rgb(126, 137, 1);">{{ presentation.subTitle }}</p>
                 {% endif %}
 
             </div>
@@ -30,17 +30,19 @@
                     {% if is_granted('ROLE_ADMIN') %}
                         <hr class="has-background-white">
                         <div style="display: flex;">
-                            <div class="column half-touch has-text-centered">
-                                <span class="icon is-medium">
-                                    <a style="text-decoration: none" href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la présentation"></a>
-                                </span>
-                            </div>
 
                             <div class="column half-touch has-text-centered">
                                 <span class="icon is-medium">
                                     <a style="text-decoration: none" href="{{ path('edit_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la présentation"></a>
                                 </span>
                             </div>
+
+                            <div class="column half-touch has-text-centered">
+                                <span class="icon is-medium">
+                                    <a style="text-decoration: none" href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la présentation"></a>
+                                </span>
+                            </div>
+
                         </div>
                     {% endif %}
                 </div>
