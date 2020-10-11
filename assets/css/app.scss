@@ -22,7 +22,7 @@ $warning: #d0dca0;
 
 $navbar-item-color: white;
 //$navbar-item-hover-color: $primary;
-$navbar-background-color: #0a0a0a;
+$navbar-background-color: rgba(0,0,0,0);
 $navbar-item-hover-background-color: none;
 $link: white;
 $link-hover: $primary;
@@ -205,9 +205,12 @@ section{
     background: $primary
 }
 
-/*          global elements Background-green        */
+/*          global elements Background        */
 .has-background-green{
 background: $primary
+}
+.has-background-transparent{
+    background-color: rgba(0,0,0,0);
 }
 
 .has-background-green-custom{
