@@ -30,7 +30,7 @@ class CompetenceController extends AbstractController
             return $this->redirect('\#competences');
         }
 
-        return $this->render('sections/competences/add_comp.html.twig',[
+        return $this->render('sections/competences/includes/add_comp.html.twig',[
             'comp_form' => $form->createView()
         ]);
     }
@@ -52,7 +52,7 @@ class CompetenceController extends AbstractController
             $entityManager->flush();
             return $this->redirect('\#competences');
         }
-        return $this->render('sections/competences/edit_comp.html.twig',[
+        return $this->render('sections/competences/includes/edit_comp.html.twig',[
             'comp_form' => $form->createView()
         ]);
     }

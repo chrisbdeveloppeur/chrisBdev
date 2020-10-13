@@ -1,74 +1,74 @@
-<div class="column is-flex box justify-content-around" style="background: rgba(100,100,100,0.5);box-shadow: rgb(0, 0, 0) 0px 0px 15px;position: relative">
+<div class="container is-flex" style="justify-content: center">
+    <div class="column is-flex box is-half has-text-centered" style="background: rgba(100,100,100,0.5);box-shadow: rgb(0, 0, 0) 0px 0px 15px;position: relative">
 
-    {#<div class="is-hidden-touch" style="opacity:.7;position: absolute;top: 0;left:0;margin:2%;height: 20%;width: 20%;background:center /contain no-repeat url({{ asset('build/images/undraw_typing_jie3.529b71af.svg') }})">
-    </div>#}
+        {% include 'flash_message.html.twig' %}
 
-    {#                <div class="column is-hidden-touch is-one-third-desktop" style="opacity:.7;background:center /contain no-repeat url({{ asset('build/images/undraw_typing_jie3.529b71af.svg') }})">#}
-    {#                </div>#}
+        <article class="column has-text-centered">
 
-    <article class="column is-half-desktop has-text-centered">
-
-        <div class="field">
-            <label class="label is-size-3-touch">Last name</label>
-            <div class="control has-icons-left is-size-3-touch">
-                {#                {{ form_row(messageForm.nom, {'attr' : { 'class' : 'is-size-3-touch input','title' : 'Last name', 'placeholder' : 'My name', 'alt' : 'Last name'}#}
-                {#                }) }}#}
-                <span class="icon is-small is-left" style="z-index: 0;">
+            <div class="field">
+                <label class="label">Nom</label>
+                <div class="control has-icons-left">
+                                    {{ form_row(messageForm.nom, {'attr' : { 'class' : 'input','title' : 'Nom', 'placeholder' : 'Mon nom', 'alt' : 'Nom'}
+                                    }) }}
+                            <span class="icon is-small is-left" style="z-index: 0;">
                                 <i class="fas fa-male"></i>
                             </span>
+                </div>
             </div>
-        </div>
 
-        <div class="field">
-            <label class="label is-size-3-touch">First name</label>
-            <div class="control has-icons-left is-size-3-touch">
-                {#                {{ form_row(messageForm.prenom, {'attr' : { 'class' : 'is-size-3-touch input','title' : 'First name', 'placeholder' : 'My First name', 'alt' : 'First name'}#}
-                {#                }) }}#}
-                <span class="icon is-small is-left" style="z-index: 0;">
+            <div class="field">
+                <label class="label">Prénom</label>
+                <div class="control has-icons-left">
+                                    {{ form_row(messageForm.prenom, {'attr' : { 'class' : 'input','title' : 'Prénom', 'placeholder' : 'Mon prénom', 'alt' : 'Prénom'}
+                                    }) }}
+                    <span class="icon is-small is-left" style="z-index: 0;">
                                 <i class="fas fa-user"></i>
                             </span>
+                </div>
+
             </div>
 
-        </div>
-
-        <div class="field">
-            <label class="label is-size-3-touch">Email *</label>
-            <div class="control has-icons-left is-size-3-touch">
-                {#                {{ form_row(messageForm.email, {'attr' : { 'class' : 'is-size-3-touch input','title' : 'Email *', 'placeholder' : 'ex : mymail@gmail.com', 'alt' : 'email'}#}
-                {#                }) }}#}
-                <span class="icon is-small is-left" style="z-index: 0;">
+            <div class="field">
+                <label class="label">Email *</label>
+                <div class="control has-icons-left">
+                                    {{ form_row(messageForm.email, {'attr' : { 'class' : 'input','title' : 'Email *', 'placeholder' : 'ex : mon-adresse-mail@gmail.com', 'alt' : 'email'}
+                                    }) }}
+                    <span class="icon is-small is-left" style="z-index: 0;">
                                 <i class="fas fa-envelope"></i>
                             </span>
 
+                </div>
+
             </div>
 
-        </div>
-
-        <div class="field">
-            <label class="label is-size-3-touch">Subject</label>
-            <div class="control has-icons-left is-size-3-touch">
-                {#                {{ form_row(messageForm.objet, {'attr' : { 'class' : 'is-size-3-touch input','title' : 'Subject', 'placeholder' : 'Enter the subject', 'alt' : 'subject'}#}
-                {#                }) }}#}
-                <span class="icon is-small is-left" style="z-index: 0;">
+            <div class="field">
+                <label class="label">Objet</label>
+                <div class="control has-icons-left">
+                                    {{ form_row(messageForm.objet, {'attr' : { 'class' : 'input','title' : 'Objet', 'placeholder' : 'Entrer un objet', 'alt' : 'objet'}
+                                    }) }}
+                    <span class="icon is-small is-left" style="z-index: 0;">
                                 <i class="fas fa-hashtag"></i>
                             </span>
+                </div>
+
             </div>
 
-        </div>
-
-        <div class="field">
-            <label class="label is-size-3-touch">Message *</label>
-            <div class="control">
-                {#                {{ form_row(messageForm.message, {'attr' : { 'class' : 'is-size-3-touch textarea ','title' : 'Message *', 'placeholder' : 'My message', 'alt' : 'message'}#}
-                {#                }) }}#}
+            <div class="field">
+                <label class="label">Message *</label>
+                <div class="control">
+                                    {{ form_row(messageForm.text, {'attr' : { 'class' : 'textarea ','title' : 'Message *', 'placeholder' : 'Mon message', 'alt' : 'message'}
+                                    }) }}
+                </div>
             </div>
-        </div>
 
-        <div class="field is-grouped justify-content-center" title="Submit">
-            <div class="control">
-                <button class="button is-info is-size-3-touch" type="submit">Submit</button>
+            <div class="field is-grouped is-flex" title="Submit" style="justify-content: center">
+                <div class="control">
+                    <button class="button is-info" type="submit">Envoyer</button>
+                </div>
             </div>
-        </div>
 
-    </article>
+        </article>
+    </div>
 </div>
+
+

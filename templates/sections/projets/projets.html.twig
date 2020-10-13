@@ -1,4 +1,4 @@
-<div id="projets" style="position: relative;top: -8rem;"></div>
+<div id="projets" style="position: relative;top: -7rem;"></div>
 
 <section class="hero is-dark is-bold is-normal">
     <div class="hero-body">
@@ -19,11 +19,7 @@
         {% endfor %}
 
         {% if is_granted('ROLE_ADMIN') %}
-            <div class="column has-text-centered" style="justify-content: center;align-items: center;display: flex">
-            <span class="icon is-large">
-                <a href="{{ path('add_projet') }}" class="fas fa-3x fa-plus-circle has-text-info" title="Ajouter un projet"></a>
-            </span>
-            </div>
+            {{ include('sections/projets/includes/box_projet_shadow.html.twig') }}
         {% endif %}
     </div>
 

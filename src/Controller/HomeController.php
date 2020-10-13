@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Admin;
+use App\Form\MessageType;
 use App\Repository\AdminRepository;
 use App\Repository\CompRepository;
 use App\Repository\PresentationRepository;
 use App\Repository\ProjetRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -32,7 +34,6 @@ class HomeController extends AbstractController
         }
 
 
-
         $competences = $compRepository->findAll();
         $presentations = $presentationRepository->findAll();
         $projets = $projetRepository->findAll();
@@ -42,6 +43,8 @@ class HomeController extends AbstractController
             'projets' => $projets,
         ]);
     }
+
+
 
 
 }
