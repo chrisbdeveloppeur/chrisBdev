@@ -26,6 +26,7 @@ $navbar-background-color: rgba(0,0,0,0);
 $navbar-item-hover-background-color: none;
 $link: $primary;
 $link-hover: white;
+$box-background-color: rgba(0,0,0,0.5);
 
 $family-primary: 'Oxygen', sans-serif;
 $family-secondary: 'Teko', sans-serif;
@@ -58,10 +59,7 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
 .box-projet div.box{
     transition: .3s;
 }
-.box-projet div.box:hover{
-    //box-shadow: black 0 0 15px;
-    scale: 1.03;
-}
+
 .block-presentation{
     margin-bottom: 1.75rem;
     transition: 1s;
@@ -139,6 +137,10 @@ section{
     }
     .competence:hover{
         scale:1.03;
+    }
+    .box-projet div.box:hover{
+        //box-shadow: black 0 0 15px;
+        scale: 1.03;
     }
 }
 
