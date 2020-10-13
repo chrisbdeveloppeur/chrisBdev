@@ -24,8 +24,8 @@ $navbar-item-color: white;
 //$navbar-item-hover-color: $primary;
 $navbar-background-color: rgba(0,0,0,0);
 $navbar-item-hover-background-color: none;
-$link: white;
-$link-hover: $primary;
+$link: $primary;
+$link-hover: white;
 
 $family-primary: 'Oxygen', sans-serif;
 $family-secondary: 'Teko', sans-serif;
@@ -197,6 +197,10 @@ section{
 }
 .is-skyblue{
     color: #20b0ca;
+}
+.has-text-green-neon{
+    color: white !important;
+    text-shadow: 0 0 10px rgb(126, 137, 1) !important;
 }
 
 
