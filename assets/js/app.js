@@ -15,3 +15,4 @@ const logo = require('../img/Chris B Dev - Logo - sans-fond.svg');
 const logo2 = require('../img/Chris B Dev - Logo - reduit.svg');
 const logo3 = require('../img/Chris B Dev - Logo - reduit - Black.svg');
 const logo4 = require('../img/Chris B Dev - Logo - sans-fond - Black.svg');
+const bg_contact = require('../img/email-3249062_1280.png');
