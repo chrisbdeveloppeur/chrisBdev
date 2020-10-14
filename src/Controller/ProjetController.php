@@ -26,7 +26,7 @@ class ProjetController extends AbstractController
             $entityManager->persist($projet);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Le projet "' . $projet->getTitle() . '" à bien été modifié');
+            $this->addFlash('success', 'Le projet "' . $projet->getTitle() . '" a été ajoutée');
 
             return $this->redirect('\#projets');
         }
@@ -52,12 +52,9 @@ class ProjetController extends AbstractController
             $entityManager->persist($projet);
             $entityManager->flush();
 
-            $this->addFlash('success', 'La présentation "' . $projet->getTitle() . '" à bien été modifié');
+            $this->addFlash('success', 'La présentation "' . $projet->getTitle() . '" a bien été modifié');
 
-            return $this->render('sections/projets/includes/edit_projet.html.twig',[
-                'projet' => $projet,
-                'projet_form' => $form->createView()
-            ]);
+            return $this->redirect('\#projets');
 
         }
         return $this->render('sections/projets/includes/edit_projet.html.twig',[
@@ -76,20 +73,21 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($projet);
         $entityManager->flush();
+        $this->addFlash('danger', 'La présentation "' . $projet->getTitle() . '" a été supprimée');
         return $this->redirect('\#projets');
     }
 
     /**
-     * @Route("/supprimer-img-{id}", name="del_img")
+     * @Route("/supprimer-img-projet-{id}", name="del_img_projet")
      * @IsGranted("ROLE_ADMIN")
      */
-    public function del_img(ProjetRepository $projetRepository, $id, Request $request)
+    public function del_img_projet(ProjetRepository $projetRepository, $id, Request $request)
     {
         $projet = $projetRepository->find($id);
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
         $entityManager = $this->getDoctrine()->getManager();
-        $projet->setImgName(null);
+        $projet->setImgProjetName(null);
         $entityManager->flush();
 
         return $this->render('sections/projets/includes/edit_projet.html.twig',[

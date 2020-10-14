@@ -37,7 +37,7 @@ class Projet
 
     /**
      *
-     * @Vich\UploadableField(mapping="img_projet", fileNameProperty="img_name")
+     * @Vich\UploadableField(mapping="img_projet", fileNameProperty="img_projet_name")
      *
      * @var File|null
      * @Assert\Image(
@@ -50,7 +50,7 @@ class Projet
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $img_name;
+    private $img_projet_name;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -110,18 +110,18 @@ class Projet
     /**
      * @return mixed
      */
-    public function getImgName(): ?string
+    public function getImgProjetName(): ?string
     {
-        return $this->img_name;
+        return $this->img_projet_name;
     }
 
     /**
-     * @param mixed $img_name
+     * @param mixed $img_projet_name
      * @return Projet
      */
-    public function setImgName($img_name): Projet
+    public function setImgProjetName($img_projet_name): Projet
     {
-        $this->img_name = $img_name;
+        $this->img_projet_name = $img_projet_name;
         return $this;
     }
 

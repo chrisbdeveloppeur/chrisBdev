@@ -57,10 +57,10 @@
                 <div class="field">
                     <label class="label has-text-light">Image d'illustration</label>
 
-                    {% if presentation.imgName %}
+                    {% if presentation.imgPresentationName %}
                         <figure class="figure" style="position: relative;margin-bottom: .75rem">
-                            <a href="{{ path('del_img', {'id': presentation.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
-                            <img class="img-thumb-presentation" src="{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}" alt="{{ presentation.imgName }}">
+                            <a href="{{ path('del_img_presentation', {'id': presentation.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
+                            <img class="img-thumb-presentation" src="{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}" alt="{{ presentation.imgPresentationName }}">
                         </figure>
                         {% endif %}
 
@@ -79,8 +79,8 @@
                                     </span>
                                 </span>
                                 <span class="file-name has-background-grey-lighter">
-                                    {% if presentation.imgName %}
-                                        {{ presentation.imgName }}
+                                    {% if presentation.imgPresentationName %}
+                                        {{ presentation.imgPresentationName }}
                                     {% else %}
                                         Aucune image uploadé
                                     {% endif %}
@@ -111,7 +111,5 @@
 
         </section>
     {% endif %}
-
-    {% include 'flash_message.html.twig' %}
 
 {% endblock %}

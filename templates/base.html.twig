@@ -30,6 +30,11 @@
 
 {% endblock %}
 
+
+{% block flash_message %}
+    {% include 'flash_message.html.twig' %}
+{% endblock %}
+
 <footer class="footer has-background-black" style="position: relative;z-index: 10">
     {% include 'layouts/footer.html.twig' %}
 </footer>

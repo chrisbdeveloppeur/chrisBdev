@@ -3,7 +3,7 @@
         <div class="box">
 
             <figure class="image is-4by3"
-                    {% if projet.imgName %}
+                    {% if projet.imgProjetName %}
                     style="background: center / cover no-repeat url('{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb') }}')"
                     {% else %}
                     style="background: center / cover no-repeat url('https://bulma.io/images/placeholders/1280x960.png')"

@@ -3,12 +3,12 @@
         {% if is_granted("ROLE_ADMIN") %}
 
             <div class="column is-fullwidth is-1-desktop has-background-black-bis has-text-primary" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
-                <h4 class="half-touch has-text-centered has-text-weight-bold is-{{ competences.color }}">{{ competences.name }}</h4>
+                <h4 class="is-family-primary half-touch has-text-centered is-{{ competences.color }}">{{ competences.name }}</h4>
             </div>
 
             <div class="column is-8 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <span  id="percent-{{ competences.id }}" class="has-text-weight-bold has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
-                <span style="position: absolute;left: {{ competences.value / 2 }}%;" class="has-text-weight-bold has-text-centered has-text-dark is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
+                <span  id="percent-{{ competences.id }}" class="is-family-secondary has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
+                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="is-family-secondary has-text-centered has-text-dark is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
                 <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
 
@@ -26,12 +26,12 @@
 
         {% else %}
         <div class="column is-fullwidth is-1-desktop has-background-black-bis has-text-primary" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
-            <h4 class="half-touch has-text-centered has-text-weight-bold is-{{ competences.color }}">{{ competences.name }}</h4>
+            <h4 class="is-family-primary half-touch has-text-centered is-{{ competences.color }}">{{ competences.name }}</h4>
         </div>
 
             <div class="column is-10 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <span  id="percent-{{ competences.id }}" class="has-text-weight-bold has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
-                <span style="position: absolute;left: {{ competences.value / 2 }}%;" class="has-text-weight-bold has-text-centered has-text-dark is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
+                <span  id="percent-{{ competences.id }}" class="is-family-secondary has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
+                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="is-family-secondary has-text-centered has-text-dark is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
                 <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
         {% endif %}

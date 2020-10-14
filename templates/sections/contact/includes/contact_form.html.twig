@@ -1,12 +1,10 @@
 <div class="container is-flex" style="justify-content: center">
     <div class="column is-flex box is-half has-text-centered" style="background: rgba(100,100,100,0.5);box-shadow: rgb(0, 0, 0) 0px 0px 15px;position: relative">
 
-        {% include 'flash_message.html.twig' %}
-
         <article class="column has-text-centered">
 
             <div class="field">
-                <label class="label">Nom</label>
+                <label class="label has-text-light">Nom</label>
                 <div class="control has-icons-left">
                                     {{ form_row(messageForm.nom, {'attr' : { 'class' : 'input','title' : 'Nom', 'placeholder' : 'Mon nom', 'alt' : 'Nom'}
                                     }) }}
@@ -17,7 +15,7 @@
             </div>
 
             <div class="field">
-                <label class="label">Prénom</label>
+                <label class="label has-text-light">Prénom</label>
                 <div class="control has-icons-left">
                                     {{ form_row(messageForm.prenom, {'attr' : { 'class' : 'input','title' : 'Prénom', 'placeholder' : 'Mon prénom', 'alt' : 'Prénom'}
                                     }) }}
@@ -29,7 +27,7 @@
             </div>
 
             <div class="field">
-                <label class="label">Email *</label>
+                <label class="label has-text-light">Email *</label>
                 <div class="control has-icons-left">
                                     {{ form_row(messageForm.email, {'attr' : { 'class' : 'input','title' : 'Email *', 'placeholder' : 'ex : mon-adresse-mail@gmail.com', 'alt' : 'email'}
                                     }) }}
@@ -42,9 +40,9 @@
             </div>
 
             <div class="field">
-                <label class="label">Objet</label>
+                <label class="label has-text-light">Objet</label>
                 <div class="control has-icons-left">
-                                    {{ form_row(messageForm.objet, {'attr' : { 'class' : 'input','title' : 'Objet', 'placeholder' : 'Entrer un objet', 'alt' : 'objet'}
+                                    {{ form_row(messageForm.objet, {'attr' : { 'class' : 'input','title' : 'Objet', 'placeholder' : 'Entrer le sujet de votre message', 'alt' : 'objet'}
                                     }) }}
                     <span class="icon is-small is-left" style="z-index: 0;">
                                 <i class="fas fa-hashtag"></i>
@@ -54,7 +52,7 @@
             </div>
 
             <div class="field">
-                <label class="label">Message *</label>
+                <label class="label has-text-light">Message *</label>
                 <div class="control">
                                     {{ form_row(messageForm.text, {'attr' : { 'class' : 'textarea ','title' : 'Message *', 'placeholder' : 'Mon message', 'alt' : 'message'}
                                     }) }}

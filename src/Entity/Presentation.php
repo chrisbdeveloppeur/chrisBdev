@@ -48,7 +48,7 @@ class Presentation
 
     /**
      *
-     * @Vich\UploadableField(mapping="img_presentation", fileNameProperty="img_name")
+     * @Vich\UploadableField(mapping="img_presentation", fileNameProperty="img_presentation_name")
      *
      * @var File|null
      * @Assert\Image(
@@ -61,7 +61,7 @@ class Presentation
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $img_name;
+    private $img_presentation_name;
 
 
     /**
@@ -152,18 +152,18 @@ class Presentation
     /**
      * @return mixed
      */
-    public function getImgName(): ?string
+    public function getImgPresentationName(): ?string
     {
-        return $this->img_name;
+        return $this->img_presentation_name;
     }
 
     /**
-     * @param mixed $img_name
+     * @param mixed $img_presentation_name
      * @return Presentation
      */
-    public function setImgName(?string $img_name): Presentation
+    public function setImgPresentationName(?string $img_presentation_name): Presentation
     {
-        $this->img_name = $img_name;
+        $this->img_presentation_name = $img_presentation_name;
         return $this;
     }
 

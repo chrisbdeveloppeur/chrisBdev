@@ -26,7 +26,7 @@ class PresentationController extends AbstractController
             $entityManager->persist($presentation);
             $entityManager->flush();
 
-            $this->addFlash('success', 'La présentation "' . $presentation->getTitle() . '" à bien été modifié');
+            $this->addFlash('success', 'La présentation "' . $presentation->getTitle() . '" a été ajoutée');
 
             return $this->redirect('\#presentation');
         }
@@ -52,13 +52,9 @@ class PresentationController extends AbstractController
             $entityManager->persist($presentation);
             $entityManager->flush();
 
-            $this->addFlash('success', 'La présentation "' . $presentation->getTitle() . '" à bien été modifié');
+            $this->addFlash('success', 'La présentation "' . $presentation->getTitle() . '" a bien été modifié');
 
-            return $this->render('sections/presentation/includes/edit_presentation.html.twig',[
-                'presentation' => $presentation,
-                'presentation_form' => $form->createView()
-            ]);
-
+            return $this->redirect('\#presentation');
         }
         return $this->render('sections/presentation/includes/edit_presentation.html.twig',[
             'presentation' => $presentation,
@@ -76,20 +72,23 @@ class PresentationController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($presentation);
         $entityManager->flush();
+
+        $this->addFlash('danger', 'La présentation "' . $presentation->getTitle() . '" a été supprimée');
+
         return $this->redirect('\#presentation');
     }
 
     /**
-     * @Route("/supprimer-img-{id}", name="del_img")
+     * @Route("/supprimer-img-presentation-{id}", name="del_img_presentation")
      * @IsGranted("ROLE_ADMIN")
      */
-    public function del_img(PresentationRepository $presentationRepository, $id, Request $request)
+    public function del_img_presentation(PresentationRepository $presentationRepository, $id, Request $request)
     {
         $presentation = $presentationRepository->find($id);
         $form = $this->createForm(PresentationType::class, $presentation);
         $form->handleRequest($request);
         $entityManager = $this->getDoctrine()->getManager();
-        $presentation->setImgName(null);
+        $presentation->setImgPresentationName(null);
         $entityManager->flush();
 
         return $this->render('sections/presentation/includes/edit_presentation.html.twig',[

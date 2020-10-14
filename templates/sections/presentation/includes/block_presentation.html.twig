@@ -1,8 +1,8 @@
 
 
-<div class="is-centered block-presentation" style="position:relative;{% if presentation.imgName %}background: center / cover no-repeat url('{{ vich_uploader_asset(presentation, 'img') | imagine_filter('HQ') }}');{% endif %}">
+<div class="is-centered block-presentation" style="position:relative;{% if presentation.imgPresentationName %}background: center / cover no-repeat url('{{ vich_uploader_asset(presentation, 'img') | imagine_filter('HQ') }}');{% endif %}">
 
-    <div style="position:absolute;width: 100%;height: 100%;top: 0;left: 0;background: rgba(1, 20, 1, 0.5)"></div>
+    <div style="position:absolute;width: 100%;height: 100%;top: 0;left: 0;background: rgba(0, 10, 0, 0.8)"></div>
 
         <div class="container column is-two-thirds is-full-touch">
 
@@ -28,7 +28,7 @@
 
                     {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}
-                        <hr class="has-background-white">
+                        <hr style="background: rgba(255,255,255,.1);height: 1px;">
                         <div style="display: flex;">
 
                             <div class="column half-touch has-text-centered">
