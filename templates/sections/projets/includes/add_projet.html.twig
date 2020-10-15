@@ -27,6 +27,29 @@
                 </div>
 
                 <div class="field">
+                    <label class="label">Année de réalisation</label>
+                    <div class="control">
+                        {{ form_row(projet_form.dateReal, {'attr' : {
+                            'class' : 'input',
+                            'placeholder' : 'ex : 2015',
+                            'alt' : 'Date de réalisation'
+                        }
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Type de développement</label>
+                    <div class="control select" style="width: 100%">
+                        {{ form_row(projet_form.typedev, {placeholder: 'Selectionner ...', 'attr' : {
+                            'class' : 'select input',
+                            'alt' : 'Type de développement'
+                        }
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="field">
                     <label class="label">Texte</label>
                     <div class="control">
                         {{ form_row(projet_form.text, {'attr' : {
@@ -36,6 +59,18 @@
                                 'alt' : 'Text de la présentation',
                                 'style' :  'resize:none'
                             }
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Lien url du projet</label>
+                    <div class="control">
+                        {{ form_row(projet_form.link, {'attr' : {
+                            'class' : 'input',
+                            'placeholder' : 'ex : https://chrisbdev.com',
+                            'alt' : 'url du projet'
+                        }
                         }) }}
                     </div>
                 </div>

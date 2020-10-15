@@ -29,7 +29,7 @@ $link-hover: white;
 $box-background-color: rgba(0,0,0,0.5);
 $box-radius: 0px;
 $input-radius: 0px;
-//$modal-z: 1000;
+$tag-radius: 0px;
 
 $family-primary: 'Oxygen', sans-serif;
 $family-secondary: 'Teko', sans-serif;
@@ -256,6 +256,15 @@ div.container h2{
     text-shadow: 0 0 10px rgb(126, 137, 1) !important;
 }
 
+/*          Special          */
+.is-overable-green{
+    transition: .5s;
+}
+.is-overable-green:hover{
+    background-color: $primary !important;
+    color: white !important;
+    cursor: help;
+}
 
 /*           Box background color           */
 .box.is-green{

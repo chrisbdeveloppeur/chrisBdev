@@ -1,6 +1,11 @@
 <div id="modal-{{ projet.id }}" class="modal">
     <div class="modal-background" onclick="closeModal({{ projet.id }})"></div>
+
     <div class="modal-content-custom">
+
+        <span class="icon is-medium">
+        <a style="text-decoration: none" href="{{ path('edit_projet', {'id': projet.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer le projet"></a>
+    </span>
 
             <div class="column has-text-centered">
                 <h3 class="subtitle is-3 is-uppercase has-text-green-neon">{{ projet.title }}</h3>
@@ -28,8 +33,22 @@
 
             </div>
 
+        <div class="column" style="display: flex;justify-content: space-between;align-items: center;border-bottom: rgba(255,255,255,.1) solid 1px;">
+            <div class="tags has-addons" style="margin: 0">
+                <span class="tag" style="margin: 0">Année de réalisation</span>
+                <span class="tag is-primary" style="margin: 0">{{ projet.dateReal }}</span>
+            </div>
+
+            <div class="is-uppercase">
+                {{ projet.typedev }}
+            </div>
+        </div>
+
+
+
+
             <div class="column">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit finibus justo. Ut fermentum faucibus purus sit amet feugiat. Maecenas nisl nibh, blandit at interdum vitae, pharetra eu diam. Maecenas et molestie mi. Sed volutpat efficitur ligula ac lacinia. Donec scelerisque viverra nibh, in tristique felis. Quisque vitae turpis libero. Sed euismod fringilla leo posuere commodo. Nunc ornare magna et lacus lacinia, nec accumsan nulla posuere. Nunc mattis ante vel enim lacinia suscipit fusce.</p>
+                <p>{{ projet.text }}</p>
             </div>
 
             <div class="column is-flex-desktop">
@@ -82,21 +101,21 @@
                     <div class="column">
 
                         <div class="tags">
-                            <span class="tag is-warning"><a href="#"></a>#HTML</span>
-                            <span class="tag is-warning">#CSS</span>
-                            <span class="tag is-warning">#PHP</span>
-                            <span class="tag is-warning">#Symfony 4</span>
-                            <span class="tag is-warning">#Bulma</span>
-                            <span class="tag is-warning">#Javascript</span>
-                            <span class="tag is-warning">#JQuery</span>
-                            <span class="tag is-warning">#JQuery</span>
-                            <span class="tag is-warning">#JQuery</span>
-                            <span class="tag is-warning">#JQuery</span>
-                            <span class="tag is-warning">#JQuery</span>
-                            <span class="tag is-warning">#JQuery</span>
-                            <span class="tag is-warning">#JQuery</span>
-                            <span class="tag is-warning">#JQuery</span>
-                            <span class="tag is-warning">#JQuery</span>
+                            <span class="tag is-warning is-overable-green"><a href="#"></a>#HTML</span>
+                            <span class="tag is-warning is-overable-green">#CSS</span>
+                            <span class="tag is-warning is-overable-green">#PHP</span>
+                            <span class="tag is-warning is-overable-green">#Symfony 4</span>
+                            <span class="tag is-warning is-overable-green">#Bulma</span>
+                            <span class="tag is-warning is-overable-green">#Javascript</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            <span class="tag is-warning is-overable-green">#JQuery</span>
                         </div>
 
                     </div>
@@ -104,9 +123,11 @@
 
             </div>
 
+        {% if projet.link %}
         <div class="column is-flex-desktop" style="justify-content: end;">
-            <a class="button is-green-custom" href="#">Visiter le site</a>
+            <a class="button is-green-custom" target="_blank" href="{{ projet.link }}">Visiter le site</a>
         </div>
+        {% endif %}
 
     </div>
     <button class="modal-close is-large" aria-label="close" onclick="closeModal({{ projet.id }})"></button>

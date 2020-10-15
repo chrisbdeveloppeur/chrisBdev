@@ -4,7 +4,11 @@ namespace App\Form;
 
 use App\Entity\Projet;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,7 +24,29 @@ class ProjetType extends AbstractType
                 'required' => false
             ])
 
+            ->add('dateReal', NumberType::class,[
+                'label' => false,
+                'required' => false,
+                'invalid_message' => 'Veuillez selectionnez une Année valide.',
+                'error_bubbling' => true,
+            ])
+
+            ->add('typedev', ChoiceType::class, [
+                'label' => false,
+                'required' => false,
+                'choices' => [
+                    'Développement partiel' => 'Développement partiel',
+                    'Développement complet' => 'Développement complet',
+                    'Refonte graphique' => 'Refonte graphique',
+                ]
+            ])
+
             ->add('text', TextareaType::class, [
+                'label' => false,
+                'required' => false,
+            ])
+
+            ->add('link', TextType::class, [
                 'label' => false,
                 'required' => false,
             ])
@@ -29,6 +55,8 @@ class ProjetType extends AbstractType
                 'label' => false,
                 'required' => false,
             ])
+
+
         ;
     }
 

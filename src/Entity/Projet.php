@@ -30,10 +30,16 @@ class Projet
     /**
      * @ORM\Column(type="text", nullable=true)
      * @Assert\Length(
-     *     max="1000",
-     *     maxMessage="1000 charactères maximum autorisé")
+     *     max="500",
+     *     maxMessage="500 charactères maximum autorisé")
      */
     private $text;
+
+
+    /**
+     * @var @ORM\Column(type="string", nullable=true)
+     */
+    private $date_real;
 
     /**
      *
@@ -56,6 +62,16 @@ class Projet
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $link;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $typedev;
 
     public function getId(): ?int
     {
@@ -142,6 +158,49 @@ class Projet
         $this->updatedAt = $updatedAt;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDateReal()
+    {
+        return $this->date_real;
+    }
+
+    /**
+     * @param mixed $date_real
+     */
+    public function setDateReal($date_real)
+    {
+        $this->date_real = $date_real;
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): self
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    public function getTypedev(): ?string
+    {
+        return $this->typedev;
+    }
+
+    public function setTypedev(?string $typedev): self
+    {
+        $this->typedev = $typedev;
+
+        return $this;
+    }
+
+
 
 
 
