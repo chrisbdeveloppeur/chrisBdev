@@ -24,7 +24,7 @@ $navbar-item-color: white;
 //$navbar-item-hover-color: $primary;
 $navbar-background-color: rgba(0,0,0,0);
 $navbar-item-hover-background-color: none;
-$link: $primary;
+$link: $warning;
 $link-hover: white;
 $box-background-color: rgba(0,0,0,0.5);
 $box-radius: 0px;
@@ -135,21 +135,27 @@ section{
     height: 100%;
     background-color: rgba(0,0,0,0.5);
 }
-.modal-content {
+.modal-content-custom {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
     background-color: rgba(0,0,0,0);
     //height: 100%;
     margin: auto;
     width: 90%;
     //max-width: 1200px;
     //max-height: 700px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     text-align: center;
 }
-
+.modal-background{
+    background-color: rgba(0,0,0,0.9) !important;
+}
+div.container h2{
+   text-shadow: 1px 2px 2px black;
+}
 
 
 
@@ -163,6 +169,9 @@ section{
     .block-presentation{
         padding: 0;
         width: 100%;
+    }
+    #charaProjet1{
+        border-bottom: rgba(255,255,255,.1) solid 1px;
     }
 }
 
@@ -180,6 +189,9 @@ section{
     .box-projet div.box:hover{
         box-shadow: black 0 0 50px;
         scale: 1.03;
+    }
+    #charaProjet1{
+        border-right: rgba(255,255,255,.1) solid 1px;
     }
 }
 
@@ -253,6 +265,9 @@ section{
 /*          global elements Background        */
 .has-background-green{
 background: $primary
+}
+.has-background-demi-transparent{
+    background-color: rgba(0,0,0,.5);
 }
 .has-background-transparent{
     background-color: rgba(0,0,0,0);
