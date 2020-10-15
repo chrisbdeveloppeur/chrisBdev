@@ -16,6 +16,7 @@
 
         {% for projet in projets %}
             {{ include('sections/projets/includes/box_projet.html.twig') }}
+{#            {{ include('sections/projets/includes/lightbox_projet.html.twig') }}#}
         {% endfor %}
 
         {% if is_granted('ROLE_ADMIN') %}

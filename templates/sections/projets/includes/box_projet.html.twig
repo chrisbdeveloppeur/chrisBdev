@@ -1,5 +1,5 @@
-<div class="column box-projet is-one-third">
-    <a href="#" class="">
+<div class="column box-projet is-one-third" id="boxProjet{{ projet.id }}">
+    <a onclick="openModal({{ projet.id }})">
         <div class="box">
 
             <figure class="image is-4by3"
@@ -15,7 +15,7 @@
                         width: 100%;
                         height: 100%;
                         top: 0;
-                        left: 0;">
+                        left: 0;"></div>
             </figure>
 
             <div class="container">
@@ -48,3 +48,4 @@
         </div>
     {% endif %}
 </div>
+
