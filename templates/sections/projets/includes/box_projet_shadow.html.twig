@@ -1,32 +1,31 @@
-<div class="column is-one-third" style="position:relative;">
+<div class="column box-projet is-one-third" style="position: relative">
+    <div style="opacity: .3">
+        <div class="box">
 
-        <div class="box" style="opacity: .4">
-            <figure class="image is-4by3" style="background: center / cover no-repeat url('https://bulma.io/images/placeholders/1280x960.png')">
-                        <div style="
-                        background: rgba(1, 20, 1, 0.8);
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        top: 0;
-                        left: 0;">
-            </figure>
+            <figure class="image is-4by3" style="background: center / cover no-repeat url('https://bulma.io/images/placeholders/1280x960.png')" ></figure>
 
             <div class="container">
                 <h3 class="subtitle is-3 has-text-green-neon has-text-centered">#projet</h3>
 
-                <p class="has-text-light">
+                <p class="has-text-light" style="overflow: hidden;text-overflow: ellipsis;height: 100px;position: relative;background: linear-gradient(rgb(255,255,255) 0%, rgba(0,0,0,0) 90%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum augue elit, tincidunt accumsan urna tristique nec. Fusce et diam id dolor imperdiet pellentesque. Morbi tortor tortor, efficitur a cursus gravida, vulputate nec ante. Pellentesque vel ligula at nulla viverra interdum. Maecenas eget magna nec leo aliquam fringilla. Proin magna neque, molestie eu efficitur sit amet, maximus eget erat. Pellentesque laoreet consectetur lacus efficitur laoreet. Suspendisse semper ultrices aenean.
                 </p>
             </div>
+
         </div>
+    </div>
 
-
-
-        <div class="column has-text-centered" style="justify-content: center;align-items: center;display: flex;position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
+    <div class="column has-text-centered" style="justify-content: center;align-items: center;display: flex;position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
                     <span class="icon is-large">
                         <a href="{{ path('add_projet') }}" class="fas fa-3x fa-plus-circle has-text-info" title="Ajouter un projet"></a>
                     </span>
-        </div>
-
+    </div>
 
 </div>
+
+
+
+
+
