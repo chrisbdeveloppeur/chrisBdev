@@ -258,13 +258,14 @@ div.container h2{
 }
 
 /*          Special          */
-.is-overable-green{
-    transition: .5s;
-}
+//.is-overable-green{
+//
+//}
 .is-overable-green:hover{
     background-color: $primary !important;
     color: white !important;
     cursor: help;
+    text-decoration: underline dotted ;
 }
 
 /*           Box background color           */

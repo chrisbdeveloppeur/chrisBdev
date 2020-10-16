@@ -80,6 +80,7 @@
                             <a class="tag is-warning" href="{{ path('del_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="retirer le technologie au projet">
                                 #{{ techno.name }}
                             </a>
+                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}"></a>
                             <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}"></a>
                         </div>
                     </div>
@@ -89,6 +90,7 @@
                             <a class="tag is-light" href="{{ path('add_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="ajouter le technologie au projet">
                                 #{{ techno.name }}
                             </a>
+                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}"></a>
                             <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}"></a>
                         </div>
                     </div>
@@ -98,27 +100,6 @@
                         <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                     </a>
                 </div>
-{#                <div class="field is-grouped is-grouped-multiline">#}
-{#                    <div class="control">#}
-{#                        {% for techno in techno %}#}
-{#                            {% if techno in projet.techno %}#}
-{#                                <div class="tags has-addons">#}
-{#                                    <a class="tag is-warning" href="{{ path('del_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="retirer le technologie au projet">#}
-{#                                        #{{ techno.name }}#}
-{#                                    </a>#}
-{#                                    <a class="tag is-delete" href="{{ path('del_techno') }}"></a>#}
-{#                                </div>#}
-{#                            {% else %}#}
-{#                                <a class="tag is-light" href="{{ path('add_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="ajouter le technologie au projet">#}
-{#                                    #{{ techno.name }}#}
-{#                                </a>#}
-{#                            {% endif %}#}
-{#                        {% endfor %}#}
-{#                        <a class="tag" href="{{ path('add_techno') }}" style="text-decoration: none" title="Ajouter une technologie">#}
-{#                            <i  class="fas f-lg fa-plus-circle has-text-black-bis" ></i>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                </div>#}
 
 
 

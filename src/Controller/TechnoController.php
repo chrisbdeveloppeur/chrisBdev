@@ -33,11 +33,12 @@ class TechnoController extends AbstractController
     }
 
     /**
-     * @Route("/editer-techno-{id]", name="edit_techno")
+     * @Route("/editer-techno-{id}", name="edit_techno")
      */
     public function edit_techno(Request $request, TechnoRepository $technoRepository, $id)
     {
         $techno = $technoRepository->find($id);
+//        dd($techno);
         $technoform = $this->createForm(TechnoType::class, $techno);
         $technoform->handleRequest($request);
         if ($technoform->isSubmitted() && $technoform->isValid()){
@@ -50,8 +51,9 @@ class TechnoController extends AbstractController
 
             return $this->redirect('\#projets');
         }
-        return $this->render('sections/projets/includes/add_techno.html.twig', [
+        return $this->render('sections/projets/includes/edit_techno.html.twig', [
             'techno_form' => $technoform->createView(),
+            'techno' => $techno,
         ]);
     }
 

@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/sections/projets/includes/add_techno.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sections/projets/includes/edit_techno.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProjetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProjetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Projet.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Projet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProjetType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProjetType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TechnoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TechnoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sections/projets/includes/edit_projet.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/projets/includes/edit_projet.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -68,16 +61,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/edit_projet.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="100" column="50" selection-start-line="100" selection-start-column="50" selection-end-line="100" selection-end-column="50" />
+            <state relative-caret-position="382">
+              <caret line="93" column="54" selection-start-line="93" selection-start-column="54" selection-end-line="93" selection-end-column="54" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
                 <element signature="e#3441#3461#0#Twig" expanded="true" />
+                <element signature="e#3746#3757#0#Twig" expanded="true" />
                 <element signature="e#3721#3731#0#Twig" expanded="true" />
                 <element signature="e#3993#4013#0#Twig" expanded="true" />
+                <element signature="e#4433#4444#0#Twig" expanded="true" />
                 <element signature="e#4273#4283#0#Twig" expanded="true" />
                 <element signature="e#4479#4489#0#Twig" expanded="true" />
                 <element signature="e#4496#4525#0#HTML" expanded="true" />
@@ -86,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="269" column="46" selection-start-line="269" selection-start-column="46" selection-end-line="269" selection-end-column="46" />
+            <state relative-caret-position="221">
+              <caret line="267" column="31" selection-start-line="267" selection-start-column="31" selection-end-line="267" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -122,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="399">
+              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#figure#0;n#div#0;n#a#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -132,10 +127,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sections/projets/projets.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/edit_techno.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+            <state relative-caret-position="510">
+              <caret line="51" column="74" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -143,10 +138,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TechnoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="60" column="71" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
+            <state relative-caret-position="314">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding>
                 <element signature="e#34#58#0#PHP" expanded="true" />
+                <element signature="e#1954#2003#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,8 +151,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/ProjetController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+            <state relative-caret-position="637">
+              <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
               <folding>
                 <element signature="e#34#58#0#PHP" expanded="true" />
                 <element signature="e#1971#2020#0#PHP" expanded="true" />
@@ -170,8 +166,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/add_techno.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="552">
+              <caret line="58" selection-end-line="61" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -216,7 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/css/mystyles.scss" />
         <option value="$PROJECT_DIR$/src/Form/CompType.php" />
         <option value="$PROJECT_DIR$/src/Form/RegistrationFormType.php" />
         <option value="$PROJECT_DIR$/templates/registration/register.html.twig" />
@@ -263,10 +258,11 @@
         <option value="$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Techno.php" />
         <option value="$PROJECT_DIR$/src/Entity/Projet.php" />
-        <option value="$PROJECT_DIR$/assets/css/app.scss" />
         <option value="$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/TechnoController.php" />
         <option value="$PROJECT_DIR$/templates/sections/projets/includes/edit_projet.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/TechnoController.php" />
+        <option value="$PROJECT_DIR$/templates/sections/projets/includes/edit_techno.html.twig" />
+        <option value="$PROJECT_DIR$/assets/css/app.scss" />
       </list>
     </option>
   </component>
@@ -567,12 +563,12 @@
       <workItem from="1602669081150" duration="7111000" />
       <workItem from="1602712276615" duration="29555000" />
       <workItem from="1602806797700" duration="147000" />
-      <workItem from="1602806962015" duration="6935000" />
+      <workItem from="1602806962015" duration="7763000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184551000" />
+    <option name="totallyTimeSpent" value="185379000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -635,7 +631,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/images/presentation/planet-581239-1280-5f810104716f2898789659.jpg" />
     <entry file="file://$PROJECT_DIR$/public/images/presentation/pen-4337524-1920-5f81ae335fec0653027021.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -951,29 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="n#style#0;n#figure#0;n#div#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ProjetController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-            <element signature="e#1971#2020#0#PHP" expanded="true" />
-            <element signature="e#4025#4038#0#PHP" expanded="true" />
-            <element signature="e#4678#4691#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Techno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
@@ -991,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/add_techno.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
@@ -1008,36 +973,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
+    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="269" column="46" selection-start-line="269" selection-start-column="46" selection-end-line="269" selection-end-column="46" />
+        <state relative-caret-position="399">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#figure#0;n#div#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TechnoController.php">
+    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/add_techno.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="60" column="71" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="552">
+          <caret line="58" selection-end-line="61" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/edit_projet.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="100" column="50" selection-start-line="100" selection-start-column="50" selection-end-line="100" selection-end-column="50" />
+        <state relative-caret-position="382">
+          <caret line="93" column="54" selection-start-line="93" selection-start-column="54" selection-end-line="93" selection-end-column="54" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
             <element signature="e#3441#3461#0#Twig" expanded="true" />
+            <element signature="e#3746#3757#0#Twig" expanded="true" />
             <element signature="e#3721#3731#0#Twig" expanded="true" />
             <element signature="e#3993#4013#0#Twig" expanded="true" />
+            <element signature="e#4433#4444#0#Twig" expanded="true" />
             <element signature="e#4273#4283#0#Twig" expanded="true" />
             <element signature="e#4479#4489#0#Twig" expanded="true" />
             <element signature="e#4496#4525#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ProjetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+            <element signature="e#1971#2020#0#PHP" expanded="true" />
+            <element signature="e#4025#4038#0#PHP" expanded="true" />
+            <element signature="e#4678#4691#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TechnoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+            <element signature="e#1954#2003#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/edit_techno.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="51" column="74" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="267" column="31" selection-start-line="267" selection-start-column="31" selection-end-line="267" selection-end-column="31" />
         </state>
       </provider>
     </entry>

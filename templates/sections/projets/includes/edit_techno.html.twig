@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chris B Dev - Modifier une technologie{% endblock %}
+
+{% block body %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative">
+
+            <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
+                Modificer la technologie {{ techno.name }}
+            </h1>
+
+            <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
+                {{ form_start(techno_form) }}
+
+                <div class="field">
+                    <label class="label">Nom de la technologie</label>
+                    <div class="control">
+                        {{ form_row(techno_form.name, {'attr' : {
+                            'class' : 'input',
+                            'placeholder' : 'ex : HTML',
+                            'alt' : 'nom de la technologie'
+                        }
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Info bulle</label>
+                    <div class="control">
+                        {{ form_row(techno_form.help, {'attr' : {
+                            'class' : 'input',
+                            'placeholder' : 'ex : Hypertext Markup Language',
+                            'alt' : 'info bulle'
+                        }
+                        }) }}
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="column is-centered">
+                <button type="submit" style="width: 100%;" class="button is-info">Valider les modifications</button>
+            </div>
+
+            {{ form_end(techno_form) }}
+            </div>
+
+            <a href="{{ path('home') }}#projets" class="button is-danger">
+                Retour
+            </a>
+
+
+        </section>
+    {% endif %}
+
+    {% include 'flash_message.html.twig' %}
+
+{% endblock %}
