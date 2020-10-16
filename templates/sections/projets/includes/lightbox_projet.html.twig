@@ -3,9 +3,14 @@
 
     <div class="modal-content-custom">
 
-        <span class="icon is-medium">
-        <a style="text-decoration: none" href="{{ path('edit_projet', {'id': projet.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer le projet"></a>
-    </span>
+        {% if is_granted('ROLE_ADMIN') %}
+            <div style="display: flex;justify-content: start;">
+                <span class="icon is-medium">
+                    <a style="text-decoration: none" href="{{ path('edit_projet', {'id': projet.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer le projet"></a>
+                </span>
+            </div>
+        {% endif %}
+
 
             <div class="column has-text-centered">
                 <h3 class="subtitle is-3 is-uppercase has-text-green-neon">{{ projet.title }}</h3>
@@ -14,20 +19,20 @@
             <div class="columns">
 
                 <div class="column">
-                    <figure class="image is-square">
-                        <img src="https://bulma.io/images/placeholders/256x256.png">
+                    <figure class="">
+                        <img src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb_small') }}">
                     </figure>
                 </div>
 
                 <div class="column">
-                    <figure class="image is-square">
-                        <img src="https://bulma.io/images/placeholders/256x256.png">
+                    <figure class="">
+                        <img src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb_small') }}">
                     </figure>
                 </div>
 
                 <div class="column">
-                    <figure class="image is-square">
-                        <img src="https://bulma.io/images/placeholders/256x256.png">
+                    <figure class="">
+                        <img src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb_small') }}">
                     </figure>
                 </div>
 
@@ -101,21 +106,15 @@
                     <div class="column">
 
                         <div class="tags">
-                            <span class="tag is-warning is-overable-green"><a href="#"></a>#HTML</span>
-                            <span class="tag is-warning is-overable-green">#CSS</span>
-                            <span class="tag is-warning is-overable-green">#PHP</span>
-                            <span class="tag is-warning is-overable-green">#Symfony 4</span>
-                            <span class="tag is-warning is-overable-green">#Bulma</span>
-                            <span class="tag is-warning is-overable-green">#Javascript</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
-                            <span class="tag is-warning is-overable-green">#JQuery</span>
+                            {% for techno in projet.techno %}
+                                <span class="tag is-warning is-overable-green" title="{{ techno.help }}">#{{ techno.name }}</span>
+                            {% endfor %}
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="tag is-overable-green" href="{{ path('add_techno') }}" style="text-decoration: none">
+                                        <i  class="fas f-lg fa-plus-circle has-text-black-bis" title="Ajouter une technologie"></i>
+                                </a>
+                            {% endif %}
                         </div>
 
                     </div>

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProjetRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -72,6 +74,17 @@ class Projet
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $typedev;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Techno::class, inversedBy="projets")
+     */
+    private $techno;
+
+
+    public function __construct()
+    {
+        $this->techno = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -200,7 +213,31 @@ class Projet
         return $this;
     }
 
+    /**
+     * @return Collection|Techno[]
+     */
+    public function getTechno(): Collection
+    {
+        return $this->techno;
+    }
 
+    public function addTechno(Techno $techno): self
+    {
+        if (!$this->techno->contains($techno)) {
+            $this->techno[] = $techno;
+        }
+
+        return $this;
+    }
+
+    public function removeTechno(Techno $techno): self
+    {
+        if ($this->techno->contains($techno)) {
+            $this->techno->removeElement($techno);
+        }
+
+        return $this;
+    }
 
 
 

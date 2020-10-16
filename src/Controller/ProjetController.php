@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ProjetType;
 use App\Repository\ProjetRepository;
+use App\Repository\TechnoRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,8 +41,9 @@ class ProjetController extends AbstractController
      * @Route("/modifier-projet-{id}", name="edit_projet")
      * @IsGranted("ROLE_ADMIN")
      */
-    public function edit_projet(Request $request, ProjetRepository $projetRepository, $id)
+    public function edit_projet(Request $request, ProjetRepository $projetRepository, $id, TechnoRepository $technoRepository)
     {
+        $techno = $technoRepository->findAll();
         $projet = $projetRepository->find($id);
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
@@ -58,6 +60,7 @@ class ProjetController extends AbstractController
 
         }
         return $this->render('sections/projets/includes/edit_projet.html.twig',[
+            'techno' => $techno,
             'projet' => $projet,
             'projet_form' => $form->createView()
         ]);
@@ -93,6 +96,40 @@ class ProjetController extends AbstractController
         return $this->render('sections/projets/includes/edit_projet.html.twig',[
             'projet' => $projet,
             'projet_form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/ajouter-techno-{idtechno}-au-projet-{id}", name="add_techno_to_projet")
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function add_techno_to_project(ProjetRepository $projetRepository, $id, $idtechno, TechnoRepository $technoRepository)
+    {
+        $projet = $projetRepository->find($id);
+        $techno = $technoRepository->find($idtechno);
+        $entityManager = $this->getDoctrine()->getManager();
+        $projet->addTechno($techno);
+        $entityManager->flush();
+        return $this->redirectToRoute('edit_projet',[
+            'projet' => $projet,
+            'id' => $projet->getId(),
+        ]);
+    }
+
+    /**
+     * @Route("/retirer-techno-{idtechno}-au-projet-{id}", name="del_techno_to_projet")
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function del_techno_to_project(ProjetRepository $projetRepository, $id, $idtechno, TechnoRepository $technoRepository)
+    {
+        $projet = $projetRepository->find($id);
+        $techno = $technoRepository->find($idtechno);
+        $entityManager = $this->getDoctrine()->getManager();
+        $projet->removeTechno($techno);
+        $entityManager->flush();
+        return $this->redirectToRoute('edit_projet',[
+            'projet' => $projet,
+            'id' => $projet->getId(),
         ]);
     }
 }

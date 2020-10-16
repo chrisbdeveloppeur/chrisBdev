@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Admin;
 use App\Form\MessageType;
+use App\Form\TechnoType;
 use App\Repository\AdminRepository;
 use App\Repository\CompRepository;
 use App\Repository\PresentationRepository;
 use App\Repository\ProjetRepository;
+use App\Repository\TechnoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,7 +19,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home(CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository)
+    public function home(CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository)
     {
         $evenAdmin = $adminRepository->findAll();
 
@@ -37,10 +39,12 @@ class HomeController extends AbstractController
         $competences = $compRepository->findAll();
         $presentations = $presentationRepository->findAll();
         $projets = $projetRepository->findAll();
+        $techno = $technoRepository->findAll();
         return $this->render('home/index.html.twig', [
             'competences' => $competences,
             'presentations' => $presentations,
             'projets' => $projets,
+            'techno' => $techno,
         ]);
     }
 
