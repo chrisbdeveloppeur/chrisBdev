@@ -6,7 +6,7 @@
             <div class="field">
                 <label class="label has-text-light">Nom</label>
                 <div class="control has-icons-left">
-                                    {{ form_row(messageForm.nom, {'attr' : { 'class' : 'input','title' : 'Nom', 'placeholder' : 'Mon nom', 'alt' : 'Nom'}
+                                    {{ form_widget(messageForm.nom, {'attr' : { 'class' : 'input','title' : 'Nom', 'placeholder' : 'Mon nom', 'alt' : 'Nom'}
                                     }) }}
                             <span class="icon is-small is-left" style="z-index: 0;">
                                 <i class="fas fa-male"></i>
@@ -17,7 +17,7 @@
             <div class="field">
                 <label class="label has-text-light">Prénom</label>
                 <div class="control has-icons-left">
-                                    {{ form_row(messageForm.prenom, {'attr' : { 'class' : 'input','title' : 'Prénom', 'placeholder' : 'Mon prénom', 'alt' : 'Prénom'}
+                                    {{ form_widget(messageForm.prenom, {'attr' : { 'class' : 'input','title' : 'Prénom', 'placeholder' : 'Mon prénom', 'alt' : 'Prénom'}
                                     }) }}
                     <span class="icon is-small is-left" style="z-index: 0;">
                                 <i class="fas fa-user"></i>
@@ -29,7 +29,7 @@
             <div class="field">
                 <label class="label has-text-light">Email *</label>
                 <div class="control has-icons-left">
-                                    {{ form_row(messageForm.email, {'attr' : { 'class' : 'input','title' : 'Email *', 'placeholder' : 'ex : mon-adresse-mail@gmail.com', 'alt' : 'email'}
+                                    {{ form_widget(messageForm.email, {'attr' : { 'class' : 'input','title' : 'Email *', 'placeholder' : 'ex : mon-adresse-mail@gmail.com', 'alt' : 'email'}
                                     }) }}
                     <span class="icon is-small is-left" style="z-index: 0;">
                                 <i class="fas fa-envelope"></i>
@@ -42,11 +42,11 @@
             <div class="field">
                 <label class="label has-text-light">Objet</label>
                 <div class="control has-icons-left">
-                                    {{ form_row(messageForm.objet, {'attr' : { 'class' : 'input','title' : 'Objet', 'placeholder' : 'Entrer le sujet de votre message', 'alt' : 'objet'}
+                                    {{ form_widget(messageForm.objet, {'attr' : { 'class' : 'input','title' : 'Objet', 'placeholder' : 'Entrer le sujet de votre message', 'alt' : 'objet'}
                                     }) }}
                     <span class="icon is-small is-left" style="z-index: 0;">
-                                <i class="fas fa-hashtag"></i>
-                            </span>
+                        <i class="fas fa-hashtag"></i>
+                    </span>
                 </div>
 
             </div>
@@ -54,7 +54,7 @@
             <div class="field">
                 <label class="label has-text-light">Message *</label>
                 <div class="control">
-                                    {{ form_row(messageForm.text, {'attr' : { 'class' : 'textarea ','title' : 'Message *', 'placeholder' : 'Mon message', 'alt' : 'message'}
+                                    {{ form_widget(messageForm.text, {'attr' : { 'class' : 'textarea ','title' : 'Message *', 'placeholder' : 'Mon message', 'alt' : 'message'}
                                     }) }}
                 </div>
             </div>

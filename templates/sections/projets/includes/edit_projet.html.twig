@@ -19,7 +19,7 @@
                 <div class="field">
                     <label class="label has-text-light">Titre</label>
                     <div class="control">
-                        {{ form_row(projet_form.title, {'attr' : {'class' : 'input', 'placeholder' : 'ex : chris B developper', 'alt' : 'Titre' }
+                        {{ form_widget(projet_form.title, {'attr' : {'class' : 'input', 'placeholder' : 'ex : chris B developper', 'alt' : 'Titre' }
                         }) }}
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                 <div class="field">
                     <label class="label">Année de réalisation</label>
                     <div class="control">
-                        {{ form_row(projet_form.dateReal, {'attr' : {
+                        {{ form_widget(projet_form.dateReal, {'attr' : {
                             'class' : 'input',
                             'placeholder' : 'ex : 2015',
                             'alt' : 'Date de réalisation'
@@ -39,7 +39,7 @@
                 <div class="field">
                     <label class="label">Type de développement</label>
                     <div class="control select" style="width: 100%">
-                        {{ form_row(projet_form.typedev, {placeholder: 'Selectionner ...', 'attr' : {
+                        {{ form_widget(projet_form.typedev, {placeholder: 'Selectionner ...', 'attr' : {
                             'class' : 'select input',
                             'alt' : 'Type de développement'
                         }
@@ -50,7 +50,7 @@
                 <div class="field">
                     <label class="label has-text-light">Texte</label>
                     <div class="control">
-                        {{ form_row(projet_form.text, {'attr' : {
+                        {{ form_widget(projet_form.text, {'attr' : {
                             'class' : 'textarea',
                             'placeholder' : 'Entre le text de la projet',
                             'pattern' : '[0-9]{10}',
@@ -62,7 +62,7 @@
                 <div class="field">
                     <label class="label">Lien url du projet</label>
                     <div class="control">
-                        {{ form_row(projet_form.link, {'attr' : {
+                        {{ form_widget(projet_form.link, {'attr' : {
                             'class' : 'input',
                             'placeholder' : 'ex : https://chrisbdev.com',
                             'alt' : 'url du projet'
@@ -74,27 +74,31 @@
 
                 <div class="field is-grouped is-grouped-multiline">
                 {% for techno in techno %}
-                {% if techno in projet.techno %}
+
                     <div class="control">
                         <div class="tags has-addons">
-                            <a class="tag is-warning" href="{{ path('del_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="retirer le technologie au projet">
+                    {% if techno in projet.techno %}
+                            <a class="tag is-warning" href="{{ path('del_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="retirer le technologie du projet">
                                 #{{ techno.name }}
                             </a>
-                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}"></a>
-                            <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}"></a>
+                    {% else %}
+                        <a class="tag is-light" href="{{ path('add_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="ajouter le technologie au projet">
+                            #{{ techno.name }}
+                        </a>
+                    {% endif %}
+                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}" title="modifier la technologie"></a>
+                            <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}" title="supprimer la technologie"></a>
                         </div>
                     </div>
-                {% else %}
-                    <div class="control">
-                        <div class="tags has-addons">
-                            <a class="tag is-light" href="{{ path('add_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="ajouter le technologie au projet">
-                                #{{ techno.name }}
-                            </a>
-                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}"></a>
-                            <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}"></a>
-                        </div>
-                    </div>
-                {% endif %}
+
+{#                    <div class="control">#}
+{#                        <div class="tags has-addons">#}
+{#                            #}
+{#                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}"></a>#}
+{#                            <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}"></a>#}
+{#                        </div>#}
+{#                    </div>#}
+
                 {% endfor %}
                     <a class="tag icon" href="{{ path('add_techno') }}" style="text-decoration: none" title="Ajouter une technologie">
                         <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
@@ -117,7 +121,7 @@
                     <div class="control">
                         <div class="file has-name is-fullwidth">
                             <label class="file-label">
-                                {{ form_row(projet_form.img, {'attr' : {
+                                {{ form_widget(projet_form.img, {'attr' : {
                                     'class' : 'file-input',
                                     'alt' : 'Uploader une image'} }) }}
                                 <span class="file-cta">
