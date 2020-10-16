@@ -111,8 +111,8 @@
                             {% endfor %}
 
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a class="tag is-overable-green" href="{{ path('add_techno') }}" style="text-decoration: none">
-                                        <i  class="fas f-lg fa-plus-circle has-text-black-bis" title="Ajouter une technologie"></i>
+                                <a class="tag icon" href="{{ path('add_techno') }}" style="text-decoration: none" title="Ajouter une technologie">
+                                    <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                                 </a>
                             {% endif %}
                         </div>

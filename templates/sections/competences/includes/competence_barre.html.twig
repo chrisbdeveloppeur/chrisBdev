@@ -41,14 +41,17 @@
     <script>
         let competence{{ competences.id }} = document.getElementById('competence-{{ competences.id }}');
         let competencePercent{{ competences.id }} = document.getElementById('percent-{{ competences.id }}');
-        {#console.log(competence{{ competences.id }});#}
+
         competence{{ competences.id }}.addEventListener('mouseover', event => {
             competencePercent{{ competences.id }}.style.opacity = '1';
             competencePercent{{ competences.id }}.style.left = '{{ competences.value - 10 }}%';
         });
         competence{{ competences.id }}.addEventListener('mouseleave', event => {
-            competencePercent{{ competences.id }}.style.opacity = '0';
-            competencePercent{{ competences.id }}.style.left = '1%';
+            setTimeout(function () {
+                competencePercent{{ competences.id }}.style.opacity = '0';
+                competencePercent{{ competences.id }}.style.left = '1%';
+            },500);
+
         })
 
     </script>
