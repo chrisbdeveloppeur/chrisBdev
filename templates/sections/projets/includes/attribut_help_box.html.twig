@@ -1,0 +1,28 @@
+<article class="message is-small attribut-help-box" id="attribut-help-{{ attribut.id }}" style="background: rgba(255,255,255,0.8);border-radius: 0">
+    <div class="message-header has-background-primary has-text-light" style="text-shadow: none">
+        <p>{{ attribut.title }}</p>
+        <span class="icon has-text-light">
+            <i class="fas fa-lg fa-info-circle"></i>
+        </span>
+    </div>
+    <div class="message-body" style="text-shadow: none">
+        {{ attribut.text }}
+    </div>
+</article>
+
+
+<script>
+    let attribut{{ attribut.id }} = document.getElementById('attribut-{{ attribut.id }}');
+
+    attribut{{ attribut.id }}.addEventListener('mouseover', function () {
+        let attributHelpBox = document.getElementById('attribut-help-{{ attribut.id }}');
+        attributHelpBox.style.display = 'block';
+    });
+
+    attribut{{ attribut.id }}.addEventListener('mouseleave', function () {
+        let attributHelpBox = document.getElementById('attribut-help-{{ attribut.id }}');
+        attributHelpBox.style.display = 'none';
+    });
+
+</script>
+

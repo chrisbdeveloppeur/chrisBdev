@@ -80,10 +80,21 @@ class Projet
      */
     private $techno;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Attribut::class, mappedBy="projet")
+     */
+    private $attributs;
+
 
     public function __construct()
     {
         $this->techno = new ArrayCollection();
+        $this->attributs = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getTitle();
     }
 
     public function getId(): ?int
@@ -234,6 +245,34 @@ class Projet
     {
         if ($this->techno->contains($techno)) {
             $this->techno->removeElement($techno);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Attribut[]
+     */
+    public function getAttributs(): Collection
+    {
+        return $this->attributs;
+    }
+
+    public function addAttribut(Attribut $attribut): self
+    {
+        if (!$this->attributs->contains($attribut)) {
+            $this->attributs[] = $attribut;
+            $attribut->addProjet($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAttribut(Attribut $attribut): self
+    {
+        if ($this->attributs->contains($attribut)) {
+            $this->attributs->removeElement($attribut);
+            $attribut->removeProjet($this);
         }
 
         return $this;

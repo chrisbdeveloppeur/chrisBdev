@@ -1,7 +1,7 @@
 <div id="modal-{{ projet.id }}" class="modal">
     <div class="modal-background" onclick="closeModal({{ projet.id }})"></div>
 
-    <div class="modal-content-custom">
+    <div class="modal-content-custom" id="modal-content-custom">
 
         {% if is_granted('ROLE_ADMIN') %}
             <div style="display: flex;justify-content: start;">
@@ -73,42 +73,59 @@
                 <div class="column is-half" id="charaProjet1">
                     <div class="columns is-multiline">
 
-                        <div class="column is-half" style="display: flex;align-items: center">
-                            <span class="icon is-medium">
-                                <i class="fas fa fa-check-circle has-text-green-neon"></i>
-                            </span>
-                            <h6 class="subtitle is-5">Interface d'administration</h6>
-                        </div>
-                        <div class="column is-half" style="display: flex;align-items: center">
-                            <span class="icon is-medium">
-                                <i class="fas fa fa-check-circle has-text-green-neon"></i>
-                            </span>
-                            <h6 class="subtitle is-5">Responsive design</h6>
-                        </div>
-                        <div class="column is-half" style="display: flex;align-items: center">
-                            <span class="icon is-medium">
-                                <i class="fas fa fa-check-circle has-text-green-neon"></i>
-                            </span>
-                            <h6 class="subtitle is-5">Référencement naturel</h6>
-                        </div>
-                        <div class="column is-half" style="display: flex;align-items: center">
-                            <span class="icon is-medium">
-                                <i class="fas fa fa-check-circle has-text-green-neon"></i>
-                            </span>
-                            <h6 class="subtitle is-5">Référencement naturel</h6>
-                        </div>
-                        <div class="column is-half" style="display: flex;align-items: center">
-                            <span class="icon is-medium">
-                                <i class="fas fa fa-check-circle has-text-green-neon"></i>
-                            </span>
-                            <h6 class="subtitle is-5">Référencement naturel</h6>
-                        </div>
-                        <div class="column is-half" style="display: flex;align-items: center">
-                            <span class="icon is-medium">
-                                <i class="fas fa fa-check-circle has-text-green-neon"></i>
-                            </span>
-                            <h6 class="subtitle is-5">Référencement naturel</h6>
-                        </div>
+
+
+                            {% for attribut in projet.attributs %}
+
+                                <div id="attribut-{{ attribut.id }}" class="column is-half attribut" style="display: flex;align-items: center;position: relative">
+
+                                    <span class="icon is-medium">
+                                        <i class="fas fa fa-check-circle"></i>
+                                    </span>
+
+                                    <div class="is-size-5 is-family-secondary">
+                                        {{ attribut.title }}
+                                    </div>
+
+                                    {{ include('sections/projets/includes/attribut_help_box.html.twig') }}
+
+                                </div>
+
+                            {% endfor %}
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <div class="column is-half" style="display: flex;align-items: center;justify-content:center;position: relative">
+
+                                    <a class="tag icon" href="{{ path('add_attribut') }}" style="text-decoration: none" title="Ajouter un attribut">
+                                        <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
+                                    </a>
+
+                                </div>
+                            {% endif %}
+
+
+{#                        {% else %}#}
+
+{#                            {% for attribut in projet.attributs %}#}
+
+{#                                <div id="attribut-{{ attribut.id }}" class="column is-half attribut" style="display: flex;align-items: center;position: relative">#}
+
+{#                                    <span class="icon is-medium">#}
+{#                                        <i class="fas fa fa-check-circle"></i>#}
+{#                                    </span>#}
+
+{#                                    <div class="is-size-5 is-family-secondary">#}
+{#                                        {{ attribut.title }}#}
+{#                                    </div>#}
+
+{#                                    {{ include('sections/projets/includes/attribut_help_box.html.twig') }}#}
+
+{#                                </div>#}
+
+{#                            {% endfor %}#}
+
+
+
 
                     </div>
                 </div>
@@ -119,7 +136,11 @@
 
                         <div class="tags">
                             {% for techno in projet.techno %}
-                                <span class="tag is-warning is-overable-green" title="{{ techno.help }}">#{{ techno.name }}</span>
+                                {% if techno.help %}
+                                    <span class="tag is-warning is-overable-green-help" title="{{ techno.help }}">#{{ techno.name }}</span>
+                                {% else %}
+                                    <span class="tag is-warning is-overable-green" title="{{ techno.help }}">#{{ techno.name }}</span>
+                                {% endif %}
                             {% endfor %}
 
                             {% if is_granted('ROLE_ADMIN') %}

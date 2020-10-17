@@ -7,12 +7,6 @@
     {% if is_granted('ROLE_ADMIN') %}
         <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative;padding: 2rem">
 
-{#            <span class="icon is-medium" style="position: absolute;top: .5rem;left: .5rem;">#}
-{#                <a class="button is-small is-green-custom" type="submit" href="{{ path('home') }}#projets" title="Revenir à l'accueil">#}
-{#                    <span style="text-decoration: none" class="fas fa-lg fa-arrow-left has-text-dark"></span>#}
-{#                </a>#}
-{#            </span>#}
-
             <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
                 Modifier le projet :
             </h1>
@@ -92,7 +86,37 @@
                 </div>
 
 
+                <label class="label">Liste des attributs</label>
                 <div class="field is-grouped is-grouped-multiline">
+
+                    {% for attribut in attribut %}
+
+                        <div class="control">
+                            <div class="tags has-addons">
+                                {% if attribut in projet.attributs %}
+                                    <a class="tag is-warning" href="{{ path('del_attribut_to_projet', {'id': projet.id, 'idattribut': attribut.id}) }}" title="retirer l'attribut du projet">
+                                        {{ attribut.title }}
+                                    </a>
+                                {% else %}
+                                    <a class="tag is-light" href="{{ path('add_attribut_to_projet', {'id': projet.id, 'idattribut': attribut.id}) }}" title="ajouter l'attribut au projet">
+                                        {{ attribut.title }}
+                                    </a>
+                                {% endif %}
+                                <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_attribut', {'id': attribut.id}) }}" title="modifier l'attribut"></a>
+                                <a class="tag is-delete" href="{{ path('del_attribut', {'id': attribut.id}) }}" title="supprimer l'attribut"></a>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                    <a class="tag icon" href="{{ path('add_attribut') }}" style="text-decoration: none" title="Ajouter un attribut">
+                        <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
+                    </a>
+                </div>
+
+
+                <label class="label">Liste des technologies</label>
+                <div class="field is-grouped is-grouped-multiline">
+
                 {% for techno in techno %}
 
                     <div class="control">

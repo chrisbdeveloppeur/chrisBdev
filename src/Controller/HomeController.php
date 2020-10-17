@@ -6,6 +6,7 @@ use App\Entity\Admin;
 use App\Form\MessageType;
 use App\Form\TechnoType;
 use App\Repository\AdminRepository;
+use App\Repository\AttributRepository;
 use App\Repository\CompRepository;
 use App\Repository\PresentationRepository;
 use App\Repository\ProjetRepository;
@@ -19,7 +20,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home(CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository)
+    public function home(CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository)
     {
         $evenAdmin = $adminRepository->findAll();
 
@@ -40,11 +41,13 @@ class HomeController extends AbstractController
         $presentations = $presentationRepository->findAll();
         $projets = $projetRepository->findAll();
         $techno = $technoRepository->findAll();
+        $attribut = $attributRepository->findAll();
         return $this->render('home/index.html.twig', [
             'competences' => $competences,
             'presentations' => $presentations,
             'projets' => $projets,
             'techno' => $techno,
+            'attribut' => $attribut,
         ]);
     }
 

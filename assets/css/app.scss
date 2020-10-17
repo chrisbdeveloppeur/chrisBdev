@@ -157,6 +157,16 @@ section{
 div.container h2{
    text-shadow: 1px 2px 2px black;
 }
+.attribut:hover{
+    color: white !important;
+    text-shadow: 0 0 10px rgb(126, 137, 1) !important;
+    cursor: context-menu;
+}
+.attribut-help-box{
+    display: none;
+    position: absolute;
+    bottom: 100%;
+}
 
 
 
@@ -264,6 +274,10 @@ div.container h2{
 .is-overable-green:hover{
     background-color: $primary !important;
     color: white !important;
+}
+.is-overable-green-help:hover{
+    background-color: $primary !important;
+    color: white !important;
     cursor: help;
     text-decoration: underline dotted ;
 }
@@ -300,6 +314,7 @@ background: $primary
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b8b3d', endColorstr='#5fe37a',GradientType=0 );
     border: none !important;
     transition: .2s;
+    border-radius: 0 !important;
 }
 .is-green-custom:hover{
     border: none !important;

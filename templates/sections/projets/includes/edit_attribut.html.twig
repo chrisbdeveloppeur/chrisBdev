@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Chris B Dev - Modifier une technologie{% endblock %}
+{% block title %}Chris B Dev - Modifier un attribut{% endblock %}
 
 {% block body %}
 
@@ -8,9 +8,9 @@
         <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative; padding: 2rem">
 
             <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
-                Modificer la technologie
+                Modificer la attribut
             </h1>
-            <h2 class="subtitle has-text-black-bis is-family-primary is-4">" {{ techno.name }} "</h2>
+            <h2 class="subtitle has-text-black-bis is-family-primary is-4">" {{ attribut.title }} "</h2>
 
             <div class="box column is-two-fifths is-full-touch has-background-black-bis" style="align-self: center">
 
@@ -23,20 +23,20 @@
                     </span>
 
                     <span class="icon is-medium">
-                        <a style="text-decoration: none" href="{{ path('del_techno', {'id': techno.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la technologie"></a>
+                        <a style="text-decoration: none" href="{{ path('del_attribut', {'id': attribut.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer l'attribut"></a>
                     </span>
 
                 </div>
 
-                {{ form_start(techno_form) }}
+                {{ form_start(attribut_form) }}
 
                 <div class="field">
-                    <label class="label">Nom de la technologie</label>
+                    <label class="label">Titre de l'attribut</label>
                     <div class="control">
-                        {{ form_row(techno_form.name, {'attr' : {
+                        {{ form_row(attribut_form.title, {'attr' : {
                             'class' : 'input',
                             'placeholder' : 'ex : HTML',
-                            'alt' : 'nom de la technologie'
+                            'alt' : 'nom de la attribut'
                         }
                         }) }}
                     </div>
@@ -45,7 +45,7 @@
                 <div class="field">
                     <label class="label">Info bulle</label>
                     <div class="control">
-                        {{ form_row(techno_form.help, {'attr' : {
+                        {{ form_row(attribut_form.text, {'attr' : {
                             'class' : 'input',
                             'placeholder' : 'ex : Hypertext Markup Language',
                             'alt' : 'info bulle'
@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                {{ form_end(techno_form) }}
+                {{ form_end(attribut_form) }}
 
             </div>
 

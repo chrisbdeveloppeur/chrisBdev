@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ProjetType;
+use App\Repository\AttributRepository;
 use App\Repository\ProjetRepository;
 use App\Repository\TechnoRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -41,9 +42,10 @@ class ProjetController extends AbstractController
      * @Route("/modifier-projet-{id}", name="edit_projet")
      * @IsGranted("ROLE_ADMIN")
      */
-    public function edit_projet(Request $request, ProjetRepository $projetRepository, $id, TechnoRepository $technoRepository)
+    public function edit_projet(Request $request, ProjetRepository $projetRepository, $id, TechnoRepository $technoRepository, AttributRepository $attributRepository)
     {
         $techno = $technoRepository->findAll();
+        $attribut = $attributRepository->findAll();
         $projet = $projetRepository->find($id);
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
@@ -60,6 +62,7 @@ class ProjetController extends AbstractController
 
         }
         return $this->render('sections/projets/includes/edit_projet.html.twig',[
+            'attribut' => $attribut,
             'techno' => $techno,
             'projet' => $projet,
             'projet_form' => $form->createView()
@@ -132,4 +135,42 @@ class ProjetController extends AbstractController
             'id' => $projet->getId(),
         ]);
     }
+
+
+
+
+    /**
+     * @Route("/ajouter-attribut-{idattribut}-au-projet-{id}", name="add_attribut_to_projet")
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function add_attribut_to_project(ProjetRepository $projetRepository, $id, $idattribut, AttributRepository $attributRepository)
+    {
+        $projet = $projetRepository->find($id);
+        $attribut = $attributRepository->find($idattribut);
+        $entityManager = $this->getDoctrine()->getManager();
+        $projet->addAttribut($attribut);
+        $entityManager->flush();
+        return $this->redirectToRoute('edit_projet',[
+            'projet' => $projet,
+            'id' => $projet->getId(),
+        ]);
+    }
+
+    /**
+     * @Route("/retirer-attribut-{idattribut}-au-projet-{id}", name="del_attribut_to_projet")
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function del_attribut_to_project(ProjetRepository $projetRepository, $id, $idattribut, AttributRepository $attributRepository)
+    {
+        $projet = $projetRepository->find($id);
+        $attribut = $attributRepository->find($idattribut);
+        $entityManager = $this->getDoctrine()->getManager();
+        $projet->removeAttribut($attribut);
+        $entityManager->flush();
+        return $this->redirectToRoute('edit_projet',[
+            'projet' => $projet,
+            'id' => $projet->getId(),
+        ]);
+    }
+
 }
