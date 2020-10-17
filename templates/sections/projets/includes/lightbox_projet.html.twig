@@ -71,9 +71,7 @@
             <div class="columns is-multiline" style="padding: .75rem;margin: 0">
 
                 <div class="column is-half" id="charaProjet1">
-                    <div class="columns is-multiline">
-
-
+                    <div class="field is-grouped is-grouped-multiline">
 
                             {% for attribut in projet.attributs %}
 
@@ -86,6 +84,16 @@
                                     <div class="is-size-5 is-family-secondary">
                                         {{ attribut.title }}
                                     </div>
+
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                    <div style="margin: 0 1rem">
+                                        <a class="fas fa-edit has-text-warning" href="{{ path('edit_attribut', {'id': attribut.id}) }}" title="modifier l'attribut" style="text-shadow: none"></a>
+                                        <span class="icon is-small">
+                                            <a style="text-decoration: none;text-shadow: none" href="{{ path('del_attribut', {'id': attribut.id}) }}" class="fas fa-times-circle has-text-danger" title="supprimer l'attribut"></a>
+                                        </span>
+                                    </div>
+                                    {% endif %}
+
 
                                     {{ include('sections/projets/includes/attribut_help_box.html.twig') }}
 
@@ -103,30 +111,6 @@
                                 </div>
                             {% endif %}
 
-
-{#                        {% else %}#}
-
-{#                            {% for attribut in projet.attributs %}#}
-
-{#                                <div id="attribut-{{ attribut.id }}" class="column is-half attribut" style="display: flex;align-items: center;position: relative">#}
-
-{#                                    <span class="icon is-medium">#}
-{#                                        <i class="fas fa fa-check-circle"></i>#}
-{#                                    </span>#}
-
-{#                                    <div class="is-size-5 is-family-secondary">#}
-{#                                        {{ attribut.title }}#}
-{#                                    </div>#}
-
-{#                                    {{ include('sections/projets/includes/attribut_help_box.html.twig') }}#}
-
-{#                                </div>#}
-
-{#                            {% endfor %}#}
-
-
-
-
                     </div>
                 </div>
 
@@ -134,13 +118,22 @@
                 <div class="column is-half" id="charaProjet2">
                     <div class="column">
 
-                        <div class="tags">
+                        <div class="field is-grouped is-grouped-multiline">
                             {% for techno in projet.techno %}
-                                {% if techno.help %}
-                                    <span class="tag is-warning is-overable-green-help" title="{{ techno.help }}">#{{ techno.name }}</span>
-                                {% else %}
-                                    <span class="tag is-warning is-overable-green" title="{{ techno.help }}">#{{ techno.name }}</span>
-                                {% endif %}
+                                <div class="control">
+                                    <div class="tags has-addons">
+                                        {% if techno.help %}
+                                            <span class="tag is-warning is-overable-green-help" title="{{ techno.help }}">#{{ techno.name }}</span>
+                                        {% else %}
+                                            <span class="tag is-warning is-overable-green" title="{{ techno.help }}">#{{ techno.name }}</span>
+                                        {% endif %}
+
+                                        {% if is_granted('ROLE_ADMIN') %}
+                                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}" title="modifier la technologie"></a>
+                                            <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}" title="supprimer la technologie"></a>
+                                        {% endif %}
+                                    </div>
+                                </div>
                             {% endfor %}
 
                             {% if is_granted('ROLE_ADMIN') %}
@@ -148,6 +141,14 @@
                                     <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                                 </a>
                             {% endif %}
+
+                        </div>
+
+
+
+
+
+
                         </div>
 
                     </div>
@@ -161,9 +162,11 @@
         </div>
         {% endif %}
 
-    </div>
     <button class="modal-close is-large" aria-label="close" onclick="closeModal({{ projet.id }})"></button>
+
 </div>
+
+
 
 <script>
     function openModal(id) {
