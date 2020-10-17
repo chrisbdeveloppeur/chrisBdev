@@ -5,15 +5,22 @@
 {% block body %}
 
     {% if is_granted('ROLE_ADMIN') %}
-        <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative">
+        <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative;padding: 2rem">
 
             <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
                 Modifier le projet :
             </h1>
-            <h2 class="subtitle has-text-black-bis">" {{ projet.title }} "</h2>
+            <h2 class="subtitle has-text-black-bis is-family-primary is-4">" {{ projet.title }} "</h2>
 
 
             <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
+
+                <div class="column half-touch has-text-centered is-flex" style="justify-content: end">
+                                <span class="icon is-medium">
+                                    <a style="text-decoration: none" href="{{ path('del_projet', {'id': projet.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer le projet"></a>
+                                </span>
+                </div>
+
                 {{ form_start(projet_form) }}
 
                 <div class="field">
@@ -91,14 +98,6 @@
                         </div>
                     </div>
 
-{#                    <div class="control">#}
-{#                        <div class="tags has-addons">#}
-{#                            #}
-{#                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}"></a>#}
-{#                            <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}"></a>#}
-{#                        </div>#}
-{#                    </div>#}
-
                 {% endfor %}
                     <a class="tag icon" href="{{ path('add_techno') }}" style="text-decoration: none" title="Ajouter une technologie">
                         <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
@@ -145,16 +144,13 @@
 
                 </div>
 
-                <div class="field is-centered">
-                    <div class="is-half has-text-centered">
-                        <button type="submit" style="width: 100%;" class="button is-info">Valider les modifications</button>
+                <div class="field is-grouped is-flex" title="Submit" style="justify-content: center">
+                    <div class="control">
+                        <button class="button is-green-custom" type="submit">Valider les modifications</button>
                     </div>
                 </div>
 
-
                 {{ form_end(projet_form) }}
-
-                <a style="text-decoration: none" href="{{ path('del_projet', {'id': projet.id}) }}" class="button is-danger is-fullwidth" title="supprimer le projet">supprimer</a>
 
             </div>
 

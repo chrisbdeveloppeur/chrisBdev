@@ -5,15 +5,22 @@
 {% block body %}
 
     {% if is_granted('ROLE_ADMIN') %}
-        <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative">
+        <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative;padding: 2rem;">
 
             <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
                 Modifier la présentation :
             </h1>
-            <h2 class="subtitle has-text-black-bis">" {{ presentation.title }} "</h2>
+            <h2 class="subtitle has-text-black-bis is-family-primary is-4">" {{ presentation.title }} "</h2>
 
 
             <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
+
+                <div class="column half-touch has-text-centered is-flex" style="justify-content: end">
+                                <span class="icon is-medium">
+                                    <a style="text-decoration: none" href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la présentation"></a>
+                                </span>
+                </div>
+
                 {{ form_start(presentation_form) }}
 
                 <div class="field">
@@ -91,16 +98,14 @@
 
                 </div>
 
-                <div class="field is-centered">
-                    <div class="is-half has-text-centered">
-                        <button type="submit" style="width: 100%;" class="button is-info">Valider les modifications</button>
+                <div class="field is-grouped is-flex" title="Submit" style="justify-content: center">
+                    <div class="control">
+                        <button class="button is-green-custom" type="submit">Valider les modifications</button>
                     </div>
                 </div>
 
 
                 {{ form_end(presentation_form) }}
-
-                <a style="text-decoration: none" href="{{ path('del_presentation', {'id': presentation.id}) }}" class="button is-danger is-fullwidth" title="supprimer la présentation">supprimer</a>
 
             </div>
 

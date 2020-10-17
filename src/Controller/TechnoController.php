@@ -58,7 +58,7 @@ class TechnoController extends AbstractController
     }
 
     /**
-     * @Route("/retirer-techno-{id}", name="del_techno")
+     * @Route("/supprimer-techno-{id}", name="del_techno")
      */
     public function del_techno(TechnoRepository $technoRepository, $id)
     {

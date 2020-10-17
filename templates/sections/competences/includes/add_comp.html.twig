@@ -5,7 +5,7 @@
 {% block body %}
 
     {% if is_granted('ROLE_ADMIN') %}
-    <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative">
+    <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative; padding: 2rem">
 
         <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
             Ajouter une compétence
@@ -15,11 +15,22 @@
             {{ form_start(comp_form) }}
 
             <div class="field">
-                <label class="label">Compétence</label>
-                <div class="control">
-                    {{ form_row(comp_form.name, {'attr' : {'class' : 'input', 'placeholder' : 'ex : HTML', 'alt' : 'Compétence' }
-                    }) }}
+
+                <label class="label">Titre de la compétence</label>
+
+                <div class="control" style="display: flex;align-items: center;justify-content: space-between">
+
+                    <div class="select is-fullwidth">
+                        {{ form_widget(comp_form.name, {'attr' : {'placeholder' : 'ex : HTML', 'alt' : 'Compétence' }
+                        }) }}
+                    </div>
+
+                    <a class="tag icon is-medium" href="{{ path('add_techno') }}" style="text-decoration: none;margin-left: .75rem" title="Ajouter une technologie">
+                        <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
+                    </a>
+
                 </div>
+
             </div>
 
             <div class="field">
@@ -38,8 +49,10 @@
                 </div>
             </div>
 
-            <div class="column is-centered">
-                <button type="submit" style="width: 100%;" class="button is-info">Valider</button>
+            <div class="field is-grouped is-flex" title="Submit" style="justify-content: center">
+                <div class="control">
+                    <button class="button is-green-custom" type="submit">Ajouter la compétence</button>
+                </div>
             </div>
 
             {{ form_end(comp_form) }}

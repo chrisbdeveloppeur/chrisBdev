@@ -10,23 +10,32 @@
         <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
             Modifier la compétence
         </h1>
-        <h3 class="subtitle is-4 has-text-black-bis">"{{ competence.name }}"</h3>
+        <h2 class="subtitle has-text-black-bis is-family-primary is-4">"{{ competence.name }}"</h2>
 
         <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
+
+            <div class="column half-touch has-text-centered is-flex" style="justify-content: end">
+                                <span class="icon is-medium">
+                                    <a style="text-decoration: none" href="{{ path('del_comp', {'id': competence.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la compétence"></a>
+                                </span>
+            </div>
+
             {{ form_start(comp_form) }}
 
             <div class="field">
+
                 <label class="label">Titre de la compétence</label>
+
                 <div class="control" style="display: flex;align-items: center;justify-content: space-between">
+
                     <div class="select is-fullwidth">
                         {{ form_widget(comp_form.name, {'attr' : {'placeholder' : 'ex : HTML', 'alt' : 'Compétence' }
                         }) }}
                     </div>
-{#                    <div class="is-half">#}
-                        <a class="tag icon is-medium" href="{{ path('add_techno') }}" style="text-decoration: none;margin-left: .75rem" title="Ajouter une technologie">
-                            <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
-                        </a>
-{#                    </div>#}
+
+                    <a class="tag icon is-medium" href="{{ path('add_techno') }}" style="text-decoration: none;margin-left: .75rem" title="Ajouter une technologie">
+                        <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
+                    </a>
 
                 </div>
 
@@ -50,8 +59,10 @@
                 </div>
             </div>
 
-            <div class="column is-centered">
-                <button type="submit" style="width: 100%;" class="button is-info">Valider</button>
+            <div class="field is-grouped is-flex" title="Submit" style="justify-content: center">
+                <div class="control">
+                    <button class="button is-green-custom" type="submit">Valider les modifications</button>
+                </div>
             </div>
 
             {{ form_end(comp_form) }}
