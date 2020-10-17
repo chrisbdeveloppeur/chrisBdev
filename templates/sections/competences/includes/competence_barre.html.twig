@@ -7,9 +7,9 @@
             </div>
 
             <div class="column is-8 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <span  id="percent-{{ competences.id }}" class="is-family-secondary has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
-                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="is-family-secondary has-text-centered has-text-dark is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
-                <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+                <span  id="percent-{{ competences.id }}" class="has-text-centered has-text-dark is-size-5 percent is-hidden-touch" >{{ competences.value }}%</span>
+                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="has-text-centered has-text-dark is-size-5 is-hidden-desktop" >{{ competences.value }}%</span>
+                <progress class="progress is-medium is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
 
             <div class="column is-fullwidth is-one-fifth-desktop" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
@@ -30,9 +30,9 @@
             </div>
 
             <div class="column is-10 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <span  id="percent-{{ competences.id }}" class="is-family-secondary has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>
-                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="is-family-secondary has-text-centered has-text-dark is-size-4 is-hidden-desktop" >{{ competences.value }}%</span>
-                <progress class="progress is-large is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+                <span  id="percent-{{ competences.id }}" class="has-text-centered has-text-dark is-size-5 percent is-hidden-touch" >{{ competences.value }}%</span>
+                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="has-text-centered has-text-dark is-size-5 is-hidden-desktop" >{{ competences.value }}%</span>
+                <progress class="progress is-medium is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
             </div>
         {% endif %}
 
