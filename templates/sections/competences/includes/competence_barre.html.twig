@@ -25,9 +25,9 @@
             </div>
 
         {% else %}
-        <div class="column is-fullwidth has-background-black-bis has-text-primary" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
-            <h4 class="is-family-primary half-touch has-text-centered is-{{ competences.color }}">{{ competences.name }}</h4>
-        </div>
+            <div class="column is-fullwidth has-background-black-bis has-text-primary" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
+                <h4 class="is-family-primary half-touch has-text-centered is-{{ competences.color }}">{{ competences.name }}</h4>
+            </div>
 
             <div class="column is-10 is-full-touch" style="display: flex;align-items: center;position: relative;">
                 <span  id="percent-{{ competences.id }}" class="is-family-secondary has-text-centered has-text-dark is-size-4 percent is-hidden-touch" >{{ competences.value }}%</span>

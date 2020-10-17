@@ -56,7 +56,7 @@ class CompetenceController extends AbstractController
         }
         return $this->render('sections/competences/includes/edit_comp.html.twig',[
             'comp_form' => $form->createView(),
-            'techno' => $techno
+            'techno' => $techno,
         ]);
     }
 

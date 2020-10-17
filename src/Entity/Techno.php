@@ -34,9 +34,11 @@ class Techno
      */
     private $projets;
 
+
     public function __construct()
     {
         $this->projets = new ArrayCollection();
+        $this->comps = new ArrayCollection();
     }
 
     public function __toString()
@@ -100,5 +102,7 @@ class Techno
 
         return $this;
     }
+
+
 
 }

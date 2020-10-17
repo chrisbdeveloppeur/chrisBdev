@@ -13,21 +13,19 @@
 
     <div style="display: flex;justify-content: center">
         <div class="column is-three-fifths-desktop">
+
             {% for competences in competences %}
                 {{ include('sections/competences/includes/competence_barre.html.twig') }}
             {% endfor %}
+
+            {% if is_granted('ROLE_ADMIN') %}
+
+                    {{ include('sections/competences/includes/competence_barre_shadow.html.twig') }}
+
+            {% endif %}
         </div>
+
+
     </div>
-
-
-
-        {% if is_granted('ROLE_ADMIN') %}
-        <div class="column has-text-centered">
-            <span class="icon is-large">
-                <a href="{{ path('add_comp') }}" class="fas fa-3x fa-plus-circle has-text-info" title="Ajouter une compétence"></a>
-            </span>
-        </div>
-        {% endif %}
-
-
+    
 </section>

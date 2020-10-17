@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CompRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,13 @@ class Comp
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $color;
+
+
+    public function __construct()
+    {
+        $this->Techno = new ArrayCollection();
+    }
+
 
     /**
      * @return mixed
