@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\CompType;
 use App\Repository\CompRepository;
+use App\Repository\TechnoRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,8 +40,9 @@ class CompetenceController extends AbstractController
      * @Route("modifier-competence-{id}", name="edit_comp")
      * @IsGranted("ROLE_ADMIN")
      */
-    public function edit_competence(Request $request, CompRepository $compRepository, $id)
+    public function edit_competence(Request $request, CompRepository $compRepository, $id, TechnoRepository $technoRepository)
     {
+        $techno = $technoRepository->findAll();
         $competence = $compRepository->find($id);
         $form = $this->createForm(CompType::class, $competence);
         $form->handleRequest($request);
@@ -53,7 +55,8 @@ class CompetenceController extends AbstractController
             return $this->redirect('\#competences');
         }
         return $this->render('sections/competences/includes/edit_comp.html.twig',[
-            'comp_form' => $form->createView()
+            'comp_form' => $form->createView(),
+            'techno' => $techno
         ]);
     }
 

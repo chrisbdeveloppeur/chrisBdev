@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Comp;
+use App\Entity\Techno;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -16,8 +18,11 @@ class CompType extends AbstractType
     {
         $builder
             ->add('name',
-                TextType::class,
-                array('label' => false)
+                EntityType::class, [
+                    'label' => false,
+                    'required' => false,
+                    'class' => Techno::class,
+                ]
             )
 
             ->add('value',

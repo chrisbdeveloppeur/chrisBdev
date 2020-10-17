@@ -16,10 +16,19 @@
 
             <div class="field">
                 <label class="label">Compétence</label>
-                <div class="control">
-                    {{ form_row(comp_form.name, {'attr' : {'class' : 'input', 'placeholder' : 'ex : HTML', 'alt' : 'Compétence' }
-                    }) }}
+                <div class="control" style="display: flex;align-items: center;justify-content: space-between">
+                    <div class="select is-fullwidth">
+                        {{ form_widget(comp_form.name, {'attr' : {'placeholder' : 'ex : HTML', 'alt' : 'Compétence' }
+                        }) }}
+                    </div>
+{#                    <div class="is-half">#}
+                        <a class="tag icon is-medium" href="{{ path('add_techno') }}" style="text-decoration: none;margin-left: .75rem" title="Ajouter une technologie">
+                            <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
+                        </a>
+{#                    </div>#}
+
                 </div>
+
             </div>
 
             <div class="field">
