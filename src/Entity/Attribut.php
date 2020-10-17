@@ -6,6 +6,7 @@ use App\Repository\AttributRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AttributRepository::class)
@@ -24,15 +25,20 @@ class Attribut
      */
     private $title;
 
-    /**
-     * @ORM\Column(type="text", length=255, nullable=true)
-     */
-    private $text;
+
 
     /**
      * @ORM\ManyToMany(targetEntity=Projet::class, inversedBy="attributs")
      */
     private $projet;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     * @Assert\Length(
+     *     max="500",
+     *     maxMessage="500 charactères maximum autorisé")
+     */
+    private $text;
 
     public function __construct()
     {
@@ -93,4 +99,6 @@ class Attribut
 
         return $this;
     }
+
+
 }

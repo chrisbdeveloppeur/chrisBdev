@@ -160,12 +160,12 @@ div.container h2{
 .attribut:hover{
     color: white !important;
     text-shadow: 0 0 10px rgb(126, 137, 1) !important;
-    cursor: context-menu;
+    cursor: help;
 }
 .attribut-help-box{
     display: none;
     position: absolute;
-    bottom: 100%;
+    bottom: 50%;
 }
 
 

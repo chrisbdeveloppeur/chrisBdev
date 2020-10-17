@@ -13,7 +13,7 @@ class AttributController extends AbstractController
     /**
      * @Route("/ajouter-attribut", name="add_attribut")
      */
-    public function add_attribut(Request $request, AttributRepository $attributRepository)
+    public function add_attribut(Request $request)
     {
         $attributform = $this->createForm(AttributType::class);
         $attributform->handleRequest($request);
@@ -25,7 +25,7 @@ class AttributController extends AbstractController
 
             $this->addFlash('success', 'L\'attribut "' . $attribut->getTitle() . '" a bien été ajoutée');
 
-            return $this->redirect('\#presentation');
+            return $this->redirect('\#projets');
         }
         return $this->render('sections/projets/includes/add_attribut.html.twig', [
             'attribut_form' => $attributform->createView(),
@@ -59,7 +59,7 @@ class AttributController extends AbstractController
     /**
      * @Route("/supprimer-attribut-{id}", name="del_attribut")
      */
-    public function del_attribut(AttributRepository $attributRepository, $id)
+    public function del_attribut(AttributRepository $attributRepository, $id, Request $request)
     {
         $attribut = $attributRepository->find($id);
         $entityManager = $this->getDoctrine()->getManager();
@@ -68,6 +68,6 @@ class AttributController extends AbstractController
 
         $this->addFlash('danger', 'L\'attribut "' . $attribut->getTitle() . '" a bien été supprimée');
 
-        return $this->redirect('\#projets');
+        return $this->redirect($request->server->get('HTTP_REFERER'));
     }
 }

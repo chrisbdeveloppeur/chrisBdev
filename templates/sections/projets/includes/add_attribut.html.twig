@@ -30,8 +30,8 @@
                     <div class="control">
                         {{ form_row(attribut_form.title, {'attr' : {
                             'class' : 'input',
-                            'placeholder' : 'ex : HTML',
-                            'alt' : 'nom de la attributlogie'
+                            'placeholder' : 'ex : Responsive Design',
+                            'alt' : 'nom de l\'attributlogie'
                         }
                         }) }}
                     </div>
@@ -41,7 +41,7 @@
                     <label class="label">Info bulle</label>
                     <div class="control">
                         {{ form_row(attribut_form.text, {'attr' : {
-                            'class' : 'input',
+                            'class' : 'textarea',
                             'placeholder' : 'ex : Hypertext Markup Language',
                             'alt' : 'info bulle'
                         }
@@ -61,11 +61,6 @@
 
                 {{ form_end(attribut_form) }}
             </div>
-
-            <a href="{{ path('home') }}#projets" class="button is-danger">
-                Retour
-            </a>
-
 
         </section>
     {% endif %}

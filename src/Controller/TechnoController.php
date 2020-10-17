@@ -60,7 +60,7 @@ class TechnoController extends AbstractController
     /**
      * @Route("/supprimer-techno-{id}", name="del_techno")
      */
-    public function del_techno(TechnoRepository $technoRepository, $id)
+    public function del_techno(TechnoRepository $technoRepository, $id, Request $request)
     {
         $techno = $technoRepository->find($id);
         $entityManager = $this->getDoctrine()->getManager();
@@ -69,6 +69,6 @@ class TechnoController extends AbstractController
 
         $this->addFlash('danger', 'La technologie "' . $techno->getName() . '" a bien été supprimée');
 
-        return $this->redirect('\#projets');
+        return $this->redirect($request->server->get('HTTP_REFERER'));
     }
 }

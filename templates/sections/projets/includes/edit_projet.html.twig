@@ -98,7 +98,7 @@
                                         {{ attribut.title }}
                                     </a>
                                 {% else %}
-                                    <a class="tag is-light" href="{{ path('add_attribut_to_projet', {'id': projet.id, 'idattribut': attribut.id}) }}" title="ajouter l'attribut au projet">
+                                    <a class="tag is-light" href="{{ path('add_attribut_to_projet', {'id': projet.id, 'idattribut': attribut.id }) }}" title="ajouter l'attribut au projet">
                                         {{ attribut.title }}
                                     </a>
                                 {% endif %}
