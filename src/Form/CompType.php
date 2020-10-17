@@ -25,13 +25,13 @@ class CompType extends AbstractType
                 ]
             )
 
-
             ->add('value',
                 NumberType::class,
                     array('label' => false,
                         'required' => false
                     )
             )
+
             ->add('color',
                ChoiceType::class,[
                     'choices' => [

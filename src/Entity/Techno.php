@@ -35,6 +35,7 @@ class Techno
     private $projets;
 
 
+
     public function __construct()
     {
         $this->projets = new ArrayCollection();
@@ -102,6 +103,8 @@ class Techno
 
         return $this;
     }
+
+
 
 
 

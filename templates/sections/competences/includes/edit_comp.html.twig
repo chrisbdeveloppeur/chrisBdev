@@ -5,17 +5,18 @@
 {% block body %}
 
     {% if is_granted('ROLE_ADMIN') %}
-    <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: space-evenly;align-items: center;position: relative">
+    <section class="has-text-centered hero is-bold is-fullheight is-primary" style="justify-content: center;align-items: center;position: relative">
 
         <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
             Modifier la compétence
         </h1>
+        <h3 class="subtitle is-4 has-text-black-bis">"{{ competence.name }}"</h3>
 
         <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
             {{ form_start(comp_form) }}
 
             <div class="field">
-                <label class="label">Compétence</label>
+                <label class="label">Titre de la compétence</label>
                 <div class="control" style="display: flex;align-items: center;justify-content: space-between">
                     <div class="select is-fullwidth">
                         {{ form_widget(comp_form.name, {'attr' : {'placeholder' : 'ex : HTML', 'alt' : 'Compétence' }
@@ -32,9 +33,9 @@
             </div>
 
             <div class="field">
-                <label class="label">Valeur</label>
+                <label class="label">Valeur en %</label>
                 <div class="control">
-                    {{ form_row(comp_form.value, {'attr' : {'class' : 'input', 'placeholder' : 'ex : 80', 'alt' : 'Valeur' }
+                    {{ form_widget(comp_form.value, {'attr' : {'class' : 'input', 'placeholder' : 'ex : 80', 'alt' : 'Valeur' }
                     }) }}
                 </div>
             </div>
@@ -42,8 +43,10 @@
             <div class="field">
                 <label class="label">Couleur</label>
                 <div class="control">
-                    {{ form_row(comp_form.color, {'attr' : {'class' : 'input', 'placeholder' : 'ex : blue', 'pattern' : '[0-9]{10}', 'alt' : 'Couleur' }
-                    }) }}
+                    <div class="select is-fullwidth">
+                        {{ form_widget(comp_form.color, {'attr' : {'class' : 'input', 'placeholder' : 'ex : blue', 'pattern' : '[0-9]{10}', 'alt' : 'Couleur' }
+                        }) }}
+                    </div>
                 </div>
             </div>
 

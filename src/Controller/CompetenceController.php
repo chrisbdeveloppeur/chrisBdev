@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Techno;
 use App\Form\CompType;
 use App\Repository\CompRepository;
 use App\Repository\TechnoRepository;
@@ -44,6 +45,7 @@ class CompetenceController extends AbstractController
     {
         $techno = $technoRepository->findAll();
         $competence = $compRepository->find($id);
+
         $form = $this->createForm(CompType::class, $competence);
         $form->handleRequest($request);
 
@@ -56,6 +58,7 @@ class CompetenceController extends AbstractController
         }
         return $this->render('sections/competences/includes/edit_comp.html.twig',[
             'comp_form' => $form->createView(),
+            'competence' => $competence,
             'techno' => $techno,
         ]);
     }
