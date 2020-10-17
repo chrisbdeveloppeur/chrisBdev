@@ -12,12 +12,20 @@
             </h1>
             <h2 class="subtitle has-text-black-bis is-family-primary is-4">" {{ techno.name }} "</h2>
 
-            <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
+            <div class="box column is-two-fifths is-full-touch has-background-black-bis" style="align-self: center">
 
-                <div class="column half-touch has-text-centered is-flex" style="justify-content: end">
-                                <span class="icon is-medium">
-                                    <a style="text-decoration: none" href="{{ path('del_techno', {'id': techno.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la technologie"></a>
-                                </span>
+                <div class="column half-touch has-text-centered is-flex" style="justify-content: space-between">
+
+                    <span class="icon is-medium">
+                        <a class="button is-small is-green-custom" type="submit" href="{{ path('home') }}" title="Revenir à l'accueil">
+                            <span style="text-decoration: none" class="fas fa-lg fa-arrow-left has-text-dark"></span>
+                        </a>
+                    </span>
+
+                    <span class="icon is-medium">
+                        <a style="text-decoration: none" href="{{ path('del_techno', {'id': techno.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la technologie"></a>
+                    </span>
+
                 </div>
 
                 {{ form_start(techno_form) }}
@@ -58,7 +66,7 @@
             {{ form_end(techno_form) }}
             </div>
 
-            <a href="{{ path('home') }}#projets" class="button is-danger">
+            <a href="{{ path('home') }}#projets" class="button is-warning">
                 Retour
             </a>
 

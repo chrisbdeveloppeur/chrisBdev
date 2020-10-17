@@ -11,7 +11,18 @@
                 Ajouter une technologie
             </h1>
 
-            <div class="box column is-two-fifths is-four-fifths-touch has-background-black-bis" style="align-self: center">
+            <div class="box column is-two-fifths is-full-touch has-background-black-bis" style="align-self: center">
+
+                <div class="column half-touch has-text-centered is-flex">
+
+                    <span class="icon is-medium">
+                        <a class="button is-small is-green-custom" type="submit" href="{{ path('home') }}" title="Revenir à l'accueil">
+                            <span style="text-decoration: none" class="fas fa-lg fa-arrow-left has-text-dark"></span>
+                        </a>
+                    </span>
+
+                </div>
+
                 {{ form_start(techno_form) }}
 
                 <div class="field">
