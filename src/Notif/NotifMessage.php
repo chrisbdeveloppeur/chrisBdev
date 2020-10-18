@@ -31,7 +31,7 @@ class NotifMessage
             /**
              * Ci dessous entrez l'adresse de l'utilisateur concerné : $message->getEmail()
              */
-            ->setTo(['christian.boungou@gmail.com'])
+            ->setTo(['chrisbdeveloppeur@gmail.com'])
             ->setBody($this->renderer->render('emails/message.html.twig',[
                 'message' => $message,
             ]), 'text/html' );
