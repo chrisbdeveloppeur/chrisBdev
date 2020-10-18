@@ -7,8 +7,6 @@
             </div>
 
             <div class="column is-8 is-full-touch" style="display: flex;align-items: center;position: relative;">
-{#                <span  id="percent-{{ competences.id }}" class="has-text-centered has-text-dark is-size-5 percent is-hidden-touch" >{{ competences.value }}%</span>#}
-{#                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="has-text-centered has-text-dark is-size-5 is-hidden-desktop" >{{ competences.value }}%</span>#}
                 <progress class="progress is-medium is-{{ competences.color }}" id="progress-{{ competences.id }}" value="{{ competences.value }}" max="100"></progress>
             </div>
 
@@ -29,9 +27,7 @@
                 <h4 class="is-family-primary half-touch has-text-centered is-{{ competences.color }}">{{ competences.name }}</h4>
             </div>
 
-            <div class="column is-10 is-full-touch" style="display: flex;align-items: center;position: relative;">
-{#                <span  id="percent-{{ competences.id }}" class="has-text-centered has-text-dark is-size-5 percent is-hidden-touch" >{{ competences.value }}%</span>#}
-{#                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="has-text-centered has-text-dark is-size-5 is-hidden-desktop" >{{ competences.value }}%</span>#}
+            <div class="column is-0 is-full-touch progress-column" style="display: flex;align-items: center;position: relative" id="progress-column-{{ competences.id }}">
                 <progress class="progress is-medium is-{{ competences.color }}" id="progress-{{ competences.id }}" value="{{ competences.value }}" max="100"></progress>
             </div>
         {% endif %}
@@ -41,20 +37,15 @@
     <script>
         let competence{{ competences.id }} = document.getElementById('competence-{{ competences.id }}');
         let competenceProgress{{ competences.id }} = document.getElementById('progress-{{ competences.id }}');
+        let competenceProgressColumn{{ competences.id }} = document.getElementById('progress-column-{{ competences.id }}');
+        let deployProgress{{ competences.id }} = false;
 
-        console.log(competenceProgress{{ competences.id }});
-
-        competence{{ competences.id }}.addEventListener('mouseover', event => {
-            {#competenceProgress{{ competences.id }}.style.opacity = '1';#}
-            {#competenceProgress{{ competences.id }}.value = {{ competences.value }};#}
-        });
-        competence{{ competences.id }}.addEventListener('mouseleave', event => {
-            setTimeout(function () {
-                {#competenceProgress{{ competences.id }}.style.opacity = '0';#}
-                {#competenceProgress{{ competences.id }}.value = 0;#}
-            },500);
-
-        })
+            competence{{ competences.id }}.addEventListener('mouseover', event => {
+                competenceProgress{{ competences.id }}.style.opacity = '1';
+                competenceProgressColumn{{ competences.id }}.classList.remove('is-0');
+                competenceProgressColumn{{ competences.id }}.classList.add('is-10');
+                {#competenceProgressColumn{{ competences.id }}.style.padding = '.75rem';#}
+            });
 
     </script>
 
