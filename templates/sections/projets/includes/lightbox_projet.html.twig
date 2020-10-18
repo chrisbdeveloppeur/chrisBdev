@@ -75,7 +75,7 @@
 
                             {% for attribut in projet.attributs %}
 
-                                <div id="attribut-{{ attribut.id }}" class="column is-half is-full-touch attribut" style="display: flex;align-items: center;position: relative">
+                                <div id="attribut-{{ attribut.id }}{{ projet.id }}" class="column is-half is-full-touch attribut" style="display: flex;align-items: center;position: relative">
 
                                     <span class="icon is-medium">
                                         <i class="fas fa fa-check-circle"></i>

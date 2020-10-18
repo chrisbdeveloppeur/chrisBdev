@@ -1,4 +1,4 @@
-<article class="message is-small attribut-help-box" id="attribut-help-{{ attribut.id }}" style="background: rgba(255,255,255,0.8);border-radius: 0">
+<article class="message is-small attribut-help-box" id="attribut-help-{{ attribut.id }}{{ projet.id }}" style="background: rgba(255,255,255,0.8);border-radius: 0">
     <div class="message-header has-background-primary has-text-light" style="text-shadow: none;border-radius: 0">
         <p>{{ attribut.title }}</p>
         <span class="icon has-text-light">
@@ -12,15 +12,15 @@
 
 
 <script>
-    let attribut{{ attribut.id }} = document.getElementById('attribut-{{ attribut.id }}');
+    let attribut{{ attribut.id }}{{ projet.id }} = document.getElementById('attribut-{{ attribut.id }}{{ projet.id }}');
 
-    attribut{{ attribut.id }}.addEventListener('click', function () {
-        let attributHelpBox = document.getElementById('attribut-help-{{ attribut.id }}');
+    attribut{{ attribut.id }}{{ projet.id }}.addEventListener('click', function () {
+        let attributHelpBox = document.getElementById('attribut-help-{{ attribut.id }}{{ projet.id }}');
         attributHelpBox.style.display = 'block';
     });
 
-    attribut{{ attribut.id }}.addEventListener('mouseleave', function () {
-        let attributHelpBox = document.getElementById('attribut-help-{{ attribut.id }}');
+    attribut{{ attribut.id }}{{ projet.id }}.addEventListener('mouseleave', function () {
+        let attributHelpBox = document.getElementById('attribut-help-{{ attribut.id }}{{ projet.id }}');
         attributHelpBox.style.display = 'none';
     });
 
