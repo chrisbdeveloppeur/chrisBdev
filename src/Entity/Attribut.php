@@ -35,8 +35,8 @@ class Attribut
     /**
      * @ORM\Column(type="text", nullable=true)
      * @Assert\Length(
-     *     max="500",
-     *     maxMessage="500 charactères maximum autorisé")
+     *     max="1000",
+     *     maxMessage="1000 charactères maximum autorisé")
      */
     private $text;
 
