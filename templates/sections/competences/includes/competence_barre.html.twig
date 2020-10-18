@@ -7,9 +7,9 @@
             </div>
 
             <div class="column is-8 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <span  id="percent-{{ competences.id }}" class="has-text-centered has-text-dark is-size-5 percent is-hidden-touch" >{{ competences.value }}%</span>
-                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="has-text-centered has-text-dark is-size-5 is-hidden-desktop" >{{ competences.value }}%</span>
-                <progress class="progress is-medium is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+{#                <span  id="percent-{{ competences.id }}" class="has-text-centered has-text-dark is-size-5 percent is-hidden-touch" >{{ competences.value }}%</span>#}
+{#                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="has-text-centered has-text-dark is-size-5 is-hidden-desktop" >{{ competences.value }}%</span>#}
+                <progress class="progress is-medium is-{{ competences.color }}" id="progress-{{ competences.id }}" value="{{ competences.value }}" max="100"></progress>
             </div>
 
             <div class="column is-fullwidth is-one-fifth-desktop" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
@@ -30,9 +30,9 @@
             </div>
 
             <div class="column is-10 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <span  id="percent-{{ competences.id }}" class="has-text-centered has-text-dark is-size-5 percent is-hidden-touch" >{{ competences.value }}%</span>
-                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="has-text-centered has-text-dark is-size-5 is-hidden-desktop" >{{ competences.value }}%</span>
-                <progress class="progress is-medium is-{{ competences.color }}" value="{{ competences.value }}" max="100">{{ competences.value }}%</progress>
+{#                <span  id="percent-{{ competences.id }}" class="has-text-centered has-text-dark is-size-5 percent is-hidden-touch" >{{ competences.value }}%</span>#}
+{#                <span style="position: absolute;left: {{ (competences.value / 2) - 3 }}%;" class="has-text-centered has-text-dark is-size-5 is-hidden-desktop" >{{ competences.value }}%</span>#}
+                <progress class="progress is-medium is-{{ competences.color }}" id="progress-{{ competences.id }}" value="{{ competences.value }}" max="100"></progress>
             </div>
         {% endif %}
 
@@ -40,16 +40,18 @@
 
     <script>
         let competence{{ competences.id }} = document.getElementById('competence-{{ competences.id }}');
-        let competencePercent{{ competences.id }} = document.getElementById('percent-{{ competences.id }}');
+        let competenceProgress{{ competences.id }} = document.getElementById('progress-{{ competences.id }}');
+
+        console.log(competenceProgress{{ competences.id }});
 
         competence{{ competences.id }}.addEventListener('mouseover', event => {
-            competencePercent{{ competences.id }}.style.opacity = '1';
-            competencePercent{{ competences.id }}.style.left = '{{ competences.value - 10 }}%';
+            {#competenceProgress{{ competences.id }}.style.opacity = '1';#}
+            {#competenceProgress{{ competences.id }}.value = {{ competences.value }};#}
         });
         competence{{ competences.id }}.addEventListener('mouseleave', event => {
             setTimeout(function () {
-                competencePercent{{ competences.id }}.style.opacity = '0';
-                competencePercent{{ competences.id }}.style.left = '1%';
+                {#competenceProgress{{ competences.id }}.style.opacity = '0';#}
+                {#competenceProgress{{ competences.id }}.value = 0;#}
             },500);
 
         })
