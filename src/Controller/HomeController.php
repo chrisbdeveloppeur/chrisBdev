@@ -3,8 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Admin;
-use App\Form\MessageType;
-use App\Form\TechnoType;
 use App\Repository\AdminRepository;
 use App\Repository\AttributRepository;
 use App\Repository\CompRepository;
@@ -12,7 +10,6 @@ use App\Repository\PresentationRepository;
 use App\Repository\ProjetRepository;
 use App\Repository\TechnoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 

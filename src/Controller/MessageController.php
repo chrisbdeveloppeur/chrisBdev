@@ -27,7 +27,7 @@ class MessageController extends AbstractController
             return $this->redirectToRoute('contact');
         }
 
-        return $this->render('sections/contact/contact.html.twig', [
+        return $this->render('contact/contact.html.twig', [
             'messageForm' => $form->createView(),
         ]);
 
