@@ -79,6 +79,13 @@ class AdminLoginAuthenticator extends AbstractFormLoginAuthenticator implements 
 
     public function checkCredentials($credentials, UserInterface $user)
     {
+        /**
+         * @Var Admin $user
+         */
+        if (!$user->getIsConfirmed()) {
+            throw new CustomUserMessageAuthenticationException('Veuillez valider votre inscription via le mail de confirmation avant de pouvoir vous connecter');
+        }
+
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
     }
 

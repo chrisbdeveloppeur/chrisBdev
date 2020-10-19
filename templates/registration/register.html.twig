@@ -3,11 +3,19 @@
 {% block title %}Chris B dev | Register{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+
+
+
 <section class="hero is-bold section is-dark is-fullheight-with-navbar">
     <div class="columns is-flex has-text-centered is-centered">
+
+        {% if form_errors(registrationForm) != null %}
+            <div class="notification is-danger" style="position: fixed;bottom: 0;margin: .75rem;z-index: 50">
+                <button class="delete" onclick="this.parentElement.parentElement.removeChild(this.parentElement);"></button>
+                {{ form_errors(registrationForm) }}
+            </div>
+        {% endif %}
+
         <div class="column is-one-quarter">
             <h1 class="title has-text-primary">Enregistrer un compte</h1>
             {{ form_start(registrationForm) }}
@@ -32,7 +40,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="button is-success">S'enregistrer</button>
+            <button type="submit" class="button is-success is-small">S'enregistrer</button>
 
             {{ form_end(registrationForm) }}
         </div>
