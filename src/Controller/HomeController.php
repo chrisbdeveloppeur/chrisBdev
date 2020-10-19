@@ -20,11 +20,8 @@ class HomeController extends AbstractController
      */
     public function home(UserPasswordEncoderInterface $passwordEncoder,CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository)
     {
-        $evenAdmin = $adminRepository->findAll();
-
-        if ($evenAdmin){
-
-        }else{
+        $evenAdmin = $adminRepository->findByRoles('ROLE_ADMIN');
+        if ($evenAdmin == []){
             $admin = new Admin();
             $admin->setEmail('christian.boungou@gmail.com');
             $admin->setPassword(
