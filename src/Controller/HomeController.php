@@ -14,27 +14,33 @@ use App\Repository\TechnoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function home(CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository)
+    public function home(UserPasswordEncoderInterface $passwordEncoder,CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository)
     {
-//        $evenAdmin = $adminRepository->findAll();
-//
-//        if ($evenAdmin){
-//
-//        }else{
-//            $admin = new Admin();
-//            $admin->setEmail('christian.boungou@gmail.com');
-//            $admin->setPassword('121090cb.K4gur0');
-//            $admin->setRoles(['ROLE_ADMIN']);
-//            $entityManager = $this->getDoctrine()->getManager();
-//            $entityManager->persist($admin);
-//            $entityManager->flush();
-//        }
+        $evenAdmin = $adminRepository->findAll();
+
+        if ($evenAdmin){
+
+        }else{
+            $admin = new Admin();
+            $admin->setEmail('christian.boungou@gmail.com');
+            $admin->setPassword(
+                $passwordEncoder->encodePassword(
+                    $admin,
+                    '121090cb.K4gur0'
+                )
+            );
+            $admin->setRoles(['ROLE_ADMIN']);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($admin);
+            $entityManager->flush();
+        }
 
 
         $competences = $compRepository->findAll();
