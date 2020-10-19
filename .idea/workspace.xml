@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201017220528.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layouts/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/header.html.twig" afterDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
@@ -96,13 +92,14 @@
         <entry file="file://$PROJECT_DIR$/templates/layouts/header.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="155">
-              <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="79" selection-end-column="89" />
+              <caret line="69" column="22" lean-forward="true" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="e#630#634#0#Twig" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#nav#0;n#!!top" expanded="true" />
+                <element signature="e#3222#3231#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="257">
-              <caret line="41" column="23" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="41" selection-end-column="23" />
+              <caret line="41" column="23" selection-start-line="8" selection-start-column="16" selection-end-line="41" selection-end-column="23" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -522,12 +519,12 @@
       <workItem from="1602949324782" duration="11720000" />
       <workItem from="1602962036753" duration="20780000" />
       <workItem from="1603045691922" duration="5734000" />
-      <workItem from="1603095451036" duration="3490000" />
+      <workItem from="1603095451036" duration="3755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240730000" />
+    <option name="totallyTimeSpent" value="240995000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -539,10 +536,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14817813" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14817813" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -556,7 +553,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32827735" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49959514" visible="true" weight="0.30728242" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49959514" visible="true" weight="0.30728242" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50040483" side_tool="true" weight="0.3250444" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -980,7 +977,7 @@
     <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
-          <caret line="41" column="23" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="41" selection-end-column="23" />
+          <caret line="41" column="23" selection-start-line="8" selection-start-column="16" selection-end-line="41" selection-end-column="23" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
@@ -990,13 +987,14 @@
     <entry file="file://$PROJECT_DIR$/templates/layouts/header.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
-          <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="79" selection-end-column="89" />
+          <caret line="69" column="22" lean-forward="true" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="e#630#634#0#Twig" expanded="true" />
             <element signature="n#style#0;n#div#1;n#nav#0;n#!!top" expanded="true" />
+            <element signature="e#3222#3231#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
