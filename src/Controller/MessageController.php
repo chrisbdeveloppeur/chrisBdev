@@ -16,6 +16,14 @@ class MessageController extends AbstractController
     public function contact(Request $request, NotifMessage $notifMessage){
         $form = $this->createForm(MessageType::class);
         $form->handleRequest($request);
+        $user = $this->getUser();
+//        dd($user);
+        if ($user){
+            $email = $user->getUsername();
+            $form->get('email')->setData($email);
+        }
+
+
 
         if ($form->isSubmitted() && $form->isValid()){
             $message = $form->getData();
