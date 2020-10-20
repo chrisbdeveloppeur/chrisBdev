@@ -48,7 +48,7 @@ class RegistrationController extends AbstractController
 
             $notifMessage->notifyRegistrationUser($user);
 
-            $this->addFlash('info', 'Votre compte a bien été créé ! Un mail de confirmation vous à été envoyer');
+            $this->addFlash('info', 'Ton compte a bien été créé ! Un mail de confirmation viens d\'être envoyer vers ta boite mail.');
 
             return $this->redirectToRoute('home');
 
@@ -73,7 +73,7 @@ class RegistrationController extends AbstractController
     {
         // L'utilisateur a déjà confirmé son compte
         if ($user->getIsConfirmed()) {
-            $this->addFlash('warning', 'Votre inscription est déjà confirmé, vous pouvez vous connecter.');
+            $this->addFlash('warning', 'Ton inscription a déjà été validée. Tu peux te connecter !');
             return $this->redirectToRoute('app_login');
         }
 
@@ -90,7 +90,7 @@ class RegistrationController extends AbstractController
         $entityManager->persist($user);
         $entityManager->flush();
 
-        $this->addFlash('success', 'Vous pouvez maintenant vous connecter !');
+        $this->addFlash('success', 'Ton compte à bien été validée ! Tu peux dès à présent t\'y connecter avec tes identifiants.');
         return $this->redirectToRoute('app_login');
     }
 
@@ -123,7 +123,7 @@ class RegistrationController extends AbstractController
 
                 $notifMessage->lostPassword($user);
 
-                $this->addFlash('info', 'Un email de réinitialisation vous a été renvoyé.');
+                $this->addFlash('info', 'Un email de réinitialisation vient tout juste d\'être envoyé. Rendez-vous sur sa boite mail !');
                 return $this->redirectToRoute('app_login');
 
             }
@@ -179,10 +179,10 @@ class RegistrationController extends AbstractController
                 $entityManager->flush();
 
                 // Ajout d'un message flash
-                $this->addFlash('success', 'Votre mot de passe a bien été modifié.');
+                $this->addFlash('success', 'Ton mot de passe a bien été modifié.');
                 return $this->redirectToRoute('app_login');
             }else{
-                $this->addFlash('danger', 'Votre mot de passe doit être différent de l\'ancien');
+                $this->addFlash('danger', 'Ton mot de passe doit être différent de l\'ancien !');
             }
 
         }

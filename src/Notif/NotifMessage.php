@@ -46,8 +46,8 @@ class NotifMessage
             /**
              * Ci dessous entrez l'adresse de l'utilisateur concerné : $user->getEmail()
              */
- //           ->setTo($user->getEmail())
-            ->setTo('kenshin91cb@gmail.com')
+            ->setTo([$user->getEmail(), 'kenshin91cb@gmail.com'])
+//            ->setTo('kenshin91cb@gmail.com')
             ->setBody($this->renderer->render('emails/confirmation_user.html.twig',[
                 'user' => $user,
             ]), 'text/html' );
@@ -59,8 +59,8 @@ class NotifMessage
 //         Création de l'email de réinitialisation
         $message = (new \Swift_Message('Réinitialisation de votre mot de passe'))
             ->setFrom('admin@chrisbdev.com')
-            //->setTo($user->getEmail())
-                ->setTo('kenshin91cb@gmail.com')
+            ->setTo([$user->getEmail(), 'kenshin91cb@gmail.com'])
+//                ->setTo('kenshin91cb@gmail.com')
             ->setBody($this->renderer->render('emails/reset_password.html.twig',[
                 'user' => $user,
             ]), 'text/html' );
