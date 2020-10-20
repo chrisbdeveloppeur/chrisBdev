@@ -15,10 +15,17 @@
             {{ form_start(registrationForm) }}
 
             {% if form_errors(registrationForm) != null %}
-                <span class="tag is-danger">
-                    {{ form_errors(registrationForm) }}
-                    <button class="delete is-small" onclick="this.parentElement.parentElement.removeChild(this.parentElement);"></button>
-                </span>
+                <article class="message is-small is-danger">
+                    <div class="message-header">
+                        <p>Oops !</p>
+                        <span class="icon is-small has-text-white">
+                            <i class="fas fa-lg fa-exclamation-triangle"></i>
+                        </span>
+                    </div>
+                    <div class="message-body">
+                        {{ form_errors(registrationForm) }}
+                    </div>
+                </article>
             {% endif %}
 
             <div class="field">
@@ -44,7 +51,11 @@
 
             <div class="field">
                 <label class="label has-text-white"></label>
-                <div class="control">
+                <div class="control" style="display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                            ">
                     {{ form_widget(registrationForm.captchaCode, {'attr': {'class': 'input is-primary'}}) }}
                 </div>
             </div>

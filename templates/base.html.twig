@@ -32,7 +32,13 @@
 
 
 {% block flash_message %}
-    {% include 'flash_message.html.twig' %}
+    <div style="position: relative;
+    bottom: .75rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;">
+        {% include 'flash_message.html.twig' %}
+    </div>
 {% endblock %}
 
 <footer class="footer has-background-black" style="position: relative;z-index: 10">

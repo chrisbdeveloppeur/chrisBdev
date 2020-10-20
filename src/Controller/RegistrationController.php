@@ -25,7 +25,7 @@ class RegistrationController extends AbstractController
      * @Route("/register", name="app_register")
      *
      */
-    public function register(NotifMessage $notifMessage,Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, AdminLoginAuthenticator $authenticator): Response
+    public function register(NotifMessage $notifMessage,Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $user = new Admin();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -52,12 +52,6 @@ class RegistrationController extends AbstractController
 
             return $this->redirectToRoute('home');
 
-            //return $guardHandler->authenticateUserAndHandleSuccess(
-            //    $user,
-            //    $request,
-            //    $authenticator,
-            //    'main' // firewall name in security.yaml
-            //);
         }
 
         return $this->render('registration/register.html.twig', [

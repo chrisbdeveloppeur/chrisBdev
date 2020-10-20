@@ -30,6 +30,13 @@ $box-background-color: rgba(0,0,0,0.5);
 $box-radius: 0px;
 $input-radius: 0px;
 $tag-radius: 0px;
+$message-radius: 0px;
+$message-body-radius: 0 px;
+$message-header-radius: 0px;
+$notification-radius: 0px;
+$notification-padding: .5rem 2.5rem;
+$notification-padding-ltr: .5rem 2.5rem;
+$notification-padding-rtl: .5rem 2.5rem;
 
 $family-primary: 'Oxygen', sans-serif;
 $family-secondary: 'Teko', sans-serif;
@@ -173,6 +180,11 @@ div.container h2{
 }
 .button{
     border-radius: 0px !important;
+}
+div.BDC_CaptchaImageDiv a{
+    opacity: 0;
+    pointer-events: none;
+    cursor: none;
 }
 
 
