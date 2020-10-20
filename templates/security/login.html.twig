@@ -7,20 +7,16 @@
         <div class="columns is-flex has-text-centered is-centered">
             <div class="column is-one-quarter">
                 <form method="post">
-                    {% if error %}
-                        <div class="notification is-danger" style="position: fixed;bottom: 0;margin: .75rem;z-index: 50">
-                            <button class="delete" onclick="this.parentElement.parentElement.removeChild(this.parentElement);"></button>
-                            {{ error.messageKey|trans(error.messageData, 'security') }}
-                        </div>
-                    {% endif %}
-
-                    {#{% if app.user %}
-                        <div class="mb-3">
-                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                        </div>
-                    {% endif %}#}
 
                     <h1 class="title has-text-primary">Veuillez entrez vos identifiants de connexion</h1>
+
+                    {% if error %}
+                        <span class="tag is-danger">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                            <button class="delete is-small" onclick="this.parentElement.parentElement.removeChild(this.parentElement);"></button>
+                        </span>
+                    {% endif %}
+
                     <div class="field">
                         <label class="label has-text-white">Email</label>
                         <div class="control">

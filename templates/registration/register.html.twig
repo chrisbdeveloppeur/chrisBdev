@@ -9,16 +9,18 @@
 <section class="hero is-bold section is-dark is-fullheight-with-navbar">
     <div class="columns is-flex has-text-centered is-centered">
 
-        {% if form_errors(registrationForm) != null %}
-            <div class="notification is-danger" style="position: fixed;bottom: 0;margin: .75rem;z-index: 50">
-                <button class="delete" onclick="this.parentElement.parentElement.removeChild(this.parentElement);"></button>
-                {{ form_errors(registrationForm) }}
-            </div>
-        {% endif %}
-
         <div class="column is-one-quarter">
             <h1 class="title has-text-primary">Création de mon espace utilisateur</h1>
+
             {{ form_start(registrationForm) }}
+
+            {% if form_errors(registrationForm) != null %}
+                <span class="tag is-danger">
+                            {{ form_errors(registrationForm) }}
+                            <button class="delete is-small" onclick="this.parentElement.parentElement.removeChild(this.parentElement);"></button>
+                        </span>
+            {% endif %}
+
             <div class="field">
                 <label class="label has-text-white">Email</label>
                 <div class="control">

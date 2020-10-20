@@ -28,7 +28,7 @@ class RegistrationFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
                 'type' => PasswordType::class,
-                'invalid_message' => 'Vos mots de passe doivent être identiques',
+                'invalid_message' => 'Les mots de passe indiqués ne sont pas identiques',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
                 'error_bubbling' => true,
