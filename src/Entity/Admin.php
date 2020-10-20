@@ -6,6 +6,7 @@ use App\Repository\AdminRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Captcha\Bundle\CaptchaBundle\Validator\Constraints as CaptchaAssert;
 
 /**
  * @ORM\Entity(repositoryClass=AdminRepository::class)
@@ -46,6 +47,13 @@ class Admin implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isConfirmed;
+
+    /**
+     * @CaptchaAssert\ValidCaptcha(
+     *      message = "Echec de validation CAPTCHA, veuillez reéssayer."
+     * )
+     */
+    protected $captchaCode;
 
     /**
      * @ORM\PrePersist()
@@ -174,5 +182,15 @@ class Admin implements UserInterface
         $this->isConfirmed = $isConfirmed;
 
         return $this;
+    }
+
+    public function getCaptchaCode()
+    {
+        return $this->captchaCode;
+    }
+
+    public function setCaptchaCode($captchaCode)
+    {
+        $this->captchaCode = $captchaCode;
     }
 }

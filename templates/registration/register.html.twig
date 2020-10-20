@@ -42,6 +42,13 @@
                 </div>
             </div>
 
+            <div class="field">
+                <label class="label has-text-white"></label>
+                <div class="control">
+                    {{ form_widget(registrationForm.captchaCode, {'attr': {'class': 'input is-primary'}}) }}
+                </div>
+            </div>
+
             <button type="submit" class="button is-success is-small">S'enregistrer</button>
 
             {{ form_end(registrationForm) }}
