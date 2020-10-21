@@ -15,7 +15,7 @@ class MessageController extends AbstractController
      */
     public function contact(Request $request, NotifMessage $notifMessage){
         $form = $this->createForm(MessageType::class);
-        $form->handleRequest($request);
+
         $user = $this->getUser();
 //        dd($user);
         if ($user){
@@ -23,9 +23,10 @@ class MessageController extends AbstractController
             $form->get('email')->setData($email);
         }
 
-
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+
             $message = $form->getData();
 
             $this->addFlash('success', 'Votre message a bien été envoyer !');

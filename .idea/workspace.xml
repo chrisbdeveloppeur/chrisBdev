@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminLoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/AdminLoginAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/AdminLoginAuthenticator.php" afterDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -62,20 +60,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AttributController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="1071">
               <caret line="67" selection-start-line="67" selection-end-line="67" />
-              <folding>
-                <element signature="e#1023#1073#0#PHP" expanded="true" />
-              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Security/AdminLoginAuthenticator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Security/AdminLoginAuthenticator.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/MessageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="110" column="36" lean-forward="true" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+            <state relative-caret-position="95">
+              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              <folding>
+                <element signature="e#34#59#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,13 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layouts/header.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
+            <state relative-caret-position="986">
               <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
-              <folding>
-                <element signature="e#630#634#0#Twig" expanded="true" />
-                <element signature="e#3210#3219#0#Twig" expanded="true" />
-                <element signature="e#3460#3472#0#Twig" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -97,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AdminLoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
+            <state relative-caret-position="561">
               <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
@@ -181,11 +183,9 @@
         <option value="$PROJECT_DIR$/src/Form/RegistrationFormType.php" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/src/Entity/Admin.php" />
-        <option value="$PROJECT_DIR$/vendor/captcha-com/symfony-captcha-bundle/Resources/views/captcha.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/captcha.php" />
         <option value="$PROJECT_DIR$/templates/security/login.html.twig" />
         <option value="$PROJECT_DIR$/templates/User/lost_password.html.twig" />
-        <option value="$PROJECT_DIR$/.env.local" />
         <option value="$PROJECT_DIR$/assets/css/app.scss" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Notif/NotifMessage.php" />
@@ -193,9 +193,11 @@
         <option value="$PROJECT_DIR$/src/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/templates/flash_message.html.twig" />
         <option value="$PROJECT_DIR$/templates/registration/register.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/MessageController.php" />
         <option value="$PROJECT_DIR$/src/Controller/AdminLoginController.php" />
         <option value="$PROJECT_DIR$/src/Security/AdminLoginAuthenticator.php" />
+        <option value="$PROJECT_DIR$/vendor/captcha-com/symfony-captcha-bundle/Resources/views/captcha.html.twig" />
+        <option value="$PROJECT_DIR$/.env.local" />
+        <option value="$PROJECT_DIR$/src/Controller/MessageController.php" />
       </list>
     </option>
   </component>
@@ -315,9 +317,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="292" />
+    <option name="x" value="291" />
     <option name="y" value="-27" />
-    <option name="width" value="1936" />
+    <option name="width" value="1937" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -328,6 +330,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -356,11 +359,6 @@
               <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
               <item name="packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
@@ -439,11 +437,45 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="User" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="captcha-com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="captcha-com" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony-captcha-bundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="captcha-com" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony-captcha-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="captcha-com" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony-captcha-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -459,19 +491,19 @@
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\User" />
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\competences\includes" />
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\presentation\includes" />
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\contact\includes" />
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\presentation" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev" />
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\emails" />
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\security" />
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates" />
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\projets\includes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\User" />
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\competences\includes" />
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\presentation\includes" />
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\contact\includes" />
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\presentation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -527,11 +559,12 @@
       <workItem from="1603045691922" duration="5734000" />
       <workItem from="1603095451036" duration="24418000" />
       <workItem from="1603215003605" duration="13571000" />
+      <workItem from="1603285440726" duration="1386000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275229000" />
+    <option name="totallyTimeSpent" value="276615000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -543,10 +576,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1913646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19433199" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -560,7 +593,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32827735" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49959514" visible="true" weight="0.30444205" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49959514" visible="true" weight="0.30373" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50040483" side_tool="true" weight="0.3250444" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -594,13 +627,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/sections/competences/includes/competence_barre.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -739,13 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -837,13 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env.local">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/User/lost_password.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -851,13 +863,6 @@
           <folding>
             <element signature="e#508#531#0#Twig" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/captcha-com/symfony-captcha-bundle/Resources/views/captcha.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1003,17 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MessageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#34#59#0#PHP" expanded="true" />
-            <element signature="e#896#923#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/contact/includes/contact_form.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1044,37 +1038,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AttributController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="1071">
           <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="e#1023#1073#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layouts/header.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
+        <state relative-caret-position="986">
           <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
-          <folding>
-            <element signature="e#630#634#0#Twig" expanded="true" />
-            <element signature="e#3210#3219#0#Twig" expanded="true" />
-            <element signature="e#3460#3472#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AdminLoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
+        <state relative-caret-position="561">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Security/AdminLoginAuthenticator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="110" column="36" lean-forward="true" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+        <state relative-caret-position="208">
+          <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/captcha-com/symfony-captcha-bundle/Provider/botdetect.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.local">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/captcha-com/symfony-captcha-bundle/Resources/views/captcha.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MessageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="e#34#59#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
