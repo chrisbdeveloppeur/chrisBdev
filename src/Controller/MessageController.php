@@ -29,7 +29,7 @@ class MessageController extends AbstractController
 
             $message = $form->getData();
 
-            $this->addFlash('success', 'Votre message a bien été envoyer !');
+            $this->addFlash('success', 'Ton message a bien été envoyé et il va être lu très soigneusement !');
 
             $notifMessage->sendMessage($message);
 

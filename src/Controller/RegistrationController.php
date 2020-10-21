@@ -69,7 +69,7 @@ class RegistrationController extends AbstractController
      * @param EntityManagerInterface $entityManager Pour mettre à jour l'utilisateur
      */
 
-    public function confirmAccount(Admin $user, $token, EntityManagerInterface $entityManager)
+    public function confirmAccount(Admin $user, $token, EntityManagerInterface $entityManager, NotifMessage $notifMessage)
     {
         // L'utilisateur a déjà confirmé son compte
         if ($user->getIsConfirmed()) {
@@ -89,6 +89,8 @@ class RegistrationController extends AbstractController
 
         $entityManager->persist($user);
         $entityManager->flush();
+
+        $notifMessage->notifyRegistrationUserToAdmin($user);
 
         $this->addFlash('success', 'Ton compte à bien été validée ! Tu peux dès à présent t\'y connecter avec tes identifiants.');
         return $this->redirectToRoute('app_login');

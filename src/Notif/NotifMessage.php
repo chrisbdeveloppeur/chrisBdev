@@ -27,8 +27,8 @@ class NotifMessage
 
     public function sendMessage(Message $message)
     {
-        $mail = (new \Swift_Message('Message en provenance de vinnyvixi.com'))
-            ->setFrom('chrisbdeveloppeur@gmail.com')
+        $mail = (new \Swift_Message('Message en provenance de www.chrisbdev.com'))
+            ->setFrom('admin@chrisbdev.com')
             /**
              * Ci dessous entrez l'adresse de l'utilisateur concerné : $message->getEmail()
              */
@@ -43,23 +43,30 @@ class NotifMessage
     {
         $message = (new \Swift_Message('Chris B Dev - Mail de confirmation pour la création de compte'))
             ->setFrom('admin@chrisbdev.com')
-            /**
-             * Ci dessous entrez l'adresse de l'utilisateur concerné : $user->getEmail()
-             */
-            ->setTo([$user->getEmail(), 'kenshin91cb@gmail.com'])
-//            ->setTo('kenshin91cb@gmail.com')
+            ->setTo($user->getEmail())
             ->setBody($this->renderer->render('emails/confirmation_user.html.twig',[
                 'user' => $user,
             ]), 'text/html' );
         $this->mailer->send($message);
     }
 
+    public function notifyRegistrationUserToAdmin(Admin $user)
+    {
+        $messageToAdmin = (new \Swift_Message('Chris B Dev - Un utilisateur vient de créer son profile'))
+            ->setFrom('admin@chrisbdev.com')
+            ->setTo('chrisbdeveloppeur@gmail.com')
+            ->setBody($this->renderer->render('emails/confirmation_user_to_admin.html.twig',[
+                'user' => $user,
+            ]), 'text/html' );
+        $this->mailer->send($messageToAdmin);
+    }
+
     public function lostPassword(Admin $user)
     {
 //         Création de l'email de réinitialisation
-        $message = (new \Swift_Message('Réinitialisation de votre mot de passe'))
+        $message = (new \Swift_Message('chris B dev - Réinitialisation de votre mot de passe'))
             ->setFrom('admin@chrisbdev.com')
-            ->setTo([$user->getEmail(), 'kenshin91cb@gmail.com'])
+            ->setTo($user->getEmail())
 //                ->setTo('kenshin91cb@gmail.com')
             ->setBody($this->renderer->render('emails/reset_password.html.twig',[
                 'user' => $user,

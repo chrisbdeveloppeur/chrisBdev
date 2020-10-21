@@ -1,7 +1,23 @@
 <div class="container is-flex" style="justify-content: center">
     <div class="column is-flex box is-half has-text-centered" style="background: rgba(100,100,100,0.5);box-shadow: rgb(0, 0, 0) 0px 0px 15px;position: relative">
 
+
+
         <article class="column has-text-centered">
+
+            {% if form_errors(messageForm) != null %}
+                <article class="message is-small is-danger" style="text-align: start">
+                    <div class="message-header">
+                        <p>Oops !</p>
+                        <span class="icon is-small has-text-white">
+                                  <i class="fas fa-lg fa-exclamation-triangle"></i>
+                                </span>
+                    </div>
+                    <div class="message-body">
+                        {{ form_errors(messageForm) }}
+                    </div>
+                </article>
+            {% endif %}
 
             <div class="field">
                 <label class="label has-text-light">Nom</label>

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\MessageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=MessageRepository::class)
@@ -19,26 +20,55 @@ class Message
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Regex(
+     *     pattern="/[<>{}\/]/",
+     *     match=false,
+     *     message="Votre nom ne doit pas contenir de charactères spéciaux (ex: / {} <>)",
+     * )
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Regex(
+     *     pattern="/[<>{}\/]/",
+     *     match=false,
+     *     message="Votre prénom ne doit pas contenir de charactères spéciaux (ex: / {} <>)",
+     * )
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(
+     *     pattern="/[<>{}\/]/",
+     *     match=false,
+     *     message="Votre email ne doit pas contenir de charactères spéciaux (ex: / {} <>)",
+     * )
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Regex(
+     *     pattern="/[<>{}\/]/",
+     *     match=false,
+     *     message="l'objet ne doit pas contenir de charactères spéciaux (ex: / {} <>)",
+     * )
      */
     private $objet;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Regex(
+     *     pattern="/[<>{}\/]/",
+     *     match=false,
+     *     message="Votre message ne doit pas contenir de charactères spéciaux (ex: / {} <>)",
+     * )
+     * @Assert\Length(
+     *     max="1000",
+     *     maxMessage="1000 charactères maximum"
+     * )
      */
     private $text;
 

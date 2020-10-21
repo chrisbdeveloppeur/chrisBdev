@@ -67,8 +67,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
     <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
-        @import url(https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700);
-        @import url(https://fonts.googleapis.com/css?family=Oxygen:300,400,700);
     </style>
     <!--<![endif]-->
     <style type="text/css">
@@ -104,8 +102,8 @@
         <tr>
             <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
     <![endif]-->
-    <div style="margin:0px auto;max-width:600px">
-        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+    <div style="background:rgba(0,0,0,0);background-color:rgba(0,0,0,0);margin:0px auto;max-width:600px;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:rgba(0,0,0,0);background-color:rgba(0,0,0,0);width:100%;">
             <tbody>
             <tr>
                 <td style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:20px;padding-top:20px;text-align:center;">
@@ -231,28 +229,11 @@
 
 
                             <div style="font-family:Helvetica;font-size:13px;line-height:1;text-align:center;color:#FFFFFF;">
-                                <span style="font-size:20px; font-weight:bold">Merci pour ton inscription !</span>
+                                <h2>Chris ! Un utilisateur vient de créer et valider son profile</h2>
                                 <br/>
                                 <span style="font-size:15px">
-                                    <p>La création de ton compte est presque fini !</p>
+                                    <p>Un message de bienvenue lui à été transmis sur sa boite email {{ user.email }}</p>
                                 </span>
-                            </div>
-                            <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:#ABCDEA;">
-
-                                <p>
-                                <p>Afin de finaliser ton inscription, il te suffit de cliquer lien suivant : </p>
-                                <p>
-                                    <a href="{{ url('user_confirmation', {id: user.id, token: user.securityToken}) }}" style="display:inline-block; background: #1b8b3d;
-    background: -moz-linear-gradient(top,  #1b8b3d 0%, #24c447 50%, #1db540 51%, #5fe37a 100%);
-    background: -webkit-linear-gradient(top,  #1b8b3d 0%,#24c447 50%,#1db540 51%,#5fe37a 100%);
-    background: linear-gradient(to bottom,  #1b8b3d 0%,#24c447 50%,#1db540 51%,#5fe37a 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b8b3d', endColorstr='#5fe37a',GradientType=0 );;color:#FFFFFF;font-family:Helvetica;font-size:14px;font-weight:bold;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:0px;"
-                                       target="_blank">
-                                        Confirmer mon inscription
-                                    </a>
-                                </p>
-
-                                </p>
                             </div>
 
                         </table>
@@ -300,7 +281,7 @@
                         <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                             <tr>
                                 <td align="center" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-bottom:0px;padding-left:25px;word-break:break-word;">
-                                    <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;line-height:1;text-align:center;color:#FFFFFF;"><strong>Voici ton identifiant :</strong></div>
+                                    <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;line-height:1;text-align:center;color:#FFFFFF;"><strong>Voici ses informations :</strong></div>
                                 </td>
                             </tr>
                             <tr>
@@ -357,7 +338,7 @@
                                 <td align="center" vertical-align="middle" style="font-size:0px;padding:15px 30px;padding-right:25px;padding-bottom:10px;padding-left:25px;word-break:break-word;">
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;">
                                         <tr>
-                                            <td align="center" bgcolor="#ffae00" role="presentation" style="border:none;border-radius:0px;cursor:auto;mso-padding-alt:10px 25px;background:#ffae00;" valign="middle">
+                                            <td align="center" bgcolor="#ffae00" role="presentation" style="border:none;border-radius:0px;cursor:auto;mso-padding-alt:10px 25px;" valign="middle">
                                                 <a href="https://chrisbdev.com" style="display:inline-block; background: #1b8b3d;
     background: -moz-linear-gradient(top,  #1b8b3d 0%, #24c447 50%, #1db540 51%, #5fe37a 100%);
     background: -webkit-linear-gradient(top,  #1b8b3d 0%,#24c447 50%,#1db540 51%,#5fe37a 100%);

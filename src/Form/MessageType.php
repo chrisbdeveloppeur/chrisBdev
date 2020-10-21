@@ -17,21 +17,26 @@ class MessageType extends AbstractType
         $builder
             ->add('nom', TextType::class,[
                 'label' => false,
-                'required' => false
+                'required' => false,
+                'error_bubbling' => true,
             ])
             ->add('prenom', TextType::class, [
                 'label' => false,
-                'required' => false
+                'required' => false,
+                'error_bubbling' => true,
             ])
             ->add('email', EmailType::class, [
-                'label' => false
+                'label' => false,
+                'error_bubbling' => true,
             ])
             ->add('objet', TextType::class, [
                 'label' => false,
-                'required' => false
+                'required' => false,
+                'error_bubbling' => true,
             ])
             ->add('text', TextareaType::class, [
-                'label' => false
+                'label' => false,
+                'error_bubbling' => true,
             ])
         ;
     }

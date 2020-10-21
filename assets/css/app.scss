@@ -51,6 +51,9 @@ $box-shadow : rgba(0,0,0,0.8) 0 0 10px 1px ;
 .title, .subtitle, .navbar-item{
     font-family: 'Teko', sans-serif;
 }
+ul{
+    list-style: inside !important;
+}
 .logo{
     opacity: .6;
     transition: .5s;
