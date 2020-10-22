@@ -69,6 +69,10 @@ ul{
     color: $warning !important;
     text-shadow: #dfdfdf 0 0 5px;
 }
+.sectionPaddingTop{
+    position: relative;
+    top: -5rem;
+}
 .box-projet div.box{
     transition: .5s;
 }
