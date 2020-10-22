@@ -36,9 +36,10 @@ class ProjetType extends AbstractType
                 'label' => false,
                 'required' => false,
                 'choices' => [
-                    'Développement partiel' => 'Développement partiel',
-                    'Développement complet' => 'Développement complet',
-                    'Refonte graphique' => 'Refonte graphique',
+                    'Développement partiel' => 'Partielle',
+                    'Développement complet' => 'Complète',
+                    'Refonte graphique' => 'Refonte',
+                    'Assistance' => 'Assistance',
                 ]
             ])
 
