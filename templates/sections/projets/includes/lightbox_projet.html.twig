@@ -161,8 +161,11 @@
                                         {% endif %}
                                     </div>
 
+                                    {% if techno.help %}
+                                        {{ include('sections/projets/includes/techno_help_box.html.twig') }}
+                                    {% endif %}
                                 </div>
-                                {{ include('sections/projets/includes/techno_help_box.html.twig') }}
+
                             {% endfor %}
 
                             {% if is_granted('ROLE_ADMIN') %}
