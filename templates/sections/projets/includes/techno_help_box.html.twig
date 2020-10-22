@@ -1,0 +1,28 @@
+<article class="message is-small techno-help-box" id="techno-help-{{ techno.id }}{{ projet.id }}" style="background: rgba(255,255,255,0.8);border-radius: 0">
+    <div class="message-header has-background-primary has-text-light" style="text-shadow: none;border-radius: 0">
+        <p>{{ techno.name }}</p>
+        <span class="icon has-text-light">
+            <i class="fas fa-lg fa-info-circle"></i>
+        </span>
+    </div>
+    <div class="message-body" style="text-shadow: none">
+        {{ techno.help }}
+    </div>
+</article>
+
+
+<script>
+    let techno{{ techno.id }}{{ projet.id }} = document.getElementById('techno-{{ techno.id }}{{ projet.id }}');
+
+    techno{{ techno.id }}{{ projet.id }}.addEventListener('click', function () {
+        let technoHelpBox = document.getElementById('techno-help-{{ techno.id }}{{ projet.id }}');
+        technoHelpBox.style.display = 'block';
+    });
+
+    techno{{ techno.id }}{{ projet.id }}.addEventListener('mouseleave', function () {
+        let technoHelpBox = document.getElementById('techno-help-{{ techno.id }}{{ projet.id }}');
+        technoHelpBox.style.display = 'none';
+    });
+
+</script>
+

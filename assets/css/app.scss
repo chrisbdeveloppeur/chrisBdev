@@ -180,11 +180,12 @@ div.container h2{
     text-shadow: 0 0 10px rgb(126, 137, 1) !important;
     cursor: help;
 }
-.attribut-help-box{
+.attribut-help-box, .techno-help-box{
     display: none;
     position: absolute;
     bottom: 50%;
 }
+
 .button{
     border-radius: 0px !important;
 }
@@ -292,16 +293,31 @@ div.BDC_CaptchaImageDiv a{
     color: white !important;
     text-shadow: 0 0 10px rgb(126, 137, 1) !important;
 }
+.is-boxed-neon-green{
+    box-shadow: 0 0 10px rgb(126, 137, 1) !important;
+}
+.is-boxed-neon-white{
+    box-shadow: 0 0 10px white !important;
+}
+
 
 /*          Special          */
-//.is-overable-green{
-//
-//}
-.is-overable-green:hover{
+
+.is-overable-warning:hover{
+    background-color: $warning !important;
+    color: black !important;
+}
+.is-overable-warning-help:hover{
+    background-color: $warning !important;
+    color: black !important;
+    cursor: help;
+    text-decoration: underline dotted ;
+}
+.is-overable-primary:hover{
     background-color: $primary !important;
     color: white !important;
 }
-.is-overable-green-help:hover{
+.is-overable-primary-help:hover{
     background-color: $primary !important;
     color: white !important;
     cursor: help;

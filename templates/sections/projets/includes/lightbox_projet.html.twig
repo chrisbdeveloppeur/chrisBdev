@@ -50,27 +50,45 @@
 
             </div>
 
-        <div class="column" style="display: flex;justify-content: space-between;align-items: center;border-bottom: rgba(255,255,255,.1) solid 1px;">
-            <div class="tags has-addons" style="margin: 0">
-                <span class="tag" style="margin: 0">Année de réalisation</span>
-                <span class="tag is-primary" style="margin: 0">{{ projet.dateReal }}</span>
+        <div class="column is-flex-desktop" style="justify-content: space-between;align-items: center;border-bottom: rgba(255,255,255,.1) solid 1px;">
+
+            <div class="tags has-addons is-centered" style="margin: 0">
+
+                <span class="icon tag is-primary has-text-light">
+                    <i class="far fa-lg fa-calendar-alt"></i>
+                </span>
+
+                <span class="tag" style="flex: 1;">{{ projet.dateReal }}</span>
+
             </div>
 
-            <div class="is-uppercase">
-                {{ projet.typedev }}
+
+            <div class="tags has-addons is-centered" style="margin: 0">
+
+                <span class="icon tag is-primary has-text-light">
+                    <i class="fas fa-lg fa-code"></i>
+                </span>
+
+                <div class="tag is-uppercase" style="flex: 1;">
+                    {{ projet.typedev }}
+                </div>
+
             </div>
+
         </div>
 
 
-
-
-            <div class="column">
+            <div class="column has-text-white">
                 <p>{{ projet.text }}</p>
             </div>
+
 
             <div class="columns is-multiline" style="padding: .75rem;margin: 0">
 
                 <div class="column is-half" id="charaProjet1">
+
+                    <span class="tag is-primary is-uppercase has-text-weight-bold" style="width: 100%">Les attributs du site</span>
+
                     <div class="field is-grouped is-grouped-multiline">
 
                             {% for attribut in projet.attributs %}
@@ -116,16 +134,23 @@
 
 
                 <div class="column is-half" id="charaProjet2">
+
+                    <span class="tag is-primary is-uppercase has-text-weight-bold" style="width: 100%">Technologies utilisées</span>
+
                     <div class="column">
 
-                        <div class="field is-grouped is-grouped-multiline">
+                        <div class="field is-grouped is-grouped-multiline" style="position:relative;">
+
                             {% for techno in projet.techno %}
-                                <div class="control">
+
+                                <div class="control" id="techno-{{ techno.id }}{{ projet.id }}">
+
                                     <div class="tags has-addons">
+
                                         {% if techno.help %}
-                                            <span class="tag is-warning is-overable-green-help" title="{{ techno.help }}">#{{ techno.name }}</span>
+                                            <span class="tag is-light is-overable-warning-help" title="{{ techno.help }}">#{{ techno.name }}</span>
                                         {% else %}
-                                            <span class="tag is-warning is-overable-green" title="{{ techno.help }}">#{{ techno.name }}</span>
+                                            <span class="tag is-light is-overable-warning" title="{{ techno.help }}">#{{ techno.name }}</span>
                                         {% endif %}
 
                                         {% if is_granted('ROLE_ADMIN') %}
@@ -133,7 +158,9 @@
                                             <a class="tag is-delete" href="{{ path('techno_del', {'id': techno.id}) }}" title="supprimer la technologie"></a>
                                         {% endif %}
                                     </div>
+
                                 </div>
+                                {{ include('sections/projets/includes/techno_help_box.html.twig') }}
                             {% endfor %}
 
                             {% if is_granted('ROLE_ADMIN') %}
