@@ -11,11 +11,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/projet", name="projet_")
+ * @IsGranted("ROLE_ADMIN")
+ */
 class ProjetController extends AbstractController
 {
     /**
-     * @Route("/ajouter-projet", name="add_projet")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/ajouter", name="add")
      */
     public function add_projet(Request $request)
     {
@@ -39,8 +42,7 @@ class ProjetController extends AbstractController
     }
 
     /**
-     * @Route("/modifier-projet-{id}", name="edit_projet")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/modifier", name="edit")
      */
     public function edit_projet(Request $request, ProjetRepository $projetRepository, $id, TechnoRepository $technoRepository, AttributRepository $attributRepository)
     {
@@ -70,8 +72,7 @@ class ProjetController extends AbstractController
     }
 
     /**
-     * @Route("/supprimer-projet-{id}", name="del_projet")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/supprimer", name="del")
      */
     public function del_projet(ProjetRepository $projetRepository, $id)
     {
@@ -84,8 +85,7 @@ class ProjetController extends AbstractController
     }
 
     /**
-     * @Route("/supprimer-img-projet-{id}", name="del_img_projet")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/supprimer-img", name="del_img")
      */
     public function del_img_projet(ProjetRepository $projetRepository, $id, Request $request)
     {
@@ -103,8 +103,7 @@ class ProjetController extends AbstractController
     }
 
     /**
-     * @Route("/ajouter-techno-{idtechno}-au-projet-{id}", name="add_techno_to_projet")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/ajouter-techno/{idtechno}", name="add_techno")
      */
     public function add_techno_to_project(ProjetRepository $projetRepository, $id, $idtechno, TechnoRepository $technoRepository)
     {
@@ -113,15 +112,14 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $projet->addTechno($techno);
         $entityManager->flush();
-        return $this->redirectToRoute('edit_projet',[
+        return $this->redirectToRoute('projet_edit',[
             'projet' => $projet,
             'id' => $projet->getId(),
         ]);
     }
 
     /**
-     * @Route("/retirer-techno-{idtechno}-au-projet-{id}", name="del_techno_to_projet")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/retirer-techno/{idtechno}", name="del_techno")
      */
     public function del_techno_to_project(ProjetRepository $projetRepository, $id, $idtechno, TechnoRepository $technoRepository)
     {
@@ -130,7 +128,7 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $projet->removeTechno($techno);
         $entityManager->flush();
-        return $this->redirectToRoute('edit_projet',[
+        return $this->redirectToRoute('projet_edit',[
             'projet' => $projet,
             'id' => $projet->getId(),
         ]);
@@ -140,8 +138,7 @@ class ProjetController extends AbstractController
 
 
     /**
-     * @Route("/ajouter-attribut-{idattribut}-au-projet-{id}", name="add_attribut_to_projet")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/ajouter-attribut/{idattribut}", name="add_attribut")
      */
     public function add_attribut_to_project(ProjetRepository $projetRepository, $id, $idattribut, AttributRepository $attributRepository)
     {
@@ -150,15 +147,14 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $projet->addAttribut($attribut);
         $entityManager->flush();
-        return $this->redirectToRoute('edit_projet',[
+        return $this->redirectToRoute('projet_edit',[
             'projet' => $projet,
             'id' => $projet->getId(),
         ]);
     }
 
     /**
-     * @Route("/retirer-attribut-{idattribut}-au-projet-{id}", name="del_attribut_to_projet")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/retirer-attribut/{idattribut}", name="del_attribut")
      */
     public function del_attribut_to_project(ProjetRepository $projetRepository, $id, $idattribut, AttributRepository $attributRepository)
     {
@@ -167,7 +163,7 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $projet->removeAttribut($attribut);
         $entityManager->flush();
-        return $this->redirectToRoute('edit_projet',[
+        return $this->redirectToRoute('projet_edit',[
             'projet' => $projet,
             'id' => $projet->getId(),
         ]);

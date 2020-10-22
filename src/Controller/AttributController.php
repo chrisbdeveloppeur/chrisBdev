@@ -7,11 +7,16 @@ use App\Repository\AttributRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
+/**
+ * @Route("/attribut", name="attribut_")
+ * @IsGranted("ROLE_ADMIN")
+ */
 class AttributController extends AbstractController
 {
     /**
-     * @Route("/ajouter-attribut", name="add_attribut")
+     * @Route("/ajouter", name="add")
      */
     public function add_attribut(Request $request)
     {
@@ -33,7 +38,7 @@ class AttributController extends AbstractController
     }
 
     /**
-     * @Route("/editer-attribut-{id}", name="edit_attribut")
+     * @Route("/{id}/editer", name="edit")
      */
     public function edit_attribut(Request $request, AttributRepository $attributRepository, $id)
     {
@@ -57,7 +62,7 @@ class AttributController extends AbstractController
     }
 
     /**
-     * @Route("/supprimer-attribut-{id}", name="del_attribut")
+     * @Route("/{id}/supprimer", name="del")
      */
     public function del_attribut(AttributRepository $attributRepository, $id, Request $request)
     {

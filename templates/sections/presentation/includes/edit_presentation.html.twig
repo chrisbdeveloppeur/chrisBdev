@@ -24,7 +24,7 @@
                     </span>
 
                     <span class="icon is-medium">
-                        <a style="text-decoration: none" href="{{ path('del_presentation', {'id': presentation.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la présentation"></a>
+                        <a style="text-decoration: none" href="{{ path('presentation_del', {'id': presentation.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la présentation"></a>
                     </span>
 
                 </div>
@@ -74,7 +74,7 @@
 
                     {% if presentation.imgPresentationName %}
                         <figure class="figure" style="position: relative;margin-bottom: .75rem">
-                            <a href="{{ path('del_img_presentation', {'id': presentation.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
+                            <a href="{{ path('presentation_img_del', {'id': presentation.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
                             <img class="img-thumb-presentation" src="{{ vich_uploader_asset(presentation, 'img') | imagine_filter('thumb') }}" alt="{{ presentation.imgPresentationName }}">
                         </figure>
                         {% endif %}

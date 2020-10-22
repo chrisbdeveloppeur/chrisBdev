@@ -4,16 +4,19 @@ namespace App\Controller;
 
 use App\Form\PresentationType;
 use App\Repository\PresentationRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
+/**
+ * @Route("/presentation", name="presentation_")
+ * @IsGranted("ROLE_ADMIN")
+ */
 class PresentationController extends AbstractController
 {
     /**
-     * @Route("/ajouter-presentation", name="add_presentation")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/ajouter", name="add")
      */
     public function add_presentation(Request $request)
     {
@@ -37,8 +40,7 @@ class PresentationController extends AbstractController
     }
 
     /**
-     * @Route("/modifier-presentation-{id}", name="edit_presentation")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/modifier", name="edit")
      */
     public function edit_presentation(Request $request, PresentationRepository $presentationRepository, $id)
     {
@@ -63,8 +65,7 @@ class PresentationController extends AbstractController
     }
 
     /**
-     * @Route("/supprimer-presentation-{id}", name="del_presentation")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/supprimer", name="del")
      */
     public function del_presentation(PresentationRepository $presentationRepository, $id)
     {
@@ -79,8 +80,7 @@ class PresentationController extends AbstractController
     }
 
     /**
-     * @Route("/supprimer-img-presentation-{id}", name="del_img_presentation")
-     * @IsGranted("ROLE_ADMIN")
+     * @Route("/{id}/supprimer-img", name="img_del")
      */
     public function del_img_presentation(PresentationRepository $presentationRepository, $id, Request $request)
     {

@@ -24,7 +24,7 @@
                     </span>
 
                     <span class="icon is-medium">
-                        <a style="text-decoration: none" href="{{ path('del_projet', {'id': projet.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer le projet"></a>
+                        <a style="text-decoration: none" href="{{ path('projet_del', {'id': projet.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer le projet"></a>
                     </span>
                 </div>
 
@@ -94,21 +94,21 @@
                         <div class="control">
                             <div class="tags has-addons">
                                 {% if attribut in projet.attributs %}
-                                    <a class="tag is-warning" href="{{ path('del_attribut_to_projet', {'id': projet.id, 'idattribut': attribut.id}) }}" title="retirer l'attribut du projet">
+                                    <a class="tag is-warning" href="{{ path('projet_del_attribut', {'id': projet.id, 'idattribut': attribut.id}) }}" title="retirer l'attribut du projet">
                                         {{ attribut.title }}
                                     </a>
                                 {% else %}
-                                    <a class="tag is-light" href="{{ path('add_attribut_to_projet', {'id': projet.id, 'idattribut': attribut.id }) }}" title="ajouter l'attribut au projet">
+                                    <a class="tag is-light" href="{{ path('projet_add_attribut', {'id': projet.id, 'idattribut': attribut.id }) }}" title="ajouter l'attribut au projet">
                                         {{ attribut.title }}
                                     </a>
                                 {% endif %}
-                                <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_attribut', {'id': attribut.id}) }}" title="modifier l'attribut"></a>
-                                <a class="tag is-delete" href="{{ path('del_attribut', {'id': attribut.id}) }}" title="supprimer l'attribut"></a>
+                                <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('attribut_edit', {'id': attribut.id}) }}" title="modifier l'attribut"></a>
+                                <a class="tag is-delete" href="{{ path('attribut_del', {'id': attribut.id}) }}" title="supprimer l'attribut"></a>
                             </div>
                         </div>
 
                     {% endfor %}
-                    <a class="tag icon" href="{{ path('add_attribut') }}" style="text-decoration: none" title="Ajouter un attribut">
+                    <a class="tag icon" href="{{ path('attribut_add') }}" style="text-decoration: none" title="Ajouter un attribut">
                         <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                     </a>
                 </div>
@@ -122,21 +122,21 @@
                     <div class="control">
                         <div class="tags has-addons">
                     {% if techno in projet.techno %}
-                            <a class="tag is-warning" href="{{ path('del_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="retirer le technologie du projet">
+                            <a class="tag is-warning" href="{{ path('projet_del_techno', {'id': projet.id, 'idtechno': techno.id}) }}" title="retirer le technologie du projet">
                                 #{{ techno.name }}
                             </a>
                     {% else %}
-                        <a class="tag is-light" href="{{ path('add_techno_to_projet', {'id': projet.id, 'idtechno': techno.id}) }}" title="ajouter le technologie au projet">
+                        <a class="tag is-light" href="{{ path('projet_add_techno', {'id': projet.id, 'idtechno': techno.id}) }}" title="ajouter le technologie au projet">
                             #{{ techno.name }}
                         </a>
                     {% endif %}
-                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}" title="modifier la technologie"></a>
-                            <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}" title="supprimer la technologie"></a>
+                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('techno_edit', {'id': techno.id}) }}" title="modifier la technologie"></a>
+                            <a class="tag is-delete" href="{{ path('techno_del', {'id': techno.id}) }}" title="supprimer la technologie"></a>
                         </div>
                     </div>
 
                 {% endfor %}
-                    <a class="tag icon" href="{{ path('add_techno') }}" style="text-decoration: none" title="Ajouter une technologie">
+                    <a class="tag icon" href="{{ path('techno_add') }}" style="text-decoration: none" title="Ajouter une technologie">
                         <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                     </a>
                 </div>
@@ -149,7 +149,7 @@
 
                     {% if projet.imgProjetName %}
                         <figure class="figure" style="position: relative;margin-bottom: .75rem">
-                            <a href="{{ path('del_img_projet', {'id': projet.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
+                            <a href="{{ path('projet_del_img', {'id': projet.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
                             <img class="img-thumb-projet" src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb') }}" alt="{{ projet.imgProjetName }}">
                         </figure>
                         {% endif %}

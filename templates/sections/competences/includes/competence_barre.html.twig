@@ -13,11 +13,11 @@
             <div class="column is-fullwidth is-one-fifth-desktop" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
 
                 <span class="icon is-medium">
-                    <a style="text-decoration: none" href="{{ path('edit_comp', {'id': competences.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la compétence"></a>
+                    <a style="text-decoration: none" href="{{ path('comp_edit', {'id': competences.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la compétence"></a>
                 </span>
 
                 <span class="icon is-medium">
-                    <a style="text-decoration: none" href="{{ path('del_comp', {'id': competences.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la compétence"></a>
+                    <a style="text-decoration: none" href="{{ path('comp_del', {'id': competences.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la compétence"></a>
                 </span>
 
             </div>

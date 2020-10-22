@@ -23,7 +23,7 @@
                 </span>
 
                 <span class="icon is-medium">
-                    <a style="text-decoration: none" href="{{ path('del_comp', {'id': competence.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la compétence"></a>
+                    <a style="text-decoration: none" href="{{ path('comp_del', {'id': competence.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la compétence"></a>
                 </span>
 
             </div>
@@ -41,7 +41,7 @@
                         }) }}
                     </div>
 
-                    <a class="tag icon is-medium" href="{{ path('add_techno') }}" style="text-decoration: none;margin-left: .75rem" title="Ajouter une technologie">
+                    <a class="tag icon is-medium" href="{{ path('techno_add') }}" style="text-decoration: none;margin-left: .75rem" title="Ajouter une technologie">
                         <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                     </a>
 

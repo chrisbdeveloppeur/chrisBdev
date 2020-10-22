@@ -6,7 +6,7 @@
         {% if is_granted('ROLE_ADMIN') %}
             <div style="display: flex;justify-content: start;">
                 <span class="icon is-medium">
-                    <a style="text-decoration: none" href="{{ path('edit_projet', {'id': projet.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer le projet"></a>
+                    <a style="text-decoration: none" href="{{ path('projet_edit', {'id': projet.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer le projet"></a>
                 </span>
             </div>
         {% endif %}
@@ -21,9 +21,9 @@
                 <div class="column">
                     <figure class="">
                         {% if projet.imgProjetName %}
-                            <img src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb_small') }}">
+                            <img src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb_small') }}" alt="{{ projet.imgProjetName }}">
                         {% else %}
-                            <img src="https://bulma.io/images/placeholders/1280x960.png">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="no img">
                         {% endif %}
                     </figure>
                 </div>
@@ -87,9 +87,9 @@
 
                                     {% if is_granted('ROLE_ADMIN') %}
                                     <div style="margin: 0 1rem">
-                                        <a class="fas fa-edit has-text-warning" href="{{ path('edit_attribut', {'id': attribut.id}) }}" title="modifier l'attribut" style="text-shadow: none"></a>
+                                        <a class="fas fa-edit has-text-warning" href="{{ path('attribut_edit', {'id': attribut.id}) }}" title="modifier l'attribut" style="text-shadow: none"></a>
                                         <span class="icon is-small">
-                                            <a style="text-decoration: none;text-shadow: none" href="{{ path('del_attribut', {'id': attribut.id}) }}" class="fas fa-times-circle has-text-danger" title="supprimer l'attribut"></a>
+                                            <a style="text-decoration: none;text-shadow: none" href="{{ path('attribut_del', {'id': attribut.id}) }}" class="fas fa-times-circle has-text-danger" title="supprimer l'attribut"></a>
                                         </span>
                                     </div>
                                     {% endif %}
@@ -104,7 +104,7 @@
                             {% if is_granted('ROLE_ADMIN') %}
                                 <div class="column is-half" style="display: flex;align-items: center;justify-content:center;position: relative">
 
-                                    <a class="tag icon" href="{{ path('add_attribut') }}" style="text-decoration: none" title="Ajouter un attribut">
+                                    <a class="tag icon" href="{{ path('attribut_add') }}" style="text-decoration: none" title="Ajouter un attribut">
                                         <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                                     </a>
 
@@ -129,15 +129,15 @@
                                         {% endif %}
 
                                         {% if is_granted('ROLE_ADMIN') %}
-                                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('edit_techno', {'id': techno.id}) }}" title="modifier la technologie"></a>
-                                            <a class="tag is-delete" href="{{ path('del_techno', {'id': techno.id}) }}" title="supprimer la technologie"></a>
+                                            <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('techno_edit', {'id': techno.id}) }}" title="modifier la technologie"></a>
+                                            <a class="tag is-delete" href="{{ path('techno_del', {'id': techno.id}) }}" title="supprimer la technologie"></a>
                                         {% endif %}
                                     </div>
                                 </div>
                             {% endfor %}
 
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a class="tag icon" href="{{ path('add_techno') }}" style="text-decoration: none" title="Ajouter une technologie">
+                                <a class="tag icon" href="{{ path('techno_add') }}" style="text-decoration: none" title="Ajouter une technologie">
                                     <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                                 </a>
                             {% endif %}

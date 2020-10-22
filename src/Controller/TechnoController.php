@@ -7,11 +7,16 @@ use App\Repository\TechnoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
+/**
+ * @Route("/techno", name="techno_")
+ * @IsGranted("ROLE_ADMIN")
+ */
 class TechnoController extends AbstractController
 {
     /**
-     * @Route("/ajouter-techno", name="add_techno")
+     * @Route("/ajouter", name="add")
      */
     public function add_techno(Request $request, TechnoRepository $technoRepository)
     {
@@ -33,7 +38,7 @@ class TechnoController extends AbstractController
     }
 
     /**
-     * @Route("/editer-techno-{id}", name="edit_techno")
+     * @Route("/{id}/editer", name="edit")
      */
     public function edit_techno(Request $request, TechnoRepository $technoRepository, $id)
     {
@@ -58,7 +63,7 @@ class TechnoController extends AbstractController
     }
 
     /**
-     * @Route("/supprimer-techno-{id}", name="del_techno")
+     * @Route("/{id}/supprimer", name="del")
      */
     public function del_techno(TechnoRepository $technoRepository, $id, Request $request)
     {
