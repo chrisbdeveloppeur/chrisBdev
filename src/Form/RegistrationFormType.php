@@ -20,11 +20,11 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('captchaCode', CaptchaType::class, array(
-                'captchaConfig' => 'ExampleCaptcha',
-                'label' => false,
-                'error_bubbling' => true,
-            ))
+//            ->add('captchaCode', CaptchaType::class, array(
+//                'captchaConfig' => 'ExampleCaptcha',
+//                'label' => false,
+//                'error_bubbling' => true,
+//            ))
             ->add('email', EmailType::class,[
                 'label' => false,
                 'error_bubbling' => true,

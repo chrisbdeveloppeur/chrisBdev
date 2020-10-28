@@ -49,11 +49,26 @@ class Admin implements UserInterface
     private $isConfirmed;
 
     /**
-     * @CaptchaAssert\ValidCaptcha(
-     *      message = "Echec de validation CAPTCHA, veuillez reéssayer."
-     * )
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    protected $captchaCode;
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $last_name;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $birthday;
+
+//    /**
+//     * @CaptchaAssert\ValidCaptcha(
+//     *      message = "Echec de validation CAPTCHA, veuillez reéssayer."
+//     * )
+//     */
+//    protected $captchaCode;
 
     /**
      * @ORM\PrePersist()
@@ -184,13 +199,49 @@ class Admin implements UserInterface
         return $this;
     }
 
-    public function getCaptchaCode()
-    {
-        return $this->captchaCode;
-    }
+//    public function getCaptchaCode()
+//    {
+//        return $this->captchaCode;
+//    }
+//
+//    public function setCaptchaCode($captchaCode)
+//    {
+//        $this->captchaCode = $captchaCode;
+//    }
 
-    public function setCaptchaCode($captchaCode)
-    {
-        $this->captchaCode = $captchaCode;
-    }
+public function getName(): ?string
+{
+    return $this->name;
+}
+
+public function setName(?string $name): self
+{
+    $this->name = $name;
+
+    return $this;
+}
+
+public function getLastName(): ?string
+{
+    return $this->last_name;
+}
+
+public function setLastName(?string $last_name): self
+{
+    $this->last_name = $last_name;
+
+    return $this;
+}
+
+public function getBirthday(): ?\DateTimeInterface
+{
+    return $this->birthday;
+}
+
+public function setBirthday(?\DateTimeInterface $birthday): self
+{
+    $this->birthday = $birthday;
+
+    return $this;
+}
 }

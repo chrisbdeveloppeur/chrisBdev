@@ -20,7 +20,11 @@ class MessageController extends AbstractController
 //        dd($user);
         if ($user){
             $email = $user->getUsername();
+            $nom = $user->getLastName();
+            $prenom = $user->getName();
             $form->get('email')->setData($email);
+            $form->get('nom')->setData($prenom);
+            $form->get('prenom')->setData($nom);
         }
 
         $form->handleRequest($request);
