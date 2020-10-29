@@ -11,6 +11,10 @@ import '../css/app.scss';
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
 
+const logo_favicon = require('../img/Chris B Dev - Logo - reduit - favicon.ico');
+const logo_favicon_2 = require('../img/Chris B Dev - Logo - fond noir - favicon.ico');
+const logo_favicon_3 = require('../img/Chris B Dev - Logo - reduit - Black - favicon.ico');
+const logo_favicon_4 = require('../img/Chris_B_Dev_Logo_reduit_fondnoir_borderradius.ico');
 const logo = require('../img/Chris B Dev - Logo - sans-fond.svg');
 const logo2 = require('../img/Chris B Dev - Logo - reduit.svg');
 const logo3 = require('../img/Chris B Dev - Logo - reduit - Black.svg');
