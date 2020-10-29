@@ -109,7 +109,7 @@
                                     <div style="margin: 0 1rem">
                                         <a class="fas fa-edit has-text-warning" href="{{ path('attribut_edit', {'id': attribut.id}) }}" title="modifier l'attribut" style="text-shadow: none"></a>
                                         <span class="icon is-small">
-                                            <a style="text-decoration: none;text-shadow: none" href="{{ path('attribut_del', {'id': attribut.id}) }}" class="fas fa-times-circle has-text-danger" title="supprimer l'attribut"></a>
+                                            <a style="text-decoration: none;text-shadow: none" href="{{ path('projet_del_attribut', {'id': projet.id, 'idattribut': attribut.id}) }}" class="fas fa-times-circle has-text-danger" title="retirer l'attribut du projet"></a>
                                         </span>
                                     </div>
                                     {% endif %}
@@ -124,7 +124,7 @@
                             {% if is_granted('ROLE_ADMIN') %}
                                 <div class="column is-half" style="display: flex;align-items: center;justify-content:center;position: relative">
 
-                                    <a class="tag icon" href="{{ path('attribut_add') }}" style="text-decoration: none" title="Ajouter un attribut">
+                                    <a class="tag icon" href="{{ path('projet_edit', {'id': projet.id}) }}" style="text-decoration: none" title="Ajouter un attribut">
                                         <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                                     </a>
 
@@ -157,7 +157,7 @@
 
                                         {% if is_granted('ROLE_ADMIN') %}
                                             <a class="tag fas fa-2x fa-edit has-text-warning" href="{{ path('techno_edit', {'id': techno.id}) }}" title="modifier la technologie"></a>
-                                            <a class="tag is-delete" href="{{ path('techno_del', {'id': techno.id}) }}" title="supprimer la technologie"></a>
+                                            <a class="tag is-delete" href="{{ path('projet_del_techno', {'id': projet.id, 'idtechno': techno.id}) }}" title="retirer la technologie du projet"></a>
                                         {% endif %}
                                     </div>
 
@@ -169,7 +169,7 @@
                             {% endfor %}
 
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a class="tag icon" href="{{ path('techno_add') }}" style="text-decoration: none" title="Ajouter une technologie">
+                                <a class="tag icon" href="{{ path('projet_edit', {'id': projet.id}) }}" style="text-decoration: none" title="Ajouter une technologie">
                                     <i  class="fas fa-lg fa-plus-circle has-text-black-bis" ></i>
                                 </a>
                             {% endif %}

@@ -112,6 +112,7 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $projet->addTechno($techno);
         $entityManager->flush();
+        $this->addFlash('success', 'La technologie "' . $techno->getName() . '" a été ajoutée du projet ' . $projet->getTitle());
         return $this->redirectToRoute('projet_edit',[
             'projet' => $projet,
             'id' => $projet->getId(),
@@ -128,6 +129,7 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $projet->removeTechno($techno);
         $entityManager->flush();
+        $this->addFlash('danger', 'La technologie "' . $techno->getName() . '" a été retirée du projet ' . $projet->getTitle());
         return $this->redirectToRoute('projet_edit',[
             'projet' => $projet,
             'id' => $projet->getId(),
@@ -147,6 +149,7 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $projet->addAttribut($attribut);
         $entityManager->flush();
+        $this->addFlash('success', 'L\'attribut "' . $attribut->getTitle() . '" a été ajouter au projet ' . $projet->getTitle());
         return $this->redirectToRoute('projet_edit',[
             'projet' => $projet,
             'id' => $projet->getId(),
@@ -163,6 +166,7 @@ class ProjetController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $projet->removeAttribut($attribut);
         $entityManager->flush();
+        $this->addFlash('danger', 'L\'attribut "' . $attribut->getTitle() . '" a été retiré du projet ' . $projet->getTitle());
         return $this->redirectToRoute('projet_edit',[
             'projet' => $projet,
             'id' => $projet->getId(),
