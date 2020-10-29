@@ -60,7 +60,7 @@
 
                         <div class="control">
                             <div class="tags has-addons is-centered">
-                                <a title="modifier mon profile" href="{{ path('user_space') }}" class="tag is-light is-normal is-size-7-touch">{% if app.user.name %}{{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}</a>
+                                <a title="modifier mon profile" href="{{ path('user_space') }}" class="tag {% if 'ROLE_ADMIN' in app.user.roles %}is-dark has-text-warning{% else %}is-light{% endif %} is-normal is-size-7-touch has-text-weight-bold">{% if app.user.name %}{{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}</a>
                                 <a href="{{ path('app_logout') }}" class="tag is-danger is-normal is-size-7-touch">
                                     <strong>Deconnexion</strong>
                                 </a>
