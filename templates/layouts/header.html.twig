@@ -60,7 +60,7 @@
 
                         <div class="control">
                             <div class="tags is-centered" style="flex-direction: column">
-                                <a style="width: 100%" title="modifier mon profile" href="{{ path('user_space') }}" class="tag is-size-6-touch {% if 'ROLE_ADMIN' in app.user.roles %}is-dark has-text-warning{% else %}is-light{% endif %} is-normal is-size-7-touch has-text-weight-bold">{% if app.user.name %}{{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}</a>
+                                <a style="width: 100%" title="modifier mon profile" href="{{ path('user_space') }}" class="tag is-size-6-touch {% if 'ROLE_ADMIN' in app.user.roles %}is-dark has-text-warning{% else %}is-light{% endif %} is-normal has-text-weight-bold">{% if app.user.name %}{{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}</a>
                                 <a style="width: 100%" href="{{ path('app_logout') }}" class="tag is-danger is-normal is-size-6-touch">
                                     <strong>Déconnexion</strong>
                                     <span class="icon">
