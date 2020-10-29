@@ -23,3 +23,6 @@ const bg_header = require('../img/abstract-5035778_1920.jpg');
 const bg_header_2 = require('../img/audio-855980.jpg');
 const bg_header_3 = require('../img/tech-870970_1280_resize.png');
 const bg_header_4 = require('../img/cubes-2492010_1920.jpg');
+const bg_signin_illustration = require('../img/undraw_sign_in_e6hj.svg');
+const bg_login_illustration = require('../img/undraw_Access_account_re_8spm.svg');
+const bg_edit_profile_illustration = require('../img/undraw_profile_6l1l.svg');

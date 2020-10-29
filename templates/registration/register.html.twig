@@ -7,74 +7,18 @@
 
 
 <section class="hero is-bold section is-dark is-fullheight-with-navbar">
-    <div class="columns is-flex has-text-centered is-centered">
+    <div class="columns has-text-centered is-centered">
 
-        <div class="column is-one-quarter">
-            <h1 class="title has-text-primary">Création de mon espace utilisateur</h1>
-
-            {{ form_start(registrationForm, {'attr': {'id': 'registerForm'}}) }}
-
-            {% if form_errors(registrationForm) != null %}
-                <article class="message is-small is-danger">
-                    <div class="message-header">
-                        <p>Oops !</p>
-                        <span class="icon is-small has-text-white">
-                            <i class="fas fa-lg fa-exclamation-triangle"></i>
-                        </span>
-                    </div>
-                    <div class="message-body">
-                        {{ form_errors(registrationForm) }}
-                    </div>
-                </article>
-            {% endif %}
-
-            <div class="field">
-                <label class="label has-text-white">Email</label>
-                <div class="control">
-                    {{ form_widget(registrationForm.email, {'attr': {'class': 'input is-primary'}}) }}
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label has-text-white">Mot de passe</label>
-                <div class="control">
-                    {{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'input is-primary'}}) }}
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label has-text-white">Confirmer votre mot de passe</label>
-                <div class="control">
-                    {{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'input is-primary'}}) }}
-                </div>
-            </div>
-
-{#            <div class="field">#}
-{#                <label class="label has-text-white"></label>#}
-{#                <div class="control" style="display: flex;#}
-{#                                            flex-direction: column;#}
-{#                                            justify-content: center;#}
-{#                                            align-items: center;#}
-{#                                            ">#}
-{#                    {{ form_widget(registrationForm.captchaCode, {'attr': {'class': 'input is-primary'}}) }}#}
-{#                </div>#}
-{#            </div>#}
-
-{#            <button type="submit" class="button is-success is-small">#}
-{#                S'enregistrer#}
-{#            </button>#}
-
-
-            <button type="submit" class="button is-success is-small g-recaptcha"
-                    data-sitekey="6LfSl9wZAAAAACPrrml-QieLt8K7CfycrC1vJwMr"
-                    data-callback='onSubmit'
-                    data-action='submit'>
-                S'enregistrer
-            </button>
-
-            {{ form_end(registrationForm) }}
-
+        <div class="column is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
+            {{ include('registration/registration_form.html.twig') }}
         </div>
+
+        <div class="column is-two-fifths is-one-fifth-widescreen is-one-quarter-fullhd is-flex">
+            <figure>
+                <img src="{{ asset('build/images/undraw_sign_in_e6hj.5a54e749.svg') }}" alt="sign in illustration">
+            </figure>
+        </div>
+
     </div>
 </section>
 

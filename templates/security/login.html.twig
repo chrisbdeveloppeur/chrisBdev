@@ -3,59 +3,30 @@
 {% block title %}Chris B dev | Connexion{% endblock %}
 
 {% block body %}
+
     <section class="hero is-bold section is-dark is-fullheight-with-navbar">
-        <div class="columns is-flex has-text-centered is-centered">
-            <div class="column is-one-quarter">
-                <form method="post">
+        <div class="columns has-text-centered is-centered">
 
-                    <h1 class="title has-text-primary">Veuillez entrez vos identifiants de connexion</h1>
-
-                    {% if error %}
-                        <article class="message is-small is-danger">
-                            <div class="message-header">
-                                <p>Oops !</p>
-                                <span class="icon is-small has-text-white">
-                                  <i class="fas fa-lg fa-exclamation-triangle"></i>
-                                </span>
-                            </div>
-                            <div class="message-body">
-                                {{ error.messageKey|trans(error.messageData, 'security') }}
-                            </div>
-                        </article>
-                    {% endif %}
-
-                    <div class="field">
-                        <label class="label has-text-white">Email</label>
-                        <div class="control">
-                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input is-primary" required autofocus>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <label class="label has-text-white">Mot de passe</label>
-                        <div class="control">
-                            <input type="password" name="password" id="inputPassword" class="form-control input is-primary" required>
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="_csrf_token"
-                           value="{{ csrf_token('authenticate') }}"
-                    >
-                    
-                    <div style="display: flex;justify-content: space-between">
-                        <a class="button is-small is-info" href="{{ path('lost_password') }}">
-                            Mot de passe oublié ?
-                        </a>
-
-                        <button class="button is-success is-small" type="submit">
-                            Connexion
-                        </button>
-                    </div>
-                    
-                    
-                </form>
+            <div class="column is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd is-flex" style="align-items: center">
+                {{ include('security/login_form.html.twig') }}
             </div>
+
+            <div class="column is-two-fifths is-one-fifth-widescreen is-one-quarter-fullhd is-flex">
+                <figure>
+                    <img src="{{ asset('build/images/undraw_Access_account_re_8spm.52dc6593.svg') }}" alt="login illustration">
+                </figure>
+            </div>
+
+
         </div>
     </section>
+
+{#    <section class="hero is-bold section is-dark is-fullheight-with-navbar">#}
+{#        <div class="columns is-flex has-text-centered is-centered">#}
+{#            <div class="column is-one-quarter">#}
+{#                {{ include('security/login_form.html.twig') }}#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
 
 {% endblock %}

@@ -5,86 +5,28 @@
 {% block body %}
 
     {% if is_granted('ROLE_USER') %}
-        <section class="has-text-centered hero is-fullheight is-light" style="justify-content: center;align-items: center;position: relative">
 
-            <h1 class="title has-text-black-bis has-text-weight-bold" style="text-transform: uppercase">
-                Modifier mon profile
-            </h1>
-            <h2 class="subtitle has-text-black-bis is-family-primary is-4">"{{ user.username }}"</h2>
+        <section class="hero is-bold section is-dark is-fullheight-with-navbar">
+            <div class="columns has-text-centered is-centered">
 
-            <div class="box column is-two-fifths is-full-touch has-background-black-bis" style="align-self: center">
-
-                <div class="column half-touch has-text-centered is-flex" style="justify-content: space-between">
-
-                <span class="icon is-medium">
-                    <a class="button is-small is-green-custom" type="submit" href="{{ path('home') }}#competences" title="Revenir à l'accueil">
-                        <span style="text-decoration: none" class="fas fa-lg fa-arrow-left has-text-dark"></span>
-                    </a>
-                </span>
-
-{#                    <span class="icon is-medium">#}
-{#                        <a style="text-decoration: none" href="" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer mon profile"></a>#}
-{#                    </span>#}
-
+                <div class="column is-one-third-widescreen box has-background-black-bis">
+                    {{ include('User/edit_user_form.html.twig') }}
                 </div>
 
-                {{ form_start(form) }}
-
-                <div class="field">
-                    <label class="label">Mon nom</label>
-                    <div class="control">
-                        {{ form_widget(form.lastName, {'attr': {'class': 'input is-primary'}}) }}
-                    </div>
+                <div class="column is-two-fifths is-one-quarter-widescreen is-flex">
+                    <figure>
+                        <img src="{{ asset('build/images/undraw_profile_6l1l.fa21e098.svg') }}" alt="edit profile illustration">
+                    </figure>
                 </div>
-
-                <div class="field">
-                    <label class="label">Mon prénom</label>
-                    <div class="control">
-                        {{ form_widget(form.name, {'attr': {'class': 'input is-primary'}}) }}
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label class="label">Ma date de naissance</label>
-                    <div class="control">
-
-                        <div class="select">{{ form_widget( form.birthday.day, {'attr' : {'alt' : 'jour'}} ) }}</div>
-                        <div class="select">{{ form_widget( form.birthday.month, {'attr' : {'alt' : 'mois'}} ) }}</div>
-                        <div class="select">{{ form_widget( form.birthday.year, {'attr' : {'alt' : 'annee'}} ) }}</div>
-
-                    </div>
-                </div>
-
-{#                <div class="field">#}
-{#                    <label class="label">Ma date de naissance</label>#}
-{#                    <div class="control">#}
-{#                        {{ form_widget(form.birthday, {'attr': {'class': 'select is-primary'}}) }}#}
-{#                    </div>#}
-{#                </div>#}
-
-                <div class="field">
-                    <label class="label">Mon adresse mail</label>
-                    <div class="control">
-                        {{ form_widget(form.email, {'attr': {'class': 'input is-primary'}}) }}
-                    </div>
-                </div>
-
-
-
-
-
-
-                <div class="field is-grouped is-flex" style="justify-content: center">
-                    <div class="control">
-                        <button class="button is-green-custom g-recaptcha" type="submit" >Valider les modifications</button>
-                    </div>
-                </div>
-
-                {{ form_end(form) }}
 
             </div>
-
         </section>
+
+{#        <section class="has-text-centered hero is-fullheight is-light" style="justify-content: center;align-items: center;position: relative">#}
+
+{#            #}
+
+{#        </section>#}
     {% endif %}
 
 

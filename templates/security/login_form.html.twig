@@ -1,0 +1,48 @@
+<form method="post" style="width: 100%">
+
+    <h1 class="title has-text-primary">Veuillez entrez vos identifiants de connexion</h1>
+
+    {% if error %}
+        <article class="message is-small is-danger">
+            <div class="message-header">
+                <p>Oops !</p>
+                <span class="icon is-small has-text-white">
+                                  <i class="fas fa-lg fa-exclamation-triangle"></i>
+                                </span>
+            </div>
+            <div class="message-body">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        </article>
+    {% endif %}
+
+    <div class="field">
+        <label class="label has-text-white">Email</label>
+        <div class="control">
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input is-primary" required autofocus>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label has-text-white">Mot de passe</label>
+        <div class="control">
+            <input type="password" name="password" id="inputPassword" class="form-control input is-primary" required>
+        </div>
+    </div>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    <div style="display: flex;justify-content: space-between">
+        <a class="button is-small is-info" href="{{ path('lost_password') }}">
+            Mot de passe oublié ?
+        </a>
+
+        <button class="button is-success is-small" type="submit">
+            Connexion
+        </button>
+    </div>
+
+
+</form>
