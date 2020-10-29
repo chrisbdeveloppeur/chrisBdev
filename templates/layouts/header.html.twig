@@ -59,10 +59,13 @@
                     <div class="navbar-item">
 
                         <div class="control">
-                            <div class="tags has-addons is-centered">
-                                <a title="modifier mon profile" href="{{ path('user_space') }}" class="tag {% if 'ROLE_ADMIN' in app.user.roles %}is-dark has-text-warning{% else %}is-light{% endif %} is-normal is-size-7-touch has-text-weight-bold">{% if app.user.name %}Tu est connecté {{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}</a>
-                                <a href="{{ path('app_logout') }}" class="tag is-danger is-normal is-size-7-touch">
-                                    <strong>Deconnexion</strong>
+                            <div class="tags is-centered" style="flex-direction: column">
+                                <a style="width: 100%" title="modifier mon profile" href="{{ path('user_space') }}" class="tag {% if 'ROLE_ADMIN' in app.user.roles %}is-dark has-text-warning{% else %}is-light{% endif %} is-normal is-size-7-touch has-text-weight-bold">{% if app.user.name %}{{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}</a>
+                                <a style="width: 100%" href="{{ path('app_logout') }}" class="tag is-danger is-normal is-size-6-touch">
+                                    <strong>Déconnexion</strong>
+                                    <span class="icon">
+                                        <i class="fas fa-lg fa-sign-out-alt"></i>
+                                    </span>
                                 </a>
                             </div>
                         </div>
@@ -73,12 +76,15 @@
                     <div class="navbar-item">
 
                         <div class="control">
-                            <div class="tags has-addons is-centered">
-                                <a href="{{ path('app_login') }}" class="tag is-success is-normal is-size-7-touch" title="se connecter à mon espace">
+                            <div class="tags is-centered" style="flex-direction: column">
+                                <a style="width: 100%" href="{{ path('app_login') }}" class="tag is-success is-normal is-size-6-touch" title="se connecter à mon espace">
                                     <strong>Connexion</strong>
+                                    <span class="icon">
+                                        <i class="fas fa-lg fa-sign-in-alt"></i>
+                                    </span>
                                 </a>
-                                <a href="{{ path('app_register') }}" class="tag is-info is-size-7-touch" title="créer son profile">
-                                    <strong>s'enregistrer</strong>
+                                <a style="width: 100%" href="{{ path('app_register') }}" class="tag is-info is-size-6-touch" title="créer son profile">
+                                    <strong>S'enregistrer</strong>
                                 </a>
                             </div>
                         </div>
