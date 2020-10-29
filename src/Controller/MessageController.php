@@ -23,8 +23,8 @@ class MessageController extends AbstractController
             $nom = $user->getLastName();
             $prenom = $user->getName();
             $form->get('email')->setData($email);
-            $form->get('nom')->setData($prenom);
-            $form->get('prenom')->setData($nom);
+            $form->get('nom')->setData($nom);
+            $form->get('prenom')->setData($prenom);
         }
 
         $form->handleRequest($request);
