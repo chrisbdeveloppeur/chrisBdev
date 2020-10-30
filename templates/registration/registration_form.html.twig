@@ -7,8 +7,8 @@
             <div class="message-header">
                 <p>Oops !</p>
                 <span class="icon is-small has-text-white">
-                            <i class="fas fa-lg fa-exclamation-triangle"></i>
-                        </span>
+                    <i class="fas fa-lg fa-exclamation-triangle"></i>
+                </span>
             </div>
             <div class="message-body">
                 {{ form_errors(registrationForm) }}
@@ -18,22 +18,31 @@
 
     <div class="field">
         <label class="label has-text-white">Email</label>
-        <div class="control">
+        <div class="control has-icons-left">
             {{ form_widget(registrationForm.email, {'attr': {'class': 'input is-primary'}}) }}
+            <span class="icon is-small is-left">
+                <i class="fas fa-at"></i>
+            </span>
         </div>
     </div>
 
     <div class="field">
         <label class="label has-text-white">Mot de passe</label>
-        <div class="control">
+        <div class="control has-icons-left">
             {{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'input is-primary'}}) }}
+            <span class="icon is-small is-left">
+                <i class="fas fa-key"></i>
+            </span>
         </div>
     </div>
 
     <div class="field">
         <label class="label has-text-white">Confirmer votre mot de passe</label>
-        <div class="control">
+        <div class="control has-icons-left">
             {{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'input is-primary'}}) }}
+            <span class="icon is-small is-left">
+                <i class="fas fa-key"></i>
+            </span>
         </div>
     </div>
 

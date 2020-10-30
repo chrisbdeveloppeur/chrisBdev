@@ -1,4 +1,7 @@
 <h1 class="title has-text-weight-bold has-text-primary">
+    <span class="icon is-medium">
+        <i class="fas fa-id-card"></i>
+    </span>
     Modifier mon profil
 </h1>
 <h2 class="subtitle is-family-primary is-4">"{{ user.username }}"</h2>
@@ -13,10 +16,6 @@
                     </a>
                 </span>
 
-        {#                    <span class="icon is-medium">#}
-        {#                        <a style="text-decoration: none" href="" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer mon profile"></a>#}
-        {#                    </span>#}
-
     </div>
 
     {{ form_start(form) }}
@@ -24,7 +23,7 @@
     <div class="field">
         <label class="label has-text-light has-text-left">
             <span class="icon">
-                <i class="fas fa-id-card"></i>
+                <i class="fas fa-male"></i>
             </span>
             Mon nom
         </label>
@@ -79,6 +78,13 @@
 
         </div>
     </div>
+
+    <a class="tag is-small is-warning" href="{{ path('user_change_password') }}" style="text-decoration: none">
+        <span class="icon">
+                <i class="fas fa-key"></i>
+            </span>
+        Modifier mon mot de passe
+    </a>
 
     <div class="field is-grouped is-flex" style="justify-content: center;padding-top: .75rem">
         <div class="control">

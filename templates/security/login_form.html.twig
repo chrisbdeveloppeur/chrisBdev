@@ -17,18 +17,25 @@
     {% endif %}
 
     <div class="field">
-        <label class="label has-text-white">Email</label>
-        <div class="control">
+        <label class="label has-text-light">Email</label>
+        <div class="control has-icons-left">
             <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input is-primary" required autofocus>
+            <span class="icon is-small is-left">
+                <i class="fas fa-at"></i>
+            </span>
         </div>
     </div>
 
     <div class="field">
-        <label class="label has-text-white">Mot de passe</label>
-        <div class="control">
+        <label class="label has-text-light">Mot de passe</label>
+        <div class="control has-icons-left">
             <input type="password" name="password" id="inputPassword" class="form-control input is-primary" required>
+            <span class="icon is-small is-left">
+                <i class="fas fa-key"></i>
+            </span>
         </div>
     </div>
+
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
