@@ -15,10 +15,22 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/mon-espace", name="space")
+     * @Route("/mon-espace-perso", name="space")
      * @IsGranted("ROLE_USER")
      */
     public function monEspace(Request $request)
+    {
+        $user = $this->getUser();
+        return $this->render('User/space_user.html.twig', [
+            'user' => $user
+        ]);
+    }
+
+    /**
+     * @Route("/modifier-mon-profil", name="edit")
+     * @IsGranted("ROLE_USER")
+     */
+    public function editUser(Request $request)
     {
         $user = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
@@ -30,9 +42,9 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', 'La modification de votre profiel à bien été prise en compte');
+            $this->addFlash('success', 'La modification de votre profil à bien été prise en compte');
 
-            return $this->redirect($request->server->get('HTTP_REFERER'));
+            return $this->redirectToRoute('user_space');
         }
 
 

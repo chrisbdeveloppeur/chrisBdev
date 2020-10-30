@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}chrisBdev - Mon espace personnel{% endblock %}
+
+{% block meta_description %}Bienvenue dans votre espace personnel du site chrisBdev{% endblock %}
+
+{% block body %}
+
+    {% if is_granted('ROLE_USER') %}
+
+        <section class="hero is-bold section is-dark is-fullheight-with-navbar">
+            <div class="columns has-text-centered is-centered">
+
+                <div class="column is-one-third-widescreen box has-background-black-bis is-flex is-flex-direction-column">
+                    {{ include('User/user_card.html.twig') }}
+                    <a class="button has-background-green-custom" href="{{ path('user_edit') }}">Modifier mon profil</a>
+                </div>
+
+                <div class="column is-two-fifths is-two-fifths-widescreen is-one-quarter-fullhd is-flex">
+                    <figure>
+                        <img src="{{ asset('build/images/undraw_profile_details_f8b7.c2f3185f.svg') }}" alt="edit profile illustration">
+                    </figure>
+                </div>
+
+            </div>
+        </section>
+
+    {% endif %}
+
+
+{% endblock %}

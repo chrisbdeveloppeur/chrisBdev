@@ -8,7 +8,7 @@
     <div class="column half-touch has-text-centered is-flex" style="justify-content: space-between">
 
                 <span class="icon is-medium">
-                    <a class="button is-small is-green-custom" type="submit" href="{{ path('home') }}" title="Revenir à l'accueil">
+                    <a class="button is-small is-green-custom" type="submit" href="{{ path('user_space') }}" title="Revenir dans mon espace personnel">
                         <span style="text-decoration: none" class="fas fa-lg fa-arrow-left has-text-dark"></span>
                     </a>
                 </span>
@@ -22,27 +22,47 @@
     {{ form_start(form) }}
 
     <div class="field">
-        <label class="label has-text-light">Mon nom</label>
+        <label class="label has-text-light has-text-left">
+            <span class="icon">
+                <i class="fas fa-id-card"></i>
+            </span>
+            Mon nom
+        </label>
         <div class="control">
             {{ form_widget(form.lastName, {'attr': {'class': 'input is-primary'}}) }}
         </div>
     </div>
 
     <div class="field">
-        <label class="label has-text-light">Mon prénom</label>
+        <label class="label has-text-light has-text-left">
+            <span class="icon">
+                <i class="fas fa-user"></i>
+            </span>
+            Mon prénom
+        </label>
         <div class="control">
             {{ form_widget(form.name, {'attr': {'class': 'input is-primary'}}) }}
         </div>
     </div>
 
     <div class="field">
-        <label class="label has-text-light">Mon adresse mail</label>
+        <label class="label has-text-light has-text-left">
+            <span class="icon">
+                <i class="fas fa-at"></i>
+            </span>
+            Mon adresse mail
+        </label>
         <div class="control">
             {{ form_widget(form.email, {'attr': {'class': 'input is-primary'}}) }}
         </div>
     </div>
 
-    <label class="label has-text-light">Ma date de naissance</label>
+    <label class="label has-text-light has-text-left">
+        <span class="icon">
+            <i class="fas fa-birthday-cake"></i>
+        </span>
+        Ma date de naissance
+    </label>
     <div class="field has-addons" style="margin-bottom: .75rem">
 
             <div class="control is-expanded">

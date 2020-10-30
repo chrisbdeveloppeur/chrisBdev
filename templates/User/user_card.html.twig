@@ -1,0 +1,33 @@
+<div class="column has-text-left">
+    <div class="column has-text-light">
+        <span class="icon">
+            <i class="fas fa-at"></i>
+        </span>
+        Mon mail : <p class="has-text-primary">{{ user.username }}</p>
+    </div>
+
+    <div class="column has-text-light">
+        <span class="icon">
+            <i class="fas fa-id-card"></i>
+        </span>
+        Mon nom : {% if user.lastName %}<p class="has-text-primary">{{ user.lastName }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
+    </div>
+
+    <div class="column has-text-light">
+        <span class="icon">
+            <i class="fas fa-user"></i>
+        </span>
+        Mon prénom : {% if user.name %}<p class="has-text-primary">{{ user.name }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
+    </div>
+
+    <div class="column has-text-light">
+        <span class="icon">
+            <i class="fas fa-birthday-cake"></i>
+        </span>
+        Ma date de naissance : {% if user.birthday %}<p class="has-text-primary">{{ user.birthday }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
+    </div>
+
+</div>
+
+
+

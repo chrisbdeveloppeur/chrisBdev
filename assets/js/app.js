@@ -30,3 +30,5 @@ const bg_header_4 = require('../img/cubes-2492010_1920.jpg');
 const bg_signin_illustration = require('../img/undraw_sign_in_e6hj.svg');
 const bg_login_illustration = require('../img/undraw_Access_account_re_8spm.svg');
 const bg_edit_profile_illustration = require('../img/undraw_profile_6l1l.svg');
+const bg_space_user_illustration = require('../img/undraw_profile_details_f8b7.svg');
+const bg_space_user_illustration_2 = require('../img/undraw_account_490v.svg');
