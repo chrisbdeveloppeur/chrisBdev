@@ -36,7 +36,7 @@ class MessageType extends AbstractType
             ])
             ->add('text', TextareaType::class, [
                 'label' => false,
-                'required' => false,
+                'required' => true,
                 'error_bubbling' => true,
             ])
         ;
