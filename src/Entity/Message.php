@@ -69,6 +69,7 @@ class Message
      *     max="1000",
      *     maxMessage="1000 charactères maximum"
      * )
+     * @Assert\NotBlank()
      */
     private $text;
 
