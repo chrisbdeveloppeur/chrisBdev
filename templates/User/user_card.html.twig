@@ -24,7 +24,7 @@
         <span class="icon">
             <i class="fas fa-birthday-cake"></i>
         </span>
-        Ma date de naissance : {% if user.birthday %}<p class="has-text-primary">{{ user.birthday }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
+        Ma date de naissance : {% if user.birthday %}<p class="has-text-primary">{{ user.birthday|date("d/m/Y") }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
     </div>
 
 </div>
