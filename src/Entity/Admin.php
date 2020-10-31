@@ -63,6 +63,11 @@ class Admin implements UserInterface
      */
     private $birthday;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $news;
+
 //    /**
 //     * @CaptchaAssert\ValidCaptcha(
 //     *      message = "Echec de validation CAPTCHA, veuillez reéssayer."
@@ -241,6 +246,18 @@ public function getBirthday(): ?\DateTimeInterface
 public function setBirthday(?\DateTimeInterface $birthday): self
 {
     $this->birthday = $birthday;
+
+    return $this;
+}
+
+public function getNews(): ?bool
+{
+    return $this->news;
+}
+
+public function setNews(bool $news): self
+{
+    $this->news = $news;
 
     return $this;
 }

@@ -52,6 +52,12 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+
+            ->add('news', CheckboxType::class,[
+                'label' => false,
+                'error_bubbling' => true,
+                'required' => false,
+            ])
         ;
     }
 

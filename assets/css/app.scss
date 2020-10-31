@@ -11,7 +11,7 @@ $primary: rgba(126, 137, 72, 0.71);
 //$link: #9a009a;
 $info: #5db7de;
 $danger: #F22B29;
-$warning-custom: #d0dca0;
+$warning-custom: #b5c070;
 
 
 .progress.is-large{
@@ -25,7 +25,7 @@ $navbar-item-color: white;
 $navbar-background-color: rgba(0,0,0,0);
 $navbar-item-hover-background-color: none;
 $link: $warning-custom;
-$link-hover: white;
+$link-hover: #effad1;
 $box-background-color: rgba(0,0,0,0.5);
 $box-radius: 0px;
 $input-radius: 0px;
@@ -685,4 +685,5 @@ background: $primary
 
 
 @import "~bulma";
+@import "~bulma-extensions";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";

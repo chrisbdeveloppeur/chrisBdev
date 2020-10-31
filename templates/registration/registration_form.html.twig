@@ -46,10 +46,17 @@
         </div>
     </div>
 
-    <button type="submit" class="button is-success is-small g-recaptcha"
-            data-sitekey="6LfSl9wZAAAAACPrrml-QieLt8K7CfycrC1vJwMr"
-            data-callback='onSubmit'
-            data-action='submit'>
+    <div class="field has-text-left">
+        {{ form_widget(registrationForm.news, {'attr': {'class': 'switch is-small', 'name': 'registration_form_news'}}) }}
+        <label for="registration_form_news" class="is-size-7">J'accepte de recevoir des mails sur les offres en provenance du site chrisBdev</label>
+    </div>
+
+    <div class="field has-text-left">
+        <input id="switchAgreeTerms" type="checkbox" name="switchAgreeTerms" class="switch is-small" required>
+        <label for="switchAgreeTerms" class="is-size-7">J'accepte les <a href="#">conditions générales</a> et la <a href="#">politique de confidentialité</a></label>
+    </div>
+
+    <button type="submit" class="button is-success is-small">
         S'enregistrer
     </button>
 

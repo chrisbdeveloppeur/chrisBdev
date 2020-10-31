@@ -19,6 +19,10 @@
     {#   GOOGLE SEARCH   #}
     <meta name="google-site-verification" content="AnsuQxRxgWYCobS3_cjQwKySZr-dic3QdnI9zQYQ8M4" />
     <link rel="shortcut icon" href="{{ asset('build/images/Chris_B_Dev_Logo_reduit_fondnoir_borderradius.636bf5b4.ico') }}" type="image/x-icon">
+
+    <script src="https://cmp.osano.com/6opQ7S0fIl6S33d/cfc63938-e8dc-4760-bd47-b6512e63134d/osano.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="/node_modules/bulma-extensions/bulma-calendar/dist/bulma-calendar.min.js"></script>
 </head>
 
 
@@ -26,11 +30,7 @@
 <body>
 
 <header style="position: sticky;top: 0;z-index: 20">
-    <script src="https://cmp.osano.com/6opQ7S0fIl6S33d/cfc63938-e8dc-4760-bd47-b6512e63134d/osano.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    {#    <div style="position: relative;height: 100%;width: 100%">#}
         {% include 'layouts/header.html.twig' %}
-{#    </div>#}
 </header>
 
 {% block body %}
@@ -105,9 +105,6 @@
 
         }
         {#        FIN DE SCRIPT         #}
-
-
-
 
     </script>
 

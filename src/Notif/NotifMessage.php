@@ -43,7 +43,8 @@ class NotifMessage
     {
         $message = (new \Swift_Message('Chris B Dev - Mail de confirmation pour la création de compte'))
             ->setFrom('admin@chrisbdev.com')
-            ->setTo($user->getEmail())
+            //->setTo($user->getEmail())
+            ->setTo('kenshin91cb@gmail.com')
             ->setBody($this->renderer->render('emails/confirmation_user.html.twig',[
                 'user' => $user,
             ]), 'text/html' );

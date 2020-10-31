@@ -79,6 +79,11 @@
         </div>
     </div>
 
+    <div class="field has-text-left">
+        {{ form_widget(form.news, {'attr': {'class': 'switch is-small', 'name': 'switchNewsLetter'}}) }}
+        <label for="user_news" class="is-size-7 has-text-light">J'accepte de recevoir des mails sur les offres en provenance du site chrisBdev</label>
+    </div>
+
     <a class="tag is-small is-warning" href="{{ path('user_change_password') }}" style="text-decoration: none">
         <span class="icon">
                 <i class="fas fa-key"></i>

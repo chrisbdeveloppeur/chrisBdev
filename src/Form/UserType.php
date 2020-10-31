@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Admin;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -43,6 +44,12 @@ class UserType extends AbstractType
                 ],
                 'format' => 'dd MM yyyy',
                 'invalid_message' => 'Veuillez selectionnez une date valide.',
+            ])
+
+            ->add('news', CheckboxType::class,[
+                'label' => false,
+                'error_bubbling' => true,
+                'required' => false,
             ])
 
             ;

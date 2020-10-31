@@ -1,30 +1,43 @@
 <div class="column has-text-left">
+
     <div class="column has-text-light">
-        <span class="icon">
-            <i class="fas fa-at"></i>
+        <span class="icon is-normal">
+            <i class="fas fa-lg fa-at"></i>
         </span>
         Mon mail : <p class="has-text-primary">{{ user.username }}</p>
     </div>
 
     <div class="column has-text-light">
-        <span class="icon">
-            <i class="fas fa-id-card"></i>
+        <span class="icon is-normal">
+            <i class="fas fa-lg fa-id-card"></i>
         </span>
         Mon nom : {% if user.lastName %}<p class="has-text-primary">{{ user.lastName }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
     </div>
 
     <div class="column has-text-light">
-        <span class="icon">
-            <i class="fas fa-user"></i>
+        <span class="icon is-normal">
+            <i class="fas fa-lg fa-user"></i>
         </span>
         Mon prénom : {% if user.name %}<p class="has-text-primary">{{ user.name }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
     </div>
 
     <div class="column has-text-light">
-        <span class="icon">
-            <i class="fas fa-birthday-cake"></i>
+        <span class="icon is-normal">
+            <i class="fas fa-lg fa-birthday-cake"></i>
         </span>
         Ma date de naissance : {% if user.birthday %}<p class="has-text-primary">{{ user.birthday|date("d/m/Y") }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
+    </div>
+
+    <div class="column has-text-light">
+        <span class="icon is-normal">
+            <i class="fas fa-lg fa-envelope-square"></i>
+        </span>
+        J'accepte de recevoir les mails :
+        {% if user.news == 1 %}
+            <p class="has-text-primary">Oui</p>
+        {% else %}
+            <p class="has-text-primary">Non</p>
+        {% endif %}
     </div>
 
 </div>
