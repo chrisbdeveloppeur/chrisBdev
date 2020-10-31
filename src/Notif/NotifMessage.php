@@ -27,7 +27,7 @@ class NotifMessage
 
     public function sendMessage(Message $message)
     {
-        $mail = (new \Swift_Message('Message en provenance de www.chrisbdev.com'))
+        $mail = (new \Swift_Message('Chris B Dev - Un utilisateur vient de vous envoyer un message'))
             ->setFrom('admin@chrisbdev.com')
             /**
              * Ci dessous entrez l'adresse de l'utilisateur concerné : $message->getEmail()
@@ -43,8 +43,8 @@ class NotifMessage
     {
         $message = (new \Swift_Message('Chris B Dev - Mail de confirmation pour la création de compte'))
             ->setFrom('admin@chrisbdev.com')
-            //->setTo($user->getEmail())
-            ->setTo('kenshin91cb@gmail.com')
+            ->setTo($user->getEmail())
+            //->setTo('kenshin91cb@gmail.com')
             ->setBody($this->renderer->render('emails/confirmation_user.html.twig',[
                 'user' => $user,
             ]), 'text/html' );
