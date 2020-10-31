@@ -1,0 +1,28 @@
+{% if projet.img2Name %}
+    <p class="tag is-primary" style="width: 100%">image 2</p>
+    <figure class="figure" style="position: relative;margin-bottom: .75rem">
+        <a href="{{ path('projet_del_img_2', {'id': projet.id}) }}" class="delete" style="position: absolute;top: .3rem;right: .3rem;"></a>
+        <img class="img-thumb-projet" src="{{ vich_uploader_asset(projet, 'img_2') | imagine_filter('thumb') }}" alt="{{ projet.img2Name }}">
+    </figure>
+{% else %}
+    <p class="is-size-7">Aucune image uploadé</p>
+{% endif %}
+
+<div class="control">
+
+    <div class="file is-small" style="justify-content: center">
+        <label class="file-label">
+            {{ form_widget(projet_form.img2, {'attr' : {
+                'class' : 'file-input',
+                'alt' : 'Uploader une image'} }) }}
+            <span class="file-cta">
+                <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Choisir
+                </span>
+            </span>
+        </label>
+    </div>
+</div>

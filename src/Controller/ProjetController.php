@@ -60,7 +60,7 @@ class ProjetController extends AbstractController
 
             $this->addFlash('success', 'La présentation "' . $projet->getTitle() . '" a bien été modifié');
 
-            return $this->redirect('\#projets');
+            return $this->redirect($request->server->get('HTTP_REFERER'));
 
         }
         return $this->render('sections/projets/includes/edit_projet.html.twig',[
@@ -96,10 +96,52 @@ class ProjetController extends AbstractController
         $projet->setImgProjetName(null);
         $entityManager->flush();
 
-        return $this->render('sections/projets/includes/edit_projet.html.twig',[
-            'projet' => $projet,
-            'projet_form' => $form->createView()
-        ]);
+        return $this->redirect($request->server->get('HTTP_REFERER'));
+    }
+
+    /**
+     * @Route("/{id}/supprimer-img-1", name="del_img_1")
+     */
+    public function del_img_1(ProjetRepository $projetRepository, $id, Request $request)
+    {
+        $projet = $projetRepository->find($id);
+        $form = $this->createForm(ProjetType::class, $projet);
+        $form->handleRequest($request);
+        $entityManager = $this->getDoctrine()->getManager();
+        $projet->setImg1Name(null);
+        $entityManager->flush();
+
+        return $this->redirect($request->server->get('HTTP_REFERER'));
+    }
+
+    /**
+     * @Route("/{id}/supprimer-img-2", name="del_img_2")
+     */
+    public function del_img_2(ProjetRepository $projetRepository, $id, Request $request)
+    {
+        $projet = $projetRepository->find($id);
+        $form = $this->createForm(ProjetType::class, $projet);
+        $form->handleRequest($request);
+        $entityManager = $this->getDoctrine()->getManager();
+        $projet->setImg2Name(null);
+        $entityManager->flush();
+
+        return $this->redirect($request->server->get('HTTP_REFERER'));
+    }
+
+    /**
+     * @Route("/{id}/supprimer-img-3", name="del_img_3")
+     */
+    public function del_img_3(ProjetRepository $projetRepository, $id, Request $request)
+    {
+        $projet = $projetRepository->find($id);
+        $form = $this->createForm(ProjetType::class, $projet);
+        $form->handleRequest($request);
+        $entityManager = $this->getDoctrine()->getManager();
+        $projet->setImg3Name(null);
+        $entityManager->flush();
+
+        return $this->redirect($request->server->get('HTTP_REFERER'));
     }
 
     /**

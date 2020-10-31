@@ -10,3 +10,4 @@ vich_uploader:
             uri_prefix: /images/projet
             upload_destination: '%kernel.project_dir%/public/images/projet'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+

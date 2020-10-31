@@ -56,9 +56,60 @@ class Projet
     private $img;
 
     /**
+     *
+     * @Vich\UploadableField(mapping="img_projet", fileNameProperty="img_1_name")
+     *
+     * @var File|null
+     * @Assert\Image(
+     *     maxSize="8Mi",
+     *     mimeTypes={"image/jpeg", "image/png", "image/svg+xml"},
+     *     mimeTypesMessage = "Seul les fichier jpg/jpeg/png/svg sont acceptés")
+     */
+    private $img_1;
+
+    /**
+     *
+     * @Vich\UploadableField(mapping="img_projet", fileNameProperty="img_2_name")
+     *
+     * @var File|null
+     * @Assert\Image(
+     *     maxSize="8Mi",
+     *     mimeTypes={"image/jpeg", "image/png", "image/svg+xml"},
+     *     mimeTypesMessage = "Seul les fichier jpg/jpeg/png/svg sont acceptés")
+     */
+    private $img_2;
+
+    /**
+     *
+     * @Vich\UploadableField(mapping="img_projet", fileNameProperty="img_3_name")
+     *
+     * @var File|null
+     * @Assert\Image(
+     *     maxSize="8Mi",
+     *     mimeTypes={"image/jpeg", "image/png", "image/svg+xml"},
+     *     mimeTypesMessage = "Seul les fichier jpg/jpeg/png/svg sont acceptés")
+     */
+    private $img_3;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $img_projet_name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img_1_name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img_2_name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img_3_name;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -84,7 +135,6 @@ class Projet
      * @ORM\ManyToMany(targetEntity=Attribut::class, mappedBy="projet")
      */
     private $attributs;
-
 
     public function __construct()
     {
@@ -278,7 +328,121 @@ class Projet
         return $this;
     }
 
+    /**
+     * @return File|null
+     */
+    public function getImg1(): ?File
+    {
+        return $this->img_1;
+    }
 
+    /**
+     * @param File|null $img_1
+     * @return Projet
+     */
+    public function setImg1(?File $img_1): Projet
+    {
+        $this->img_1 = $img_1;
+        if ($this->img_1 instanceof UploadedFile){
+            $this->updatedAt = new \DateTime('now');
+        }
+        return $this;
+    }
 
+    /**
+     * @return File|null
+     */
+    public function getImg2(): ?File
+    {
+        return $this->img_2;
+    }
+
+    /**
+     * @param File|null $img_2
+     * @return Projet
+     */
+    public function setImg2(?File $img_2): Projet
+    {
+        $this->img_2 = $img_2;
+        if ($this->img_2 instanceof UploadedFile){
+            $this->updatedAt = new \DateTime('now');
+        }
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getImg3(): ?File
+    {
+        return $this->img_3;
+    }
+
+    /**
+     * @param File|null $img_3
+     * @return Projet
+     */
+    public function setImg3(?File $img_3): Projet
+    {
+        $this->img_3 = $img_3;
+        if ($this->img_3 instanceof UploadedFile){
+            $this->updatedAt = new \DateTime('now');
+        }
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImg1Name()
+    {
+        return $this->img_1_name;
+    }
+
+    /**
+     * @param mixed $img_1_name
+     * @return Projet
+     */
+    public function setImg1Name($img_1_name)
+    {
+        $this->img_1_name = $img_1_name;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImg2Name()
+    {
+        return $this->img_2_name;
+    }
+
+    /**
+     * @param mixed $img_2_name
+     * @return Projet
+     */
+    public function setImg2Name($img_2_name)
+    {
+        $this->img_2_name = $img_2_name;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImg3Name()
+    {
+        return $this->img_3_name;
+    }
+
+    /**
+     * @param mixed $img_3_name
+     * @return Projet
+     */
+    public function setImg3Name($img_3_name)
+    {
+        $this->img_3_name = $img_3_name;
+        return $this;
+    }
 
 }

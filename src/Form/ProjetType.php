@@ -58,6 +58,21 @@ class ProjetType extends AbstractType
                 'required' => false,
             ])
 
+            ->add('img1', FileType::class,[
+                'label' => false,
+                'required' => false,
+            ])
+
+            ->add('img2', FileType::class,[
+                'label' => false,
+                'required' => false,
+            ])
+
+            ->add('img3', FileType::class,[
+                'label' => false,
+                'required' => false,
+            ])
+
 
         ;
     }

@@ -18,35 +18,29 @@
 
             <div class="columns">
 
-                <div class="column">
-                    <figure class="">
-                        {% if projet.imgProjetName %}
-                            <img src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb_small') }}" alt="{{ projet.imgProjetName }}">
-                        {% else %}
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="no img">
-                        {% endif %}
-                    </figure>
-                </div>
+                {% if projet.img1Name %}
+                    <div class="column">
+                        <figure class="">
+                            <img src="{{ vich_uploader_asset(projet, 'img_1') | imagine_filter('thumb_small') }}" alt="{{ projet.img1Name }}">
+                        </figure>
+                    </div>
+                {% endif %}
 
-{#                <div class="column">#}
-{#                    <figure class="">#}
-{#                        {% if projet.imgProjetName %}#}
-{#                            <img src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb_small') }}">#}
-{#                        {% else %}#}
-{#                            <img src="https://bulma.io/images/placeholders/1280x960.png">#}
-{#                        {% endif %}#}
-{#                    </figure>#}
-{#                </div>#}
+                {% if projet.img2Name %}
+                    <div class="column">
+                        <figure class="">
+                            <img src="{{ vich_uploader_asset(projet, 'img_2') | imagine_filter('thumb_small') }}" alt="{{ projet.img2Name }}">
+                        </figure>
+                    </div>
+                {% endif %}
 
-{#                <div class="column">#}
-{#                    <figure class="">#}
-{#                        {% if projet.imgProjetName %}#}
-{#                            <img src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb_small') }}">#}
-{#                        {% else %}#}
-{#                            <img src="https://bulma.io/images/placeholders/1280x960.png">#}
-{#                        {% endif %}#}
-{#                    </figure>#}
-{#                </div>#}
+                {% if projet.img3Name %}
+                    <div class="column">
+                        <figure class="">
+                            <img src="{{ vich_uploader_asset(projet, 'img_3') | imagine_filter('thumb_small') }}" alt="{{ projet.img3Name }}">
+                        </figure>
+                    </div>
+                {% endif %}
 
             </div>
 
