@@ -368,6 +368,24 @@ background: $primary
     border: rgba(27, 139, 61, 0.7) 1px solid !important;
 }
 
+.is-info-custom{
+    background: #478add;
+    background: -moz-linear-gradient(top,  #478add 0%, #6fafe7 50%, #5fa5e7 51%, #a7d0f1 100%);
+    background: -webkit-linear-gradient(top,  #478add 0%,#6fafe7 50%,#5fa5e7 51%,#a7d0f1 100%);
+    background: linear-gradient(to bottom,  #478add 0%,#6fafe7 50%,#5fa5e7 51%,#a7d0f1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#478add', endColorstr='#a7d0f1',GradientType=0 );
+    border: none !important;
+    transition: .2s;
+    border-radius: 0 !important;
+}
+.is-info-custom:hover{
+    border: none !important;
+    box-shadow: black 0 0 10px 1px;
+}
+.is-info-custom:focus{
+    border: rgba(32, 92, 202, 0.7) 1px solid !important;
+}
+
 
 /*          Progess bar colors customed         */
 .progress.is-yellow::-webkit-progress-value {
