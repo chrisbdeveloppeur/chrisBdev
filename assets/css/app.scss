@@ -387,12 +387,12 @@ background: $primary
 }
 
 .is-danger-custom{
-    background: #b20618;
-    background: -moz-linear-gradient(top,  #b20618 0%, #f70b37 50%, #e3072c 51%, #fa6c88 100%);
-    background: -webkit-linear-gradient(top,  #b20618 0%,#f70b37 50%,#e3072c 51%,#fa6c88 100%);
-    background: linear-gradient(to bottom,  #b20618 0%,#f70b37 50%,#e3072c 51%,#fa6c88 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b20618', endColorstr='#fa6c88',GradientType=0 );
-    border: none !important;
+    background: #ffb1b5;
+    background: -moz-linear-gradient(top,  #ffb1b5 0%, #ff2530 50%, #f2000c 51%, #ff5b63 100%);
+    background: -webkit-linear-gradient(top,  #ffb1b5 0%,#ff2530 50%,#f2000c 51%,#ff5b63 100%);
+    background: linear-gradient(to bottom,  #ffb1b5 0%,#ff2530 50%,#f2000c 51%,#ff5b63 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb1b5', endColorstr='#ff5b63',GradientType=0 );
+
     transition: .2s;
     border-radius: 0 !important;
     color: white !important;
