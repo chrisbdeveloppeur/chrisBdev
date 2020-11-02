@@ -8,7 +8,14 @@
 
     {% if is_granted('ROLE_USER') %}
 
-        <section class="hero is-bold section is-dark is-fullheight-with-navbar">
+        <section class="hero is-bold section is-dark">
+                <h1 class="subtitle is-1 has-text-light has-text-weight-bold has-text-centered-touch is-flex-desktop subtitle-left" style="align-items: baseline">
+                        Mon espace personnel
+                        <span class="icon has-text-light is-hidden-touch" style="margin: 0 1.75rem">
+                            <i class="fas fa-arrow-alt-circle-left"></i>
+                        </span>
+                </h1>
+
             <div class="columns has-text-centered is-centered">
 
                 <div class="column is-one-third-widescreen box has-background-black-bis is-flex is-flex-direction-column">
