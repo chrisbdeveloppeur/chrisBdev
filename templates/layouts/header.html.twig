@@ -60,13 +60,13 @@
 
                         <div class="control">
                             <div class="tags is-centered" style="flex-direction: column">
-                                <a style="width: 100%;margin-left: 0" href="{{ path('app_logout') }}" class="tag is-danger is-normal is-size-6-touch">
+                                <a style="width: 100%;margin-left: 0" href="{{ path('app_logout') }}" class="tag is-danger-custom is-normal is-size-6-touch">
                                     <strong>Déconnexion</strong>
                                     <span class="icon">
                                         <i class="fas fa-lg fa-sign-out-alt"></i>
                                     </span>
                                 </a>
-                                <a style="width: 100%;margin-left: 0" title="Mon profil" href="{{ path('user_space') }}" class="tag is-size-6-touch {% if 'ROLE_ADMIN' in app.user.roles %}is-dark has-text-warning{% else %}is-light{% endif %} is-normal has-text-weight-bold">{% if app.user.name %}{{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}</a>
+                                <a style="width: 100%;margin-left: 0" title="Mon profil" href="{{ path('user_space') }}" class="tag is-size-6-touch {% if 'ROLE_ADMIN' in app.user.roles %}is-dark has-text-warning{% else %}is-green-custom {% endif %} is-normal has-text-weight-bold">{% if app.user.name %}{{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}</a>
 
 {#                                {% if 'ROLE_ADMIN' in app.user.roles %}#}
 {#                                    <div style="width: 100%;margin-left: 0" class="tag is-size-6-touch is-dark has-text-warning is-normal has-text-weight-bold dropdown is-hoverable is-right">{% if app.user.name %}{{ app.user.name }}{% else %}{{ app.user.username }}{% endif %}#}
