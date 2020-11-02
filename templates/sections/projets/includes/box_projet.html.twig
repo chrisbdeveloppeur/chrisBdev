@@ -25,7 +25,6 @@
     </a>
 
     {% if is_granted('ROLE_ADMIN') %}
-        <hr class="has-background-white">
         <div style="display: flex;">
 
             <div class="column half-touch has-text-centered">
@@ -41,6 +40,7 @@
             </div>
 
         </div>
+        <hr style="background: rgba(255,255,255,.1);height: 1px">
     {% endif %}
 </div>
 
