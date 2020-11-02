@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}chrisBdev | Gestion utilisateurs{% endblock %}
+
+{% block body %}
+
+{% for user in user %}
+    <h3>{{ user.email }}</h3>
+    <h3>{{ user.name }}</h3>
+    <h3>{{ user.lastName }}</h3>
+    <h3>{{ user.birthday|date }}</h3>
+{% endfor %}
+
+{% endblock %}

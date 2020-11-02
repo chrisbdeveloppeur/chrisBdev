@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Projet;
 use Doctrine\DBAL\Types\ObjectType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -43,9 +44,10 @@ class ProjetType extends AbstractType
                 ]
             ])
 
-            ->add('text', TextareaType::class, [
+            ->add('text', CKEditorType::class, [
                 'label' => false,
                 'required' => false,
+                'config' => ['toolbar' => 'full'],
             ])
 
             ->add('link', TextType::class, [
