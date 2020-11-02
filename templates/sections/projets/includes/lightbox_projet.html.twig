@@ -20,24 +20,24 @@
 
                 {% if projet.img1Name %}
                     <div class="column">
-                        <figure class="">
-                            <img src="{{ vich_uploader_asset(projet, 'img_1') | imagine_filter('thumb_small') }}" alt="{{ projet.img1Name }}">
+                        <figure style="height: 100%">
+                            <img src="{{ vich_uploader_asset(projet, 'img_1') }}" alt="{{ projet.img1Name }}">
                         </figure>
                     </div>
                 {% endif %}
 
                 {% if projet.img2Name %}
                     <div class="column">
-                        <figure class="">
-                            <img src="{{ vich_uploader_asset(projet, 'img_2') | imagine_filter('thumb_small') }}" alt="{{ projet.img2Name }}">
+                        <figure style="height: 100%">
+                            <img src="{{ vich_uploader_asset(projet, 'img_2') }}" alt="{{ projet.img2Name }}">
                         </figure>
                     </div>
                 {% endif %}
 
                 {% if projet.img3Name %}
                     <div class="column">
-                        <figure class="">
-                            <img src="{{ vich_uploader_asset(projet, 'img_3') | imagine_filter('thumb_small') }}" alt="{{ projet.img3Name }}">
+                        <figure style="height: 100%">
+                            <img src="{{ vich_uploader_asset(projet, 'img_3') }}" alt="{{ projet.img3Name }}">
                         </figure>
                     </div>
                 {% endif %}
@@ -51,7 +51,7 @@
                 <span class="icon tag is-primary has-text-light">
                     <i class="far fa-lg fa-calendar-alt"></i>
                 </span>
-                <span class="tag is-primary has-text-light has-text-weight-bold" >Année de réalisation</span>
+                <span class="tag is-primary has-text-light has-text-weight-bold" style="flex: 1;">Année de réalisation</span>
 
                 <span class="tag" style="flex: 1;">{{ projet.dateReal }}</span>
 
@@ -63,7 +63,7 @@
                 <span class="icon tag is-primary has-text-light">
                     <i class="fas fa-lg fa-code"></i>
                 </span>
-                <span class="tag is-primary has-text-light has-text-weight-bold" >Contribution</span>
+                <span class="tag is-primary has-text-light has-text-weight-bold" style="flex: 1;">Contribution</span>
 
                 <div class="tag is-uppercase" style="flex: 1;">
                     {{ projet.typedev }}
