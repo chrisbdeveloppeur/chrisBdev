@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/projets/includes/box_projet_shadow.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/projets/includes/box_projet_shadow.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PresentationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PresentationType.php" afterDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -101,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/projets.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -109,7 +108,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -118,11 +117,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Form/PresentationType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/sections/presentation/includes/edit_presentation.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-34">
+              <caret line="21" column="94" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
+              <folding>
+                <element signature="e#12#26#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet_shadow.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -190,7 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Entity/Admin.php" />
         <option value="$PROJECT_DIR$/src/Controller/MessageController.php" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/templates/security/login.html.twig" />
@@ -241,6 +260,7 @@
         <option value="$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig" />
         <option value="$PROJECT_DIR$/templates/sections/projets/includes/box_projet_shadow.html.twig" />
         <option value="$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/PresentationType.php" />
       </list>
     </option>
   </component>
@@ -381,17 +401,6 @@
             <path>
               <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
               <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -399,6 +408,12 @@
               <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
@@ -422,14 +437,14 @@
               <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="sections" type="462c0819:PsiDirectoryNode" />
-              <item name="projets" type="462c0819:PsiDirectoryNode" />
+              <item name="presentation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chrisBdev" type="b2602c69:ProjectViewProjectNode" />
               <item name="chrisBdev" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="sections" type="462c0819:PsiDirectoryNode" />
-              <item name="projets" type="462c0819:PsiDirectoryNode" />
+              <item name="presentation" type="462c0819:PsiDirectoryNode" />
               <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -531,12 +546,12 @@
       <workItem from="1603920201853" duration="12967000" />
       <workItem from="1603968018061" duration="7948000" />
       <workItem from="1604004956896" duration="36237000" />
-      <workItem from="1604312210654" duration="2067000" />
+      <workItem from="1604312210654" duration="2596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363534000" />
+    <option name="totallyTimeSpent" value="364063000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,13 +616,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/User/change_password.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="90" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -741,16 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/presentation/includes/edit_presentation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="94" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
@@ -1007,7 +1005,7 @@
     <entry file="file://$PROJECT_DIR$/templates/sections/projets/projets.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#div#1;n#section#0;n#!!top" expanded="true" />
           </folding>
@@ -1017,7 +1015,7 @@
     <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet_shadow.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -1028,6 +1026,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/presentation/includes/edit_presentation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="21" column="94" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/PresentationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
