@@ -34,10 +34,6 @@ class Presentation
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Assert\Length(
-     *     max="1000",
-     *     maxMessage="1000 charactères maximum autorisé"
-     * )
      */
     private $text;
 

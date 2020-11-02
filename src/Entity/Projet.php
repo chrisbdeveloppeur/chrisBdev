@@ -31,9 +31,6 @@ class Projet
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Assert\Length(
-     *     max="500",
-     *     maxMessage="500 charactères maximum autorisé")
      */
     private $text;
 
