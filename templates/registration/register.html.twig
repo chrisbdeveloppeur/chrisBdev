@@ -12,7 +12,11 @@
     <div class="columns has-text-centered is-centered">
 
         <div class="column is-one-third-desktop is-one-quarter-widescreen is-two-fifth-fullhd">
-            {{ include('registration/registration_form.html.twig') }}
+            <h1 class="title has-text-primary">Création de mon espace utilisateur</h1>
+
+            {{ form_start(registrationForm, {'attr': {'id': 'registerForm'}}) }}
+                {{ include('registration/registration_form.html.twig') }}
+            {{ form_end(registrationForm) }}
         </div>
 
         <div class="column is-two-fifths is-two-fifths-widescreen is-one-quarter-fullhd is-flex">
