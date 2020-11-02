@@ -68,6 +68,11 @@ class Admin implements UserInterface
      */
     private $news;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $agree_terms;
+
 //    /**
 //     * @CaptchaAssert\ValidCaptcha(
 //     *      message = "Echec de validation CAPTCHA, veuillez reéssayer."
@@ -258,6 +263,18 @@ public function getNews(): ?bool
 public function setNews(bool $news): self
 {
     $this->news = $news;
+
+    return $this;
+}
+
+public function getAgreeTerms(): ?bool
+{
+    return $this->agree_terms;
+}
+
+public function setAgreeTerms(?bool $agree_terms): self
+{
+    $this->agree_terms = $agree_terms;
 
     return $this;
 }

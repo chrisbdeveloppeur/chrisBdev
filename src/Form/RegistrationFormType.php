@@ -28,6 +28,11 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class,[
                 'label' => false,
                 'error_bubbling' => true,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez indiquer une adresse Email',
+                    ]),
+                ],
             ])
             ->add('plainPassword', RepeatedType::class, [
                 // instead of being set onto the object directly,
@@ -39,7 +44,7 @@ class RegistrationFormType extends AbstractType
                 'required' => true,
                 'error_bubbling' => true,
                 'first_options'  => ['label' => false],
-                'second_options' => ['label' => false],
+                'second_options' => ['label' => false, 'required' => true,],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un mot de passe',
@@ -57,6 +62,17 @@ class RegistrationFormType extends AbstractType
                 'label' => false,
                 'error_bubbling' => true,
                 'required' => false,
+            ])
+
+            ->add('agreeTerms', CheckboxType::class,[
+                'label' => false,
+                'error_bubbling' => true,
+                'required' => false,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez accepter les conditions générales',
+                    ]),
+                ],
             ])
         ;
     }

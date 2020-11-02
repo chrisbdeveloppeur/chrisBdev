@@ -7,7 +7,7 @@
                     <i class="fas fa-lg fa-exclamation-triangle"></i>
                 </span>
             </div>
-            <div class="message-body">
+            <div class="message-body has-text-left">
                 {{ form_errors(registrationForm) }}
             </div>
         </article>
@@ -49,8 +49,9 @@
     </div>
 
     <div class="field has-text-left">
-        <input id="switchAgreeTerms" type="checkbox" name="switchAgreeTerms" class="switch is-small" required="required">
-        <label for="switchAgreeTerms" class="is-size-7">J'accepte les <a href="#">conditions générales</a> et la <a href="#">politique de confidentialité</a></label>
+        {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'switch is-small', 'name': 'registration_form_agreeTerms'}}) }}
+{#        <input id="switchAgreeTerms" type="checkbox" name="switchAgreeTerms" class="switch is-small" required="required">#}
+        <label for="registration_form_agreeTerms" class="is-size-7">J'accepte les <a href="#">conditions générales</a> et la <a href="#">politique de confidentialité</a></label>
     </div>
 
     <button type="submit" class="button is-success is-small g-recaptcha"
