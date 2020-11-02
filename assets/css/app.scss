@@ -165,11 +165,11 @@ section{
     margin: auto;
     padding: .5rem;
     width: 90%;
-    //max-width: 1200px;
-    //max-height: 700px;
+    max-width: 1200px;
+    max-height: 700px;
     overflow-x: hidden;
     overflow-y: auto;
-    text-align: center;
+    //text-align: center;
 }
 .modal-background{
     background-color: rgba(0,0,0,0.9) !important;

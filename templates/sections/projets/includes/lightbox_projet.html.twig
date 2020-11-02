@@ -19,7 +19,7 @@
             <div class="columns is-centered">
 
                 {% if projet.img1Name %}
-                    <div class="column is-one-quarter-fullhd">
+                    <div class="column is-one-third">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_1') }}" alt="{{ projet.img1Name }}">
                         </figure>
@@ -27,7 +27,7 @@
                 {% endif %}
 
                 {% if projet.img2Name %}
-                    <div class="column is-one-quarter-fullhd">
+                    <div class="column is-one-third">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_2') }}" alt="{{ projet.img2Name }}">
                         </figure>
@@ -35,7 +35,7 @@
                 {% endif %}
 
                 {% if projet.img3Name %}
-                    <div class="column is-one-quarter-fullhd">
+                    <div class="column is-one-third">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_3') }}" alt="{{ projet.img3Name }}">
                         </figure>
@@ -180,13 +180,15 @@
                     </div>
                 </div>
 
+            {% if projet.link %}
+                <div class="is-flex" style="justify-content: center;">
+                    <a class="button is-green-custom" target="_blank" href="{{ projet.link }}">Visiter le site</a>
+                </div>
+            {% endif %}
+
             </div>
 
-        {% if projet.link %}
-        <div class="column is-flex-desktop" style="justify-content: end;">
-            <a class="button is-green-custom" target="_blank" href="{{ projet.link }}">Visiter le site</a>
-        </div>
-        {% endif %}
+
 
     <button class="modal-close is-large" aria-label="close" onclick="closeModal({{ projet.id }})"></button>
 
