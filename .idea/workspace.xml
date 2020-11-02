@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig" afterDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -93,8 +93,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="119">
+              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#1520#1531#0#Twig" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#span#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#1898#1908#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -562,12 +570,12 @@
       <workItem from="1603920201853" duration="12967000" />
       <workItem from="1603968018061" duration="7948000" />
       <workItem from="1604004956896" duration="36237000" />
-      <workItem from="1604312210654" duration="5924000" />
+      <workItem from="1604312210654" duration="6175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367391000" />
+    <option name="totallyTimeSpent" value="367642000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1053,8 +1061,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+        <state relative-caret-position="119">
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1520#1531#0#Twig" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1898#1908#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
