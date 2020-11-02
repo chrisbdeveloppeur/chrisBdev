@@ -53,6 +53,25 @@ class HomeController extends AbstractController
     }
 
 
+    /**
+     * @Route("/mentions-legales", name="mentions_legales")
+     */
+    public function mentionsLegales()
+    {
+        return $this->render('RGPD/Mentions légales/page.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/politique-de-confidentialite", name="politique_de_confidentialite")
+     */
+    public function polotiqueDeConfidentialite()
+    {
+        return $this->render('RGPD/Politique de confidentialité/page.html.twig', [
+        ]);
+    }
+
+
 
 
 }

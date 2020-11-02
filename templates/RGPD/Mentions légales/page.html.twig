@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}chrisBdev | Mentions légales{% endblock %}
+
+{% block meta_description %}Bienvenue sur la page des mentions légales du site chrisBdev.{% endblock %}
+
+{% block body %}
+
+    <section class="hero is-dark is-bold is-normal">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="subtitle is-1 has-text-light has-text-weight-bold has-text-centered-touch is-flex-desktop subtitle-right" style="align-items: baseline">
+                <span class="icon has-text-light is-hidden-touch" style="margin: 0 1.75rem">
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                </span>
+                    Mentions légales
+                </h1>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                {{ include('RGPD/Mentions légales/mentions_legales.html.twig') }}
+            </div>
+        </section>
+
+    </section>
+
+{% endblock %}
