@@ -1,4 +1,4 @@
-<form method="post" style="width: 100%">
+<form method="post" style="width: 100%" id="loginForm">
 
     <h1 class="title has-text-primary">Veuillez entrez vos identifiants de connexion</h1>
 
@@ -46,7 +46,10 @@
             Mot de passe oublié ?
         </a>
 
-        <button class="button is-success is-small" type="submit">
+        <button class="button is-success is-small g-recaptcha" type="submit"
+                data-sitekey="6LfSl9wZAAAAACPrrml-QieLt8K7CfycrC1vJwMr"
+                data-callback='onSubmit'
+                data-action='submit'>
             Connexion
         </button>
     </div>
