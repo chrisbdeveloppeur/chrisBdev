@@ -20,7 +20,14 @@
 
                 <div class="column is-one-third-widescreen box has-background-black-bis is-flex is-flex-direction-column">
                     {{ include('User/user_card.html.twig') }}
-                    <a class="button is-green-custom" href="{{ path('user_edit') }}">Modifier mon profil</a>
+                    <a class="button is-green-custom" href="{{ path('user_edit') }}">
+                        <span class="icon">
+                            <i class="fas fa-user-edit"></i>
+                        </span>
+                        <span>
+                            Modifier mon profil
+                        </span>
+                    </a>
                 </div>
 
                 <div class="column is-two-fifths is-two-fifths-widescreen is-one-quarter-fullhd is-flex">
