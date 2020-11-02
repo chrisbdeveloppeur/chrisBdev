@@ -16,10 +16,10 @@
                 <h3 class="subtitle is-3 is-uppercase has-text-green-neon">{{ projet.title }}</h3>
             </div>
 
-            <div class="columns">
+            <div class="columns is-centered">
 
                 {% if projet.img1Name %}
-                    <div class="column">
+                    <div class="column is-one-quarter-fullhd">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_1') }}" alt="{{ projet.img1Name }}">
                         </figure>
@@ -27,7 +27,7 @@
                 {% endif %}
 
                 {% if projet.img2Name %}
-                    <div class="column">
+                    <div class="column is-one-quarter-fullhd">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_2') }}" alt="{{ projet.img2Name }}">
                         </figure>
@@ -35,7 +35,7 @@
                 {% endif %}
 
                 {% if projet.img3Name %}
-                    <div class="column">
+                    <div class="column is-one-quarter-fullhd">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_3') }}" alt="{{ projet.img3Name }}">
                         </figure>
