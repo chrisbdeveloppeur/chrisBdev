@@ -33,3 +33,5 @@ const bg_edit_profile_illustration = require('../img/undraw_profile_6l1l.svg');
 const bg_space_user_illustration = require('../img/undraw_profile_details_f8b7.svg');
 const bg_space_user_illustration_2 = require('../img/undraw_account_490v.svg');
 const bg_change_user_password_illustration = require('../img/undraw_security_o890.svg');
+const unamed = require('../img/unnamed.jpg');
+const top_secret = require('../img/secret-3037639_1920.svg');

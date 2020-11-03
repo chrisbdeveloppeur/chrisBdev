@@ -104,8 +104,9 @@ section{
     padding-bottom: 3rem;
 }
 
-.subtitle-left .subtitle-right{
-    align-items: center
+.subtitle-left, .subtitle-right{
+    align-items: center;
+    text-shadow: 1px 2px 2px black;
 }
 .subtitle-right{
     justify-content: end;
@@ -140,7 +141,7 @@ section{
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 5, 0, 0.9);
+    background: rgba(0, 2, 0, .95);
 }
 .modal{
     transition: .5s;
