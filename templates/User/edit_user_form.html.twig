@@ -93,6 +93,17 @@
         </span>
     </a>
 
+    {% if is_granted("ROLE_ADMIN") %}
+        <a class="tag is-medium is-danger-custom" href="{{ path('admin_del_user', {'user_id': user.id}) }}" style="text-decoration: none">
+        <span class="icon">
+            <i class="fas fa-user-minus"></i>
+        </span>
+            <span>
+            Supprimer le compte
+        </span>
+        </a>
+    {% endif %}
+
     <div class="is-flex" style="justify-content: center;padding-top: 3rem">
         <div class="control" style="width: 100%">
             <button class="button is-fullwidth is-green-custom g-recaptcha" type="submit" >

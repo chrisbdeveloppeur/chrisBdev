@@ -1,7 +1,7 @@
 <div id="modal-{{ projet.id }}" class="modal">
     <div class="modal-background" onclick="closeModal({{ projet.id }})"></div>
 
-    <div class="modal-content-custom" id="modal-content-custom">
+    <div class="modal-content" id="modal-content-custom">
 
         {% if is_granted('ROLE_ADMIN') %}
             <div style="display: flex;justify-content: start;">
@@ -16,10 +16,10 @@
                 <h3 class="subtitle is-3 is-uppercase has-text-green-neon">{{ projet.title }}</h3>
             </div>
 
-            <div class="columns is-centered">
+            <div class="column is-flex-desktop is-centered">
 
                 {% if projet.img1Name %}
-                    <div class="column is-one-third is-one-quarter-fullhd">
+                    <div class="column is-one-third">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_1') }}" alt="{{ projet.img1Name }}">
                         </figure>
@@ -27,7 +27,7 @@
                 {% endif %}
 
                 {% if projet.img2Name %}
-                    <div class="column is-one-third is-one-quarter-fullhd">
+                    <div class="column is-one-third">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_2') }}" alt="{{ projet.img2Name }}">
                         </figure>
@@ -35,7 +35,7 @@
                 {% endif %}
 
                 {% if projet.img3Name %}
-                    <div class="column is-one-third is-one-quarter-fullhd">
+                    <div class="column is-one-third">
                         <figure style="height: 100%">
                             <img src="{{ vich_uploader_asset(projet, 'img_3') }}" alt="{{ projet.img3Name }}">
                         </figure>
@@ -44,7 +44,7 @@
 
             </div>
 
-        <div class="column is-flex-desktop is-three-quarters-fullhd" style="margin: auto;justify-content: space-between;align-items: center;border-bottom: rgba(255,255,255,.1) solid 1px;">
+        <div class="column is-flex-desktop" style="margin: auto;justify-content: space-between;align-items: center;border-bottom: rgba(255,255,255,.1) solid 1px;">
 
             <div class="tags has-addons is-centered" style="margin: 0">
 
@@ -74,14 +74,14 @@
         </div>
 
 
-            <div class="column has-text-white is-three-quarters-fullhd" style="margin: auto;">
+            <div class="column has-text-white" style="margin: auto;">
                 <p>{{ projet.text }}</p>
             </div>
 
 
             <div class="columns is-multiline is-centered" style="padding: .75rem;margin: 0">
 
-                <div class="column is-half is-one-third-fullhd" id="charaProjet1">
+                <div class="column is-half" id="charaProjet1">
 
                     <span class="tag is-primary is-uppercase has-text-weight-bold" style="width: 100%">Caractéristiques</span>
 
@@ -129,7 +129,7 @@
                 </div>
 
 
-                <div class="column is-half is-one-third-fullhd" id="charaProjet2">
+                <div class="column is-half" id="charaProjet2">
 
                     <span class="tag is-primary is-uppercase has-text-weight-bold" style="width: 100%">Technologies utilisées</span>
 
@@ -180,13 +180,15 @@
                     </div>
                 </div>
 
+        {% if projet.link %}
+            <div class="is-flex" style="justify-content: center;padding: 1rem 0">
+                <a class="button is-green-custom" target="_blank" href="{{ projet.link }}">Visiter le site</a>
+            </div>
+        {% endif %}
+
             </div>
 
-    {% if projet.link %}
-        <div class="is-flex" style="justify-content: center;padding: 1rem 0">
-            <a class="button is-green-custom" target="_blank" href="{{ projet.link }}">Visiter le site</a>
-        </div>
-    {% endif %}
+
 
 
     <button class="modal-close is-large" aria-label="close" onclick="closeModal({{ projet.id }})"></button>

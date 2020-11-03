@@ -39,6 +39,7 @@ $dropdown-content-background-color: #121212;
 //$notification-padding: .5rem 2.5rem;
 //$notification-padding-ltr: .5rem 2.5rem;
 //$notification-padding-rtl: .5rem 2.5rem;
+$modal-content-width: 70vw;
 
 $family-primary: 'Oxygen', sans-serif;
 $family-secondary: 'Teko', sans-serif;
@@ -197,6 +198,18 @@ div.BDC_CaptchaImageDiv a{
     pointer-events: none;
     cursor: none;
 }
+.active-button-tableau-admin{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 
 

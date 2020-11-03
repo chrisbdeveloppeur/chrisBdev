@@ -32,6 +32,8 @@ class HomeController extends AbstractController
             );
             $admin->setRoles(['ROLE_ADMIN']);
             $admin->setIsConfirmed(true);
+            $admin->setNews(false);
+            $admin->setEnable(true);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($admin);
             $entityManager->flush();

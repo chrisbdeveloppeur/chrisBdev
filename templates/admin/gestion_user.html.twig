@@ -4,11 +4,115 @@
 
 {% block body %}
 
-{% for user in user %}
-    <h3>{{ user.email }}</h3>
-    <h3>{{ user.name }}</h3>
-    <h3>{{ user.lastName }}</h3>
-    <h3>{{ user.birthday|date }}</h3>
-{% endfor %}
+    <section class="hero is-normal" style="background: center / cover no-repeat url('{{ asset('build/images/secret-3037639_1920.7781347c.svg') }}');background-attachment: fixed;position: relative">
+        <div class="section-bg-layer"></div>
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="subtitle is-1 has-text-light has-text-weight-bold has-text-centered-touch is-flex-desktop subtitle-right" style="align-items: baseline;text-shadow: 1px 2px 2px black;">
+                <span class="icon has-text-light is-hidden-touch" style="margin: 0 1.75rem">
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                </span>
+                    Gestion utilisateurs
+                </h1>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Rôle</th>
+                            <th>Email</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th><abbr title="Date d'anniversaire">Anniv</abbr></th>
+                            <th><abbr title="Fidélisation">Fidél</abbr></th>
+                            <th><abbr title="Gérer le compte">Gérer</abbr></th>
+                            <th><abbr title="Activer ou désactiver le compte">Act/Désact</abbr></th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Rôle</th>
+                            <th>Email</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th><abbr title="Date d'anniversaire">Anniv</abbr></th>
+                            <th><abbr title="Fidélisation">Fidél</abbr></th>
+                            <th><abbr title="Gérer le compte">Gérer</abbr></th>
+                            <th><abbr title="Activer ou désactiver le compte">Act/Désact</abbr></th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody>
+                        {% for user in user %}
+                            <tr>
+                                <th>{{ user.id }}</th>
+                                <td style="position:relative;">
+                                    {% if 'ROLE_ADMIN' in user.roles  %}
+                                        <div class="active-button-tableau-admin">
+                                            <span class="icon has-text-danger">
+                                                <i class="fas fa-lg fa-crown"></i>
+                                            </span>
+                                        </div>
+                                    {% else %}
+
+                                    {% endif %}
+                                </td>
+                                <td><a href="mailto:{{ user.email }}" title="Leicester City F.C.">{{ user.email }}</a></td>
+                                <td>{{ user.lastName }}{% if user.lastName == null %}<p class="is-italic has-text-dark is-size-7 has-background-grey-light" style="padding: 0 .5rem">Non renseigné</p>{% endif %}</td>
+                                <td>{{ user.name }}{% if user.name == null %}<p class="is-italic has-text-dark is-size-7 has-background-grey-light" style="padding: 0 .5rem">Non renseigné</p>{% endif %}</td>
+                                <td>{% if user.birthday %}{{ user.birthday|date("d/m/Y") }}{% else %}<p class="is-italic has-text-dark is-size-7 has-background-grey-light" style="padding: 0 .5rem">Non renseigné</p>{% endif %}</td>
+                                <td>{% if user.news == 1 %}Oui{% elseif user.news == 0 %}Non{% endif %}</td>
+                                <td>
+                                    <a class="button is-green-custom" href="{{ path('admin_user_edit', {'id': user.id}) }}">
+                                        <span class="icon">
+                                            <i class="fas fa-user-edit"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                                <td style="position: relative">
+                                    {% if 'ROLE_ADMIN' in user.roles  %}
+                                        <a href="#" class="active-button-tableau-admin is-disabled">
+                                               <span class="icon is-medium has-text-warning">
+                                                    <i class="fas fa-lg fa-power-off"></i>
+                                                </span>
+                                        </a>
+                                    {% else %}
+
+                                        {% if user.enable == false %}
+                                            <a href="{{ path('admin_activer_compte', {'id': user.id}) }}" class="active-button-tableau-admin">
+                                               <span class="icon is-medium has-text-danger">
+                                                    <i class="fas fa-lg fa-power-off"></i>
+                                                </span>
+                                            </a>
+                                        {% else %}
+                                            <a href="{{ path('admin_desactiver_compte', {'id': user.id}) }}" class="active-button-tableau-admin">
+                                               <span class="icon is-medium has-text-info">
+                                                    <i class="fas fa-lg fa-power-off"></i>
+                                                </span>
+                                            </a>
+                                        {% endif %}
+
+                                    {% endif %}
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+        </section>
+
+    </section>
+
 
 {% endblock %}

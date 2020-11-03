@@ -84,6 +84,8 @@ class AdminLoginAuthenticator extends AbstractFormLoginAuthenticator implements 
          */
         if (!$user->getIsConfirmed()) {
             throw new CustomUserMessageAuthenticationException('Veuillez valider votre inscription via le mail de confirmation avant de pouvoir vous connecter');
+        }elseif ($user->getEnable() == false){
+            throw new CustomUserMessageAuthenticationException('Votre compte à été désactivé');
         }
 
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);

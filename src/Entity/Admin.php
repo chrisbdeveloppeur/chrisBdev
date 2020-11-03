@@ -73,6 +73,11 @@ class Admin implements UserInterface
      */
     private $agree_terms;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $enable;
+
 //    /**
 //     * @CaptchaAssert\ValidCaptcha(
 //     *      message = "Echec de validation CAPTCHA, veuillez reéssayer."
@@ -275,6 +280,18 @@ public function getAgreeTerms(): ?bool
 public function setAgreeTerms(?bool $agree_terms): self
 {
     $this->agree_terms = $agree_terms;
+
+    return $this;
+}
+
+public function getEnable(): ?bool
+{
+    return $this->enable;
+}
+
+public function setEnable(?bool $enable): self
+{
+    $this->enable = $enable;
 
     return $this;
 }
