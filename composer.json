@@ -11,6 +11,7 @@
         "doctrine/orm": "^2.7",
         "easycorp/easyadmin-bundle": "^3.1",
         "friendsofsymfony/ckeditor-bundle": "^2.2",
+        "fzaninotto/faker": "^1.9",
         "liip/imagine-bundle": "^2.3",
         "sensio/framework-extra-bundle": "^5.6",
         "symfony/console": "4.4.*",
@@ -31,7 +32,6 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.3",
-        "fzaninotto/faker": "^1.9",
         "symfony/debug-bundle": "^4.4",
         "symfony/maker-bundle": "^1.21",
         "symfony/monolog-bundle": "^3.0",

@@ -45,14 +45,16 @@ class UserController extends AbstractController
 
             $this->addFlash('success', 'La modification de votre profil à bien été prise en compte');
 
-            return $this->redirectToRoute('user_space');
+            return $this->redirect($request->server->get('HTTP_REFERER'));
+        }else{
+            return $this->render('User/edit_user.html.twig', [
+                'form' => $form->createView(),
+                'user' => $user
+            ]);
         }
 
 
-        return $this->render('User/edit_user.html.twig', [
-            'form' => $form->createView(),
-            'user' => $user
-        ]);
+
     }
 
 

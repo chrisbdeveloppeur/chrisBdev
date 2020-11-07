@@ -18,7 +18,7 @@
         </div>
 
         <section class="section">
-            <div class="container">
+            <div class="container table-wrapper">
 
                 <table class="table">
 
@@ -85,21 +85,11 @@
                                                 </span>
                                         </a>
                                     {% else %}
-
-                                        {% if user.enable == false %}
-                                            <a href="{{ path('admin_activer_compte', {'id': user.id}) }}" class="active-button-tableau-admin">
-                                               <span class="icon is-medium has-text-danger">
-                                                    <i class="fas fa-lg fa-power-off"></i>
-                                                </span>
-                                            </a>
-                                        {% else %}
-                                            <a href="{{ path('admin_desactiver_compte', {'id': user.id}) }}" class="active-button-tableau-admin">
-                                               <span class="icon is-medium has-text-info">
-                                                    <i class="fas fa-lg fa-power-off"></i>
-                                                </span>
-                                            </a>
-                                        {% endif %}
-
+                                        <a href="{{ path('admin_desactiver_compte', {'id': user.id}) }}" class="active-button-tableau-admin js-on-off-user">
+                                            <span class="icon is-medium {% if user.enable %}has-text-info{% else %}has-text-danger{% endif %} js-icon-color">
+                                                <i class="fas fa-lg fa-power-off"></i>
+                                            </span>
+                                        </a>
                                     {% endif %}
                                 </td>
 
@@ -115,4 +105,33 @@
     </section>
 
 
+    {#               SCRIPT POUR AJAX                   #}
+        <script>
+
+            function onOffUser(event){
+                event.preventDefault();
+
+                const url = this.href;
+                const iconColor = this.querySelector('span.js-icon-color');
+
+                axios.get(url).then(function (response) {
+                    if (iconColor.classList.contains('has-text-info')){
+                        iconColor.classList.replace('has-text-info', 'has-text-danger')
+                    }else {
+                        iconColor.classList.replace('has-text-danger', 'has-text-info')
+                    }
+                })
+            }
+
+            let submitButton = document.querySelectorAll('a.js-on-off-user').forEach(function (link){
+                link.addEventListener('click', onOffUser);
+            });
+
+
+
+        </script>
+
+
 {% endblock %}
+
+

@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/presentation", name="presentation_")
- * @IsGranted("ROLE_ADMIN")
+ * @IsGranted("ROLE_ADMIN", message="Vous n'êtes pas éligible à cette page !")
  */
 class PresentationController extends AbstractController
 {
@@ -57,6 +57,7 @@ class PresentationController extends AbstractController
             $this->addFlash('success', 'La présentation "' . $presentation->getTitle() . '" a bien été modifié');
 
             return $this->redirect('\#presentation');
+//            return $this->json(['code' => 200, 'message' => 'ça marche']);
         }
         return $this->render('sections/presentation/includes/edit_presentation.html.twig',[
             'presentation' => $presentation,

@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="{% block meta_description %}Création de sites web, applications, interfaces. chrisBdev, développeur web PHP Symphony. Pour des conceptions de sites web dynamiques et interactifs. Site vitrine, site one-page, Boutique en ligne, portail web. N'hésitez pas à contacter chrisBdev !{% endblock %}">
+    <meta name="description" content="{% block meta_description %}Création de sites web, applications, interfaces. chrisBdev, développeur web PHP Symfony. Pour des conceptions de sites web dynamiques et interactifs. Site vitrine, site one-page, Boutique en ligne, portail web. N'hésitez pas à contacter chrisBdev !{% endblock %}">
     <title>{% block title %}chrisBdev | Acceuil{% endblock %}</title>
     {% block css %}
         {{ encore_entry_link_tags('app') }}
@@ -53,6 +53,7 @@
 </footer>
 
 {% block javascripts %}
+    {#        SCRIPT POUR NAVBAR BURGER RESPONSIVE ANIMATION          #}
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -79,36 +80,14 @@
             }
 
         });
-
-
-        {#        SCRIPT POUR VERIF NOMBRE DANS FORMULAIRE          #}
-        function verif_nombre(champ)
-        {
-            var chiffres = new RegExp("[0-9]");
-            var verif;
-            var points = 0;
-
-            for(x = 0; x < champ.value.length; x++)
-            {
-                verif = chiffres.test(champ.value.charAt(x));
-                if(champ.value.charAt(x) == "."){points++;}
-                if(points > 1){verif = false; points = 1;}
-                if(verif == false){champ.value = champ.value.substr(0,x) + champ.value.substr(x+1,champ.value.length-x+1); x--;}
-            }
-        }
-
-        function verif_nombre_max(champ, max){
-
-            let x = champ.value;
-            let xsub = x.toString().substr(0,max);
-            champ.value = xsub;
-
-        }
-        {#        FIN DE SCRIPT         #}
-
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 {% endblock %}
+
+
+
+
 </body>
 
 </html>

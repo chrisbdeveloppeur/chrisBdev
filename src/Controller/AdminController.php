@@ -7,6 +7,7 @@ use App\Repository\AdminRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -43,9 +44,9 @@ class AdminController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', 'La modification de votre profil à bien été prise en compte');
+            $this->addFlash('success', 'La modification du compte ' . $user->getEmail() . ' à bien été prise en compte');
 
-            return $this->redirectToRoute('user_space');
+            return $this->redirect($request->server->get('HTTP_REFERER'));
         }
 
 
@@ -58,28 +59,45 @@ class AdminController extends AbstractController
     /**
      * @Route("/desactiver-compte/{id}", name="desactiver_compte")
      */
-    public function desactiverCompte(AdminRepository $userRepository, $id, Request $request)
+    public function desactiverCompte(AdminRepository $userRepository, $id, Request $request): Response
     {
         $user = $userRepository->find($id);
+        $isEnable = $user->getEnable();
+        if ($isEnable != true){
+            $user->setEnable(true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+            return $this->json('User activé');
+        }
+
         $user->setEnable(false);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($user);
         $entityManager->flush();
-        return $this->redirect($request->server->get('HTTP_REFERER'));
+        return $this->json('User désactivé');
+
+
+//        $entityManager = $this->getDoctrine()->getManager();
+//        $entityManager->persist($user);
+//        $entityManager->flush();
+////        return $this->redirect($request->server->get('HTTP_REFERER'));
+//        return $this->json('ça marche');
     }
 
-    /**
-     * @Route("/activer-compte/{id}", name="activer_compte")
-     */
-    public function activerCompte(AdminRepository $userRepository, $id, Request $request)
-    {
-        $user = $userRepository->find($id);
-        $user->setEnable(true);
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($user);
-        $entityManager->flush();
-        return $this->redirect($request->server->get('HTTP_REFERER'));
-    }
+//    /**
+//     * @Route("/activer-compte/{id}", name="activer_compte")
+//     */
+//    public function activerCompte(AdminRepository $userRepository, $id, Request $request)
+//    {
+//        $user = $userRepository->find($id);
+//
+//        $entityManager = $this->getDoctrine()->getManager();
+//        $entityManager->persist($user);
+//        $entityManager->flush();
+////        return $this->redirect($request->server->get('HTTP_REFERER'));
+//        return $this->json('ça marche');
+//    }
 
 
     /**

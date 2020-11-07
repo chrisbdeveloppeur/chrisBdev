@@ -6,7 +6,8 @@ use App\Repository\AdminRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Captcha\Bundle\CaptchaBundle\Validator\Constraints as CaptchaAssert;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=AdminRepository::class)
@@ -49,12 +50,30 @@ class Admin implements UserInterface
     private $isConfirmed;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\Regex(
+     *     pattern="/[<>{}\/]/",
+     *     match=false,
+     *     message="Votre prénom ne peut contenir des caratères spéciaux (ex: / {} <>)",
+     *)
+     * @Assert\Length(
+     *     max="100",
+     *     maxMessage="100 caractères maximum autorisés pour votre prénom"
+     * )
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\Regex(
+     *     pattern="/[<>{}\/]/",
+     *     match=false,
+     *     message="Votre nom ne peut contenir des caratères spéciaux (ex: / {} <>)",
+     *)
+     * @Assert\Length(
+     *     max="100",
+     *     maxMessage="100 caractères maximum autorisés pour votre nom"
+     * )
      */
     private $last_name;
 

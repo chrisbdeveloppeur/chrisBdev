@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
@@ -24,6 +25,10 @@ class UserType extends AbstractType
             ->add('email', EmailType::class,[
                 'label' => false,
                 'error_bubbling' => true,
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez remplir ce champ.']),
+                    new Email(['message' => 'Veuillez indiquer une adresse mail valide. Exemple : mon_adresse_mail@gmail.com']),
+                ]
             ])
             ->add('lastName', TextType::class,[
                 'label' => false,

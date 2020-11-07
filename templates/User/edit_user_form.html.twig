@@ -18,6 +18,20 @@
 
     </div>
 
+    {% if form_errors(form) %}
+        <article class="message is-small is-danger">
+            <div class="message-header">
+                <p>Oops !</p>
+                <span class="icon is-small has-text-white">
+                                  <i class="fas fa-lg fa-exclamation-triangle"></i>
+                                </span>
+            </div>
+            <div class="message-body">
+                {{ form_errors(form) }}
+            </div>
+        </article>
+    {% endif %}
+
     {{ form_start(form) }}
 
     <div class="field">
@@ -84,24 +98,29 @@
         <label for="user_news" class="is-size-7 has-text-light">J'accepte de recevoir des mails sur les offres en provenance du site chrisBdev</label>
     </div>
 
-    <a class="tag is-medium is-warning" href="{{ path('user_change_password') }}" style="text-decoration: none">
-        <span class="icon">
-            <i class="fas fa-key"></i>
-        </span>
-        <span>
-            Modifier mon mot de passe
-        </span>
-    </a>
+    <div class="field">
+        <a class="tag is-medium is-warning" href="{{ path('user_change_password') }}" style="text-decoration: none;width: 100%">
+            <span class="icon">
+                <i class="fas fa-key"></i>
+            </span>
+            <span>
+                Modifier mon mot de passe
+            </span>
+        </a>
+    </div>
+
 
     {% if is_granted("ROLE_ADMIN") %}
-        <a class="tag is-medium is-danger-custom" href="{{ path('admin_del_user', {'user_id': user.id}) }}" style="text-decoration: none">
-        <span class="icon">
-            <i class="fas fa-user-minus"></i>
-        </span>
-            <span>
-            Supprimer le compte
-        </span>
-        </a>
+        <div class="field">
+            <a class="tag is-medium is-danger-custom" href="{{ path('admin_del_user', {'user_id': user.id}) }}" style="text-decoration: none;width: 100%">
+                <span class="icon">
+                    <i class="fas fa-user-minus"></i>
+                </span>
+               <span>
+                    Supprimer le compte
+                </span>
+            </a>
+        </div>
     {% endif %}
 
     <div class="is-flex" style="justify-content: center;padding-top: 3rem">
