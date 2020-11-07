@@ -76,28 +76,8 @@ class AdminController extends AbstractController
         $entityManager->persist($user);
         $entityManager->flush();
         return $this->json('User désactivé');
-
-
-//        $entityManager = $this->getDoctrine()->getManager();
-//        $entityManager->persist($user);
-//        $entityManager->flush();
-////        return $this->redirect($request->server->get('HTTP_REFERER'));
-//        return $this->json('ça marche');
     }
 
-//    /**
-//     * @Route("/activer-compte/{id}", name="activer_compte")
-//     */
-//    public function activerCompte(AdminRepository $userRepository, $id, Request $request)
-//    {
-//        $user = $userRepository->find($id);
-//
-//        $entityManager = $this->getDoctrine()->getManager();
-//        $entityManager->persist($user);
-//        $entityManager->flush();
-////        return $this->redirect($request->server->get('HTTP_REFERER'));
-//        return $this->json('ça marche');
-//    }
 
 
     /**
