@@ -16,6 +16,17 @@
         <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     {% endblock %}
 
+    {#   GOOGLE ANALYTICS   #}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DB59B0TCMP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DB59B0TCMP');
+    </script>
+
     {#   GOOGLE SEARCH   #}
     <meta name="google-site-verification" content="AnsuQxRxgWYCobS3_cjQwKySZr-dic3QdnI9zQYQ8M4" />
     <link rel="shortcut icon" href="{{ asset('build/images/Chris_B_Dev_Logo_reduit_fondnoir_borderradius.636bf5b4.ico') }}" type="image/x-icon">
