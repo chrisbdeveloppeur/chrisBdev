@@ -68,14 +68,14 @@ class AdminController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-            return $this->json('User activé');
+            return $this->json('User ' . $user->getId() . ' activé');
         }
 
         $user->setEnable(false);
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($user);
         $entityManager->flush();
-        return $this->json('User désactivé');
+        return $this->json('User ' . $user->getId() . ' désactivé');
     }
 
 
@@ -92,7 +92,7 @@ class AdminController extends AbstractController
         $entityManager->remove($user);
         $entityManager->flush();
 
-        $users = $userRepository->findAll();
+        $users = $adminRepository->findAll();
 
         $this->addFlash('danger', 'Le compte ' . $userMail . 'à bien été supprimer');
 
