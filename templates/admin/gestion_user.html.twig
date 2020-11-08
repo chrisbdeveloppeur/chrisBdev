@@ -124,7 +124,7 @@
             }
 
             let submitButton = document.querySelectorAll('a.js-on-off-user').forEach(function (link){
-                link.addEventListener('click', onOffUser);
+                link.addEventListener('click' || 'touchstart', onOffUser);
             });
 
 
