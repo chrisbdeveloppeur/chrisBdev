@@ -40,6 +40,8 @@ $dropdown-content-background-color: #121212;
 //$notification-padding-ltr: .5rem 2.5rem;
 //$notification-padding-rtl: .5rem 2.5rem;
 $modal-content-width: 70vw;
+$file-radius: 0;
+$file-name-max-width: none;
 
 $family-primary: 'Oxygen', sans-serif;
 $family-secondary: 'Teko', sans-serif;
@@ -211,6 +213,9 @@ div.BDC_CaptchaImageDiv a{
 }
 div.table-wrapper{
     overflow-x: auto;
+}
+.file-label{
+    width: 100%;
 }
 
 

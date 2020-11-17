@@ -9,7 +9,7 @@
     {% endif %}
 
     <div class="control">
-        <div class="file has-name is-fullwidth">
+        <div class="file has-name is-fullwidth js-file">
             <label class="file-label">
                 {{ form_widget(projet_form.img, {'attr' : {
                     'class' : 'file-input',
@@ -36,15 +36,15 @@
 
     <div class="is-flex-desktop">
 
-        <div class="column">
+        <div class="column is-one-third-desktop">
             {{ include('sections/projets/includes/img_form/img_1_form.html.twig') }}
         </div>
 
-        <div class="column">
+        <div class="column is-one-third-desktop">
             {{ include('sections/projets/includes/img_form/img_2_form.html.twig') }}
         </div>
 
-        <div class="column">
+        <div class="column is-one-third-desktop">
             {{ include('sections/projets/includes/img_form/img_3_form.html.twig') }}
         </div>
 

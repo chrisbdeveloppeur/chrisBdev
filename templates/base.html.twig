@@ -95,6 +95,25 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+    {#     SCRIPT POUR UPLOAD IMG ILLUSTRATION     #}
+    <script>
+        let imgIllustrationMin = document.querySelectorAll('.js-file input[type=file]');
+        imgIllustrationMin.forEach(function (img) {
+            img.onchange = () => {
+                console.log(img);
+                if (img.files.length > 0) {
+                    const fileName = img.nextElementSibling.nextElementSibling;
+                    const imgFile = img.parentElement.parentElement.parentElement.previousElementSibling.querySelector('img');
+                    fileName.textContent = img.files[0].name;
+                    imgFile.src = window.URL.createObjectURL(img.files[0])
+                }
+            }
+        });
+    </script>
+
 {% endblock %}
 
 

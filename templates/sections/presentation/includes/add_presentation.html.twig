@@ -28,7 +28,7 @@
                 <div class="field">
                     <label class="label">Titre</label>
                     <div class="control">
-                        {{ form_row(presentation_form.title, {'attr' : {
+                        {{ form_widget(presentation_form.title, {'attr' : {
                                 'class' : 'input',
                                 'placeholder' : 'ex : chris B developper',
                                 'alt' : 'Titre'
@@ -40,7 +40,7 @@
                 <div class="field">
                     <label class="label">Sous-titre</label>
                     <div class="control">
-                        {{ form_row(presentation_form.sub_title, {'attr' : {
+                        {{ form_widget(presentation_form.sub_title, {'attr' : {
                                 'class' : 'input',
                                 'placeholder' : 'ex : Voici mes services',
                                 'alt' : 'Sous-titre'
@@ -52,7 +52,7 @@
                 <div class="field">
                     <label class="label">Texte</label>
                     <div class="control">
-                        {{ form_row(presentation_form.text, {'attr' : {
+                        {{ form_widget(presentation_form.text, {'attr' : {
                                 'class' : 'textarea',
                                 'placeholder' : 'Entre le text de la présentation',
                                 'pattern' : '[0-9]{10}',
@@ -66,7 +66,7 @@
                 <div class="field">
                     <label class="label">Lien du "call to action"</label>
                     <div class="control">
-                        {{ form_row(presentation_form.button_link, {'attr' : {
+                        {{ form_widget(presentation_form.button_link, {'attr' : {
                             'class' : 'input',
                             'placeholder' : 'ex : https://chrisbdev.com',
                             'alt' : 'Entrer un lien'
@@ -78,10 +78,14 @@
                 <div class="field">
                     <label class="label has-text-light">Image d'illustration</label>
 
+                    <figure class="figure" style="position: relative;margin-bottom: .75rem">
+                        <img class="img-thumb-projet" src="" alt="">
+                    </figure>
+
                     <div class="control">
-                        <div class="file has-name is-fullwidth">
+                        <div class="file has-name is-fullwidth js-file">
                             <label class="file-label">
-                                {{ form_row(presentation_form.img, {'attr' : {
+                                {{ form_widget(presentation_form.img, {'attr' : {
                                     'class' : 'file-input',
                                     'alt' : 'Uploader une image'} }) }}
                                 <span class="file-cta">

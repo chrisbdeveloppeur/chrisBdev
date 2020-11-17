@@ -1,16 +1,14 @@
+<p class="tag is-primary" style="width: 100%">image 3</p>
 {% if projet.img3Name %}
-    <p class="tag is-primary" style="width: 100%">image 3</p>
     <figure class="figure" style="position: relative;margin-bottom: .75rem">
         <a href="{{ path('projet_del_img_3', {'id': projet.id}) }}" class="delete" style="position: absolute;top: .3rem;right: .3rem;"></a>
         <img class="img-thumb-projet" src="{{ vich_uploader_asset(projet, 'img_3') | imagine_filter('thumb') }}" alt="{{ projet.img3Name }}">
     </figure>
-{% else %}
-    <p class="is-size-7">Aucune image uploadé</p>
 {% endif %}
 
 <div class="control">
 
-    <div class="file is-small" style="justify-content: center">
+    <div class="file is-small has-name is-boxed js-file" style="justify-content: center">
         <label class="file-label">
             {{ form_widget(projet_form.img3, {'attr' : {
                 'class' : 'file-input',
@@ -23,6 +21,16 @@
                     Choisir
                 </span>
             </span>
+            {% if projet.img3Name is null %}
+                <span class="file-name has-background-grey-lighter">
+                Vide
+            </span>
+            {% else %}
+                <span class="file-name has-background-grey-lighter">
+                {{ projet.img3Name }}
+                </span>
+            {% endif %}
         </label>
     </div>
+
 </div>
