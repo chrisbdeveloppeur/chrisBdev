@@ -6,6 +6,10 @@
             <a href="{{ path('projet_del_img', {'id': projet.id}) }}" class="delete is-large" style="position: absolute;top: .3rem;right: .3rem;"></a>
             <img class="img-thumb-projet" src="{{ vich_uploader_asset(projet, 'img') | imagine_filter('thumb') }}" alt="{{ projet.imgProjetName }}">
         </figure>
+    {% else %}
+        <figure class="figure" style="position: relative;margin-bottom: .75rem">
+            <img class="img-thumb-projet" src="" alt="">
+        </figure>
     {% endif %}
 
     <div class="control">
