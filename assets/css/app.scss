@@ -236,17 +236,17 @@ div.table-wrapper{
 /*          DESKTOP         */
 @media (min-width: 768px) {
     .block-presentation:hover{
-        scale: 1.03;
+        transform: scale(1.03);
         box-shadow: black 0 0 50px;
         z-index: 10;
     }
     .competence:hover{
-        scale:1.03;
+        transform: scale(1.03);
         box-shadow: black 0 0 50px;
     }
     .box-projet div.box:hover{
         box-shadow: black 0 0 50px;
-        scale: 1.03;
+        transform: scale(1.03);
     }
     #charaProjet1{
         border-right: rgba(255,255,255,.1) solid 1px;
