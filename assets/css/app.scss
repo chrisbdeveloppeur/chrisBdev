@@ -191,6 +191,12 @@ div.container h2{
     display: none;
     position: absolute;
     bottom: 50%;
+    background: rgba(255,255,255,0.8);
+    border-radius: 0;
+}
+.techno-help-box{
+    bottom: 60%;
+    width: max-content;
 }
 
 .button{
