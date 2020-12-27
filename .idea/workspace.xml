@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/projets/includes/attribut_help_box.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/projets/includes/attribut_help_box.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/projets/includes/techno_help_box.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/projets/includes/techno_help_box.html.twig" afterDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -202,17 +199,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="199" column="1" selection-start-line="199" selection-start-column="1" selection-end-line="199" selection-end-column="1" />
+            <state relative-caret-position="375">
+              <caret line="199" column="21" lean-forward="true" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/techno_help_box.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="119">
+              <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#article#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#article#0;n#!!top" expanded="true" />
@@ -221,11 +218,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="161" column="43" selection-start-line="161" selection-start-column="43" selection-end-line="161" selection-end-column="43" />
+            <state relative-caret-position="136">
+              <caret line="143" column="25" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#5;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -272,10 +272,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/sections/projets/includes/techno_help_box.html.twig" />
         <option value="$PROJECT_DIR$/templates/sections/projets/includes/attribut_help_box.html.twig" />
-        <option value="$PROJECT_DIR$/assets/css/app.scss" />
+        <option value="$PROJECT_DIR$/templates/sections/projets/includes/techno_help_box.html.twig" />
         <option value="$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig" />
+        <option value="$PROJECT_DIR$/assets/css/app.scss" />
       </list>
     </option>
   </component>
@@ -625,12 +625,12 @@
       <workItem from="1608716892018" duration="602000" />
       <workItem from="1608727055664" duration="718000" />
       <workItem from="1608747770574" duration="606000" />
-      <workItem from="1609069047712" duration="1174000" />
+      <workItem from="1609069047712" duration="2560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="466269000" />
+    <option name="totallyTimeSpent" value="467655000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -643,6 +643,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -814,17 +815,6 @@
     <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/box_projet.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/techno_help_box.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#article#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/attribut_help_box.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -836,17 +826,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
+    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="199" column="1" selection-start-line="199" selection-start-column="1" selection-end-line="199" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="143" column="25" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#5;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/lightbox_projet.html.twig">
+    <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="161" column="43" selection-start-line="161" selection-start-column="43" selection-end-line="161" selection-end-column="43" />
+        <state relative-caret-position="375">
+          <caret line="199" column="21" lean-forward="true" selection-start-line="199" selection-start-column="21" selection-end-line="199" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/projets/includes/techno_help_box.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#article#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

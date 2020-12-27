@@ -141,7 +141,7 @@
 
                                 <div class="control" id="techno-{{ techno.id }}{{ projet.id }}">
 
-                                    <div class="tags has-addons">
+                                    <div class="tags has-addons" style="margin-bottom: 0">
 
                                         {% if techno.help %}
                                             <span class="tag is-light is-overable-warning-help" title="{{ techno.help }}">#{{ techno.name }}</span>
@@ -158,7 +158,6 @@
                                     {% if techno.help %}
                                         {{ include('sections/projets/includes/techno_help_box.html.twig') }}
                                     {% endif %}
-
                                 </div>
 
                             {% endfor %}
