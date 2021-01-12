@@ -41,7 +41,7 @@
            value="{{ csrf_token('authenticate') }}"
     >
 
-    <div style="display: flex;justify-content: space-between">
+    <div class="field" style="display: flex;justify-content: space-between">
         <a class="button is-small is-info-custom" href="{{ path('lost_password') }}">
             <span class="icon is-small is-left">
                 <i class="fas fa-user-lock"></i>
@@ -51,7 +51,7 @@
             </span>
         </a>
 
-        <button onclick="this.style.cursor='pointer'; return true;" class="button is-green-custom is-small g-recaptcha" type="submit"
+        <button onclick="this.style.cursor='pointer'; return true;" class="button is-green-custom is-small" type="submit"
                 data-sitekey="6LfSl9wZAAAAACPrrml-QieLt8K7CfycrC1vJwMr"
                 data-callback='onSubmit'
                 data-action='submit'>
@@ -60,6 +60,18 @@
             </span>
             <span>Connexion</span>
         </button>
+    </div>
+
+    <div class="field is-size-7">
+        Pas encore membre ?
+        <a class="button is-small is-info-custom" href="{{ path('app_register') }}">
+            <span class="icon is-small is-left">
+                <i class="fas fa-user-lock"></i>
+            </span>
+            <span>
+                S'enregistrer?
+            </span>
+        </a>
     </div>
 
 

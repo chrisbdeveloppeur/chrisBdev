@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Admin;
 use App\Repository\AdminRepository;
 use App\Repository\AttributRepository;
+use App\Repository\AviRepository;
 use App\Repository\CompRepository;
 use App\Repository\PresentationRepository;
 use App\Repository\ProjetRepository;
@@ -18,19 +19,21 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home(CompRepository $compRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository)
+    public function home(CompRepository $compRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository, AviRepository $aviRepository)
     {
         $competences = $compRepository->findAll();
         $presentations = $presentationRepository->findAll();
         $projets = $projetRepository->findAll();
         $techno = $technoRepository->findAll();
         $attribut = $attributRepository->findAll();
+        $avis = $aviRepository->findAll();
         return $this->render('home/index.html.twig', [
             'competences' => $competences,
             'presentations' => $presentations,
             'projets' => $projets,
             'techno' => $techno,
             'attribut' => $attribut,
+            'avi' => $avis,
         ]);
     }
 

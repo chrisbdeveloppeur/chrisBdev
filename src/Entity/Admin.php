@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AdminRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -96,6 +98,16 @@ class Admin implements UserInterface
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $enable;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Avi::class, mappedBy="User")
+     */
+    private $avis;
+
+    public function __construct()
+    {
+        $this->avis = new ArrayCollection();
+    }
 
 //    /**
 //     * @CaptchaAssert\ValidCaptcha(
@@ -311,6 +323,36 @@ public function getEnable(): ?bool
 public function setEnable(?bool $enable): self
 {
     $this->enable = $enable;
+
+    return $this;
+}
+
+/**
+ * @return Collection|Avi[]
+ */
+public function getAvis(): Collection
+{
+    return $this->avis;
+}
+
+public function addAvi(Avi $avi): self
+{
+    if (!$this->avis->contains($avi)) {
+        $this->avis[] = $avi;
+        $avi->setUser($this);
+    }
+
+    return $this;
+}
+
+public function removeAvi(Avi $avi): self
+{
+    if ($this->avis->removeElement($avi)) {
+        // set the owning side to null (unless already changed)
+        if ($avi->getUser() === $this) {
+            $avi->setUser(null);
+        }
+    }
 
     return $this;
 }
