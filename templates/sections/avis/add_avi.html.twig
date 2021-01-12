@@ -21,7 +21,9 @@
         </div>
 
         {{ form_start(avi_form, {'attr': {'id': 'aviForm'}}) }}
+{#        <form id="aviForm" name="avi" method="post">#}
         {{ include('sections/avis/avi_from.html.twig') }}
+{#        </form>#}
         {{ form_end(avi_form) }}
 
     </section>

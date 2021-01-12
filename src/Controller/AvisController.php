@@ -19,6 +19,7 @@ class AvisController extends AbstractController
     {
         $aviForm = $this->createForm(AviType::class);
 
+//        dd($aviForm->get('note'));
         $user = $this->getUser();
         if ($user){
             $aviForm->get('user')->setData($this->getUser()->getUsername());

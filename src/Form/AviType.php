@@ -17,6 +17,7 @@ class AviType extends AbstractType
         $builder
             ->add('note', ChoiceType::class,[
                     'label' => false,
+                    'multiple' => false,
                     'expanded' => true,
                     'choice_label' => false,
                     'choices' => [

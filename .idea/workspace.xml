@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AvisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AvisController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/AviType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AviType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact/includes/contact_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/includes/contact_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sections/avis/add_avi.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/avis/add_avi.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sections/avis/avis.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/avis/avis.html.twig" afterDir="false" />
@@ -178,8 +176,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AvisController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state relative-caret-position="248">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
               <folding>
                 <element signature="e#34#53#0#PHP" expanded="true" />
               </folding>
@@ -187,11 +185,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/avis/avis.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="-7">
+              <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
@@ -241,12 +239,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/avis/add_avi.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="442">
+              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
               <folding>
                 <element signature="e#322#454#0#HTML" expanded="true" />
                 <element signature="e#701#730#0#HTML" expanded="true" />
                 <element signature="e#830#855#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -280,13 +290,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Form/AviType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -296,15 +303,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/registration/registration_form.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -366,13 +364,13 @@
         <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Admin.php" />
         <option value="$PROJECT_DIR$/src/Entity/Avi.php" />
-        <option value="$PROJECT_DIR$/src/Form/AviType.php" />
         <option value="$PROJECT_DIR$/templates/layouts/header.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/AvisController.php" />
-        <option value="$PROJECT_DIR$/templates/sections/avis/add_avi.html.twig" />
-        <option value="$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig" />
         <option value="$PROJECT_DIR$/templates/contact/includes/contact_form.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/AviType.php" />
         <option value="$PROJECT_DIR$/templates/sections/avis/avis.html.twig" />
+        <option value="$PROJECT_DIR$/templates/sections/avis/add_avi.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/AvisController.php" />
+        <option value="$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig" />
       </list>
     </option>
   </component>
@@ -635,19 +633,19 @@
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\User" />
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\competences\includes" />
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\presentation\includes" />
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\contact\includes" />
-      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\presentation" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev" />
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\projets\includes" />
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\emails" />
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\security" />
       <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\User" />
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\competences\includes" />
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\presentation\includes" />
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\contact\includes" />
+      <recent name="C:\Users\K4gur0\PhpstormProjects\chrisBdev\templates\sections\presentation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -762,12 +760,12 @@
       <workItem from="1610387700195" duration="11000" />
       <workItem from="1610456499416" duration="1537000" />
       <workItem from="1610458543144" duration="15587000" />
-      <workItem from="1610486721629" duration="4193000" />
+      <workItem from="1610486721629" duration="7498000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="498860000" />
+    <option name="totallyTimeSpent" value="502165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -782,7 +780,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16950959" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16950959" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -795,7 +793,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23726977" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23726977" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1096,13 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/AviType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/registration_form.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1114,16 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AvisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding>
-            <element signature="e#34#53#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1159,28 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/avis/add_avi.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding>
-            <element signature="e#322#454#0#HTML" expanded="true" />
-            <element signature="e#701#730#0#HTML" expanded="true" />
-            <element signature="e#830#855#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/contact/contact.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1204,15 +1163,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/AviType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AvisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="e#34#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/avis/avis.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="-7">
+          <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="e#1386#1394#0#Twig" expanded="true" />
             <element signature="e#2452#2460#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/avis/add_avi.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding>
+            <element signature="e#322#454#0#HTML" expanded="true" />
+            <element signature="e#701#730#0#HTML" expanded="true" />
+            <element signature="e#830#855#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

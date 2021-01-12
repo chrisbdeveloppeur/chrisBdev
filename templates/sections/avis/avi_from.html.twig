@@ -25,9 +25,20 @@
 
             <div class="field">
                 <label class="label has-text-white">Note *</label>
-                <div class="control has-icons-left">
-                    {{ form_widget(avi_form.note, {'attr': {'class': 'is-primary'}}) }}
-                    {% for avi_form.children %}
+                <div class="control is-flex is-justify-content-space-evenly">
+{#                    {{ form_widget(avi_form.note, {'attr': {'class': ''}}) }}#}
+                    {% for child in avi_form.note %}
+                        <div class="column">
+                            <div class="column">
+                                <span class="icon is-size-4 has-text-white">
+                                    <i class="far fa-star fa-2x"></i>
+                                </span>
+                            </div>
+                            <div class="column">
+                                {{ form_widget(child, {'attr': {'class': ''}, 'checked': 'true' } ) }}
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
 
