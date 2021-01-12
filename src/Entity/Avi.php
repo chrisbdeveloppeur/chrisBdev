@@ -18,11 +18,6 @@ class Avi
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="avis")
-     */
-    private $User;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $note;
@@ -37,26 +32,24 @@ class Avi
      */
     private $date;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Admin::class, mappedBy="avi", cascade={"persist", "remove"})
+     */
+    private $admin;
+
     public function __construct()
     {
         $this->date = new \DateTime();
     }
 
+    public function __toString()
+    {
+        return $this->getCommentaire();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getUser(): ?Admin
-    {
-        return $this->User;
-    }
-
-    public function setUser(?Admin $User): self
-    {
-        $this->User = $User;
-
-        return $this;
     }
 
     public function getNote(): ?int
@@ -91,6 +84,24 @@ class Avi
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getAdmin(): ?Admin
+    {
+        return $this->admin;
+    }
+
+    public function setAdmin(?Admin $admin): self
+    {
+        $this->admin = $admin;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newAvi = null === $admin ? null : $this;
+        if ($admin->getAvi() !== $newAvi) {
+            $admin->setAvi($newAvi);
+        }
 
         return $this;
     }

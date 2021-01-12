@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Admin;
+use App\Form\AviType;
 use App\Repository\AdminRepository;
 use App\Repository\AttributRepository;
 use App\Repository\AviRepository;
@@ -21,6 +22,8 @@ class HomeController extends AbstractController
      */
     public function home(CompRepository $compRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository, AviRepository $aviRepository)
     {
+        $user = $this->getUser();
+        $aviForm = $this->createForm(AviType::class);
         $competences = $compRepository->findAll();
         $presentations = $presentationRepository->findAll();
         $projets = $projetRepository->findAll();
@@ -34,6 +37,8 @@ class HomeController extends AbstractController
             'techno' => $techno,
             'attribut' => $attribut,
             'avi' => $avis,
+            'avi_form' => $aviForm->createView(),
+            'user' => $user,
         ]);
     }
 

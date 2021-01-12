@@ -36,9 +36,11 @@
 
                 <div class="column">
                     {% if is_granted("ROLE_USER") %}
-                        <a href="#" class="button is-green-custom has-text-weight-bold">
-                            Noter chrisBdev
-                        </a>
+                        {% if user.avi %}
+                            {{ user.avi }}
+                        {% else %}
+                            {{ include('sections/avis/avi_from.html.twig') }}
+                        {% endif %}
                     {% else %}
                         <a href="{{ path('app_login') }}" class="button is-green-custom has-text-weight-bold">
                             Noter chrisBdev

@@ -100,21 +100,19 @@ class Admin implements UserInterface
     private $enable;
 
     /**
-     * @ORM\OneToMany(targetEntity=Avi::class, mappedBy="User")
+     * @ORM\OneToOne(targetEntity=Avi::class, inversedBy="admin", cascade={"persist", "remove"})
      */
-    private $avis;
+    private $avi;
 
     public function __construct()
     {
         $this->avis = new ArrayCollection();
     }
 
-//    /**
-//     * @CaptchaAssert\ValidCaptcha(
-//     *      message = "Echec de validation CAPTCHA, veuillez reéssayer."
-//     * )
-//     */
-//    protected $captchaCode;
+    public function __toString()
+    {
+        return $this->getEmail();
+    }
 
     /**
      * @ORM\PrePersist()
@@ -245,16 +243,6 @@ class Admin implements UserInterface
         return $this;
     }
 
-//    public function getCaptchaCode()
-//    {
-//        return $this->captchaCode;
-//    }
-//
-//    public function setCaptchaCode($captchaCode)
-//    {
-//        $this->captchaCode = $captchaCode;
-//    }
-
 public function getName(): ?string
 {
     return $this->name;
@@ -327,33 +315,17 @@ public function setEnable(?bool $enable): self
     return $this;
 }
 
-/**
- * @return Collection|Avi[]
- */
-public function getAvis(): Collection
+public function getAvi(): ?Avi
 {
-    return $this->avis;
+    return $this->avi;
 }
 
-public function addAvi(Avi $avi): self
+public function setAvi(?Avi $avi): self
 {
-    if (!$this->avis->contains($avi)) {
-        $this->avis[] = $avi;
-        $avi->setUser($this);
-    }
+    $this->avi = $avi;
 
     return $this;
 }
 
-public function removeAvi(Avi $avi): self
-{
-    if ($this->avis->removeElement($avi)) {
-        // set the owning side to null (unless already changed)
-        if ($avi->getUser() === $this) {
-            $avi->setUser(null);
-        }
-    }
 
-    return $this;
-}
 }
