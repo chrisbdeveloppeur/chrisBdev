@@ -37,10 +37,16 @@ class Avi
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $validated;
+
 
     public function __construct()
     {
         $this->date = new \DateTime();
+        $this->validated = false;
     }
 
     public function __toString()
@@ -97,6 +103,18 @@ class Avi
     public function setUser(?string $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getValidated(): ?bool
+    {
+        return $this->validated;
+    }
+
+    public function setValidated(bool $validated): self
+    {
+        $this->validated = $validated;
 
         return $this;
     }

@@ -36,12 +36,13 @@
                             {% if avi.user %}
                                 Utilisateur : {{ avi.user }}<br>
                             {% else %}
-                                Utilisateur : Anonyme<br>
+                                Utilisateur : <i>Anonyme</i><br>
                             {% endif %}
                             Date : {{ avi.date|date }}<br>
                             {% if avi.commentaire %}
-                                Commentaire : {{ avi.commentaire }}<br><br>
+                                Commentaire : {{ avi.commentaire }}
                             {% endif %}
+                            <br><br>
                         {% endfor %}
 
                         <div class="column">

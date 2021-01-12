@@ -17,20 +17,19 @@ class AvisController extends AbstractController
      */
     public function index(Request $request, EntityManagerInterface $em): Response
     {
-        $avi = new Avi();
         $aviForm = $this->createForm(AviType::class);
-        if ($this->getUser()){
-            $user = $this->getUser();
-            $aviForm->get('user')->setData($user->getUsername());
-        }
         $aviForm->handleRequest($request);
 
+        $note = $aviForm->getData();
+        if ($this->getUser()){
+            $user = $this->getUser()->getUsername();
+            $aviForm->get('user')->setData($user);
+        }
+
         if ($aviForm->isSubmitted() && $aviForm->isValid()){
-            $note = $aviForm->getData();
-            $note->setUser($user);
             $em->persist($note);
             $em->flush();
-            $message = 'Merci pour votre soutiens et d\'avoir pris le temps de donner un avi concernant chrisBdev. A très vite !';
+            $message = 'Merci pour votre soutiens et d\'avoir pris le temps de donner un avi concernant chrisBdev';
             $this->addFlash('success',$message);
             return $this->redirectToRoute('home');
         }
