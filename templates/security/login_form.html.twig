@@ -7,8 +7,8 @@
             <div class="message-header">
                 <p>Oops !</p>
                 <span class="icon is-small has-text-white">
-                                  <i class="fas fa-lg fa-exclamation-triangle"></i>
-                                </span>
+                    <i class="fas fa-lg fa-exclamation-triangle"></i>
+                </span>
             </div>
             <div class="message-body">
                 {{ error.messageKey|trans(error.messageData, 'security') }}
@@ -63,13 +63,18 @@
     </div>
 
     <div class="field is-size-7">
-        Pas encore membre ?
-        <a class="button is-small is-info-custom" href="{{ path('app_register') }}">
+        <div class="has-text-left">
             <span class="icon is-small is-left">
-                <i class="fas fa-user-lock"></i>
+                <i class="fas fa-info-circle"></i>
+            </span>
+            Pas encore membre ? N'hésitez pas à créer votre compte :
+        </div>
+        <a class="button is-small is-info-custom is-fullwidth" href="{{ path('app_register') }}">
+            <span class="icon is-small is-left">
+                <i class="fas fa-user-plus"></i>
             </span>
             <span>
-                S'enregistrer?
+                S'enregistrer
             </span>
         </a>
     </div>
