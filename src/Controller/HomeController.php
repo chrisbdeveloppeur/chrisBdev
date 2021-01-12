@@ -18,28 +18,8 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home(UserPasswordEncoderInterface $passwordEncoder,CompRepository $compRepository, AdminRepository $adminRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository)
+    public function home(CompRepository $compRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository)
     {
-        $evenAdmin = $adminRepository->findByMail('christian.boungou@gmail.com');
-        if (!$evenAdmin){
-            $admin = new Admin();
-            $admin->setEmail('christian.boungou@gmail.com');
-            $admin->setPassword(
-                $passwordEncoder->encodePassword(
-                    $admin,
-                    '121090cb.K4gur0'
-                )
-            );
-            $admin->setRoles(['ROLE_ADMIN']);
-            $admin->setIsConfirmed(true);
-            $admin->setNews(false);
-            $admin->setEnable(true);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($admin);
-            $entityManager->flush();
-        }
-
-
         $competences = $compRepository->findAll();
         $presentations = $presentationRepository->findAll();
         $projets = $projetRepository->findAll();

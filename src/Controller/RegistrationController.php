@@ -25,8 +25,10 @@ class RegistrationController extends AbstractController
      * @Route("/register", name="app_register")
      *
      */
-    public function register(NotifMessage $notifMessage,Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function register(NotifMessage $notifMessage,Request $request, UserPasswordEncoderInterface $passwordEncoder, AdminRepository $adminRepository, AddAdminAccountAutoController $addAdminAuto): Response
     {
+        $addAdminAuto->addAdminAuto($adminRepository, $passwordEncoder);
+
         $user = new Admin();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
