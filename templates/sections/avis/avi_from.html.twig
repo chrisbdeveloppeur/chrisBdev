@@ -1,6 +1,12 @@
 {{ form_start(avi_form) }}
 
-<a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">
+{{ form_widget(avi_form.note) }}
+{{ form_widget(avi_form.commentaire) }}
+
+<button type="submit" class="button is-green-custom has-text-weight-bold">
     Noter chrisBdev
-</a>
+</button>
 {{ form_end(avi_form) }}
+{#<a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">#}
+{#    Noter chrisBdev#}
+{#</a>#}

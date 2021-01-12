@@ -12,41 +12,60 @@
             <div class="is-justify-content-center has-text-centered">
 
                 <div class="column">
-                    {% if avi is empty %}
+                    {% if avis is empty %}
                         <article class="message is-small">
-                            <div class="message-header">
-                                <p>Oops !</p>
+                            <div class="message-header is-green-custom">
+                                <p>En cours de progression...</p>
                                 <span class="icon is-small">
-                                <i class="fas fa-lg fa-exclamation-triangle"></i>
+                                <i class="fas fa-lg fa-info-circle"></i>
                             </span>
                             </div>
                             <div class="message-body has-text-left">
-                                En cours de construction...
+                                Soyez le premier à noter chrisBdev !
                             </div>
+                            {% if is_granted("ROLE_USER") %}
+                            <div class="column">
+                                <a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">
+                                    Noter chrisBdev
+                                </a>
+                            </div>
+                            {% else %}
+                                <div class="column">
+                                    <a href="{{ path('app_login') }}" class="button is-green-custom has-text-weight-bold">
+                                        Noter chrisBdev
+                                    </a>
+                                </div>
+                            {% endif %}
                         </article>
                     {% else %}
-                        {% for avi in avi %}
-                            {{ avi.note }}
-                            {{ avi.user.email }}
-                            {{ avi.date }}
-                            {{ avi.commentaire }}
+
+                        {% for avi in avis %}
+                            Note : {{ avi.note }}<br>
+                            Utilisateur : {{ avi.admin }}<br>
+                            Date : {{ avi.date|date }}<br>
+                            Commentaire : {{ avi.commentaire }}<br><br>
                         {% endfor %}
+
+                        <div class="column">
+                            {% if is_granted("ROLE_USER") %}
+                                <div class="column">
+                                    <a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">
+                                        Noter chrisBdev
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="column">
+                                    <a href="{{ path('app_login') }}" class="button is-green-custom has-text-weight-bold">
+                                        Noter chrisBdev
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+
                     {% endif %}
                 </div>
 
-                <div class="column">
-                    {% if is_granted("ROLE_USER") %}
-                        {% if user.avi %}
-                            {{ user.avi }}
-                        {% else %}
-                            {{ include('sections/avis/avi_from.html.twig') }}
-                        {% endif %}
-                    {% else %}
-                        <a href="{{ path('app_login') }}" class="button is-green-custom has-text-weight-bold">
-                            Noter chrisBdev
-                        </a>
-                    {% endif %}
-                </div>
+
 
 
             </div>

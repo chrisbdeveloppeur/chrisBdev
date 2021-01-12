@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Admin;
 use App\Form\AviType;
 use App\Repository\AdminRepository;
 use App\Repository\AttributRepository;
@@ -11,33 +10,33 @@ use App\Repository\CompRepository;
 use App\Repository\PresentationRepository;
 use App\Repository\ProjetRepository;
 use App\Repository\TechnoRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function home(CompRepository $compRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository, AviRepository $aviRepository)
+    public function home(CompRepository $compRepository, PresentationRepository $presentationRepository, ProjetRepository $projetRepository, TechnoRepository $technoRepository, AttributRepository $attributRepository, AviRepository $aviRepository, AdminRepository $adminRepository)
     {
         $user = $this->getUser();
-        $aviForm = $this->createForm(AviType::class);
         $competences = $compRepository->findAll();
         $presentations = $presentationRepository->findAll();
         $projets = $projetRepository->findAll();
         $techno = $technoRepository->findAll();
         $attribut = $attributRepository->findAll();
         $avis = $aviRepository->findAll();
+
         return $this->render('home/index.html.twig', [
             'competences' => $competences,
             'presentations' => $presentations,
             'projets' => $projets,
             'techno' => $techno,
             'attribut' => $attribut,
-            'avi' => $avis,
-            'avi_form' => $aviForm->createView(),
+            'avis' => $avis,
             'user' => $user,
         ]);
     }
