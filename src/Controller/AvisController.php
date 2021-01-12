@@ -13,20 +13,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class AvisController extends AbstractController
 {
     /**
-     * @Route("/add-avi", name="add_avi")
+     * @Route("/add-avis", name="add_avis")
      */
     public function index(Request $request, EntityManagerInterface $em): Response
     {
         $aviForm = $this->createForm(AviType::class);
-        $aviForm->handleRequest($request);
 
-        $note = $aviForm->getData();
-        if ($this->getUser()){
-            $user = $this->getUser()->getUsername();
-            $aviForm->get('user')->setData($user);
+        $user = $this->getUser();
+        if ($user){
+            $aviForm->get('user')->setData($this->getUser()->getUsername());
         }
-
+        $aviForm->handleRequest($request);
         if ($aviForm->isSubmitted() && $aviForm->isValid()){
+            $note = $aviForm->getData();
             $em->persist($note);
             $em->flush();
             $message = 'Merci pour votre soutiens et d\'avoir pris le temps de donner un avi concernant chrisBdev';

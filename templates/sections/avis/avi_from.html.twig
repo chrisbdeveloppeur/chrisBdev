@@ -1,12 +1,55 @@
-{{ form_start(avi_form) }}
+<div class="container is-flex" style="justify-content: center">
+    <div class="column is-flex box is-half has-text-centered" style="background: rgba(10,10,10,0.9);box-shadow: rgb(0, 0, 0) 0px 0px 15px;position: relative">
+        <article class="column has-text-centered">
 
-{{ form_widget(avi_form.note) }}
-{{ form_widget(avi_form.commentaire) }}
+                {% if form_errors(avi_form) != null %}
+                    <article class="message is-small is-danger">
+                        <div class="message-header">
+                            <p>Oops !</p>
+                            <span class="icon is-small has-text-white">
+                                <i class="fas fa-lg fa-exclamation-triangle"></i>
+                            </span>
+                        </div>
+                        <div class="message-body has-text-left">
+                            {{ form_errors(avi_form) }}
+                        </div>
+                    </article>
+                {% endif %}
 
-<button type="submit" class="button is-green-custom has-text-weight-bold">
-    Noter chrisBdev
-</button>
-{{ form_end(avi_form) }}
-{#<a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">#}
-{#    Noter chrisBdev#}
-{#</a>#}
+            <div class="field">
+                <label class="label has-text-white">Pseudo / Email *</label>
+                <div class="control has-icons-left">
+                    {{ form_widget(avi_form.user, {'attr': {'class': 'input is-primary'}}) }}
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label has-text-white">Note *</label>
+                <div class="control has-icons-left">
+                    {{ form_widget(avi_form.note, {'attr': {'class': 'is-primary'}}) }}
+                    {% for avi_form.children %}
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label has-text-white">Commentaire</label>
+                <div class="control has-icons-left">
+                    {{ form_widget(avi_form.commentaire, {'attr': {'class': 'textarea is-primary', 'placeholder' : 'Taper mon commentaire'}}) }}
+                </div>
+            </div>
+
+            <button type="submit" class="button is-green-custom is-small"
+                    data-sitekey="6LfSl9wZAAAAACPrrml-QieLt8K7CfycrC1vJwMr"
+                    data-callback='onSubmit'
+                    data-action='submit'>
+                    <span class="icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </span>
+                    <span>
+                        Soumettre
+                    </span>
+            </button>
+
+        </article>
+    </div>
+</div>

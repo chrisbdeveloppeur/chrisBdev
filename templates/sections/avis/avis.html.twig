@@ -1,4 +1,4 @@
-<div id="cv" style="position: relative;top: -7rem;"></div>
+<div id="avi" style="position: relative;top: -7rem;"></div>
 <section class="hero is-dark is-bold is-normal">
     <div class="hero-body">
         <div class="container">
@@ -15,7 +15,7 @@
                     {% if avis is empty %}
                         <article class="message is-small">
                             <div class="message-header is-green-custom">
-                                <p>En cours de progression...</p>
+                                <p>Soutennez chrisBdev</p>
                                 <span class="icon is-small">
                                 <i class="fas fa-lg fa-info-circle"></i>
                             </span>
@@ -24,30 +24,30 @@
                                 Soyez le premier à noter chrisBdev !
                             </div>
                             <div class="column">
-                                <a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">
+                                <a href="{{ path('add_avis') }}" class="button is-green-custom has-text-weight-bold">
                                     Noter chrisBdev
                                 </a>
                             </div>
                         </article>
                     {% else %}
 
-                        {% for avi in avis %}
-                            Note : {{ avi.note }}<br>
+                        {% for avis in avis %}
+                            Note : {{ avis.note }}<br>
                             {% if avi.user %}
-                                Utilisateur : {{ avi.user }}<br>
+                                Utilisateur : {{ avis.user }}<br>
                             {% else %}
                                 Utilisateur : <i>Anonyme</i><br>
                             {% endif %}
-                            Date : {{ avi.date|date }}<br>
-                            {% if avi.commentaire %}
-                                Commentaire : {{ avi.commentaire }}
+                            Date : {{ avis.date|date }}<br>
+                            {% if avis.commentaire %}
+                                Commentaire : {{ avis.commentaire }}
                             {% endif %}
                             <br><br>
                         {% endfor %}
 
                         <div class="column">
                                 <div class="column">
-                                    <a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">
+                                    <a href="{{ path('add_avis') }}" class="button is-green-custom has-text-weight-bold">
                                         Noter chrisBdev
                                     </a>
                                 </div>
