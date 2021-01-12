@@ -99,10 +99,6 @@ class Admin implements UserInterface
      */
     private $enable;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Avi::class, inversedBy="admin", cascade={"persist", "remove"})
-     */
-    private $avi;
 
     public function __construct()
     {
@@ -315,17 +311,6 @@ public function setEnable(?bool $enable): self
     return $this;
 }
 
-public function getAvi(): ?Avi
-{
-    return $this->avi;
-}
-
-public function setAvi(?Avi $avi): self
-{
-    $this->avi = $avi;
-
-    return $this;
-}
 
 
 }

@@ -23,43 +23,33 @@
                             <div class="message-body has-text-left">
                                 Soyez le premier à noter chrisBdev !
                             </div>
-                            {% if is_granted("ROLE_USER") %}
                             <div class="column">
                                 <a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">
                                     Noter chrisBdev
                                 </a>
                             </div>
-                            {% else %}
-                                <div class="column">
-                                    <a href="{{ path('app_login') }}" class="button is-green-custom has-text-weight-bold">
-                                        Noter chrisBdev
-                                    </a>
-                                </div>
-                            {% endif %}
                         </article>
                     {% else %}
 
                         {% for avi in avis %}
                             Note : {{ avi.note }}<br>
-                            Utilisateur : {{ avi.admin }}<br>
+                            {% if avi.user %}
+                                Utilisateur : {{ avi.user }}<br>
+                            {% else %}
+                                Utilisateur : Anonyme<br>
+                            {% endif %}
                             Date : {{ avi.date|date }}<br>
-                            Commentaire : {{ avi.commentaire }}<br><br>
+                            {% if avi.commentaire %}
+                                Commentaire : {{ avi.commentaire }}<br><br>
+                            {% endif %}
                         {% endfor %}
 
                         <div class="column">
-                            {% if is_granted("ROLE_USER") %}
                                 <div class="column">
                                     <a href="{{ path('add_avi') }}" class="button is-green-custom has-text-weight-bold">
                                         Noter chrisBdev
                                     </a>
                                 </div>
-                            {% else %}
-                                <div class="column">
-                                    <a href="{{ path('app_login') }}" class="button is-green-custom has-text-weight-bold">
-                                        Noter chrisBdev
-                                    </a>
-                                </div>
-                            {% endif %}
                         </div>
 
                     {% endif %}

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Avi;
 use App\Form\AviType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,16 +17,18 @@ class AvisController extends AbstractController
      */
     public function index(Request $request, EntityManagerInterface $em): Response
     {
-        $user = $this->getUser();
-        $aviUser = $user->getAvi();
+        $avi = new Avi();
         $aviForm = $this->createForm(AviType::class);
+        if ($this->getUser()){
+            $user = $this->getUser();
+            $aviForm->get('user')->setData($user->getUsername());
+        }
         $aviForm->handleRequest($request);
 
-        if ($aviForm->isSubmitted() && $aviForm->isValid() && !$aviUser){
+        if ($aviForm->isSubmitted() && $aviForm->isValid()){
             $note = $aviForm->getData();
-            $note->setAdmin($user);
+            $note->setUser($user);
             $em->persist($note);
-            dd($note);
             $em->flush();
             $message = 'Merci pour votre soutiens et d\'avoir pris le temps de donner un avi concernant chrisBdev. A très vite !';
             $this->addFlash('success',$message);

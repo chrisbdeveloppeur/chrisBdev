@@ -33,9 +33,10 @@ class Avi
     private $date;
 
     /**
-     * @ORM\OneToOne(targetEntity=Admin::class, mappedBy="avi", cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $admin;
+    private $user;
+
 
     public function __construct()
     {
@@ -88,21 +89,16 @@ class Avi
         return $this;
     }
 
-    public function getAdmin(): ?Admin
+    public function getUser(): ?string
     {
-        return $this->admin;
+        return $this->user;
     }
 
-    public function setAdmin(?Admin $admin): self
+    public function setUser(?string $user): self
     {
-        $this->admin = $admin;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newAvi = null === $admin ? null : $this;
-        if ($admin->getAvi() !== $newAvi) {
-            $admin->setAvi($newAvi);
-        }
+        $this->user = $user;
 
         return $this;
     }
+
 }
