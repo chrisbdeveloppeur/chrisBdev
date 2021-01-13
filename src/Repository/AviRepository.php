@@ -22,19 +22,19 @@ class AviRepository extends ServiceEntityRepository
     // /**
     //  * @return Avi[] Returns an array of Avi objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findAllByNote()
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
+//            ->andWhere('a.note = :val')
+//            ->setParameter('val', $value)
+            ->orderBy('a.note', 'DESC')
+            ->setMaxResults(5)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Avi

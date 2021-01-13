@@ -28,7 +28,8 @@ class HomeController extends AbstractController
         $projets = $projetRepository->findAll();
         $techno = $technoRepository->findAll();
         $attribut = $attributRepository->findAll();
-        $avis = $aviRepository->findAll();
+        $avis = $aviRepository->findAllByNote();
+
 
         return $this->render('home/index.html.twig', [
             'competences' => $competences,
