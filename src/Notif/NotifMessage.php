@@ -81,8 +81,8 @@ class NotifMessage
     {
         $message = (new \Swift_Message('chris B dev - Avis client'))
             ->setFrom('admin@chrisbdev.com')
-//            ->setTo('chrisbdeveloppeur@gmail.com')
-                ->setTo('kenshin91cb@gmail.com')
+            ->setTo('chrisbdeveloppeur@gmail.com')
+//                ->setTo('kenshin91cb@gmail.com')
             ->setBody($this->renderer->render('emails/confirmation_avis.html.twig',[
                 'avis' => $avis,
             ]), 'text/html' );
