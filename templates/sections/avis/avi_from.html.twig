@@ -28,14 +28,14 @@
                 <div class="control is-flex is-justify-content-space-evenly">
 {#                    {{ form_widget(avi_form.note, {'attr': {'class': ''}}) }}#}
                     {% for child in avi_form.note %}
-                        <div class="column note-star" onmouseover="fillStarOnOver(this)" onmouseleave="emptyStarOnLeave(this)">
+                        <div class="column note-star" onmouseover="fillStarOnOver(this)" onmouseleave="emptyStarOnLeave(this)" onclick="checkRadio(this)">
                             <div class="column">
                                 <span class="icon is-size-4 has-text-white">
                                     <i class="fas fa-star fa-2x"></i>
                                 </span>
                             </div>
                             <div class="column">
-                                {{ form_widget(child, {'attr': {'class': 'radio-select'}, 'checked': 'true' } ) }}
+                                {{ form_widget(child, {'attr': {'class': 'radio-select is-hidden'} } ) }}
                             </div>
                         </div>
                     {% endfor %}
@@ -69,23 +69,41 @@
 <script>
 
     function fillStarOnOver(star) {
-        star.classList.add('note-selected');
+        star.classList.add('note-hover');
         let allStarsArr = document.getElementsByClassName('note-star');
         for (i=0; i<allStarsArr.length; i++){
             let iconStar = allStarsArr[i].firstElementChild.firstElementChild.firstElementChild;
             iconStar.classList.replace('far', 'fas');
-            if (allStarsArr[i].classList.contains('note-selected')){
+            if (allStarsArr[i].classList.contains('note-hover')){
                 break
             }
         }
     }
 
     function emptyStarOnLeave(star){
-        star.classList.remove('note-selected');
+        star.classList.remove('note-hover');
         let allStarsArr = document.getElementsByClassName('note-star');
-        for (i=0; i<allStarsArr.length; i++){
+        let arrLenght = allStarsArr.length;
+        for (i=arrLenght-1; i>=0; i--){
             let iconStar = allStarsArr[i].firstElementChild.firstElementChild.firstElementChild;
-            iconStar.classList.replace('fas', 'far');
+            let radioSelect = allStarsArr[i].querySelector('.radio-select');
+            if (radioSelect.checked === true){
+                break
+            }else {
+                iconStar.classList.replace('fas', 'far');
+            }
         }
+    }
+
+
+    function checkRadio(star){
+        let allStarsArr = document.getElementsByClassName('note-star');
+        let thisRadio = star.querySelector('.radio-select');
+        for (i=0; i<allStarsArr.length; i++){
+            let allRadio = allStarsArr[i].getElementsByClassName('radio-select');
+            allRadio[0].checked = false;
+        }
+        thisRadio.checked = true;
+        emptyStarOnLeave(star);
     }
 </script>
