@@ -21,6 +21,7 @@ class AvisController extends AbstractController
 
 //        dd($aviForm->get('note'));
         $user = $this->getUser();
+//        $aviForm->get('date')->setData($date);
         if ($user){
             $aviForm->get('user')->setData($this->getUser()->getUsername());
         }

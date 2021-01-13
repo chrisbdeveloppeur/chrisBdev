@@ -45,7 +45,7 @@ class Avi
 
     public function __construct()
     {
-        $this->date = new \DateTime();
+        $this->date = new \DateTime('', new \DateTimeZone('Europe/Paris'));
         $this->validated = false;
     }
 
@@ -90,6 +90,7 @@ class Avi
 
     public function setDate(\DateTimeInterface $date): self
     {
+        $date->format('d/m/Y - H:i');
         $this->date = $date;
 
         return $this;

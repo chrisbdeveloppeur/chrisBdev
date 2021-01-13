@@ -32,17 +32,29 @@
                     {% else %}
 
                         {% for avis in avis %}
-                            Note : {{ avis.note }}<br>
-                            {% if avis.user %}
-                                Utilisateur : {{ avis.user }}<br>
-                            {% else %}
-                                Utilisateur : <i>Anonyme</i><br>
-                            {% endif %}
-                            Date : {{ avis.date|date }}<br>
-                            {% if avis.commentaire %}
-                                Commentaire : {{ avis.commentaire }}
-                            {% endif %}
-                            <br><br>
+                            <div class="box">
+                                {% set nb = avis.note %}
+                                <div class="column is-flex is-align-items-center">
+                                    {% for i in 1..nb %}
+                                        <div class="column">
+                                        <span class="icon is-size-4 has-text-white">
+                                            <i class="fas fa-star fa-2x is-text-green-custom"></i>
+                                        </span>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <br>
+                                {% if avis.user %}
+                                    Utilisateur : {{ avis.user }}<br>
+                                {% else %}
+                                    Utilisateur : <i>Anonyme</i><br>
+                                {% endif %}
+                                Emis le {{ avis.date|date("d/m/Y à H:i") }}<br>
+                                {% if avis.commentaire %}
+                                    Commentaire : {{ avis.commentaire }}
+                                {% endif %}
+                                <br><br>
+                            </div>
                         {% endfor %}
 
                         <div class="column">
