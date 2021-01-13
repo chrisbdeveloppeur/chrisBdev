@@ -32,43 +32,17 @@
                     {% else %}
 
                         {% for avis in avis %}
-                            {% if avis.validated == true %}
-                            <div class="box">
-                                {% set nb = avis.note %}
-                                <div class="column is-flex is-align-items-center">
-                                    {% for i in 1..nb %}
-                                        <div class="column">
-                                        <span class="icon is-size-4 is-size-5-touch has-text-white">
-                                            <i class="fas fa-star fa-2x is-text-green-custom"></i>
-                                        </span>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                                <br>
-                                {% if avis.commentaire %}
-                                    <article class="message is-dark">
-                                        <div class="message-body">
-                                            {{ avis.commentaire }}
-                                        </div>
-                                    </article>
+
+                                {% if avis.validated == true %}
+
+                                    {{ include('sections/avis/avis_box.html.twig') }}
+
+                                {% elseif is_granted("ROLE_ADMIN") %}
+
+                                    {{ include('sections/avis/avis_box.html.twig') }}
+
                                 {% endif %}
 
-                                <div class="columns is-justify-content-space-between">
-                                    <span>
-                                        {% if avis.user %}
-                                            Par {{ avis.user }}
-                                        {% else %}
-                                            Par <i>client anonyme</i>
-                                        {% endif %}
-                                    </span>
-
-                                    <span>
-                                        Emis le {{ avis.date|date("d/m/Y à H:i") }}
-                                    </span>
-
-                                </div>
-                            </div>
-                            {% endif %}
                         {% endfor %}
 
                         <div class="column">

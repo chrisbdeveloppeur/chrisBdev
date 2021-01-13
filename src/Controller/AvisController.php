@@ -43,7 +43,6 @@ class AvisController extends AbstractController
         ]);
     }
 
-
     /**
      * @Route("/confirm-avis/{id}", name="confirm_avis")
      */
@@ -56,4 +55,40 @@ class AvisController extends AbstractController
         $this->addFlash('success',$message);
         return $this->redirect('\#avis');
     }
+
+
+    /**
+     * @Route("/on-off-avis/{id}", name="on_off_avis")
+     */
+    public function onOffAvis($id, AviRepository $aviRepository, EntityManagerInterface $em){
+        $avis = $aviRepository->find($id);
+        if ($avis->getValidated()==true){
+            $avis->setValidated(false);
+        }else{
+            $avis->setValidated(true);
+        }
+
+        $em->persist($avis);
+        $em->flush();
+        $message = 'Vous venez d\'approuver l\'avis client de '. $avis->getUser();
+        $this->addFlash('success',$message);
+        return $this->redirect('\#avis');
+    }
+
+
+    /**
+     * @Route("/delete-avis/{id}", name="delete_avis")
+     */
+    public function deleteAvis($id, AviRepository $aviRepository, EntityManagerInterface $em){
+        $avis = $aviRepository->find($id);
+        $avis->setValidated(true);
+        $em->persist($avis);
+        $em->flush();
+        $message = 'Vous venez d\'approuver l\'avis client de '. $avis->getUser();
+        $this->addFlash('success',$message);
+        return $this->redirect('\#avis');
+    }
+
+
+
 }
