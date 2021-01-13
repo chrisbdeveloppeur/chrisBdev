@@ -25,7 +25,14 @@ class AvisController extends AbstractController
         $user = $this->getUser();
 //        $aviForm->get('date')->setData($date);
         if ($user){
-            $aviForm->get('user')->setData($this->getUser()->getUsername());
+            if ($user->getPseudo()){
+                $aviForm->get('user')->setData($this->getUser()->getPseudo());
+            }elseif ($user->getName() && $user->getLastName()){
+                $userName = $user->getName() . ' ' . $user->getLastName();
+                $aviForm->get('user')->setData($userName);
+            }else{
+                $aviForm->get('user')->setData($this->getUser()->getUsername());
+            }
         }
         $aviForm->handleRequest($request);
         if ($aviForm->isSubmitted() && $aviForm->isValid()){
@@ -64,13 +71,14 @@ class AvisController extends AbstractController
         $avis = $aviRepository->find($id);
         if ($avis->getValidated()==true){
             $avis->setValidated(false);
+            $message = 'Vous venez de retirer la visibilité de l\'avis client de '. $avis->getUser();
         }else{
             $avis->setValidated(true);
+            $message = 'Vous venez de rendre visible l\'avis client de '. $avis->getUser();
         }
 
         $em->persist($avis);
         $em->flush();
-        $message = 'Vous venez d\'approuver l\'avis client de '. $avis->getUser();
         $this->addFlash('success',$message);
         return $this->redirect('\#avis');
     }

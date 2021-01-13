@@ -17,9 +17,13 @@
                 {% endif %}
 
             <div class="field">
-                <label class="label has-text-white">Pseudo / Email *</label>
+                <label class="label has-text-white">Pseudo / Nom - Prénom / Email *</label>
                 <div class="control">
-                    {{ form_widget(avi_form.user, {'attr': {'class': 'input is-primary'}}) }}
+                    {% if is_granted("ROLE_USER") %}
+                        {{ form_widget(avi_form.user, {'attr': {'class': 'input is-primary has-text-centered', 'disabled': 'true'}}) }}
+                    {% else %}
+                        {{ form_widget(avi_form.user, {'attr': {'class': 'input is-primary has-text-centered'}}) }}
+                    {% endif %}
                 </div>
             </div>
 
