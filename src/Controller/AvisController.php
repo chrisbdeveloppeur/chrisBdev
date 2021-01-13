@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Avi;
 use App\Form\AviType;
+use App\Notif\NotifMessage;
+use App\Repository\AviRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +17,7 @@ class AvisController extends AbstractController
     /**
      * @Route("/add-avis", name="add_avis")
      */
-    public function index(Request $request, EntityManagerInterface $em): Response
+    public function index(Request $request, EntityManagerInterface $em, NotifMessage $notifMessage): Response
     {
         $aviForm = $this->createForm(AviType::class);
 
@@ -27,16 +29,31 @@ class AvisController extends AbstractController
         }
         $aviForm->handleRequest($request);
         if ($aviForm->isSubmitted() && $aviForm->isValid()){
-            $note = $aviForm->getData();
-            $em->persist($note);
+            $avis = $aviForm->getData();
+            $em->persist($avis);
             $em->flush();
+            $notifMessage->sendAvis($avis);
             $message = 'Merci pour votre soutiens et d\'avoir pris le temps de donner un avi concernant chrisBdev';
             $this->addFlash('success',$message);
-            return $this->redirectToRoute('home');
+            return $this->redirect('\#avis');
         }
 
         return $this->render('sections/avis/add_avi.html.twig', [
             'avi_form' => $aviForm->createView(),
         ]);
+    }
+
+
+    /**
+     * @Route("/confirm-avis/{id}", name="confirm_avis")
+     */
+    public function confirmAvis($id, AviRepository $aviRepository, EntityManagerInterface $em){
+        $avis = $aviRepository->find($id);
+        $avis->setValidated(true);
+        $em->persist($avis);
+        $em->flush();
+        $message = 'Vous venez d\'approuver l\'avis client de '. $avis->getUser();
+        $this->addFlash('success',$message);
+        return $this->redirect('\#avis');
     }
 }

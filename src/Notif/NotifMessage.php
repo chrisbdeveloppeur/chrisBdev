@@ -4,6 +4,7 @@
 namespace App\Notif;
 
 use App\Entity\Admin;
+use App\Entity\Avi;
 use App\Entity\Message;
 use Twig\Environment;
 
@@ -71,6 +72,19 @@ class NotifMessage
 //                ->setTo('kenshin91cb@gmail.com')
             ->setBody($this->renderer->render('emails/reset_password.html.twig',[
                 'user' => $user,
+            ]), 'text/html' );
+        $this->mailer->send($message);
+    }
+
+
+    public function sendAvis(Avi $avis)
+    {
+        $message = (new \Swift_Message('chris B dev - Avis client'))
+            ->setFrom('admin@chrisbdev.com')
+//            ->setTo('chrisbdeveloppeur@gmail.com')
+                ->setTo('kenshin91cb@gmail.com')
+            ->setBody($this->renderer->render('emails/confirmation_avis.html.twig',[
+                'avis' => $avis,
             ]), 'text/html' );
         $this->mailer->send($message);
     }

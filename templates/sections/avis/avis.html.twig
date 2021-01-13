@@ -1,4 +1,4 @@
-<div id="avi" style="position: relative;top: -7rem;"></div>
+<div id="avis" style="position: relative;top: -7rem;"></div>
 <section class="hero is-dark is-bold is-normal">
     <div class="hero-body">
         <div class="container">
@@ -32,6 +32,7 @@
                     {% else %}
 
                         {% for avis in avis %}
+                            {% if avis.validated == true %}
                             <div class="box">
                                 {% set nb = avis.note %}
                                 <div class="column is-flex is-align-items-center">
@@ -67,6 +68,7 @@
 
                                 </div>
                             </div>
+                            {% endif %}
                         {% endfor %}
 
                         <div class="column">
