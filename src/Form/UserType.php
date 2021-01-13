@@ -30,6 +30,11 @@ class UserType extends AbstractType
                     new Email(['message' => 'Veuillez indiquer une adresse mail valide. Exemple : mon_adresse_mail@gmail.com']),
                 ]
             ])
+            ->add('pseudo', TextType::class,[
+                'label' => false,
+                'required' => false,
+                'error_bubbling' => true,
+            ])
             ->add('lastName', TextType::class,[
                 'label' => false,
                 'error_bubbling' => true,

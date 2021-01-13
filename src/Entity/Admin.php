@@ -99,6 +99,20 @@ class Admin implements UserInterface
      */
     private $enable;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Regex(
+     *     pattern="/[<>{}\/]/",
+     *     match=false,
+     *     message="Votre pseudo ne peut contenir des caratères spéciaux (ex: / {} <>)",
+     *)
+     * @Assert\Length(
+     *     max="100",
+     *     maxMessage="100 caractères maximum autorisés pour votre pseudo"
+     * )
+     */
+    private $pseudo;
+
 
     public function __construct()
     {
@@ -307,6 +321,18 @@ public function getEnable(): ?bool
 public function setEnable(?bool $enable): self
 {
     $this->enable = $enable;
+
+    return $this;
+}
+
+public function getPseudo(): ?string
+{
+    return $this->pseudo;
+}
+
+public function setPseudo(?string $pseudo): self
+{
+    $this->pseudo = $pseudo;
 
     return $this;
 }

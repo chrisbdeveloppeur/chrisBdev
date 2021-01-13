@@ -37,6 +37,30 @@
     <div class="field">
         <label class="label has-text-light has-text-left">
             <span class="icon">
+                <i class="fas fa-at"></i>
+            </span>
+            Mon adresse mail
+        </label>
+        <div class="control">
+            {{ form_widget(form.email, {'attr': {'class': 'input is-primary'}}) }}
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label has-text-light has-text-left">
+            <span class="icon">
+                <i class="fas fa-signature"></i>
+            </span>
+            Mon pseudonyme
+        </label>
+        <div class="control">
+            {{ form_widget(form.pseudo, {'attr': {'class': 'input is-primary'}}) }}
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label has-text-light has-text-left">
+            <span class="icon">
                 <i class="fas fa-male"></i>
             </span>
             Mon nom
@@ -55,18 +79,6 @@
         </label>
         <div class="control">
             {{ form_widget(form.name, {'attr': {'class': 'input is-primary'}}) }}
-        </div>
-    </div>
-
-    <div class="field">
-        <label class="label has-text-light has-text-left">
-            <span class="icon">
-                <i class="fas fa-at"></i>
-            </span>
-            Mon adresse mail
-        </label>
-        <div class="control">
-            {{ form_widget(form.email, {'attr': {'class': 'input is-primary'}}) }}
         </div>
     </div>
 

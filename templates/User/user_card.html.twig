@@ -9,6 +9,13 @@
 
     <div class="column has-text-light">
         <span class="icon is-normal">
+            <i class="fas fa-signature"></i>
+        </span>
+        Mon pseudonyme : {% if user.pseudo %}<p class="has-text-primary">{{ user.pseudo }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}
+    </div>
+
+    <div class="column has-text-light">
+        <span class="icon is-normal">
             <i class="fas fa-lg fa-id-card"></i>
         </span>
         Mon nom : {% if user.lastName %}<p class="has-text-primary">{{ user.lastName }}</p>{% else %}<p class="is-italic has-text-dark">Non renseigné</p>{% endif %}

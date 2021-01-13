@@ -14,7 +14,7 @@
     {% endif %}
 
     <div class="field">
-        <label class="label has-text-white">Email</label>
+        <label class="label has-text-white">Email *</label>
         <div class="control has-icons-left">
             {{ form_widget(registrationForm.email, {'attr': {'class': 'input is-primary'}}) }}
             <span class="icon is-small is-left">
@@ -24,7 +24,7 @@
     </div>
 
     <div class="field">
-        <label class="label has-text-white">Mot de passe</label>
+        <label class="label has-text-white">Mot de passe *</label>
         <div class="control has-icons-left">
             {{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'input is-primary'}}) }}
             <span class="icon is-small is-left">
@@ -34,11 +34,21 @@
     </div>
 
     <div class="field">
-        <label class="label has-text-white">Confirmer votre mot de passe</label>
+        <label class="label has-text-white">Confirmer votre mot de passe *</label>
         <div class="control has-icons-left">
             {{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'input is-primary'}}) }}
             <span class="icon is-small is-left">
                 <i class="fas fa-unlock-alt"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label has-text-white">Pseudonyme</label>
+        <div class="control has-icons-left">
+            {{ form_widget(registrationForm.pseudo, {'attr': {'class': 'input is-primary'}}) }}
+            <span class="icon is-small is-left">
+                <i class="fas fa-signature"></i>
             </span>
         </div>
     </div>
@@ -54,7 +64,7 @@
         <label for="registration_form_agreeTerms" class="is-size-7">J'accepte les <a target="_blank" href="{{ path('mentions_legales') }}">conditions générales</a> et la <a target="_blank" href="{{ path('politique_de_confidentialite') }}">politique de confidentialité</a></label>
     </div>
 
-    <button type="submit" class="button is-green-custom is-small g-recaptcha"
+    <button type="submit" class="button is-green-custom is-small"
             data-sitekey="6LfSl9wZAAAAACPrrml-QieLt8K7CfycrC1vJwMr"
             data-callback='onSubmit'
             data-action='submit'>
