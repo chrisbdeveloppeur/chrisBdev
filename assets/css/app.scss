@@ -382,6 +382,17 @@ background: $primary
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b8b3d', endColorstr='#5fe37a',GradientType=0 );
 }
 
+
+.is-text-green-custom{
+    background: #1b8b3d;
+    background: -moz-linear-gradient(top,  #1b8b3d 0%, #24c447 50%, #1db540 51%, #5fe37a 100%);
+    background: -webkit-linear-gradient(top,  #1b8b3d 0%,#24c447 50%,#1db540 51%,#5fe37a 100%);
+    background: linear-gradient(to bottom,  #1b8b3d 0%,#24c447 50%,#1db540 51%,#5fe37a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b8b3d', endColorstr='#5fe37a',GradientType=0 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .is-green-custom{
     background: #1b8b3d;
     background: -moz-linear-gradient(top,  #1b8b3d 0%, #24c447 50%, #1db540 51%, #5fe37a 100%);

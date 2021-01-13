@@ -74,6 +74,7 @@
         for (i=0; i<allStarsArr.length; i++){
             let iconStar = allStarsArr[i].firstElementChild.firstElementChild.firstElementChild;
             iconStar.classList.replace('far', 'fas');
+            iconStar.classList.add('is-text-green-custom');
             if (allStarsArr[i].classList.contains('note-hover')){
                 break
             }
@@ -91,6 +92,7 @@
                 break
             }else {
                 iconStar.classList.replace('fas', 'far');
+                iconStar.classList.remove('is-text-green-custom');
             }
         }
     }
