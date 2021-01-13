@@ -31,11 +31,11 @@
                         <div class="column note-star" onmouseover="fillStarOnOver(this)" onmouseleave="emptyStarOnLeave(this)">
                             <div class="column">
                                 <span class="icon is-size-4 has-text-white">
-                                    <i class="far fa-star fa-2x"></i>
+                                    <i class="fas fa-star fa-2x"></i>
                                 </span>
                             </div>
                             <div class="column">
-                                {{ form_widget(child, {'attr': {'class': ''}, 'checked': 'true' } ) }}
+                                {{ form_widget(child, {'attr': {'class': 'radio-select'}, 'checked': 'true' } ) }}
                             </div>
                         </div>
                     {% endfor %}
@@ -69,14 +69,23 @@
 <script>
 
     function fillStarOnOver(star) {
-        let iconStar = star.firstElementChild.firstElementChild.firstElementChild;
-        let starsArr = document.getElementsByClassName('note-star');
-        console.log(starsArr);
-        iconStar.classList.replace('far', 'fas');
+        star.classList.add('note-selected');
+        let allStarsArr = document.getElementsByClassName('note-star');
+        for (i=0; i<allStarsArr.length; i++){
+            let iconStar = allStarsArr[i].firstElementChild.firstElementChild.firstElementChild;
+            iconStar.classList.replace('far', 'fas');
+            if (allStarsArr[i].classList.contains('note-selected')){
+                break
+            }
+        }
     }
 
     function emptyStarOnLeave(star){
-        let iconStar = star.firstElementChild.firstElementChild.firstElementChild;
-        iconStar.classList.replace('fas', 'far');
+        star.classList.remove('note-selected');
+        let allStarsArr = document.getElementsByClassName('note-star');
+        for (i=0; i<allStarsArr.length; i++){
+            let iconStar = allStarsArr[i].firstElementChild.firstElementChild.firstElementChild;
+            iconStar.classList.replace('fas', 'far');
+        }
     }
 </script>
