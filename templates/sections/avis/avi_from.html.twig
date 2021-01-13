@@ -28,7 +28,7 @@
                 <div class="control is-flex is-justify-content-space-evenly">
 {#                    {{ form_widget(avi_form.note, {'attr': {'class': ''}}) }}#}
                     {% for child in avi_form.note %}
-                        <div class="column">
+                        <div class="column note-star" onmouseover="fillStarOnOver(this)" onmouseleave="emptyStarOnLeave(this)">
                             <div class="column">
                                 <span class="icon is-size-4 has-text-white">
                                     <i class="far fa-star fa-2x"></i>
@@ -64,3 +64,19 @@
         </article>
     </div>
 </div>
+
+
+<script>
+
+    function fillStarOnOver(star) {
+        let iconStar = star.firstElementChild.firstElementChild.firstElementChild;
+        let starsArr = document.getElementsByClassName('note-star');
+        console.log(starsArr);
+        iconStar.classList.replace('far', 'fas');
+    }
+
+    function emptyStarOnLeave(star){
+        let iconStar = star.firstElementChild.firstElementChild.firstElementChild;
+        iconStar.classList.replace('fas', 'far');
+    }
+</script>
