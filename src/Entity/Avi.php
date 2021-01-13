@@ -90,7 +90,7 @@ class Avi
 
     public function setDate(\DateTimeInterface $date): self
     {
-        $date->format('d/m/Y - H:i');
+//        $date->format('d/m/Y - H:i');
         $this->date = $date;
 
         return $this;

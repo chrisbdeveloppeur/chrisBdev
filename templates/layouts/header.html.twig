@@ -78,7 +78,7 @@
                                         </div>
                                     </div>
                                 {% else %}
-                                    <a style="width: 100%;margin-left: 0" title="Mon profil" href="{{ path('user_space') }}" class="tag is-size-6-touch is-light is-normal has-text-weight-bold">{% if app.user.pseudo %}{{ app.user.pseudo }}{% elseif app.user.name %}{{ app.user.nale }}{% else %}{{ app.user.username }}{% endif %}</a>
+                                    <a style="width: 100%;margin-left: 0" title="Mon profil" href="{{ path('user_space') }}" class="tag is-size-6-touch is-light is-normal has-text-weight-bold">{% if app.user.pseudo %}{{ app.user.pseudo }}{% elseif app.user.name and app.user.lastname %}{{ app.user.name }} {{ app.user.lastname }}{% else %}{{ app.user.username }}{% endif %}</a>
                                 {% endif %}
 
                             </div>

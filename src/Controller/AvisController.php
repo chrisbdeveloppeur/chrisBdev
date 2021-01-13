@@ -23,7 +23,7 @@ class AvisController extends AbstractController
 
 //        dd($aviForm->get('note'));
         $user = $this->getUser();
-//        $aviForm->get('date')->setData($date);
+
         if ($user){
             if ($user->getPseudo()){
                 $aviForm->get('user')->setData($this->getUser()->getPseudo());
@@ -89,10 +89,9 @@ class AvisController extends AbstractController
      */
     public function deleteAvis($id, AviRepository $aviRepository, EntityManagerInterface $em){
         $avis = $aviRepository->find($id);
-        $avis->setValidated(true);
-        $em->persist($avis);
+        $em->remove($avis);
         $em->flush();
-        $message = 'Vous venez d\'approuver l\'avis client de '. $avis->getUser();
+        $message = 'Vous venez de supprimer l\'avis client de '. $avis->getUser();
         $this->addFlash('success',$message);
         return $this->redirect('\#avis');
     }

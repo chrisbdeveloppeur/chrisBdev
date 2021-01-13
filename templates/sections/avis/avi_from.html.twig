@@ -20,7 +20,14 @@
                 <label class="label has-text-white">Pseudo / Nom - Prénom / Email *</label>
                 <div class="control">
                     {% if is_granted("ROLE_USER") %}
-                        {{ form_widget(avi_form.user, {'attr': {'class': 'input is-primary has-text-centered', 'disabled': 'true'}}) }}
+                        {% if app.user.pseudo %}
+                            {{ app.user.pseudo }}
+                        {% elseif app.user.name and app.user.lastname %}
+                            {{ app.user.name }} {{ app.user.lastname }}
+                        {% else %}
+                            {{ app.user.email }}
+                        {% endif %}
+                        {{ form_widget(avi_form.user, {'attr': {'class': 'input is-primary has-text-centered is-hidden'}}) }}
                     {% else %}
                         {{ form_widget(avi_form.user, {'attr': {'class': 'input is-primary has-text-centered'}}) }}
                     {% endif %}

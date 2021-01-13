@@ -1,24 +1,25 @@
-<div class="box {% if avis.validated == false %} is-shadow {% endif %}">
-    {% set nb = avis.note %}
-    <div class="column is-flex is-align-items-center">
-        {% for i in 1..nb %}
-            <div class="column">
+<div style="position: relative">
+    <div class="box {% if avis.validated == false %} is-shadow {% endif %}">
+        {% set nb = avis.note %}
+        <div class="column is-flex is-align-items-center">
+            {% for i in 1..nb %}
+                <div class="column">
                 <span class="icon is-size-4 is-size-5-touch has-text-white">
                     <i class="fas fa-star fa-2x is-text-green-custom"></i>
                 </span>
-            </div>
-        {% endfor %}
-    </div>
-    <br>
-    {% if avis.commentaire %}
-        <article class="message is-dark">
-            <div class="message-body">
-                {{ avis.commentaire }}
-            </div>
-        </article>
-    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <br>
+        {% if avis.commentaire %}
+            <article class="message is-dark">
+                <div class="message-body">
+                    {{ avis.commentaire }}
+                </div>
+            </article>
+        {% endif %}
 
-    <div class="columns is-justify-content-space-between">
+        <div class="columns is-justify-content-space-between">
         <span>
             {% if avis.user %}
                 Par {{ avis.user }}
@@ -27,9 +28,28 @@
             {% endif %}
         </span>
 
-        <span>
+            <span>
             Emis le {{ avis.date|date("d/m/Y à H:i") }}
         </span>
 
+        </div>
+
     </div>
+
+    {% if is_granted("ROLE_ADMIN") %}
+        {% if avis.validated == false %}
+            <span class="icon is-medium" style="position: absolute;top: .5rem;left: .5rem;">
+                <a href="{{ path('on_off_avis', {id: avis.id}) }}" class="fas fa-2x fa-eye" title="rendre visible la note client"></a>
+            </span>
+            <span class="icon is-medium" style="position: absolute;top: .5rem;right: .5rem;">
+                <a href="{{ path('delete_avis', {id: avis.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la note client"></a>
+            </span>
+        {% else %}
+            <span class="icon is-medium" style="position: absolute;top: .5rem;left: .5rem;">
+                <a href="{{ path('on_off_avis', {id: avis.id}) }}" class="fas fa-2x fa-eye-slash" title="rendre invisible la note client"></a>
+            </span>
+        {% endif %}
+
+    {% endif %}
+
 </div>

@@ -310,7 +310,7 @@
                                         <p style="--link-color: white;color: white;">Le client : {{ avis.user }}</p>
                                         <p style="--link-color: white;color: white;">La note : {{ avis.note }}</p>
                                         <p style="--link-color: white;color: white;">Son commentaire : {{ avis.commentaire }}</p>
-                                        <p style="--link-color: white;color: white;">Date : {{ avis.date }}</p>
+                                        <p style="--link-color: white;color: white;">Date : {{ avis.date|date("d/m/Y à H:i") }}</p>
 
                                     </div>
                                 </td>
