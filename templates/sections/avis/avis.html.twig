@@ -9,9 +9,9 @@
                 Avis clients
             </h2>
 
-            <div class="is-justify-content-center has-text-centered">
+            <div class="is-flex is-justify-content-center has-text-centered">
 
-                <div class="column">
+                <div class="column is-two-thirds-desktop">
                     {% if avis is empty %}
                         <article class="message is-small">
                             <div class="message-header is-green-custom">
@@ -37,23 +37,35 @@
                                 <div class="column is-flex is-align-items-center">
                                     {% for i in 1..nb %}
                                         <div class="column">
-                                        <span class="icon is-size-4 has-text-white">
+                                        <span class="icon is-size-4 is-size-5-touch has-text-white">
                                             <i class="fas fa-star fa-2x is-text-green-custom"></i>
                                         </span>
                                         </div>
                                     {% endfor %}
                                 </div>
                                 <br>
-                                {% if avis.user %}
-                                    Utilisateur : {{ avis.user }}<br>
-                                {% else %}
-                                    Utilisateur : <i>Anonyme</i><br>
-                                {% endif %}
-                                Emis le {{ avis.date|date("d/m/Y à H:i") }}<br>
                                 {% if avis.commentaire %}
-                                    Commentaire : {{ avis.commentaire }}
+                                    <article class="message is-dark">
+                                        <div class="message-body">
+                                            {{ avis.commentaire }}
+                                        </div>
+                                    </article>
                                 {% endif %}
-                                <br><br>
+
+                                <div class="columns is-justify-content-space-between">
+                                    <span>
+                                        {% if avis.user %}
+                                            Par {{ avis.user }}
+                                        {% else %}
+                                            Par <i>client anonyme</i>
+                                        {% endif %}
+                                    </span>
+
+                                    <span>
+                                        Emis le {{ avis.date|date("d/m/Y à H:i") }}
+                                    </span>
+
+                                </div>
                             </div>
                         {% endfor %}
 

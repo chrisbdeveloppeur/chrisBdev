@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/AvisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AvisController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Avi.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Avi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sections/avis/avis.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/avis/avis.html.twig" afterDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
@@ -185,8 +185,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/sections/avis/avis.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="35" column="86" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="86" />
+            <state relative-caret-position="197">
+              <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -221,8 +221,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="31" selection-start-line="31" selection-end-line="35" selection-end-column="34" />
+            <state relative-caret-position="170">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -323,9 +326,9 @@
         <option value="$PROJECT_DIR$/src/Form/AviType.php" />
         <option value="$PROJECT_DIR$/templates/sections/avis/add_avi.html.twig" />
         <option value="$PROJECT_DIR$/assets/css/app.scss" />
-        <option value="$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/AvisController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Avi.php" />
+        <option value="$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig" />
         <option value="$PROJECT_DIR$/templates/sections/avis/avis.html.twig" />
       </list>
     </option>
@@ -712,12 +715,12 @@
       <workItem from="1610456499416" duration="1537000" />
       <workItem from="1610458543144" duration="15587000" />
       <workItem from="1610486721629" duration="7630000" />
-      <workItem from="1610529455827" duration="10884000" />
+      <workItem from="1610529455827" duration="11743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="513181000" />
+    <option name="totallyTimeSpent" value="514040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,7 +735,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22547974" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22547974" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -745,7 +748,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23726977" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23726977" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1118,15 +1121,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/avis/avi_from.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="31" selection-start-line="31" selection-end-line="35" selection-end-column="34" />
+        <state relative-caret-position="170">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/avis/avis.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="35" column="86" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="86" />
+        <state relative-caret-position="197">
+          <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
         </state>
       </provider>
     </entry>
