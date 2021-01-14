@@ -1,10 +1,10 @@
 
     <div class="box is-relative {% if avis.validated == true %} box-avis {% elseif avis.validated == false %} is-shadow {% endif %}">
         {% set nb = avis.note %}
-        <div class="column is-flex is-align-items-center">
+        <div class="column is-flex is-align-items-center is-justify-content-center">
             {% for i in 1..nb %}
                 <div class="column">
-                <span class="icon is-size-4 is-size-5-touch has-text-white">
+                <span class="icon is-size-4-desktop has-text-white">
                     <i class="fas fa-star fa-2x is-text-green-custom has-text-green-neon-secondary"></i>
                 </span>
                 </div>
