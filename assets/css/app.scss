@@ -229,6 +229,13 @@ div.table-wrapper{
 .is-shadow{
     opacity: .5;
 }
+.box-avis{
+    position: relative;
+    transition: .5s;
+}
+.box-avis:hover{
+    transform: scale(1.03);
+}
 
 
 
