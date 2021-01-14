@@ -7,7 +7,7 @@
             </div>
 
             <div class="column is-8 is-full-touch" style="display: flex;align-items: center;position: relative;">
-                <progress class="progress is-medium is-{{ competences.color }}" id="progress-{{ competences.id }}" value="{{ competences.value }}" max="100"></progress>
+                <progress class="progress is-medium is-{% if competences.color %}{{ competences.color }} {% else %}green{% endif %}" id="progress-{{ competences.id }}" value="{{ competences.value }}" max="100"></progress>
             </div>
 
             <div class="column is-fullwidth is-one-fifth-desktop" style="display: flex;align-items: center;justify-content: space-evenly;flex-direction: row">
@@ -28,7 +28,7 @@
             </div>
 
             <div class="column is-0 is-full-touch progress-column" style="display: flex;align-items: center;position: relative" id="progress-column-{{ competences.id }}">
-                <progress class="progress is-medium is-{{ competences.color }}" id="progress-{{ competences.id }}" value="{{ competences.value }}" max="100"></progress>
+                <progress class="progress is-medium is-{% if competences.color %}{{ competences.color }} {% else %}green{% endif %}" id="progress-{{ competences.id }}" value="{{ competences.value }}" max="100"></progress>
             </div>
         {% endif %}
 
