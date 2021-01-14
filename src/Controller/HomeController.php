@@ -28,7 +28,7 @@ class HomeController extends AbstractController
         $projets = $projetRepository->findAll();
         $techno = $technoRepository->findAll();
         $attribut = $attributRepository->findAll();
-        $avis = $aviRepository->findAllByNote();
+        $avis = $aviRepository->findAllByDate();
 
 
         return $this->render('home/index.html.twig', [

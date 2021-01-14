@@ -35,6 +35,16 @@ class AviRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findAllByDate()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.date', 'DESC')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 
     /*
     public function findOneBySomeField($value): ?Avi
