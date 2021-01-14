@@ -27,9 +27,9 @@ $navbar-item-hover-background-color: none;
 $link: $warning-custom;
 $link-hover: #effad1;
 $box-background-color: rgba(0,0,0,0.5);
-$box-radius: 0px;
+//$box-radius: 0px;
 $input-radius: 0px;
-$tag-radius: 0px;
+//$tag-radius: 0px;
 $message-radius: 0px;
 $message-body-radius: 0 px;
 $message-header-radius: 0px;
@@ -74,6 +74,11 @@ ul{
     //font-size: 1.6rem;
     //color: $warning-custom !important;
     //text-shadow: #dfdfdf 0 0 5px;
+}
+.navbar-layer-bg{
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 10, 1, 0.9)
 }
 .sectionPaddingTop{
     position: relative;
@@ -200,7 +205,7 @@ div.container h2{
 
 
 .button{
-    border-radius: 0px !important;
+    //border-radius: 0px !important;
 }
 div.BDC_CaptchaImageDiv a{
     opacity: 0;
@@ -439,7 +444,7 @@ background: $primary
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b8b3d', endColorstr='#5fe37a',GradientType=0 );
     border: none !important;
     transition: .2s;
-    border-radius: 0 !important;
+    //border-radius: 0 !important;
 }
 .is-green-custom:hover{
     border: none !important;
@@ -457,7 +462,7 @@ background: $primary
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#478add', endColorstr='#a7d0f1',GradientType=0 );
     border: none !important;
     transition: .2s;
-    border-radius: 0 !important;
+    //border-radius: 0 !important;
 }
 .is-info-custom:hover{
     border: none !important;
@@ -474,7 +479,7 @@ background: $primary
     background: linear-gradient(to bottom,  #b81900 0%,#ff1003 50%,#ea1000 51%,#ff6c67 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b81900', endColorstr='#ff6c67',GradientType=0 );
     transition: .2s;
-    border-radius: 0 !important;
+    //border-radius: 0 !important;
     color: white !important;
 }
 .is-danger-custom:hover{
