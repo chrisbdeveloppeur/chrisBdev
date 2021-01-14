@@ -26,9 +26,10 @@ class AviRepository extends ServiceEntityRepository
     public function findAllByNote()
     {
         return $this->createQueryBuilder('a')
-//            ->andWhere('a.note = :val')
-//            ->setParameter('val', $value)
+            ->Where('a.validated = :val')
+            ->setParameter('val', true)
             ->orderBy('a.note', 'DESC')
+            ->addOrderBy('a.date', 'DESC')
             ->setMaxResults(5)
             ->getQuery()
             ->getResult()
