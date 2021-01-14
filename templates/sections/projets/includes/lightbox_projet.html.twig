@@ -42,6 +42,27 @@
                     </div>
                 {% endif %}
 
+                {% if not projet.img1Name and not projet.img2Name and not projet.img3Name %}
+
+                    <div class="column is-one-third">
+                        <figure style="height: 100%">
+                            <img src="{{ asset('build/images/no-image.df092810.jpg') }}" title="no-image">
+                        </figure>
+                    </div>
+
+                    <div class="column is-one-third">
+                        <figure style="height: 100%">
+                            <img src="{{ asset('build/images/no-image.df092810.jpg') }}" title="no-image">
+                        </figure>
+                    </div>
+
+                    <div class="column is-one-third">
+                        <figure style="height: 100%">
+                            <img src="{{ asset('build/images/no-image.df092810.jpg') }}" title="no-image">
+                        </figure>
+                    </div>
+                {% endif %}
+
             </div>
 
         <div class="column is-flex-desktop" style="margin: auto;justify-content: space-between;align-items: center;border-bottom: rgba(255,255,255,.1) solid 1px;">

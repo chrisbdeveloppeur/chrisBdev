@@ -145,7 +145,7 @@ section{
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 2, 0, .90);
+    background: rgba(0, 2, 0, .85);
 }
 .modal{
     transition: .5s;
@@ -255,6 +255,20 @@ div.table-wrapper{
     }
     #charaProjet1{
         border-bottom: rgba(255,255,255,.1) solid 1px;
+    }
+}
+
+@media (max-width: 768px){
+    .is-fullwidth-mobile {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1023px){
+    .is-fullwidth-touch {
+        display: flex;
+        width: 100%;
     }
 }
 

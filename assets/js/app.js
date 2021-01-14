@@ -36,4 +36,5 @@ const bg_change_user_password_illustration = require('../img/undraw_security_o89
 const unamed = require('../img/unnamed.jpg');
 const unamed_b_w = require('../img/unnamed.B_W.jpg');
 const top_secret = require('../img/secret-3037639_1920.svg');
-const no_img = require('../img/no-photo.svg');
+const no_img = require('../img/no-image.jpg');
+const feedback_green = require('../img/feedback-green.jpg');

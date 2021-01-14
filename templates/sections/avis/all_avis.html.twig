@@ -6,7 +6,8 @@
 
 {% block body %}
 
-    <section class="hero is-dark is-bold is-normal">
+    <section  style="background: center / cover no-repeat fixed url('{{ asset('build/images/feedback-green.1f88d357.jpg') }}');position: relative;">
+        <div class="section-bg-layer"></div>
         <div class="hero-body">
             <div class="container">
                 <h2 class="subtitle is-1 has-text-light has-text-weight-bold has-text-centered-touch is-flex-desktop subtitle-right" style="align-items: baseline">
@@ -39,10 +40,31 @@
                         {% else %}
 
                             {% if is_granted("ROLE_ADMIN") %}
-                                Nombre total d'avis : {{ avis|length }}
+                                <div class="tags has-addons is-centered" style="margin: 0">
+
+                                    <span class="icon tag is-primary has-text-light">
+                                        <i class="far fa-lg fa-calendar-alt"></i>
+                                    </span>
+
+                                    <span class="tag is-primary has-text-light has-text-weight-bold" style="flex: 1;">Nombre total d'avis</span>
+
+                                    <span class="tag" style="flex: 1;">{{ avis|length }}</span>
+
+                                </div>
                                 dont {{ avisValidated|length }} visibles
+
                             {% else %}
-                                Nombre total d'avis : {{ avis|length }}
+                                <div class="tags has-addons is-centered">
+
+                                    <span class="icon tag is-primary has-text-light">
+                                        <i class="far fa-lg fa-calendar-alt"></i>
+                                    </span>
+
+                                    <span class="tag is-primary has-text-light has-text-weight-bold">Nombre total d'avis</span>
+
+                                    <span class="tag">{{ avis|length }}</span>
+
+                                </div>
                             {% endif %}
 
                             {% for avis in avis %}
@@ -58,15 +80,7 @@
                                 {% endif %}
 
                             {% endfor %}
-
-                            <div class="column">
-                                <div class="column">
-                                    <a href="{{ path('avis_add') }}" class="button is-green-custom has-text-weight-bold">
-                                        Noter chrisBdev
-                                    </a>
-                                </div>
-                            </div>
-
+                            
                         {% endif %}
                     </div>
 
@@ -77,6 +91,15 @@
 
             </div>
         </div>
+
+        <div class="column is-flex-touch is-justify-content-center" style="position:sticky;right: 2rem;bottom: 0;">
+{#            <div class="column">#}
+                <a href="{{ path('avis_add') }}" class="button is-green-custom has-text-weight-bold is-fullwidth-touch is-large">
+                    Noter chrisBdev
+                </a>
+{#            </div>#}
+        </div>
+        
     </section>
 
 {% endblock %}
