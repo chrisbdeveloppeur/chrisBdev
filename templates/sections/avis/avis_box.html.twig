@@ -1,5 +1,5 @@
 
-    <div class="box box-avis {% if avis.validated == false %} is-shadow {% endif %}">
+    <div class="box is-relative {% if avis.validated == true %} box-avis {% elseif avis.validated == false %} is-shadow {% endif %}">
         {% set nb = avis.note %}
         <div class="column is-flex is-align-items-center">
             {% for i in 1..nb %}
@@ -10,7 +10,6 @@
                 </div>
             {% endfor %}
         </div>
-        <br>
         {% if avis.commentaire %}
             <article class="message is-dark">
                 <div class="message-body">
@@ -19,7 +18,7 @@
             </article>
         {% endif %}
 
-        <div class="columns is-justify-content-space-between">
+        <div class="is-flex-desktop is-justify-content-space-between">
         <span>
             {% if avis.user %}
                 Par {{ avis.user }}
