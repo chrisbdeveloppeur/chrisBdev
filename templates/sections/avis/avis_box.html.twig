@@ -37,14 +37,14 @@
 
             {% if avis.validated == false %}
                 <span class="icon is-medium" style="position: absolute;top: .5rem;left: .5rem;">
-                <a href="{{ path('on_off_avis', {id: avis.id}) }}" class="fas fa-2x fa-eye" title="rendre visible la note client"></a>
+                <a href="{{ path('avis_on_off', {id: avis.id}) }}" class="fas fa-2x fa-eye" title="rendre visible la note client"></a>
             </span>
                 <span class="icon is-medium" style="position: absolute;top: .5rem;right: .5rem;">
-                <a href="{{ path('delete_avis', {id: avis.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la note client"></a>
+                <a href="{{ path('avis_delete', {id: avis.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la note client"></a>
             </span>
             {% else %}
                 <span class="icon is-medium" style="position: absolute;top: .5rem;left: .5rem;">
-                <a href="{{ path('on_off_avis', {id: avis.id}) }}" class="fas fa-2x fa-eye-slash" title="rendre invisible la note client"></a>
+                <a href="{{ path('avis_on_off', {id: avis.id}) }}" class="fas fa-2x fa-eye-slash" title="rendre invisible la note client"></a>
             </span>
             {% endif %}
 

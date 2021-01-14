@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Form\AviType;
 use App\Repository\AdminRepository;
 use App\Repository\AttributRepository;
 use App\Repository\AviRepository;
@@ -10,9 +9,7 @@ use App\Repository\CompRepository;
 use App\Repository\PresentationRepository;
 use App\Repository\ProjetRepository;
 use App\Repository\TechnoRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -28,8 +25,7 @@ class HomeController extends AbstractController
         $projets = $projetRepository->findAll();
         $techno = $technoRepository->findAll();
         $attribut = $attributRepository->findAll();
-        $avis = $aviRepository->findAllByDate();
-
+        $avis = $aviRepository->findByValidate();
 
         return $this->render('home/index.html.twig', [
             'competences' => $competences,

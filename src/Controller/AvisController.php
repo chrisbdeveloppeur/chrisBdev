@@ -12,16 +12,43 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/avis", name="avis_")
+ */
 class AvisController extends AbstractController
 {
+
     /**
-     * @Route("/add-avis", name="add_avis")
+     * @Route("/all", name="all")
+     */
+    public function allAvis(AviRepository $aviRepository){
+
+        $user = $this->getUser();
+
+        if ($user && (in_array("ROLE_ADMIN",$user->getRoles()) ) ){
+            $avis = $aviRepository->findAllByDate();
+            $avisValidated = $aviRepository->findByValidate();
+            return $this->render('sections/avis/all_avis.html.twig', [
+                'avis' => $avis,
+                'avisValidated' => $avisValidated,
+            ]);
+        }else{
+            $avis = $aviRepository->findByValidate();
+            return $this->render('sections/avis/all_avis.html.twig', [
+                'avis' => $avis,
+            ]);
+        }
+
+    }
+
+
+    /**
+     * @Route("/add", name="add")
      */
     public function index(Request $request, EntityManagerInterface $em, NotifMessage $notifMessage): Response
     {
         $aviForm = $this->createForm(AviType::class);
 
-//        dd($aviForm->get('note'));
         $user = $this->getUser();
 
         if ($user){
@@ -51,7 +78,7 @@ class AvisController extends AbstractController
     }
 
     /**
-     * @Route("/confirm-avis/{id}", name="confirm_avis")
+     * @Route("/confirm/{id}", name="confirm")
      */
     public function confirmAvis($id, AviRepository $aviRepository, EntityManagerInterface $em){
         $avis = $aviRepository->find($id);
@@ -65,7 +92,7 @@ class AvisController extends AbstractController
 
 
     /**
-     * @Route("/on-off-avis/{id}", name="on_off_avis")
+     * @Route("/on-off/{id}", name="on_off")
      */
     public function onOffAvis($id, AviRepository $aviRepository, EntityManagerInterface $em){
         $avis = $aviRepository->find($id);
@@ -85,7 +112,7 @@ class AvisController extends AbstractController
 
 
     /**
-     * @Route("/delete-avis/{id}", name="delete_avis")
+     * @Route("/delete/{id}", name="delete")
      */
     public function deleteAvis($id, AviRepository $aviRepository, EntityManagerInterface $em){
         $avis = $aviRepository->find($id);

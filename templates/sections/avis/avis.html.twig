@@ -24,7 +24,7 @@
                                 Soyez le premier à noter chrisBdev !
                             </div>
                             <div class="column">
-                                <a href="{{ path('add_avis') }}" class="button is-green-custom has-text-weight-bold">
+                                <a href="{{ path('avis_add') }}" class="button is-green-custom has-text-weight-bold">
                                     Noter chrisBdev
                                 </a>
                             </div>
@@ -47,13 +47,22 @@
 
                         <div class="column">
                                 <div class="column">
-                                    <a href="{{ path('add_avis') }}" class="button is-green-custom has-text-weight-bold">
+                                    <a href="{{ path('avis_add') }}" class="button is-green-custom has-text-weight-bold">
                                         Noter chrisBdev
                                     </a>
                                 </div>
                         </div>
 
                     {% endif %}
+
+                    <div class="column">
+                        <div class="column">
+                            <a href="{{ path('avis_all') }}" class="button is-green-custom has-text-weight-bold">
+                                Voir tout les avis
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
 

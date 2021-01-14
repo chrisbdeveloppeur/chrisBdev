@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}chrisBdev | Avis clients{% endblock %}
+
+{#{% block meta_description %}N'hésitez pas à laisser votre avi concernant chrisBdev !{% endblock %}#}
+
+{% block body %}
+
+    <section class="hero is-dark is-bold is-normal">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="subtitle is-1 has-text-light has-text-weight-bold has-text-centered-touch is-flex-desktop subtitle-right" style="align-items: baseline">
+                <span class="icon has-text-light is-hidden-touch" style="margin: 0 1.75rem">
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                </span>
+                    Avis clients
+                </h2>
+
+                <div class="is-flex is-justify-content-center has-text-centered">
+
+                    <div class="column is-two-thirds-desktop">
+                        {% if avis is empty %}
+                            <article class="message is-small">
+                                <div class="message-header is-green-custom">
+                                    <p>Soutennez chrisBdev</p>
+                                    <span class="icon is-small">
+                                <i class="fas fa-lg fa-info-circle"></i>
+                            </span>
+                                </div>
+                                <div class="message-body has-text-left">
+                                    Soyez le premier à noter chrisBdev !
+                                </div>
+                                <div class="column">
+                                    <a href="{{ path('avis_add') }}" class="button is-green-custom has-text-weight-bold">
+                                        Noter chrisBdev
+                                    </a>
+                                </div>
+                            </article>
+                        {% else %}
+
+                            {% if is_granted("ROLE_ADMIN") %}
+                                Nombre total d'avis : {{ avis|length }}
+                                dont {{ avisValidated|length }} visibles
+                            {% else %}
+                                Nombre total d'avis : {{ avis|length }}
+                            {% endif %}
+
+                            {% for avis in avis %}
+
+                                {% if avis.validated == true %}
+
+                                    {{ include('sections/avis/avis_box.html.twig') }}
+
+                                {% elseif is_granted("ROLE_ADMIN") %}
+
+                                    {{ include('sections/avis/avis_box.html.twig') }}
+
+                                {% endif %}
+
+                            {% endfor %}
+
+                            <div class="column">
+                                <div class="column">
+                                    <a href="{{ path('avis_add') }}" class="button is-green-custom has-text-weight-bold">
+                                        Noter chrisBdev
+                                    </a>
+                                </div>
+                            </div>
+
+                        {% endif %}
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
