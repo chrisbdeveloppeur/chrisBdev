@@ -258,7 +258,7 @@ div.table-wrapper{
 
 
 //////////////////////////////      MEDIA QUERIES //////////////////////////////////
-/*          TOUCH-PAD           */
+/*          MOBIL          */
 @media (max-width: 768px) {
     #figureLogo{
         width: 100px;
@@ -269,6 +269,10 @@ div.table-wrapper{
     }
     #charaProjet1{
         border-bottom: rgba(255,255,255,.1) solid 1px;
+    }
+    .sectionPaddingTop{
+        position: relative;
+        top: -75vh;
     }
 }
 
