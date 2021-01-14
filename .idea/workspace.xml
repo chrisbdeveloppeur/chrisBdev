@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/avis/avis_box.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/avis/avis_box.html.twig" afterDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -240,7 +238,7 @@
         <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="201">
-              <caret line="235" column="27" lean-forward="true" selection-start-line="235" selection-start-column="27" selection-end-line="235" selection-end-column="27" />
+              <caret line="81" column="11" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -249,7 +247,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>font-family</find>
       <find>background</find>
       <find>#ffffff</find>
       <find>#000000</find>
@@ -279,6 +276,7 @@
       <find>nale</find>
       <find>text</find>
       <find>scale</find>
+      <find>projet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -729,12 +727,12 @@
       <workItem from="1610486721629" duration="7630000" />
       <workItem from="1610529455827" duration="15288000" />
       <workItem from="1610549713532" duration="7456000" />
-      <workItem from="1610581492583" duration="2388000" />
+      <workItem from="1610581492583" duration="2686000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="527429000" />
+    <option name="totallyTimeSpent" value="527727000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -747,6 +745,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18869936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1151,7 +1150,7 @@
     <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
-          <caret line="235" column="27" lean-forward="true" selection-start-line="235" selection-start-column="27" selection-end-line="235" selection-end-column="27" />
+          <caret line="81" column="11" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="11" />
         </state>
       </provider>
     </entry>
