@@ -30,7 +30,7 @@ class AviRepository extends ServiceEntityRepository
             ->setParameter('val', true)
             ->orderBy('a.note', 'DESC')
             ->addOrderBy('a.date', 'DESC')
-            ->setMaxResults(5)
+            ->setMaxResults(4)
             ->getQuery()
             ->getResult()
         ;

@@ -39,33 +39,28 @@
                             </article>
                         {% else %}
 
-                            {% if is_granted("ROLE_ADMIN") %}
-                                <div class="tags has-addons is-centered" style="margin: 0">
 
-                                    <span class="icon tag is-primary has-text-light">
-                                        <i class="far fa-lg fa-calendar-alt"></i>
-                                    </span>
 
-                                    <span class="tag is-primary has-text-light has-text-weight-bold" style="flex: 1;">Nombre total d'avis</span>
+                                <div class="is-flex is-justify-content-space-between is-grouped is-grouped-multiline mb-5">
+                                    <div class="control">
+                                        <div class="tags has-addons">
+                                            <span class="tag is-primary has-text-light has-text-weight-bold">Nombre total d'avis</span>
+                                            <span class="tag">{{ avis|length }}</span>
+                                        </div>
+                                    </div>
 
-                                    <span class="tag" style="flex: 1;">{{ avis|length }}</span>
-
-                                </div>
-                                dont {{ avisValidated|length }} visibles
-
-                            {% else %}
-                                <div class="tags has-addons is-centered">
-
-                                    <span class="icon tag is-primary has-text-light">
-                                        <i class="far fa-lg fa-calendar-alt"></i>
-                                    </span>
-
-                                    <span class="tag is-primary has-text-light has-text-weight-bold">Nombre total d'avis</span>
-
-                                    <span class="tag">{{ avis|length }}</span>
+                                {% if is_granted("ROLE_ADMIN") %}
+                                    <div class="control">
+                                        <div class="tags has-addons">
+                                            <span class="tag is-primary has-text-light has-text-weight-bold">Nombre d'avis visible</span>
+                                            <span class="tag">{{ avisValidated|length }}</span>
+                                        </div>
+                                    </div>
+                                {% endif %}
 
                                 </div>
-                            {% endif %}
+
+
 
                             {% for avis in avis %}
 
