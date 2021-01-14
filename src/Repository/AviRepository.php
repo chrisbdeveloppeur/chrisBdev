@@ -39,19 +39,19 @@ class AviRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('a')
             ->orderBy('a.date', 'DESC')
-            ->setMaxResults(50)
+//            ->setMaxResults(50)
             ->getQuery()
             ->getResult()
             ;
     }
 
-    public function findByValidate()
+    public function findAllValidated()
     {
         return $this->createQueryBuilder('a')
             ->Where('a.validated = :val')
             ->setParameter('val', true)
             ->orderBy('a.date', 'DESC')
-            ->setMaxResults(5)
+//            ->setMaxResults(5)
             ->getQuery()
             ->getResult()
             ;

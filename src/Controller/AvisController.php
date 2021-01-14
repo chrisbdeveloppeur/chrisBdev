@@ -27,13 +27,13 @@ class AvisController extends AbstractController
 
         if ($user && (in_array("ROLE_ADMIN",$user->getRoles()) ) ){
             $avis = $aviRepository->findAllByDate();
-            $avisValidated = $aviRepository->findByValidate();
+            $avisValidated = $aviRepository->findAllValidated();
             return $this->render('sections/avis/all_avis.html.twig', [
                 'avis' => $avis,
                 'avisValidated' => $avisValidated,
             ]);
         }else{
-            $avis = $aviRepository->findByValidate();
+            $avis = $aviRepository->findAllValidated();
             return $this->render('sections/avis/all_avis.html.twig', [
                 'avis' => $avis,
             ]);
