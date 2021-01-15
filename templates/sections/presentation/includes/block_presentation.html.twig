@@ -37,13 +37,13 @@
             <a style="text-decoration: none" href="{{ path('presentation_edit', {'id': presentation.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la présentation"></a>
         </span>
 
-        {% if presentation.position != 1 %}
+        {% if i != 1 %}
         <span class="icon is-medium" style="position: absolute;top: 1rem;">
             <a style="text-decoration: none" href="{{ path('order', {'id': presentation.id, 'order': 'down'}) }}" class="fas fa-2x fa-arrow-up has-text-light" title="monter la présentation"></a>
         </span>
         {% endif %}
 
-        {% if presentation.position < presentations|length %}
+        {% if i < presentations|length %}
         <span class="icon is-medium" style="position: absolute;bottom: 1rem;">
             <a style="text-decoration: none" href="{{ path('order', {'id': presentation.id, 'order': 'up'}) }}" class="fas fa-2x fa-arrow-down has-text-light" title="descendre la présentation"></a>
         </span>

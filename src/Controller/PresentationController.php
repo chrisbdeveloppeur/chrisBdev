@@ -18,10 +18,11 @@ class PresentationController extends AbstractController
     /**
      * @Route("/ajouter", name="add")
      */
-    public function add_presentation(Request $request)
+    public function add_presentation(Request $request, PresentationRepository $presentationRepository)
     {
         $form = $this->createForm(PresentationType::class);
         $form->handleRequest($request);
+        $presentations = $presentationRepository->findAll();
 
         if ($form->isSubmitted() && $form->isValid()){
             $presentation = $form->getData();
@@ -35,7 +36,8 @@ class PresentationController extends AbstractController
         }
 
         return $this->render('sections/presentation/includes/add_presentation.html.twig',[
-            'presentation_form' => $form->createView()
+            'presentation_form' => $form->createView(),
+            'presentations' => $presentations,
         ]);
     }
 
@@ -45,6 +47,7 @@ class PresentationController extends AbstractController
     public function edit_presentation(Request $request, PresentationRepository $presentationRepository, $id)
     {
         $presentation = $presentationRepository->find($id);
+        $presentations = $presentationRepository->findAll();
         $form = $this->createForm(PresentationType::class, $presentation);
         $form->handleRequest($request);
 
@@ -61,6 +64,7 @@ class PresentationController extends AbstractController
         }
         return $this->render('sections/presentation/includes/edit_presentation.html.twig',[
             'presentation' => $presentation,
+            'presentations' => $presentations,
             'presentation_form' => $form->createView()
         ]);
     }

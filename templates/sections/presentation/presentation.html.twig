@@ -11,8 +11,10 @@
         </div>
     </div>
 
+    {% set i = 1 %}
     {% for presentation in presentations %}
         {{ include('sections/presentation/includes/block_presentation.html.twig') }}
+        {% set i = i+1 %}
     {% endfor %}
 
 
