@@ -38,7 +38,7 @@ class OrderController extends AbstractController
             $em->flush();
         }
 
-        return $this->redirect('\#presentations');
+        return $this->json('\#presentations');
     }
 
 //    /**

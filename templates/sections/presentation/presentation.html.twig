@@ -12,11 +12,12 @@
     </div>
 
     {% set i = 1 %}
-    {% for presentation in presentations %}
-        {{ include('sections/presentation/includes/block_presentation.html.twig') }}
-        {% set i = i+1 %}
-    {% endfor %}
-
+    <div>
+        {% for presentation in presentations %}
+            {{ include('sections/presentation/includes/block_presentation.html.twig') }}
+            {% set i = i+1 %}
+        {% endfor %}
+    </div>
 
     {% if is_granted('ROLE_ADMIN') %}
         <div class="column has-text-centered">
@@ -28,6 +29,50 @@
 
 </section>
 
+
+
+
+<script>
+    // function swapDiv(elem) {
+    //     elem.parentNode.insertBefore(elem, elem.parentNode.firstChild);
+    // }
+
+    {#               SCRIPT POUR AJAX                   #}
+
+    function orderPresentationUp(event){
+        event.preventDefault();
+
+        const url = this.href;
+        const presentationBox = this.parentElement.parentElement;
+
+        axios.get(url).then(function (response) {
+            //////////////////     SWAP DE L'ELEMENT HTML AVEC SON ELEMENT PRECEDENT       ///////////////////////////
+            presentationBox.parentNode.insertBefore(presentationBox, presentationBox.previousElementSibling);
+        })
+    }
+
+    let orderUp = document.querySelectorAll('.js-order-up').forEach(function (link){
+        link.addEventListener('click' || 'touchstart', orderPresentationUp);
+    });
+
+
+    function orderPresentationDown(event){
+        event.preventDefault();
+
+        const url = this.href;
+        const presentationBox = this.parentElement.parentElement;
+
+        axios.get(url).then(function (response) {
+            //////////////////     SWAP DE L'ELEMENT HTML AVEC SON ELEMENT SUIVANT       ///////////////////////////
+            presentationBox.parentNode.insertBefore(presentationBox.nextElementSibling, presentationBox);
+        })
+    }
+
+    let orderDown = document.querySelectorAll('.js-order-down').forEach(function (link){
+        link.addEventListener('click' || 'touchstart', orderPresentationDown);
+    });
+
+</script>
 
 
 {#<script>#}
