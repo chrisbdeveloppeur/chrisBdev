@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376012fd-588f-4a8d-bfe6-5b7728afe725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/presentation/includes/block_presentation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/presentation/includes/block_presentation.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/presentation/presentation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/presentation/presentation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PresentationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PresentationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Presentation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Presentation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sections/presentation/includes/add_presentation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/presentation/includes/add_presentation.html.twig" afterDir="false" />
     </list>
     <ignored path="C:\Users\K4gur0\PhpstormProjects\chrisBdev\public\build/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -173,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Presentation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+            <state relative-caret-position="294">
+              <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
               <folding>
                 <element signature="e#30#72#0#PHP" expanded="true" />
               </folding>
@@ -185,8 +187,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="442">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -215,11 +217,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/presentation/presentation.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="70" column="93" lean-forward="true" selection-start-line="70" selection-start-column="93" selection-end-line="70" selection-end-column="93" />
+            <state relative-caret-position="192">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
@@ -238,11 +240,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/PresentationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="55" column="64" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
+            <state relative-caret-position="323">
+              <caret line="30" column="51" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -274,7 +276,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sections/presentation/includes/add_presentation.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
+            <state relative-caret-position="340">
+              <caret line="77" column="84" selection-start-line="77" selection-start-column="84" selection-end-line="77" selection-end-column="84" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -361,15 +364,16 @@
         <option value="$PROJECT_DIR$/assets/css/app.scss" />
         <option value="$PROJECT_DIR$/templates/sections/avis/avis_box.html.twig" />
         <option value="$PROJECT_DIR$/templates/sections/avis/avis.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/Presentation.php" />
-        <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/Repository/PresentationRepository.php" />
-        <option value="$PROJECT_DIR$/src/Controller/PresentationController.php" />
         <option value="$PROJECT_DIR$/templates/sections/presentation/includes/edit_presentation.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/PresentationType.php" />
         <option value="$PROJECT_DIR$/src/Controller/OrderController.php" />
         <option value="$PROJECT_DIR$/templates/sections/presentation/includes/block_presentation.html.twig" />
         <option value="$PROJECT_DIR$/templates/sections/presentation/presentation.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
+        <option value="$PROJECT_DIR$/templates/sections/presentation/includes/add_presentation.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/Presentation.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PresentationController.php" />
       </list>
     </option>
   </component>
@@ -755,12 +759,12 @@
       <workItem from="1610549713532" duration="7456000" />
       <workItem from="1610581492583" duration="4443000" />
       <workItem from="1610621778955" duration="22055000" />
-      <workItem from="1610705540543" duration="19391000" />
+      <workItem from="1610705540543" duration="20685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="570930000" />
+    <option name="totallyTimeSpent" value="572224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -775,7 +779,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14765458" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14765458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -788,7 +792,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22426869" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22426869" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1118,25 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sections/presentation/includes/add_presentation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Presentation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="207" column="21" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
-          <folding>
-            <element signature="e#30#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/presentation/includes/edit_presentation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -1154,20 +1139,6 @@
           <folding>
             <element signature="e#28#56#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PresentationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="55" column="64" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1205,8 +1176,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/sections/presentation/presentation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="70" column="93" lean-forward="true" selection-start-line="70" selection-start-column="93" selection-end-line="70" selection-end-column="93" />
+        <state relative-caret-position="192">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sections/presentation/includes/add_presentation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="77" column="84" selection-start-line="77" selection-start-column="84" selection-end-line="77" selection-end-column="84" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Presentation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+          <folding>
+            <element signature="e#30#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PresentationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="30" column="51" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
         </state>
       </provider>
     </entry>

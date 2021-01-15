@@ -26,6 +26,7 @@ class PresentationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()){
             $presentation = $form->getData();
+            $presentation->setPosition(count($presentations)+1);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($presentation);
             $entityManager->flush();

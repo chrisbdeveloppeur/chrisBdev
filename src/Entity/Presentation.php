@@ -70,14 +70,10 @@ class Presentation
      */
     private $position;
 
-//    public function __construct(PresentationRepository $presentationRepository)
+//    public function __construct()
 //    {
-//        $presentations = $presentationRepository->findAll();
-//        for ($i=0; $i<=count($presentations); $i++){
-//            if ($this->getId() == $presentations[$i]->getId()){
-//                $this->posistion = $i ;
-//            }
-//        }
+//        if ($this->position == null)
+//        $this->posistion = 0 ;
 //    }
 
     public function getId(): ?int

@@ -32,9 +32,8 @@ class HomeController extends AbstractController
                 $em->persist($presentations[$i]);
                 $em->flush();
             }
-
         }
-//        die();
+
         $projets = $projetRepository->findAll();
         $techno = $technoRepository->findAll();
         $attribut = $attributRepository->findAll();
