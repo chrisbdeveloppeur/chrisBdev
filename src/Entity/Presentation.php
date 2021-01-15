@@ -65,6 +65,21 @@ class Presentation
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $position;
+
+//    public function __construct(PresentationRepository $presentationRepository)
+//    {
+//        $presentations = $presentationRepository->findAll();
+//        for ($i=0; $i<=count($presentations); $i++){
+//            if ($this->getId() == $presentations[$i]->getId()){
+//                $this->posistion = $i ;
+//            }
+//        }
+//    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -178,6 +193,18 @@ class Presentation
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
+
         return $this;
     }
 

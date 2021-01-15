@@ -24,7 +24,7 @@
                     </span>
 
                     <span class="icon is-medium">
-                        <a style="text-decoration: none" href="{{ path('presentation_del', {'id': presentation.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la présentation"></a>
+                        <a style="text-decoration: none" href="{{ path('presentation_del', {'id': presentation.id}) }}" class="fas fa-2x fa-trash-alt has-text-danger" title="supprimer la présentation"></a>
                     </span>
 
                 </div>
@@ -66,6 +66,16 @@
                             'class' : 'input',
                             'placeholder' : 'ex : https://chrisbdev.com',
                             'alt' : 'Entrer un lien'} }) }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label has-text-light">Position de la presentation</label>
+                    <div class="control">
+                        {{ form_row(presentation_form.position, {'attr' : {
+                            'class' : 'input',
+                            'placeholder' : '1',
+                            'alt' : 'Entrer un nombre'} }) }}
                     </div>
                 </div>
 

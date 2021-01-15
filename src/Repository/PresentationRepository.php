@@ -22,19 +22,26 @@ class PresentationRepository extends ServiceEntityRepository
     // /**
     //  * @return Presentation[] Returns an array of Presentation objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findByPosition($value)
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
+            ->andWhere('p.position = :val')
             ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
+    public function orderByPosition()
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.position', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 
     /*
     public function findOneBySomeField($value): ?Presentation

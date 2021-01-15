@@ -6,6 +6,7 @@ use App\Entity\Presentation;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -32,6 +33,11 @@ class PresentationType extends AbstractType
             ])
 
             ->add('button_link', TextType::class,[
+                'label' => false,
+                'required' => false,
+            ])
+
+            ->add('position', IntegerType::class,[
                 'label' => false,
                 'required' => false,
             ])

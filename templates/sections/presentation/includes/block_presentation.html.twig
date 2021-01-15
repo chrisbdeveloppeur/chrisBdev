@@ -25,33 +25,31 @@
                         <div class="has-text-centered column">
                             <a href="{{ presentation.buttonLink }}" class="button is-green-custom has-text-weight-bold">En savoir plus...</a>
                         </div>
-
-                    {% endif %}
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <hr style="background: rgba(255,255,255,.1);height: 1px;">
-                        <div style="display: flex;">
-
-                            <div class="column half-touch has-text-centered">
-                                <span class="icon is-medium">
-                                    <a style="text-decoration: none" href="{{ path('presentation_edit', {'id': presentation.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la présentation"></a>
-                                </span>
-                            </div>
-
-                            <div class="column half-touch has-text-centered">
-                                <span class="icon is-medium">
-                                    <a style="text-decoration: none" href="{{ path('presentation_del', {'id': presentation.id}) }}" class="fas fa-2x fa-times-circle has-text-danger" title="supprimer la présentation"></a>
-                                </span>
-                            </div>
-
-                        </div>
                     {% endif %}
                 </div>
-
             </article>
 
-
-
         </div>
+
+    {% if is_granted('ROLE_ADMIN') %}
+
+        <span class="icon is-medium" style="position: absolute;top: 1rem;right: 1rem;">
+            <a style="text-decoration: none" href="{{ path('presentation_edit', {'id': presentation.id}) }}" class="fas fa-2x fa-edit has-text-warning" title="éditer la présentation"></a>
+        </span>
+
+        {% if presentation.position != 1 %}
+        <span class="icon is-medium" style="position: absolute;top: 1rem;">
+            <a style="text-decoration: none" href="{{ path('order', {'id': presentation.id, 'order': 'down'}) }}" class="fas fa-2x fa-arrow-up has-text-light" title="monter la présentation"></a>
+        </span>
+        {% endif %}
+
+        {% if presentation.position < presentations|length %}
+        <span class="icon is-medium" style="position: absolute;bottom: 1rem;">
+            <a style="text-decoration: none" href="{{ path('order', {'id': presentation.id, 'order': 'up'}) }}" class="fas fa-2x fa-arrow-down has-text-light" title="descendre la présentation"></a>
+        </span>
+        {% endif %}
+
+    {% endif %}
 
 </div>
 
