@@ -6,7 +6,7 @@
 
 {% block body %}
 
-    <section  style="background: center / cover no-repeat fixed url('{{ asset('build/images/feedback-green.1f88d357.jpg') }}');position: relative;">
+    <section class="pb-0" style="background: center / cover no-repeat fixed url('{{ asset('build/images/feedback-green.1f88d357.jpg') }}');position: relative;">
         <div class="section-bg-layer"></div>
         <div class="hero-body">
             <div class="container">
@@ -20,6 +20,9 @@
                 <div class="is-flex is-justify-content-center has-text-centered">
 
                     <div class="column is-two-thirds-desktop">
+
+                        <h3 class="subtitle is-3 has-text-light">Ce qu'ils pensent de chrisBdev</h3>
+
                         {% if avis is empty %}
                             <article class="message is-small">
                                 <div class="message-header is-green-custom">
@@ -87,12 +90,10 @@
             </div>
         </div>
 
-        <div class="column is-flex-touch is-justify-content-center" style="position:sticky;right: 2rem;bottom: 0;">
-{#            <div class="column">#}
-                <a href="{{ path('avis_add') }}" class="button is-green-custom has-text-weight-bold is-fullwidth-touch is-large">
-                    Noter chrisBdev
+        <div class="column is-flex-touch is-justify-content-center" style="position:sticky;bottom: 0;">
+                <a href="{{ path('avis_add') }}" class="button is-green-custom has-text-weight-bold is-fullwidth-touch">
+                    Donner son avis sur chrisBdev !
                 </a>
-{#            </div>#}
         </div>
         
     </section>
