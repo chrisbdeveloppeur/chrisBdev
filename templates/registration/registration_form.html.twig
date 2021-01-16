@@ -61,7 +61,7 @@
     <div class="field has-text-left">
         {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'switch is-small', 'name': 'registration_form_agreeTerms'}}) }}
 {#        <input id="switchAgreeTerms" type="checkbox" name="switchAgreeTerms" class="switch is-small" required="required">#}
-        <label for="registration_form_agreeTerms" class="is-size-7">J'accepte les <a target="_blank" href="{{ path('mentions_legales') }}">conditions générales</a> et la <a target="_blank" href="{{ path('politique_de_confidentialite') }}">politique de confidentialité</a></label>
+        <label for="registration_form_agreeTerms" class="is-size-7">J'accepte les <a target="_blank" class="is-a-link" href="{{ path('mentions_legales') }}">conditions générales</a> et la <a class="is-a-link" target="_blank" href="{{ path('politique_de_confidentialite') }}">politique de confidentialité</a> *</label>
     </div>
 
     <button type="submit" class="button is-green-custom is-small g-recaptcha"
