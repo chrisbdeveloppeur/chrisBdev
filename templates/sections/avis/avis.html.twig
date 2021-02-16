@@ -16,7 +16,7 @@
 
                     <h3 class="subtitle is-3 is-size-2-desktop">Ce qu'ils pensent de chrisBdev</h3>
 
-                    {% if avis is empty %}
+                    {% if (avis is empty) and is_granted('ROLE_ADMIN') == false %}
                         <article class="message is-small">
                             <div class="message-header is-green-custom">
                                 <p>Soutennez chrisBdev</p>
