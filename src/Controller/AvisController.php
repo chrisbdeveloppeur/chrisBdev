@@ -43,7 +43,7 @@ class AvisController extends AbstractController
 
 
     /**
-     * @Route("/add", name="add")
+     * @Route("/add", name="add", methods={"GET","POST"})
      */
     public function index(Request $request, EntityManagerInterface $em, NotifMessage $notifMessage): Response
     {
@@ -62,6 +62,7 @@ class AvisController extends AbstractController
             }
         }
         $aviForm->handleRequest($request);
+
         if ($aviForm->isSubmitted() && $aviForm->isValid()){
             $avis = $aviForm->getData();
             $em->persist($avis);
