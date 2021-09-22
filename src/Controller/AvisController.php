@@ -121,7 +121,7 @@ class AvisController extends AbstractController
         $em->flush();
         $message = 'Vous venez de supprimer l\'avis client de '. $avis->getUser();
         $this->addFlash('success',$message);
-        return $this->redirect('\#avis');
+        return $this->redirectToRoute('avis_all');
     }
 
 
