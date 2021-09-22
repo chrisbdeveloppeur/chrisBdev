@@ -68,7 +68,7 @@ class AvisController extends AbstractController
             $em->persist($avis);
             $em->flush();
             $notifMessage->sendAvis($avis);
-            $message = 'Merci pour votre soutiens et d\'avoir pris le temps de donner un avi concernant chrisBdev';
+            $message = 'Merci pour votre soutiens et d\'avoir pris le temps de donner un avi concernant chrisBdev<br>Votre message apparaîtra une foi approuvé';
             $this->addFlash('success',$message);
             return $this->redirectToRoute('avis_all');
         }

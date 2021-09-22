@@ -3,7 +3,7 @@
     {% for message in message_list %}
         <div class="notification is-{{ type }}" style="position: fixed;bottom: 0;margin: .75rem;z-index: 50;font-weight: bold">
             <button class="delete" onclick="this.parentElement.parentElement.removeChild(this.parentElement);"></button>
-            {{ message }}
+            {{ message|raw }}
         </div>
     {% endfor %}
 {% endfor %}
