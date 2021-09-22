@@ -70,7 +70,7 @@ class AvisController extends AbstractController
             $notifMessage->sendAvis($avis);
             $message = 'Merci pour votre soutiens et d\'avoir pris le temps de donner un avi concernant chrisBdev';
             $this->addFlash('success',$message);
-            return $this->redirect('\#avis');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('sections/avis/add_avi.html.twig', [
