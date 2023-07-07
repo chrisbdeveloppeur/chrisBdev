@@ -19,7 +19,7 @@ class AddAdminAccountAutoController extends AbstractController
             $admin->setPassword(
                 $passwordEncoder->encodePassword(
                     $admin,
-                    '121090cb.K4gur0'
+                    $this->getParameter('super.admin.parameter')
                 )
             );
             $admin->setRoles(['ROLE_ADMIN']);
